@@ -21,9 +21,14 @@
   --radius: 4px;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html { background: #050607; scroll-behavior: smooth; }
+html {
+  background: #050607;
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -37,13 +42,38 @@ body {
   transition: opacity 240ms ease;
 }
 
-body.is-ready { opacity: 1; }
-body.is-leaving { opacity: 0; }
+body.is-ready {
+  opacity: 1;
+}
 
-img { max-width: 100%; }
-a { color: inherit; }
-button, input, select, textarea { font: inherit; }
-button, a { -webkit-tap-highlight-color: transparent; }
+body.is-leaving {
+  opacity: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
 
 .skip-link {
   position: fixed;
@@ -55,14 +85,22 @@ button, a { -webkit-tap-highlight-color: transparent; }
   color: #111;
   border-radius: 3px;
 }
-.skip-link:focus { top: 1rem; }
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+
+/* =========================================================
+   SHARED SITE HEADER / NAVIGATION
+   ========================================================= */
 
 .site-header {
   position: relative;
   z-index: 50;
   background: #0b0e0f;
-  border-bottom: 1px solid rgba(255,255,255,.08);
-  box-shadow: 0 8px 24px rgba(0,0,0,.22);
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .22);
 }
 
 .primary-nav,
@@ -91,7 +129,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .nav-toggle {
   display: none;
-  border: 1px solid rgba(212,173,95,.45);
+  border: 1px solid rgba(212, 173, 95, .45);
   background: transparent;
   color: var(--text-main);
   padding: .45rem .7rem;
@@ -108,7 +146,10 @@ button, a { -webkit-tap-highlight-color: transparent; }
   align-items: center;
 }
 
-.primary-links { gap: clamp(.9rem, 2.5vw, 1.7rem); }
+.primary-links {
+  gap: clamp(.9rem, 2.5vw, 1.7rem);
+}
+
 .gallery-links {
   justify-content: center;
   gap: clamp(.55rem, 1.65vw, 1.25rem);
@@ -118,7 +159,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 
 .gallery-nav {
-  border-top: 1px solid rgba(255,255,255,.05);
+  border-top: 1px solid rgba(255, 255, 255, .05);
   background: #0f1213;
 }
 
@@ -148,12 +189,23 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .gallery-links a:hover::after,
 .gallery-links a:focus-visible::after,
 .primary-links a[aria-current='page']::after,
-.gallery-links a[aria-current='page']::after { right: 0; }
+.gallery-links a[aria-current='page']::after {
+  right: 0;
+}
 
 .primary-links a[aria-current='page'],
-.gallery-links a[aria-current='page'] { color: #f0cf86; }
+.gallery-links a[aria-current='page'] {
+  color: #f0cf86;
+}
 
-main { display: block; }
+main {
+  display: block;
+}
+
+
+/* =========================================================
+   SHARED GOTHIC STAGE
+   ========================================================= */
 
 .gothic-stage {
   position: relative;
@@ -173,7 +225,11 @@ main { display: block; }
   user-select: none;
 }
 
-/* The supplied shell is never stretched. Content is positioned in percentages so it scales with the shell. */
+/*
+  The supplied shell is never stretched.
+  Content is positioned in percentages so that it scales
+  with the architectural shell.
+*/
 .window-overlay {
   position: absolute;
   left: 28.25%;
@@ -194,116 +250,445 @@ textarea:focus-visible {
   outline-offset: 3px;
 }
 
-/* LANDING */
-.landing-overlay {
-  display: grid;
-  grid-template-columns: 16% 68% 16%;
-  grid-template-rows: 18% 1fr;
-  gap: 0;
-  padding: 5% 2% 4%;
+
+/* =========================================================
+   LANDING PAGE
+   ========================================================= */
+
+/*
+  The Landing page deliberately overrides the global 1122px
+  stage maximum.
+
+  This lets the actual stone image reach the browser edges
+  without stretching it.
+
+  Because the shell is portrait, on a wide monitor the page
+  will become taller than one viewport rather than distorting
+  the architecture.
+*/
+
+body.landing-page {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  background: #050607;
 }
 
-.landing-glass {
-  border: 1px solid rgba(215, 181, 109, .34);
-  background:
-    linear-gradient(135deg, rgba(106,120,98,.14), rgba(59,79,87,.12)),
-    #111515;
-  color: rgba(240,232,214,.55);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: clamp(.5rem, .9vw, .72rem);
-  letter-spacing: .05em;
-  text-transform: uppercase;
+body.landing-page main {
+  width: 100%;
+  margin: 0;
+  padding: 0;
   overflow: hidden;
+}
+
+body.landing-page .gothic-stage {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  background: #050607;
+  overflow: hidden;
+}
+
+body.landing-page .gothic-shell-image {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center top;
+}
+
+
+/*
+  This overlay corresponds to the black opening inside the
+  supplied master shell.
+*/
+body.landing-page .window-overlay {
+  left: 28.25%;
+  right: 28.25%;
+  top: 13.2%;
+  bottom: 13.4%;
+}
+
+
+/*
+  Landing layout:
+
+  top glass across the upper opening
+
+  then:
+
+  left glass | central information | right glass
+*/
+.landing-overlay {
+  display: grid;
+  grid-template-columns: 17% 66% 17%;
+  grid-template-rows: 18% 82%;
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   LANDING — TOP STAINED GLASS
+   ========================================================= */
+
+.landing-glass {
+  position: relative;
+  overflow: hidden;
+  background: #070909;
 }
 
 .landing-glass--top {
   grid-column: 1 / -1;
-  width: 58%;
-  justify-self: center;
-  clip-path: polygon(50% 0, 100% 100%, 0 100%);
-  padding-top: 10%;
+  grid-row: 1;
+  width: 100%;
+  height: 100%;
+
+  /*
+    This masks the rectangular photograph into the pointed
+    upper area without warping the photograph itself.
+  */
+  clip-path: polygon(
+    50% 0%,
+    100% 72%,
+    100% 100%,
+    0% 100%,
+    0% 72%
+  );
 }
-.landing-glass--left { grid-column: 1; grid-row: 2; }
-.landing-glass--right { grid-column: 3; grid-row: 2; }
+
+.landing-glass--top img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+
+  /*
+    cover may crop the outer edges but never changes the
+    photograph's aspect ratio.
+  */
+  object-fit: cover;
+  object-position: center 38%;
+}
+
+
+/* =========================================================
+   LANDING — SIDE STAINED GLASS
+   ========================================================= */
+
+.landing-side-stack {
+  grid-row: 2;
+
+  display: grid;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+
+  min-width: 0;
+  min-height: 0;
+
+  overflow: hidden;
+
+  background: #060808;
+}
+
+.landing-side-stack--left {
+  grid-column: 1;
+}
+
+.landing-side-stack--right {
+  grid-column: 3;
+}
+
+.landing-side-piece {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: #060808;
+}
+
+/*
+  No artificial gap between the two repeated panels.
+*/
+.landing-side-piece + .landing-side-piece {
+  margin-top: -1px;
+}
+
+.landing-side-piece img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  max-width: none;
+
+  /*
+    The source artwork is very tall and narrow.
+
+    cover allows it to occupy the side strip while retaining
+    its original proportions. Any excess is clipped rather
+    than stretched.
+  */
+  object-fit: cover;
+  object-position: center center;
+}
+
+
+/* =========================================================
+   LANDING — CENTRAL BLACK PANEL
+   ========================================================= */
 
 .landing-panel {
   grid-column: 2;
   grid-row: 2;
+
   min-width: 0;
-  background: rgba(4,5,5,.96);
-  border: 1px solid rgba(218,182,104,.32);
-  box-shadow: 0 0 28px rgba(0,0,0,.6);
-  padding: clamp(.7rem, 2vw, 1.4rem) clamp(.55rem, 1.3vw, 1rem);
+  min-height: 0;
+
+  position: relative;
+
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+
   text-align: center;
-  justify-content: space-between;
+
+  padding:
+    clamp(.7rem, 1.45vw, 1.45rem)
+    clamp(.55rem, 1.05vw, 1.15rem)
+    clamp(.65rem, 1.2vw, 1.25rem);
+
+  background:
+    radial-gradient(
+      ellipse at 50% 16%,
+      rgba(63, 53, 35, .12),
+      transparent 42%
+    ),
+    rgba(3, 4, 4, .985);
+
+  border-left: 1px solid rgba(31, 28, 22, .95);
+  border-right: 1px solid rgba(31, 28, 22, .95);
+
+  box-shadow:
+    inset 10px 0 22px rgba(0, 0, 0, .42),
+    inset -10px 0 22px rgba(0, 0, 0, .42),
+    0 0 22px rgba(0, 0, 0, .42);
+
+  color: var(--text-main);
+}
+
+
+/* =========================================================
+   LANDING — BRAND
+   ========================================================= */
+
+.landing-brand {
+  width: 100%;
 }
 
 .brand-title {
   margin: 0;
+
   font-family: var(--font-display);
+
   color: #efd393;
+
   font-weight: 400;
   letter-spacing: .015em;
   line-height: .9;
-  text-shadow: 0 1px 0 #1f1406;
+
+  text-shadow:
+    0 1px 0 #1f1406,
+    0 0 10px rgba(208, 163, 77, .09);
 }
 
-.landing-panel .brand-title { font-size: clamp(1.25rem, 3.2vw, 2.75rem); }
-.brand-subtitle {
-  margin: .35rem 0 0;
-  font-family: var(--font-display);
-  color: #e9cf96;
-  font-size: clamp(.72rem, 1.5vw, 1.3rem);
+.landing-panel .brand-title {
+  font-size: clamp(1.4rem, 2.55vw, 3rem);
 }
+
+.brand-subtitle {
+  margin: .28em 0 0;
+
+  font-family: var(--font-display);
+
+  color: #e9cf96;
+
+  font-size: clamp(.78rem, 1.35vw, 1.5rem);
+  line-height: 1;
+}
+
+
+/* =========================================================
+   LANDING — DECORATIVE RULES
+   ========================================================= */
 
 .gold-rule {
   width: 72%;
   height: 1px;
+
   margin: .55rem auto;
-  background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--accent-gold),
+      transparent
+    );
 }
+
+.landing-panel .gold-rule {
+  margin-top: clamp(.35rem, .7vw, .75rem);
+  margin-bottom: clamp(.35rem, .7vw, .75rem);
+}
+
+.landing-section-rule {
+  margin-top: clamp(.55rem, 1vw, 1rem) !important;
+}
+
+.landing-enter-rule {
+  margin-top: auto !important;
+}
+
+
+/* =========================================================
+   LANDING — SERVICE + CONTACT
+   ========================================================= */
 
 .service-line {
   margin: .1rem 0 .5rem;
-  font-size: clamp(.72rem, 1.4vw, 1.05rem);
+
+  font-size: clamp(.77rem, 1.17vw, 1.28rem);
+
   line-height: 1.15;
+
+  color: #f0e7d7;
 }
 
 .contact-compact {
   display: grid;
-  gap: .15rem;
-  font-size: clamp(.58rem, 1.15vw, .88rem);
+
+  justify-items: center;
+
+  gap: clamp(.08rem, .18vw, .22rem);
+
+  margin-top: clamp(.25rem, .45vw, .5rem);
+
+  font-size: clamp(.68rem, .94vw, 1rem);
+
+  line-height: 1.16;
+
+  color: #eee4d4;
 }
-.contact-compact a { text-decoration: none; }
-.contact-compact a:hover { color: #f3d99c; }
+
+.contact-compact a {
+  text-decoration: none;
+}
+
+.contact-compact a:hover {
+  color: #f3d99c;
+}
+
+
+/* =========================================================
+   LANDING — BUSINESS COPY
+   ========================================================= */
+
+.landing-business-copy {
+  width: 100%;
+}
+
+.landing-business-title {
+  max-width: 95%;
+
+  margin:
+    0
+    auto
+    clamp(.45rem, .7vw, .75rem);
+
+  font-family: var(--font-body);
+
+  font-size: clamp(.82rem, 1.21vw, 1.34rem);
+
+  font-weight: 500;
+
+  line-height: 1.06;
+
+  color: #f0e8db;
+}
 
 .landing-copy {
-  margin: .45rem 0;
-  font-size: clamp(.53rem, 1vw, .82rem);
-  line-height: 1.25;
+  width: 100%;
+
+  margin:
+    clamp(.32rem, .48vw, .55rem)
+    auto;
+
+  font-family: var(--font-body);
+
+  font-size: clamp(.68rem, .86vw, .95rem);
+
+  font-weight: 400;
+
+  line-height: 1.22;
+
   color: #ddd4c5;
 }
 
+
+/* =========================================================
+   LANDING — ENTER
+   ========================================================= */
+
 .enter-link {
   display: inline-block;
-  margin-top: .4rem;
-  font-family: var(--font-display);
-  font-size: clamp(1.65rem, 4vw, 3.25rem);
-  line-height: 1;
-  text-decoration: none;
-  color: #cf2329;
-  text-shadow: 0 2px 0 #42070b, 0 0 12px rgba(178,23,31,.28);
-  transition: transform 160ms ease, color 160ms ease;
-}
-.enter-link:hover { color: #ed343b; transform: translateY(-1px); }
 
-/* HOME */
+  flex: 0 0 auto;
+
+  margin-top: clamp(.2rem, .45vw, .5rem);
+
+  padding: .05em .2em .1em;
+
+  font-family: var(--font-display);
+
+  font-size: clamp(1.75rem, 3.65vw, 4rem);
+
+  line-height: .95;
+
+  text-decoration: none;
+
+  color: #cf2329;
+
+  text-shadow:
+    0 2px 0 #42070b,
+    0 0 12px rgba(178, 23, 31, .28);
+
+  transition:
+    transform 160ms ease,
+    color 160ms ease,
+    text-shadow 160ms ease;
+}
+
+.enter-link:hover {
+  color: #ed343b;
+
+  transform: translateY(-1px);
+
+  text-shadow:
+    0 2px 0 #42070b,
+    0 0 18px rgba(178, 23, 31, .42);
+}
+
+
+/* =========================================================
+   HOME
+   ========================================================= */
+
 .home-overlay {
   display: flex;
   flex-direction: column;
@@ -314,13 +699,21 @@ textarea:focus-visible {
   text-align: center;
   flex: 0 0 auto;
 }
-.home-brand .brand-title { font-size: clamp(1.2rem, 3vw, 2.45rem); }
-.home-brand .brand-subtitle { font-size: clamp(.7rem, 1.35vw, 1.1rem); }
+
+.home-brand .brand-title {
+  font-size: clamp(1.2rem, 3vw, 2.45rem);
+}
+
+.home-brand .brand-subtitle {
+  font-size: clamp(.7rem, 1.35vw, 1.1rem);
+}
+
 .home-services {
   margin-top: .35rem;
   font-size: clamp(.62rem, 1.12vw, .9rem);
   line-height: 1.18;
 }
+
 .home-contact-grid {
   display: flex;
   justify-content: center;
@@ -330,71 +723,138 @@ textarea:focus-visible {
   font-size: clamp(.5rem, .93vw, .76rem);
   color: #eee5d4;
 }
-.home-contact-grid a { text-decoration: none; }
+
+.home-contact-grid a {
+  text-decoration: none;
+}
 
 .home-gallery-grid {
   flex: 1 1 auto;
   min-height: 0;
+
   display: grid;
+
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-template-rows: repeat(2, minmax(0, 1fr));
+
   gap: clamp(4px, .65vw, 8px);
+
   margin-top: 4%;
 }
+
+
+/* =========================================================
+   HOME GALLERY PANES
+   ========================================================= */
 
 .gallery-pane {
   min-width: 0;
   min-height: 0;
+
   display: flex;
   flex-direction: column;
+
   overflow: hidden;
+
   border: 3px solid #171919;
+
   background: #101313;
+
   text-decoration: none;
-  box-shadow: inset 0 0 0 1px rgba(220,183,102,.18), 0 4px 12px rgba(0,0,0,.28);
-  transition: transform 170ms ease, box-shadow 170ms ease, filter 170ms ease;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(220, 183, 102, .18),
+    0 4px 12px rgba(0, 0, 0, .28);
+
+  transition:
+    transform 170ms ease,
+    box-shadow 170ms ease,
+    filter 170ms ease;
 }
+
 .gallery-pane:hover,
 .gallery-pane:focus-visible {
   transform: translateY(-2px);
+
   filter: brightness(1.08);
-  box-shadow: inset 0 0 0 1px rgba(231,195,116,.34), 0 7px 16px rgba(0,0,0,.38);
+
+  box-shadow:
+    inset 0 0 0 1px rgba(231, 195, 116, .34),
+    0 7px 16px rgba(0, 0, 0, .38);
 }
 
 .image-placeholder {
   flex: 1 1 auto;
+
   min-height: 0;
+
   display: flex;
+
   align-items: center;
   justify-content: center;
+
   padding: .4rem;
+
   text-align: center;
-  color: rgba(237,229,211,.58);
+
+  color: rgba(237, 229, 211, .58);
+
   background:
-    linear-gradient(45deg, transparent 49%, rgba(212,173,95,.11) 50%, transparent 51%),
-    linear-gradient(-45deg, transparent 49%, rgba(212,173,95,.09) 50%, transparent 51%),
+    linear-gradient(
+      45deg,
+      transparent 49%,
+      rgba(212, 173, 95, .11) 50%,
+      transparent 51%
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 49%,
+      rgba(212, 173, 95, .09) 50%,
+      transparent 51%
+    ),
     #121616;
+
   background-size: 28px 28px;
+
   font-size: clamp(.46rem, .75vw, .68rem);
+
   letter-spacing: .06em;
+
   text-transform: uppercase;
 }
 
 .gallery-pane-label {
   flex: 0 0 auto;
+
   display: flex;
+
   align-items: center;
   justify-content: space-between;
+
   gap: .25rem;
-  padding: clamp(.25rem, .55vw, .42rem) .45rem;
+
+  padding:
+    clamp(.25rem, .55vw, .42rem)
+    .45rem;
+
   border-top: 2px solid #171919;
-  background: rgba(7,8,8,.96);
+
+  background: rgba(7, 8, 8, .96);
+
   font-size: clamp(.5rem, .85vw, .74rem);
+
   line-height: 1.1;
 }
-.gallery-pane-label span:last-child { color: var(--accent-gold); }
 
-/* SHARED PAGE HERO */
+.gallery-pane-label span:last-child {
+  color: var(--accent-gold);
+}
+
+
+/* =========================================================
+   SHARED PAGE HERO
+   ========================================================= */
+
 .page-overlay {
   display: flex;
   align-items: center;
@@ -404,262 +864,767 @@ textarea:focus-visible {
 
 .page-window-card {
   width: 100%;
-  background: rgba(5,6,6,.9);
-  border: 1px solid rgba(212,173,95,.28);
+
+  background: rgba(5, 6, 6, .9);
+
+  border: 1px solid rgba(212, 173, 95, .28);
+
   box-shadow: var(--shadow-deep);
+
   text-align: center;
+
   padding: clamp(.8rem, 2vw, 1.35rem);
 }
+
 .page-window-card h1 {
   margin: 0;
+
   font-family: var(--font-display);
+
   color: #efd497;
+
   font-size: clamp(1.35rem, 3vw, 2.4rem);
+
   font-weight: 400;
+
   line-height: 1;
 }
+
 .page-window-card p {
   margin: .7rem auto 0;
+
   color: var(--text-muted);
+
   max-width: 30rem;
+
   font-size: clamp(.72rem, 1.2vw, .95rem);
+
   line-height: 1.3;
 }
 
+
+/* =========================================================
+   SHARED CONTENT
+   ========================================================= */
+
 .content-band {
   width: min(100%, var(--page-width));
+
   margin: 0 auto;
-  padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 5vw, 4rem);
+
+  padding:
+    clamp(2rem, 5vw, 4rem)
+    clamp(1rem, 5vw, 4rem);
+
   background: #0d1011;
-  border-top: 1px solid rgba(255,255,255,.07);
+
+  border-top: 1px solid rgba(255, 255, 255, .07);
 }
-.content-band + .content-band { border-top: 1px solid rgba(212,173,95,.12); }
+
+.content-band + .content-band {
+  border-top: 1px solid rgba(212, 173, 95, .12);
+}
 
 .section-heading {
   margin: 0 0 .7rem;
+
   font-family: var(--font-display);
+
   color: #eed196;
+
   font-weight: 400;
+
   font-size: clamp(1.65rem, 3.5vw, 2.65rem);
+
   line-height: 1;
 }
+
 .section-lede {
   margin: 0;
+
   max-width: 56rem;
+
   color: #d8d0c2;
+
   font-size: clamp(1rem, 2vw, 1.18rem);
 }
 
 .placeholder-copy {
-  border-left: 2px solid rgba(212,173,95,.45);
+  border-left: 2px solid rgba(212, 173, 95, .45);
+
   padding: .75rem 1rem;
-  background: rgba(255,255,255,.02);
+
+  background: rgba(255, 255, 255, .02);
+
   color: #c8c0b2;
 }
 
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
 .cards-grid {
   display: grid;
+
   grid-template-columns: repeat(3, minmax(0, 1fr));
+
   gap: 1rem;
+
   margin-top: 1.5rem;
 }
+
 .info-card {
   padding: 1.1rem;
+
   background: #121617;
-  border: 1px solid rgba(212,173,95,.16);
+
+  border: 1px solid rgba(212, 173, 95, .16);
 }
+
 .info-card h3 {
   margin: 0 0 .45rem;
+
   color: #ead09b;
+
   font-family: var(--font-display);
+
   font-weight: 400;
 }
-.info-card p { margin: 0; color: #cec6b8; }
 
-.cta-row { margin-top: 1.4rem; }
+.info-card p {
+  margin: 0;
+
+  color: #cec6b8;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.cta-row {
+  margin-top: 1.4rem;
+}
+
 .button {
   display: inline-block;
-  padding: .65rem 1.1rem;
-  border: 1px solid var(--accent-gold);
-  background: transparent;
-  color: #edd49d;
-  text-decoration: none;
-  border-radius: 3px;
-  transition: background 160ms ease, color 160ms ease;
-}
-.button:hover { background: rgba(212,173,95,.1); color: #fff0c8; }
-.button-disabled { opacity: .5; cursor: not-allowed; }
 
-.before-after-list { display: grid; gap: 1.2rem; margin-top: 1.5rem; }
+  padding: .65rem 1.1rem;
+
+  border: 1px solid var(--accent-gold);
+
+  background: transparent;
+
+  color: #edd49d;
+
+  text-decoration: none;
+
+  border-radius: 3px;
+
+  transition:
+    background 160ms ease,
+    color 160ms ease;
+}
+
+.button:hover {
+  background: rgba(212, 173, 95, .1);
+
+  color: #fff0c8;
+}
+
+.button-disabled {
+  opacity: .5;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   BEFORE / AFTER
+   ========================================================= */
+
+.before-after-list {
+  display: grid;
+
+  gap: 1.2rem;
+
+  margin-top: 1.5rem;
+}
+
 .before-after {
   display: grid;
+
   grid-template-columns: 1fr 1fr;
+
   gap: .8rem;
+
   padding: .9rem;
+
   background: #111516;
-  border: 1px solid rgba(212,173,95,.14);
+
+  border: 1px solid rgba(212, 173, 95, .14);
 }
-.before-after figure { margin: 0; }
-.before-after figcaption { color: #dbcba9; margin-bottom: .35rem; font-family: var(--font-display); }
-.before-after .image-placeholder { aspect-ratio: 4 / 3; }
+
+.before-after figure {
+  margin: 0;
+}
+
+.before-after figcaption {
+  color: #dbcba9;
+
+  margin-bottom: .35rem;
+
+  font-family: var(--font-display);
+}
+
+.before-after .image-placeholder {
+  aspect-ratio: 4 / 3;
+}
+
+
+/* =========================================================
+   GALLERY PAGES
+   ========================================================= */
 
 .gallery-page-grid {
   display: grid;
+
   grid-template-columns: repeat(3, minmax(0, 1fr));
+
   gap: 1rem;
+
   margin-top: 1.5rem;
 }
+
 .gallery-item {
   margin: 0;
+
   background: #111516;
-  border: 1px solid rgba(212,173,95,.14);
+
+  border: 1px solid rgba(212, 173, 95, .14);
 }
-.gallery-item .image-placeholder { aspect-ratio: 4 / 3; }
+
+.gallery-item .image-placeholder {
+  aspect-ratio: 4 / 3;
+}
+
 .gallery-item figcaption {
   padding: .55rem .7rem;
+
   color: #c8c0b3;
+
   font-size: .95rem;
 }
+
+
+/* =========================================================
+   ABOUT / CONTACT
+   ========================================================= */
 
 .about-grid,
 .contact-grid {
   display: grid;
-  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+
+  grid-template-columns:
+    minmax(0, .85fr)
+    minmax(0, 1.15fr);
+
   gap: clamp(1.2rem, 4vw, 2.5rem);
+
   align-items: start;
 }
-.about-photo .image-placeholder { aspect-ratio: 4 / 5; }
+
+.about-photo .image-placeholder {
+  aspect-ratio: 4 / 5;
+}
 
 .contact-list {
   display: grid;
+
   gap: .5rem;
+
   margin: 1rem 0 0;
+
   padding: 0;
+
   list-style: none;
 }
-.contact-list a { color: #f0d69d; text-decoration: none; }
-.contact-list a:hover { text-decoration: underline; }
 
-.contact-form { display: grid; gap: .85rem; }
-.form-row { display: grid; gap: .35rem; }
-.form-row label { color: #e8d5ac; }
+.contact-list a {
+  color: #f0d69d;
+
+  text-decoration: none;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   CONTACT FORM
+   ========================================================= */
+
+.contact-form {
+  display: grid;
+
+  gap: .85rem;
+}
+
+.form-row {
+  display: grid;
+
+  gap: .35rem;
+}
+
+.form-row label {
+  color: #e8d5ac;
+}
+
 .form-row input,
 .form-row select,
 .form-row textarea {
   width: 100%;
-  border: 1px solid rgba(212,173,95,.32);
+
+  border: 1px solid rgba(212, 173, 95, .32);
+
   background: #090b0c;
+
   color: var(--text-main);
+
   padding: .7rem .75rem;
+
   border-radius: 2px;
 }
-.form-row textarea { min-height: 160px; resize: vertical; }
-.form-note { margin: .2rem 0 0; color: #bdb4a5; font-size: .95rem; }
+
+.form-row textarea {
+  min-height: 160px;
+
+  resize: vertical;
+}
+
+.form-note {
+  margin: .2rem 0 0;
+
+  color: #bdb4a5;
+
+  font-size: .95rem;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
 .site-footer {
   width: min(100%, var(--page-width));
+
   margin: 0 auto;
-  padding: 1.8rem clamp(1rem, 4vw, 3rem) 2.2rem;
+
+  padding:
+    1.8rem
+    clamp(1rem, 4vw, 3rem)
+    2.2rem;
+
   background: #090b0c;
-  border-top: 1px solid rgba(212,173,95,.16);
+
+  border-top: 1px solid rgba(212, 173, 95, .16);
 }
+
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr .8fr;
+
+  grid-template-columns:
+    1.2fr
+    1fr
+    1fr
+    .8fr;
+
   gap: 1.2rem;
 }
-.footer-brand { font-family: var(--font-display); color: #e8cf96; font-size: 1.35rem; line-height: 1; }
-.site-footer p, .site-footer ul { margin: .3rem 0 0; color: #c9c0b2; font-size: .93rem; }
-.site-footer ul { list-style: none; padding: 0; }
-.site-footer a { text-decoration: none; }
-.site-footer a:hover { color: #f0d69a; }
+
+.footer-brand {
+  font-family: var(--font-display);
+
+  color: #e8cf96;
+
+  font-size: 1.35rem;
+
+  line-height: 1;
+}
+
+.site-footer p,
+.site-footer ul {
+  margin: .3rem 0 0;
+
+  color: #c9c0b2;
+
+  font-size: .93rem;
+}
+
+.site-footer ul {
+  list-style: none;
+
+  padding: 0;
+}
+
+.site-footer a {
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: #f0d69a;
+}
+
 .footer-bottom {
   margin-top: 1.2rem;
+
   padding-top: 1rem;
-  border-top: 1px solid rgba(255,255,255,.07);
+
+  border-top: 1px solid rgba(255, 255, 255, .07);
+
   color: #a89f93;
+
   font-size: .86rem;
 }
 
-.mobile-home-gallery { display: none; }
-
-@media (max-width: 900px) {
-  body { font-size: 17px; }
-  .cards-grid { grid-template-columns: 1fr 1fr; }
-  .gallery-page-grid { grid-template-columns: 1fr 1fr; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
+.mobile-home-gallery {
+  display: none;
 }
 
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  body {
+    font-size: 17px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gallery-page-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
 @media (max-width: 720px) {
-  .primary-nav { min-height: 54px; }
-  .nav-toggle { display: inline-block; }
+
+  .primary-nav {
+    min-height: 54px;
+  }
+
+  .nav-toggle {
+    display: inline-block;
+  }
+
   .primary-links {
     position: absolute;
+
     left: 0;
     right: 0;
     top: 54px;
+
     display: none;
+
     flex-direction: column;
     align-items: stretch;
+
     gap: 0;
+
     padding: .4rem 1rem .8rem;
+
     background: #0b0e0f;
-    border-top: 1px solid rgba(255,255,255,.05);
+
+    border-top: 1px solid rgba(255, 255, 255, .05);
   }
-  .primary-links.is-open { display: flex; }
-  .primary-links a { display: block; padding: .7rem .2rem; }
-  .gallery-nav { display: none; }
 
-  .window-overlay { left: 28.25%; right: 28.25%; }
-  .landing-overlay { padding: 7% 1% 4%; grid-template-columns: 12% 76% 12%; }
-  .landing-panel { padding: .55rem .4rem; }
-  .landing-copy { display: none; }
-  .landing-glass { font-size: .42rem; }
+  .primary-links.is-open {
+    display: flex;
+  }
 
-  .home-overlay { padding: 12% 2% 6%; }
-  .home-services { display: none; }
-  .home-contact-grid span.address { display: none; }
-  .home-gallery-grid { display: none; }
-  .mobile-home-gallery { display: block; }
+  .primary-links a {
+    display: block;
 
-  .page-overlay { padding: 18% 3% 12%; }
-  .page-window-card p { display: none; }
+    padding: .7rem .2rem;
+  }
+
+  .gallery-nav {
+    display: none;
+  }
+
+
+  /*
+    LANDING MOBILE STRATEGY
+
+    The architectural shell is deliberately allowed to become
+    wider than the phone viewport.
+
+    The phone viewport crops only the outer masonry while the
+    image itself keeps its original proportions.
+
+    This makes the inner window large enough for the real
+    business copy to remain readable without flattening or
+    stretching the Gothic arch.
+  */
+
+  body.landing-page .gothic-stage {
+    position: relative;
+
+    left: 50%;
+
+    width: 900px;
+    max-width: none;
+
+    margin: 0;
+
+    transform: translateX(-50%);
+  }
+
+  body.landing-page .gothic-shell-image {
+    width: 900px;
+    max-width: none;
+    height: auto;
+  }
+
+  body.landing-page .window-overlay {
+    left: 28.25%;
+    right: 28.25%;
+    top: 13.2%;
+    bottom: 13.4%;
+  }
+
+  .landing-overlay {
+    grid-template-columns: 16% 68% 16%;
+    grid-template-rows: 18% 82%;
+  }
+
+  .landing-panel {
+    padding: .72rem .68rem .62rem;
+  }
+
+  .landing-panel .brand-title {
+    font-size: 1.75rem;
+  }
+
+  .landing-panel .brand-subtitle {
+    font-size: .9rem;
+  }
+
+  .service-line {
+    font-size: .8rem;
+  }
+
+  .contact-compact {
+    font-size: .68rem;
+  }
+
+  .landing-business-title {
+    font-size: .86rem;
+  }
+
+  .landing-copy {
+    display: block;
+
+    font-size: .68rem;
+
+    line-height: 1.17;
+
+    margin: .3rem auto;
+  }
+
+  .enter-link {
+    font-size: 2.15rem;
+  }
+
+
+  /* HOME */
+
+  .home-overlay {
+    padding: 12% 2% 6%;
+  }
+
+  .home-services {
+    display: none;
+  }
+
+  .home-contact-grid span.address {
+    display: none;
+  }
+
+  .home-gallery-grid {
+    display: none;
+  }
+
+  .mobile-home-gallery {
+    display: block;
+  }
+
+
+  /* OTHER SHARED PAGES */
+
+  .page-overlay {
+    padding: 18% 3% 12%;
+  }
+
+  .page-window-card p {
+    display: none;
+  }
 
   .cards-grid,
   .about-grid,
-  .contact-grid { grid-template-columns: 1fr; }
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
 
-  .before-after { grid-template-columns: 1fr; }
+  .before-after {
+    grid-template-columns: 1fr;
+  }
+
 }
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
 
 @media (max-width: 520px) {
-  body { font-size: 16px; }
-  .brand-mini { max-width: 66vw; overflow: hidden; text-overflow: ellipsis; }
-  .landing-panel .brand-title { font-size: clamp(1rem, 6vw, 1.55rem); }
-  .landing-panel .brand-subtitle { font-size: .62rem; }
-  .service-line { font-size: .58rem; }
-  .contact-compact { font-size: .48rem; }
-  .enter-link { font-size: clamp(1.3rem, 9vw, 2rem); }
-  .gold-rule { margin-block: .25rem; }
 
-  .home-overlay { padding-top: 14%; }
-  .home-brand .brand-title { font-size: clamp(.95rem, 6vw, 1.45rem); }
-  .home-brand .brand-subtitle { font-size: .55rem; }
-  .home-contact-grid { font-size: .43rem; gap: 0 .35rem; }
+  body {
+    font-size: 16px;
+  }
 
-  .page-window-card { padding: .55rem .4rem; }
-  .page-window-card h1 { font-size: clamp(1rem, 7vw, 1.55rem); }
+  .brand-mini {
+    max-width: 66vw;
 
-  .gallery-page-grid { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr; }
-  .content-band { padding-inline: 1rem; }
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+  }
+
+
+  /*
+    Keep the same fixed architectural scale on small phones.
+    The outer stone is simply cropped by the viewport.
+  */
+
+  body.landing-page .gothic-stage,
+  body.landing-page .gothic-shell-image {
+    width: 900px;
+  }
+
+  .landing-panel .brand-title {
+    font-size: 1.68rem;
+  }
+
+  .landing-panel .brand-subtitle {
+    font-size: .86rem;
+  }
+
+  .service-line {
+    font-size: .76rem;
+  }
+
+  .contact-compact {
+    font-size: .65rem;
+  }
+
+  .landing-business-title {
+    font-size: .82rem;
+  }
+
+  .landing-copy {
+    font-size: .65rem;
+
+    line-height: 1.16;
+  }
+
+  .enter-link {
+    font-size: 2rem;
+  }
+
+  .gold-rule {
+    margin-block: .25rem;
+  }
+
+
+  /* HOME */
+
+  .home-overlay {
+    padding-top: 14%;
+  }
+
+  .home-brand .brand-title {
+    font-size: clamp(.95rem, 6vw, 1.45rem);
+  }
+
+  .home-brand .brand-subtitle {
+    font-size: .55rem;
+  }
+
+  .home-contact-grid {
+    font-size: .43rem;
+
+    gap: 0 .35rem;
+  }
+
+
+  /* SHARED PAGES */
+
+  .page-window-card {
+    padding: .55rem .4rem;
+  }
+
+  .page-window-card h1 {
+    font-size: clamp(1rem, 7vw, 1.55rem);
+  }
+
+  .gallery-page-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .content-band {
+    padding-inline: 1rem;
+  }
+
 }
 
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: .01ms !important;
   }
+
 }
