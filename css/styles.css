@@ -256,15 +256,18 @@ textarea:focus-visible {
    ========================================================= */
 
 /*
-  The Landing page deliberately overrides the global 1122px
-  stage maximum.
+  LANDING GEOMETRY
 
-  This lets the actual stone image reach the browser edges
-  without stretching it.
+  The master shell remains full-width and proportional.
+  The overlay is still locked to the real black opening in the shell.
 
-  Because the shell is portrait, on a wide monitor the page
-  will become taller than one viewport rather than distorting
-  the architecture.
+  The internal composition is intentionally shorter than before:
+  - 24% top stained glass
+  - 64% main content / side glass
+  - 12% breathing room above the sill
+
+  The side columns are wider so the tall stained-glass artwork can
+  display much closer to its natural proportions.
 */
 
 body.landing-page {
@@ -301,11 +304,7 @@ body.landing-page .gothic-shell-image {
   object-position: center top;
 }
 
-
-/*
-  This overlay corresponds to the black opening inside the
-  supplied master shell.
-*/
+/* Exact opening area of the supplied architectural shell. */
 body.landing-page .window-overlay {
   left: 28.25%;
   right: 28.25%;
@@ -313,20 +312,17 @@ body.landing-page .window-overlay {
   bottom: 13.4%;
 }
 
-
 /*
-  Landing layout:
+  Layout inside the opening:
 
-  top glass across the upper opening
-
-  then:
-
-  left glass | central information | right glass
+       top stained glass
+  side | centred text | side
+       breathing room
 */
 .landing-overlay {
   display: grid;
-  grid-template-columns: 17% 66% 17%;
-  grid-template-rows: 18% 82%;
+  grid-template-columns: 22% 56% 22%;
+  grid-template-rows: 24% 64% 12%;
   gap: 0;
   padding: 0;
   overflow: hidden;
@@ -346,19 +342,21 @@ body.landing-page .window-overlay {
 .landing-glass--top {
   grid-column: 1 / -1;
   grid-row: 1;
-  width: 100%;
+  width: 64%;
   height: 100%;
+  justify-self: center;
+  align-self: end;
 
   /*
-    This masks the rectangular photograph into the pointed
-    upper area without warping the photograph itself.
+    The container follows the pointed upper opening.
+    The image itself remains rectangular and is never warped.
   */
   clip-path: polygon(
     50% 0%,
-    100% 72%,
+    92% 69%,
     100% 100%,
     0% 100%,
-    0% 72%
+    8% 69%
   );
 }
 
@@ -367,13 +365,8 @@ body.landing-page .window-overlay {
   width: 100%;
   height: 100%;
   max-width: none;
-
-  /*
-    cover may crop the outer edges but never changes the
-    photograph's aspect ratio.
-  */
-  object-fit: cover;
-  object-position: center 38%;
+  object-fit: contain;
+  object-position: center bottom;
 }
 
 
@@ -383,15 +376,11 @@ body.landing-page .window-overlay {
 
 .landing-side-stack {
   grid-row: 2;
-
   display: grid;
   grid-template-rows: repeat(2, minmax(0, 1fr));
-
   min-width: 0;
   min-height: 0;
-
   overflow: hidden;
-
   background: #060808;
 }
 
@@ -407,33 +396,24 @@ body.landing-page .window-overlay {
   position: relative;
   min-width: 0;
   min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
   background: #060808;
 }
 
-/*
-  No artificial gap between the two repeated panels.
-*/
+/* Prevent any visible seam between the two repeated panes. */
 .landing-side-piece + .landing-side-piece {
   margin-top: -1px;
 }
 
 .landing-side-piece img {
   display: block;
-
   width: 100%;
   height: 100%;
-
   max-width: none;
-
-  /*
-    The source artwork is very tall and narrow.
-
-    cover allows it to occupy the side strip while retaining
-    its original proportions. Any excess is clipped rather
-    than stretched.
-  */
-  object-fit: cover;
+  object-fit: contain;
   object-position: center center;
 }
 
@@ -445,28 +425,26 @@ body.landing-page .window-overlay {
 .landing-panel {
   grid-column: 2;
   grid-row: 2;
-
   min-width: 0;
   min-height: 0;
-
   position: relative;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+  gap: clamp(.12rem, .28vw, .3rem);
 
   text-align: center;
 
   padding:
-    clamp(.7rem, 1.45vw, 1.45rem)
-    clamp(.55rem, 1.05vw, 1.15rem)
-    clamp(.65rem, 1.2vw, 1.25rem);
+    clamp(.45rem, .85vw, .85rem)
+    clamp(.45rem, .8vw, .8rem);
 
   background:
     radial-gradient(
-      ellipse at 50% 16%,
-      rgba(63, 53, 35, .12),
+      ellipse at 50% 18%,
+      rgba(63, 53, 35, .10),
       transparent 42%
     ),
     rgba(3, 4, 4, .985);
@@ -475,9 +453,9 @@ body.landing-page .window-overlay {
   border-right: 1px solid rgba(31, 28, 22, .95);
 
   box-shadow:
-    inset 10px 0 22px rgba(0, 0, 0, .42),
-    inset -10px 0 22px rgba(0, 0, 0, .42),
-    0 0 22px rgba(0, 0, 0, .42);
+    inset 8px 0 18px rgba(0, 0, 0, .38),
+    inset -8px 0 18px rgba(0, 0, 0, .38),
+    0 0 18px rgba(0, 0, 0, .36);
 
   color: var(--text-main);
 }
@@ -489,36 +467,30 @@ body.landing-page .window-overlay {
 
 .landing-brand {
   width: 100%;
+  flex: 0 0 auto;
 }
 
 .brand-title {
   margin: 0;
-
   font-family: var(--font-display);
-
   color: #efd393;
-
   font-weight: 400;
   letter-spacing: .015em;
   line-height: .9;
-
   text-shadow:
     0 1px 0 #1f1406,
     0 0 10px rgba(208, 163, 77, .09);
 }
 
 .landing-panel .brand-title {
-  font-size: clamp(1.4rem, 2.55vw, 3rem);
+  font-size: clamp(1.25rem, 2.25vw, 2.65rem);
 }
 
 .brand-subtitle {
-  margin: .28em 0 0;
-
+  margin: .18em 0 0;
   font-family: var(--font-display);
-
   color: #e9cf96;
-
-  font-size: clamp(.78rem, 1.35vw, 1.5rem);
+  font-size: clamp(.7rem, 1.15vw, 1.3rem);
   line-height: 1;
 }
 
@@ -528,11 +500,9 @@ body.landing-page .window-overlay {
    ========================================================= */
 
 .gold-rule {
-  width: 72%;
+  width: 68%;
   height: 1px;
-
-  margin: .55rem auto;
-
+  margin: .38rem auto;
   background:
     linear-gradient(
       90deg,
@@ -543,16 +513,20 @@ body.landing-page .window-overlay {
 }
 
 .landing-panel .gold-rule {
-  margin-top: clamp(.35rem, .7vw, .75rem);
-  margin-bottom: clamp(.35rem, .7vw, .75rem);
+  margin-top: clamp(.2rem, .42vw, .42rem);
+  margin-bottom: clamp(.2rem, .42vw, .42rem);
 }
 
 .landing-section-rule {
-  margin-top: clamp(.55rem, 1vw, 1rem) !important;
+  margin-top: clamp(.25rem, .5vw, .48rem) !important;
 }
 
+/*
+  Do not push ENTER to the bottom of the panel.
+  It now stays directly with the rest of the centred composition.
+*/
 .landing-enter-rule {
-  margin-top: auto !important;
+  margin-top: clamp(.2rem, .42vw, .42rem) !important;
 }
 
 
@@ -561,28 +535,19 @@ body.landing-page .window-overlay {
    ========================================================= */
 
 .service-line {
-  margin: .1rem 0 .5rem;
-
-  font-size: clamp(.77rem, 1.17vw, 1.28rem);
-
-  line-height: 1.15;
-
+  margin: .05rem 0 .3rem;
+  font-size: clamp(.7rem, 1vw, 1.1rem);
+  line-height: 1.08;
   color: #f0e7d7;
 }
 
 .contact-compact {
   display: grid;
-
   justify-items: center;
-
-  gap: clamp(.08rem, .18vw, .22rem);
-
-  margin-top: clamp(.25rem, .45vw, .5rem);
-
-  font-size: clamp(.68rem, .94vw, 1rem);
-
-  line-height: 1.16;
-
+  gap: clamp(.04rem, .12vw, .13rem);
+  margin-top: clamp(.12rem, .25vw, .24rem);
+  font-size: clamp(.61rem, .78vw, .88rem);
+  line-height: 1.08;
   color: #eee4d4;
 }
 
@@ -601,42 +566,26 @@ body.landing-page .window-overlay {
 
 .landing-business-copy {
   width: 100%;
+  flex: 0 0 auto;
 }
 
 .landing-business-title {
-  max-width: 95%;
-
-  margin:
-    0
-    auto
-    clamp(.45rem, .7vw, .75rem);
-
+  max-width: 97%;
+  margin: 0 auto clamp(.28rem, .45vw, .45rem);
   font-family: var(--font-body);
-
-  font-size: clamp(.82rem, 1.21vw, 1.34rem);
-
+  font-size: clamp(.76rem, 1.02vw, 1.12rem);
   font-weight: 500;
-
-  line-height: 1.06;
-
+  line-height: 1.03;
   color: #f0e8db;
 }
 
 .landing-copy {
   width: 100%;
-
-  margin:
-    clamp(.32rem, .48vw, .55rem)
-    auto;
-
+  margin: clamp(.2rem, .3vw, .32rem) auto;
   font-family: var(--font-body);
-
-  font-size: clamp(.68rem, .86vw, .95rem);
-
+  font-size: clamp(.63rem, .73vw, .82rem);
   font-weight: 400;
-
-  line-height: 1.22;
-
+  line-height: 1.14;
   color: #ddd4c5;
 }
 
@@ -647,27 +596,17 @@ body.landing-page .window-overlay {
 
 .enter-link {
   display: inline-block;
-
   flex: 0 0 auto;
-
-  margin-top: clamp(.2rem, .45vw, .5rem);
-
-  padding: .05em .2em .1em;
-
+  margin-top: clamp(.08rem, .18vw, .18rem);
+  padding: .02em .16em .06em;
   font-family: var(--font-display);
-
-  font-size: clamp(1.75rem, 3.65vw, 4rem);
-
-  line-height: .95;
-
+  font-size: clamp(1.55rem, 2.85vw, 3.25rem);
+  line-height: .92;
   text-decoration: none;
-
   color: #cf2329;
-
   text-shadow:
     0 2px 0 #42070b,
     0 0 12px rgba(178, 23, 31, .28);
-
   transition:
     transform 160ms ease,
     color 160ms ease,
@@ -676,9 +615,7 @@ body.landing-page .window-overlay {
 
 .enter-link:hover {
   color: #ed343b;
-
   transform: translateY(-1px);
-
   text-shadow:
     0 2px 0 #42070b,
     0 0 18px rgba(178, 23, 31, .42);
@@ -731,14 +668,10 @@ body.landing-page .window-overlay {
 .home-gallery-grid {
   flex: 1 1 auto;
   min-height: 0;
-
   display: grid;
-
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-template-rows: repeat(2, minmax(0, 1fr));
-
   gap: clamp(4px, .65vw, 8px);
-
   margin-top: 4%;
 }
 
@@ -750,22 +683,15 @@ body.landing-page .window-overlay {
 .gallery-pane {
   min-width: 0;
   min-height: 0;
-
   display: flex;
   flex-direction: column;
-
   overflow: hidden;
-
   border: 3px solid #171919;
-
   background: #101313;
-
   text-decoration: none;
-
   box-shadow:
     inset 0 0 0 1px rgba(220, 183, 102, .18),
     0 4px 12px rgba(0, 0, 0, .28);
-
   transition:
     transform 170ms ease,
     box-shadow 170ms ease,
@@ -775,9 +701,7 @@ body.landing-page .window-overlay {
 .gallery-pane:hover,
 .gallery-pane:focus-visible {
   transform: translateY(-2px);
-
   filter: brightness(1.08);
-
   box-shadow:
     inset 0 0 0 1px rgba(231, 195, 116, .34),
     0 7px 16px rgba(0, 0, 0, .38);
@@ -785,20 +709,13 @@ body.landing-page .window-overlay {
 
 .image-placeholder {
   flex: 1 1 auto;
-
   min-height: 0;
-
   display: flex;
-
   align-items: center;
   justify-content: center;
-
   padding: .4rem;
-
   text-align: center;
-
   color: rgba(237, 229, 211, .58);
-
   background:
     linear-gradient(
       45deg,
@@ -813,36 +730,24 @@ body.landing-page .window-overlay {
       transparent 51%
     ),
     #121616;
-
   background-size: 28px 28px;
-
   font-size: clamp(.46rem, .75vw, .68rem);
-
   letter-spacing: .06em;
-
   text-transform: uppercase;
 }
 
 .gallery-pane-label {
   flex: 0 0 auto;
-
   display: flex;
-
   align-items: center;
   justify-content: space-between;
-
   gap: .25rem;
-
   padding:
     clamp(.25rem, .55vw, .42rem)
     .45rem;
-
   border-top: 2px solid #171919;
-
   background: rgba(7, 8, 8, .96);
-
   font-size: clamp(.5rem, .85vw, .74rem);
-
   line-height: 1.1;
 }
 
@@ -864,41 +769,27 @@ body.landing-page .window-overlay {
 
 .page-window-card {
   width: 100%;
-
   background: rgba(5, 6, 6, .9);
-
   border: 1px solid rgba(212, 173, 95, .28);
-
   box-shadow: var(--shadow-deep);
-
   text-align: center;
-
   padding: clamp(.8rem, 2vw, 1.35rem);
 }
 
 .page-window-card h1 {
   margin: 0;
-
   font-family: var(--font-display);
-
   color: #efd497;
-
   font-size: clamp(1.35rem, 3vw, 2.4rem);
-
   font-weight: 400;
-
   line-height: 1;
 }
 
 .page-window-card p {
   margin: .7rem auto 0;
-
   color: var(--text-muted);
-
   max-width: 30rem;
-
   font-size: clamp(.72rem, 1.2vw, .95rem);
-
   line-height: 1.3;
 }
 
@@ -909,15 +800,11 @@ body.landing-page .window-overlay {
 
 .content-band {
   width: min(100%, var(--page-width));
-
   margin: 0 auto;
-
   padding:
     clamp(2rem, 5vw, 4rem)
     clamp(1rem, 5vw, 4rem);
-
   background: #0d1011;
-
   border-top: 1px solid rgba(255, 255, 255, .07);
 }
 
@@ -927,35 +814,24 @@ body.landing-page .window-overlay {
 
 .section-heading {
   margin: 0 0 .7rem;
-
   font-family: var(--font-display);
-
   color: #eed196;
-
   font-weight: 400;
-
   font-size: clamp(1.65rem, 3.5vw, 2.65rem);
-
   line-height: 1;
 }
 
 .section-lede {
   margin: 0;
-
   max-width: 56rem;
-
   color: #d8d0c2;
-
   font-size: clamp(1rem, 2vw, 1.18rem);
 }
 
 .placeholder-copy {
   border-left: 2px solid rgba(212, 173, 95, .45);
-
   padding: .75rem 1rem;
-
   background: rgba(255, 255, 255, .02);
-
   color: #c8c0b2;
 }
 
@@ -966,35 +842,26 @@ body.landing-page .window-overlay {
 
 .cards-grid {
   display: grid;
-
   grid-template-columns: repeat(3, minmax(0, 1fr));
-
   gap: 1rem;
-
   margin-top: 1.5rem;
 }
 
 .info-card {
   padding: 1.1rem;
-
   background: #121617;
-
   border: 1px solid rgba(212, 173, 95, .16);
 }
 
 .info-card h3 {
   margin: 0 0 .45rem;
-
   color: #ead09b;
-
   font-family: var(--font-display);
-
   font-weight: 400;
 }
 
 .info-card p {
   margin: 0;
-
   color: #cec6b8;
 }
 
@@ -1009,19 +876,12 @@ body.landing-page .window-overlay {
 
 .button {
   display: inline-block;
-
   padding: .65rem 1.1rem;
-
   border: 1px solid var(--accent-gold);
-
   background: transparent;
-
   color: #edd49d;
-
   text-decoration: none;
-
   border-radius: 3px;
-
   transition:
     background 160ms ease,
     color 160ms ease;
@@ -1029,13 +889,11 @@ body.landing-page .window-overlay {
 
 .button:hover {
   background: rgba(212, 173, 95, .1);
-
   color: #fff0c8;
 }
 
 .button-disabled {
   opacity: .5;
-
   cursor: not-allowed;
 }
 
@@ -1046,23 +904,16 @@ body.landing-page .window-overlay {
 
 .before-after-list {
   display: grid;
-
   gap: 1.2rem;
-
   margin-top: 1.5rem;
 }
 
 .before-after {
   display: grid;
-
   grid-template-columns: 1fr 1fr;
-
   gap: .8rem;
-
   padding: .9rem;
-
   background: #111516;
-
   border: 1px solid rgba(212, 173, 95, .14);
 }
 
@@ -1072,9 +923,7 @@ body.landing-page .window-overlay {
 
 .before-after figcaption {
   color: #dbcba9;
-
   margin-bottom: .35rem;
-
   font-family: var(--font-display);
 }
 
@@ -1089,19 +938,14 @@ body.landing-page .window-overlay {
 
 .gallery-page-grid {
   display: grid;
-
   grid-template-columns: repeat(3, minmax(0, 1fr));
-
   gap: 1rem;
-
   margin-top: 1.5rem;
 }
 
 .gallery-item {
   margin: 0;
-
   background: #111516;
-
   border: 1px solid rgba(212, 173, 95, .14);
 }
 
@@ -1111,9 +955,7 @@ body.landing-page .window-overlay {
 
 .gallery-item figcaption {
   padding: .55rem .7rem;
-
   color: #c8c0b3;
-
   font-size: .95rem;
 }
 
@@ -1125,13 +967,10 @@ body.landing-page .window-overlay {
 .about-grid,
 .contact-grid {
   display: grid;
-
   grid-template-columns:
     minmax(0, .85fr)
     minmax(0, 1.15fr);
-
   gap: clamp(1.2rem, 4vw, 2.5rem);
-
   align-items: start;
 }
 
@@ -1141,19 +980,14 @@ body.landing-page .window-overlay {
 
 .contact-list {
   display: grid;
-
   gap: .5rem;
-
   margin: 1rem 0 0;
-
   padding: 0;
-
   list-style: none;
 }
 
 .contact-list a {
   color: #f0d69d;
-
   text-decoration: none;
 }
 
@@ -1168,13 +1002,11 @@ body.landing-page .window-overlay {
 
 .contact-form {
   display: grid;
-
   gap: .85rem;
 }
 
 .form-row {
   display: grid;
-
   gap: .35rem;
 }
 
@@ -1186,29 +1018,21 @@ body.landing-page .window-overlay {
 .form-row select,
 .form-row textarea {
   width: 100%;
-
   border: 1px solid rgba(212, 173, 95, .32);
-
   background: #090b0c;
-
   color: var(--text-main);
-
   padding: .7rem .75rem;
-
   border-radius: 2px;
 }
 
 .form-row textarea {
   min-height: 160px;
-
   resize: vertical;
 }
 
 .form-note {
   margin: .2rem 0 0;
-
   color: #bdb4a5;
-
   font-size: .95rem;
 }
 
@@ -1219,53 +1043,41 @@ body.landing-page .window-overlay {
 
 .site-footer {
   width: min(100%, var(--page-width));
-
   margin: 0 auto;
-
   padding:
     1.8rem
     clamp(1rem, 4vw, 3rem)
     2.2rem;
-
   background: #090b0c;
-
   border-top: 1px solid rgba(212, 173, 95, .16);
 }
 
 .footer-grid {
   display: grid;
-
   grid-template-columns:
     1.2fr
     1fr
     1fr
     .8fr;
-
   gap: 1.2rem;
 }
 
 .footer-brand {
   font-family: var(--font-display);
-
   color: #e8cf96;
-
   font-size: 1.35rem;
-
   line-height: 1;
 }
 
 .site-footer p,
 .site-footer ul {
   margin: .3rem 0 0;
-
   color: #c9c0b2;
-
   font-size: .93rem;
 }
 
 .site-footer ul {
   list-style: none;
-
   padding: 0;
 }
 
@@ -1279,13 +1091,9 @@ body.landing-page .window-overlay {
 
 .footer-bottom {
   margin-top: 1.2rem;
-
   padding-top: 1rem;
-
   border-top: 1px solid rgba(255, 255, 255, .07);
-
   color: #a89f93;
-
   font-size: .86rem;
 }
 
@@ -1335,22 +1143,15 @@ body.landing-page .window-overlay {
 
   .primary-links {
     position: absolute;
-
     left: 0;
     right: 0;
     top: 54px;
-
     display: none;
-
     flex-direction: column;
     align-items: stretch;
-
     gap: 0;
-
     padding: .4rem 1rem .8rem;
-
     background: #0b0e0f;
-
     border-top: 1px solid rgba(255, 255, 255, .05);
   }
 
@@ -1360,7 +1161,6 @@ body.landing-page .window-overlay {
 
   .primary-links a {
     display: block;
-
     padding: .7rem .2rem;
   }
 
@@ -1372,32 +1172,22 @@ body.landing-page .window-overlay {
   /*
     LANDING MOBILE STRATEGY
 
-    The architectural shell is deliberately allowed to become
-    wider than the phone viewport.
-
-    The phone viewport crops only the outer masonry while the
-    image itself keeps its original proportions.
-
-    This makes the inner window large enough for the real
-    business copy to remain readable without flattening or
-    stretching the Gothic arch.
+    Keep the shell proportional. The outer masonry may crop on
+    narrow screens, but the glass and text remain centred inside
+    the architectural opening.
   */
 
   body.landing-page .gothic-stage {
     position: relative;
-
     left: 50%;
-
-    width: 900px;
+    width: 820px;
     max-width: none;
-
     margin: 0;
-
     transform: translateX(-50%);
   }
 
   body.landing-page .gothic-shell-image {
-    width: 900px;
+    width: 820px;
     max-width: none;
     height: auto;
   }
@@ -1410,46 +1200,48 @@ body.landing-page .window-overlay {
   }
 
   .landing-overlay {
-    grid-template-columns: 16% 68% 16%;
-    grid-template-rows: 18% 82%;
+    grid-template-columns: 22% 56% 22%;
+    grid-template-rows: 24% 64% 12%;
+  }
+
+  .landing-glass--top {
+    width: 64%;
   }
 
   .landing-panel {
-    padding: .72rem .68rem .62rem;
+    padding: .45rem .42rem;
+    gap: .12rem;
   }
 
   .landing-panel .brand-title {
-    font-size: 1.75rem;
+    font-size: 1.48rem;
   }
 
   .landing-panel .brand-subtitle {
-    font-size: .9rem;
+    font-size: .74rem;
   }
 
   .service-line {
-    font-size: .8rem;
-  }
-
-  .contact-compact {
     font-size: .68rem;
   }
 
+  .contact-compact {
+    font-size: .57rem;
+  }
+
   .landing-business-title {
-    font-size: .86rem;
+    font-size: .7rem;
   }
 
   .landing-copy {
     display: block;
-
-    font-size: .68rem;
-
-    line-height: 1.17;
-
-    margin: .3rem auto;
+    font-size: .56rem;
+    line-height: 1.1;
+    margin: .17rem auto;
   }
 
   .enter-link {
-    font-size: 2.15rem;
+    font-size: 1.7rem;
   }
 
 
@@ -1511,55 +1303,49 @@ body.landing-page .window-overlay {
 
   .brand-mini {
     max-width: 66vw;
-
     overflow: hidden;
-
     text-overflow: ellipsis;
   }
 
 
-  /*
-    Keep the same fixed architectural scale on small phones.
-    The outer stone is simply cropped by the viewport.
-  */
+  /* Keep the same proportional, cropped-shell strategy on small phones. */
 
   body.landing-page .gothic-stage,
   body.landing-page .gothic-shell-image {
-    width: 900px;
+    width: 780px;
   }
 
   .landing-panel .brand-title {
-    font-size: 1.68rem;
+    font-size: 1.4rem;
   }
 
   .landing-panel .brand-subtitle {
-    font-size: .86rem;
+    font-size: .7rem;
   }
 
   .service-line {
-    font-size: .76rem;
+    font-size: .64rem;
   }
 
   .contact-compact {
-    font-size: .65rem;
+    font-size: .54rem;
   }
 
   .landing-business-title {
-    font-size: .82rem;
+    font-size: .67rem;
   }
 
   .landing-copy {
-    font-size: .65rem;
-
-    line-height: 1.16;
+    font-size: .53rem;
+    line-height: 1.08;
   }
 
   .enter-link {
-    font-size: 2rem;
+    font-size: 1.62rem;
   }
 
   .gold-rule {
-    margin-block: .25rem;
+    margin-block: .16rem;
   }
 
 
@@ -1579,7 +1365,6 @@ body.landing-page .window-overlay {
 
   .home-contact-grid {
     font-size: .43rem;
-
     gap: 0 .35rem;
   }
 
