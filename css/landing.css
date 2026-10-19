@@ -1,1 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
 
+/* =========================================================
+   LANDING PAGE OVERRIDES
+   Loaded AFTER css/styles.css so the rest of the site is untouched.
+   ========================================================= */
+
+body.landing-page {
+  --font-medieval: 'UnifrakturCook', 'IM Fell English SC', Georgia, serif;
+  position: relative;
+  isolation: isolate;
+  width: 100vw;
+  height: 100svh;
+  min-height: 100svh;
+  margin: 0;
+  overflow: hidden;
+  background: #090a0a;
+}
+
+/*
+  Full-screen masonry layer:
+  fills the browser edge-to-edge without stretching the source image.
+  It may crop at the outer edges on wide screens, which is intentional.
+*/
+body.landing-page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image: url('../assets/images/landing/landing-shell-final.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  filter: brightness(.54) saturate(.84);
+  transform: scale(1.01);
+}
+
+body.landing-page::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: rgba(0, 0, 0, .08);
+}
+
+body.landing-page main {
+  width: 100vw;
+  height: 100svh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/*
+  Keep the central architectural frame proportional and one viewport tall.
+  The masonry background behind it fills the remaining width, so there are
+  no visible black side borders.
+*/
+body.landing-page .gothic-stage {
+  position: relative;
+  left: 50%;
+  width: calc(100svh * 1055 / 1491);
+  height: 100svh;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
+  transform: translateX(-50%);
+}
+
+/*
+  IMPORTANT:
+  landing-shell-frame.png is the same shell but with the black opening
+  made transparent. It sits ABOVE the stained glass, so the glass now
+  appears physically behind the stone moulding instead of over it.
+*/
+body.landing-page .gothic-shell-image {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  aspect-ratio: 1055 / 1491;
+  object-fit: contain;
+  object-position: center;
+  pointer-events: none;
+  user-select: none;
+}
+
+/*
+  Position all landing content behind the front stone frame.
+  The content extends slightly beneath the inner stone edge so no dark
