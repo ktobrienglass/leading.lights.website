@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=UnifrakturMaguntia&display=swap');
 
 /* =========================================================
    LEADING LIGHTS — LANDING PAGE
@@ -1388,6 +1388,557 @@ body.landing-page .enter-link:hover {
         4vw,
         3.8rem
       );
+  }
+
+}
+/* =========================================================
+   FINAL MIDDLE PANEL TYPOGRAPHY FIX
+   ONLY THE BLACK CENTRE PANEL
+   ========================================================= */
+
+
+/* Keep all content inside the available black panel */
+
+body.landing-page .landing-panel {
+  justify-content: flex-start !important;
+
+  padding:
+    5%
+    5.5%
+    3.5% !important;
+
+  overflow: hidden !important;
+}
+
+
+/* =========================================================
+   LEADING LIGHTS
+   ========================================================= */
+
+body.landing-page .landing-panel .brand-title {
+  margin: 0 !important;
+
+  font-family:
+    'UnifrakturMaguntia',
+    'UnifrakturCook',
+    Georgia,
+    serif !important;
+
+  font-size:
+    clamp(
+      2rem,
+      2.7vw,
+      2.8rem
+    ) !important;
+
+  font-weight: 400 !important;
+
+  line-height: .82 !important;
+
+  letter-spacing: 0 !important;
+
+  color: #efd28b !important;
+
+  text-shadow:
+    0 2px 0 #3c260d,
+    0 0 8px rgba(216, 169, 85, .10) !important;
+}
+
+
+/* =========================================================
+   OF LONDON LTD + GOLD SIDE LINES
+   ========================================================= */
+
+body.landing-page .brand-subtitle {
+  display: flex !important;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: .5rem;
+
+  width: 88%;
+
+  margin:
+    .15rem
+    auto
+    .32rem !important;
+
+  font-family:
+    'Cormorant Garamond',
+    Georgia,
+    serif !important;
+
+  font-size:
+    clamp(
+      .65rem,
+      .85vw,
+      .82rem
+    ) !important;
+
+  font-weight: 600;
+
+  line-height: 1 !important;
+
+  text-transform: uppercase;
+
+  letter-spacing: .07em;
+
+  color: #e8c675 !important;
+}
+
+
+body.landing-page .brand-subtitle::before,
+body.landing-page .brand-subtitle::after {
+  content: '';
+
+  flex: 1;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(214, 173, 95, .9)
+    );
+}
+
+
+body.landing-page .brand-subtitle::after {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(214, 173, 95, .9),
+      transparent
+    );
+}
+
+
+/* Hide the old plain rule directly below subtitle */
+
+body.landing-page .landing-brand > .gold-rule {
+  display: none !important;
+}
+
+
+/* =========================================================
+   STAINED GLASS DESIGN / RESTORATION & REPAIR
+   ========================================================= */
+
+body.landing-page .service-line {
+  margin:
+    .18rem
+    0
+    .28rem !important;
+
+  font-family:
+    'Cormorant Garamond',
+    Georgia,
+    serif !important;
+
+  font-size:
+    clamp(
+      .78rem,
+      1.05vw,
+      1rem
+    ) !important;
+
+  font-weight: 500;
+
+  line-height: 1.08 !important;
+
+  letter-spacing: .01em;
+
+  color: #f3ede3 !important;
+}
+
+
+/* Small gold ornament below service heading */
+
+body.landing-page .service-line::after {
+  content: '⚜';
+
+  display: block;
+
+  margin:
+    .25rem
+    auto
+    .18rem;
+
+  color: #dcb45b;
+
+  font-family: Georgia, serif;
+
+  font-size: .75rem;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   CONTACT DETAILS
+   ========================================================= */
+
+body.landing-page .contact-compact {
+  display: grid !important;
+
+  justify-items: center;
+
+  gap: .08rem !important;
+
+  margin: 0 !important;
+
+  font-family:
+    'Cormorant Garamond',
+    Georgia,
+    serif !important;
+
+  font-size:
+    clamp(
+      .60rem,
+      .73vw,
+      .72rem
+    ) !important;
+
+  line-height: 1.04 !important;
+
+  color: #f0e9dc !important;
+}
+
+
+body.landing-page .contact-compact a {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: .28rem;
+
+  color: inherit !important;
+
+  text-decoration: none;
+}
+
+
+body.landing-page .contact-compact a span {
+  color: #dfb65d;
+
+  font-size: .9em;
+
+  min-width: 1em;
+}
+
+
+/* =========================================================
+   GOLD DIVIDER ABOVE BUSINESS COPY
+   ========================================================= */
+
+body.landing-page .landing-section-rule {
+  position: relative;
+
+  display: block !important;
+
+  width: 74% !important;
+
+  height: 1px;
+
+  margin:
+    .38rem
+    auto
+    .42rem !important;
+
+  overflow: visible;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(214, 173, 95, .82) 20%,
+      rgba(214, 173, 95, .82) 43%,
+      transparent 43%,
+      transparent 57%,
+      rgba(214, 173, 95, .82) 57%,
+      rgba(214, 173, 95, .82) 80%,
+      transparent
+    ) !important;
+}
+
+
+body.landing-page .landing-section-rule::after {
+  content: '⚜';
+
+  position: absolute;
+
+  left: 50%;
+
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  padding: 0 .25rem;
+
+  background: #020303;
+
+  color: #dcb45b;
+
+  font-size: .68rem;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   BUSINESS HEADING
+   ========================================================= */
+
+body.landing-page .landing-business-title {
+  width: 96% !important;
+
+  max-width: 96% !important;
+
+  margin:
+    0
+    auto
+    .28rem !important;
+
+  font-family:
+    'Cormorant Garamond',
+    Georgia,
+    serif !important;
+
+  font-size:
+    clamp(
+      .76rem,
+      .95vw,
+      .92rem
+    ) !important;
+
+  font-weight: 500 !important;
+
+  line-height: 1.05 !important;
+
+  color: #f4eee4 !important;
+}
+
+
+/* =========================================================
+   BODY COPY
+   ========================================================= */
+
+body.landing-page .landing-business-copy {
+  width: 100% !important;
+
+  flex: 0 0 auto;
+}
+
+
+body.landing-page .landing-copy {
+  width: 97% !important;
+
+  margin:
+    .20rem
+    auto !important;
+
+  font-family:
+    'Cormorant Garamond',
+    Georgia,
+    serif !important;
+
+  font-size:
+    clamp(
+      .50rem,
+      .64vw,
+      .64rem
+    ) !important;
+
+  font-weight: 400;
+
+  line-height: 1.09 !important;
+
+  letter-spacing: .005em;
+
+  color: #e9e1d4 !important;
+}
+
+
+/* =========================================================
+   GOLD DIVIDER ABOVE ENTER
+   ========================================================= */
+
+body.landing-page .landing-enter-rule {
+  position: relative;
+
+  display: block !important;
+
+  width: 74% !important;
+
+  height: 1px;
+
+  margin:
+    .35rem
+    auto
+    .25rem !important;
+
+  overflow: visible;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(214, 173, 95, .82) 20%,
+      rgba(214, 173, 95, .82) 43%,
+      transparent 43%,
+      transparent 57%,
+      rgba(214, 173, 95, .82) 57%,
+      rgba(214, 173, 95, .82) 80%,
+      transparent
+    ) !important;
+}
+
+
+body.landing-page .landing-enter-rule::after {
+  content: '⚜';
+
+  position: absolute;
+
+  left: 50%;
+
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  padding: 0 .25rem;
+
+  background: #020303;
+
+  color: #dcb45b;
+
+  font-size: .68rem;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   ENTER
+   ========================================================= */
+
+body.landing-page .enter-link {
+  margin: 0 !important;
+
+  padding:
+    .02em
+    .15em
+    .05em !important;
+
+  font-family:
+    'UnifrakturMaguntia',
+    'UnifrakturCook',
+    Georgia,
+    serif !important;
+
+  font-size:
+    clamp(
+      2.15rem,
+      2.9vw,
+      3rem
+    ) !important;
+
+  font-weight: 400 !important;
+
+  line-height: .82 !important;
+
+  letter-spacing: .02em;
+
+  color: #d82830 !important;
+
+  text-shadow:
+    0 2px 0 #57090d,
+    0 0 9px rgba(209, 31, 39, .25) !important;
+}
+
+
+/* =========================================================
+   SHORTER DESKTOP WINDOWS
+   ========================================================= */
+
+@media (max-height: 850px) and (min-width: 721px) {
+
+  body.landing-page .landing-panel {
+    padding:
+      3.5%
+      5%
+      2.5% !important;
+  }
+
+
+  body.landing-page .landing-panel .brand-title {
+    font-size:
+      clamp(
+        1.75rem,
+        2.35vw,
+        2.45rem
+      ) !important;
+  }
+
+
+  body.landing-page .service-line {
+    font-size:
+      clamp(
+        .70rem,
+        .85vw,
+        .84rem
+      ) !important;
+  }
+
+
+  body.landing-page .contact-compact {
+    font-size:
+      clamp(
+        .54rem,
+        .62vw,
+        .63rem
+      ) !important;
+  }
+
+
+  body.landing-page .landing-business-title {
+    font-size:
+      clamp(
+        .68rem,
+        .76vw,
+        .78rem
+      ) !important;
+  }
+
+
+  body.landing-page .landing-copy {
+    font-size:
+      clamp(
+        .46rem,
+        .53vw,
+        .54rem
+      ) !important;
+  }
+
+
+  body.landing-page .landing-section-rule,
+  body.landing-page .landing-enter-rule {
+    margin-top: .25rem !important;
+    margin-bottom: .25rem !important;
+  }
+
+
+  body.landing-page .enter-link {
+    font-size:
+      clamp(
+        1.9rem,
+        2.45vw,
+        2.5rem
+      ) !important;
   }
 
 }
