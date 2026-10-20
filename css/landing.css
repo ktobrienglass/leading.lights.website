@@ -14,10 +14,9 @@
 
 body.landing-page {
   --font-medieval:
-    'UnifrakturMaguntia',
-    'UnifrakturCook',
-    Georgia,
-    serif;
+  'Pirata One',
+  Georgia,
+  serif;
 
   --font-elegant:
     'Cormorant Garamond',
