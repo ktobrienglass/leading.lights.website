@@ -3,16 +3,12 @@
 /* =========================================================
    LEADING LIGHTS — LANDING PAGE
 
-   IMPORTANT:
-   The architectural image is portrait.
+   ONE SHELL IMAGE ONLY
+   Shell dimensions: 1448 × 1086
 
-   The correct full-width approach is:
-   - width = entire browser
-   - preserve the image's natural proportions
-   - allow the page to become taller
-   - allow normal vertical scrolling
-
-   This keeps every overlay aligned with the actual window.
+   The shell itself has a transparent window opening.
+   Stained glass and text sit underneath it.
+   The stone therefore overlaps the glass naturally.
    ========================================================= */
 
 
@@ -41,15 +37,11 @@ body.landing-page {
 }
 
 
-/*
-  IMPORTANT:
-  Remove the duplicate background versions created previously.
-*/
+/* Remove all old duplicate landing backgrounds */
 
 body.landing-page::before,
 body.landing-page::after {
   content: none !important;
-
   display: none !important;
 }
 
@@ -71,32 +63,29 @@ body.landing-page main {
 
 
 /* =========================================================
-   ONE SINGLE FULL-WIDTH GOTHIC IMAGE
+   FULL-WIDTH STAGE
    ========================================================= */
 
 /*
-  The shell image is 1055 × 1491.
+   The new shell is:
+   1448px wide
+   1086px high
 
-  The stage fills the entire browser WIDTH.
+   It fills the whole browser width while keeping its
+   exact natural proportions.
 
-  Its height is calculated from the real image ratio.
-
-  Because the original image is portrait, this makes the page
-  taller than the browser on desktop — that is intentional.
-
-  The visitor can scroll normally.
+   Because it is much wider than the previous shell,
+   considerably less scrolling is required.
 */
 
 body.landing-page .gothic-stage {
   position: relative;
 
-  left: auto;
-
   width: 100vw;
 
   height:
     calc(
-      100vw * 1491 / 1055
+      100vw * 1086 / 1448
     );
 
   max-width: none;
@@ -117,49 +106,65 @@ body.landing-page .gothic-stage {
 
 
 /* =========================================================
-   FRONT STONE FRAME
+   HIDE OLD HTML SHELL
    ========================================================= */
 
 /*
-  This is landing-shell-frame.png.
+   index.html still contains the previous shell <img>.
 
-  It is the SAME architecture as the approved shell,
-  except the central window opening is transparent.
+   We hide that completely.
 
-  It sits ABOVE the stained glass.
-
-  Therefore the stained glass disappears naturally
-  underneath the stone border.
+   This prevents two shells appearing at once.
 */
 
 body.landing-page .gothic-shell-image {
+  display: none !important;
+}
+
+
+
+/* =========================================================
+   ONE AND ONLY STONE SHELL
+   ========================================================= */
+
+/*
+   This PNG contains:
+   - all the realistic stone
+   - the Gothic window border
+   - the sill
+   - the masonry
+
+   BUT the centre of the window is transparent.
+
+   It sits ABOVE the stained glass.
+*/
+
+body.landing-page .gothic-stage::after {
+  content: '';
+
   position: absolute;
 
   inset: 0;
 
-  z-index: 5;
-
-  display: block;
+  z-index: 10;
 
   width: 100%;
 
   height: 100%;
 
-  max-width: none;
+  background-image:
+    url('../assets/images/landing/landing-shell-frame-wide.png');
 
-  margin: 0;
+  background-size:
+    100% 100%;
 
-  padding: 0;
+  background-position:
+    center center;
 
-  aspect-ratio: auto;
-
-  object-fit: fill;
-
-  object-position: center;
+  background-repeat:
+    no-repeat;
 
   pointer-events: none;
-
-  user-select: none;
 }
 
 
@@ -169,10 +174,11 @@ body.landing-page .gothic-shell-image {
    ========================================================= */
 
 /*
-  These percentages are relative to THE SAME image.
+   These percentages correspond to the actual transparent
+   opening in landing-shell-frame-wide.png.
 
-  Because the whole stage now preserves the image's real
-  proportions, these positions stay attached to the window.
+   Because the shell and content use the exact same stage,
+   everything stays aligned when the page changes size.
 */
 
 body.landing-page .window-overlay {
@@ -180,13 +186,13 @@ body.landing-page .window-overlay {
 
   z-index: 2;
 
-  left: 20.8%;
+  left: 34.32%;
 
-  right: 20.8%;
+  right: 35.43%;
 
-  top: 14.3%;
+  top: 15.56%;
 
-  bottom: 17.1%;
+  bottom: 17.50%;
 
   color:
     var(--text-main);
@@ -195,8 +201,15 @@ body.landing-page .window-overlay {
 
 
 /* =========================================================
-   INTERNAL WINDOW GRID
+   WINDOW GRID
    ========================================================= */
+
+/*
+            TOP GLASS
+
+      SIDE | TEXT | SIDE
+      SIDE | TEXT | SIDE
+*/
 
 body.landing-page .landing-overlay {
   display: grid;
@@ -207,8 +220,8 @@ body.landing-page .landing-overlay {
     19%;
 
   grid-template-rows:
-    24%
-    76%;
+    32%
+    68%;
 
   gap: 0;
 
@@ -241,17 +254,19 @@ body.landing-page .landing-glass--top {
 
 
   /*
-    Slight oversize lets the glass continue underneath
-    the physical stone border.
+     Slightly oversized intentionally.
+
+     The glass extends underneath the stone moulding.
+     The stone frame above hides those outer edges.
   */
 
-  width: 110%;
+  width: 108%;
 
-  height: 110%;
+  height: 108%;
 
-  margin-left: -5%;
+  margin-left: -4%;
 
-  margin-top: -5%;
+  margin-top: -4%;
 
   align-self: end;
 
@@ -277,7 +292,7 @@ body.landing-page .landing-glass--top img {
 
 
 /* =========================================================
-   LEFT + RIGHT STAINED GLASS
+   SIDE STAINED GLASS
    ========================================================= */
 
 body.landing-page .landing-side-stack {
@@ -303,14 +318,14 @@ body.landing-page .landing-side-stack {
 body.landing-page .landing-side-stack--left {
   grid-column: 1;
 
-  margin-left: -6%;
+  margin-left: -4%;
 }
 
 
 body.landing-page .landing-side-stack--right {
   grid-column: 3;
 
-  margin-right: -6%;
+  margin-right: -4%;
 }
 
 
@@ -352,7 +367,7 @@ body.landing-page .landing-side-piece img {
 
 
 /* =========================================================
-   CENTRAL BLACK INFORMATION PANEL
+   CENTRAL BLACK PANEL
    ========================================================= */
 
 body.landing-page .landing-panel {
