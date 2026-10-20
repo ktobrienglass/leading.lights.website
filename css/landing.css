@@ -2,46 +2,22 @@
 
 /* =========================================================
    LANDING PAGE OVERRIDES
-   Loaded AFTER css/styles.css so the rest of the site is untouched.
+   FIRST FIX:
+   - one shell only
+   - shell fills the whole screen
+   - no duplicated background
+   - no black side borders
    ========================================================= */
 
 body.landing-page {
   --font-medieval: 'UnifrakturCook', 'IM Fell English SC', Georgia, serif;
   position: relative;
-  isolation: isolate;
   width: 100vw;
   height: 100svh;
   min-height: 100svh;
   margin: 0;
   overflow: hidden;
-  background: #090a0a;
-}
-
-/*
-  Full-screen masonry layer:
-  fills the browser edge-to-edge without stretching the source image.
-  It may crop at the outer edges on wide screens, which is intentional.
-*/
-body.landing-page::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  background-image: url('../assets/images/landing/landing-shell-final.png');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  filter: brightness(.54) saturate(.84);
-  transform: scale(1.01);
-}
-
-body.landing-page::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background: rgba(0, 0, 0, .08);
+  background: #050505;
 }
 
 body.landing-page main {
@@ -52,30 +28,43 @@ body.landing-page main {
   overflow: hidden;
 }
 
-/*
-  Keep the central architectural frame proportional and one viewport tall.
-  The masonry background behind it fills the remaining width, so there are
-  no visible black side borders.
-*/
+
+/* =========================================================
+   SINGLE FULL-SCREEN SHELL
+   ========================================================= */
+
 body.landing-page .gothic-stage {
   position: relative;
-  left: 50%;
-  width: calc(100svh * 1055 / 1491);
+  width: 100vw;
   height: 100svh;
-  max-width: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background: transparent;
-  transform: translateX(-50%);
+
+  /* THIS is now the only background shell */
+  background-image: url('../assets/images/landing/landing-shell-final.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
-/*
-  IMPORTANT:
-  landing-shell-frame.png is the same shell but with the black opening
-  made transparent. It sits ABOVE the stained glass, so the glass now
-  appears physically behind the stone moulding instead of over it.
-*/
+/* subtle darkening so text reads a bit better */
+body.landing-page .gothic-stage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.04);
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+/* =========================================================
+   FRONT STONE FRAME
+   Same shell image, but with transparent centre.
+   This sits above the stained glass/content.
+   ========================================================= */
+
 body.landing-page .gothic-shell-image {
   position: absolute;
   inset: 0;
@@ -84,25 +73,27 @@ body.landing-page .gothic-shell-image {
   width: 100%;
   height: 100%;
   max-width: none;
-  aspect-ratio: 1055 / 1491;
-  object-fit: contain;
-  object-position: center;
+  object-fit: cover;
+  object-position: center center;
   pointer-events: none;
   user-select: none;
 }
 
-/*
-  Position all landing content behind the front stone frame.
-  The content extends slightly beneath the inner stone edge so no dark
-  gap can appear between stained glass and masonry.
-*/
+
+/* =========================================================
+   WINDOW CONTENT AREA
+   ========================================================= */
+
 body.landing-page .window-overlay {
   position: absolute;
   z-index: 2;
+
+  /* aligned to the opening in the shell */
   left: 20.8%;
   right: 20.8%;
   top: 14.3%;
   bottom: 17.1%;
+
   color: var(--text-main);
 }
 
@@ -116,7 +107,9 @@ body.landing-page .landing-overlay {
 }
 
 
-/* ---------- TOP STAINED GLASS ---------- */
+/* =========================================================
+   TOP STAINED GLASS
+   ========================================================= */
 
 body.landing-page .landing-glass {
   position: relative;
@@ -128,10 +121,6 @@ body.landing-page .landing-glass--top {
   grid-column: 1 / -1;
   grid-row: 1;
 
-  /*
-    Deliberately oversized so the artwork continues underneath
-    the stone border. The frame above masks the excess cleanly.
-  */
   width: 110%;
   height: 110%;
   margin-left: -5%;
@@ -151,7 +140,9 @@ body.landing-page .landing-glass--top img {
 }
 
 
-/* ---------- SIDE STAINED GLASS ---------- */
+/* =========================================================
+   SIDE STAINED GLASS
+   ========================================================= */
 
 body.landing-page .landing-side-stack {
   grid-row: 2;
@@ -196,7 +187,9 @@ body.landing-page .landing-side-piece img {
 }
 
 
-/* ---------- CENTRAL INFORMATION PANEL ---------- */
+/* =========================================================
+   CENTRAL PANEL
+   ========================================================= */
 
 body.landing-page .landing-panel {
   grid-column: 2;
@@ -212,9 +205,7 @@ body.landing-page .landing-panel {
   align-items: center;
   justify-content: center;
 
-  padding:
-    clamp(.30rem, .78vh, .70rem)
-    clamp(.40rem, 1vh, .82rem);
+  padding: clamp(.30rem, .78vh, .70rem) clamp(.40rem, 1vh, .82rem);
 
   text-align: center;
 
@@ -235,7 +226,9 @@ body.landing-page .landing-panel {
 }
 
 
-/* ---------- MEDIEVAL BRAND ---------- */
+/* =========================================================
+   TITLE / BRAND
+   ========================================================= */
 
 body.landing-page .landing-brand {
   width: 100%;
@@ -264,7 +257,9 @@ body.landing-page .brand-subtitle {
 }
 
 
-/* ---------- GOLD RULES ---------- */
+/* =========================================================
+   GOLD RULES
+   ========================================================= */
 
 body.landing-page .gold-rule {
   width: 72%;
@@ -288,7 +283,9 @@ body.landing-page .landing-enter-rule {
 }
 
 
-/* ---------- SERVICE + CONTACT ---------- */
+/* =========================================================
+   SERVICE + CONTACT
+   ========================================================= */
 
 body.landing-page .service-line {
   margin: .04rem 0 clamp(.14rem, .40vh, .32rem);
@@ -309,6 +306,7 @@ body.landing-page .contact-compact {
 
 body.landing-page .contact-compact a {
   text-decoration: none;
+  color: inherit;
 }
 
 body.landing-page .contact-compact a:hover {
@@ -316,7 +314,9 @@ body.landing-page .contact-compact a:hover {
 }
 
 
-/* ---------- BUSINESS COPY ---------- */
+/* =========================================================
+   BUSINESS COPY
+   ========================================================= */
 
 body.landing-page .landing-business-copy {
   width: 100%;
@@ -344,7 +344,9 @@ body.landing-page .landing-copy {
 }
 
 
-/* ---------- MEDIEVAL ENTER ---------- */
+/* =========================================================
+   ENTER
+   ========================================================= */
 
 body.landing-page .enter-link {
   display: inline-block;
@@ -379,7 +381,9 @@ body.landing-page .enter-link:hover {
 }
 
 
-/* ---------- SHORT SCREENS ---------- */
+/* =========================================================
+   SHORTER SCREENS
+   ========================================================= */
 
 @media (max-height: 720px) and (min-width: 721px) {
   body.landing-page .landing-panel {
@@ -423,12 +427,16 @@ body.landing-page .enter-link:hover {
 }
 
 
-/* ---------- MOBILE ---------- */
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
 @media (max-width: 720px) {
   body.landing-page .window-overlay {
     left: 20.8%;
     right: 20.8%;
+    top: 14.3%;
+    bottom: 17.1%;
   }
 
   body.landing-page .landing-overlay {
@@ -465,7 +473,6 @@ body.landing-page .enter-link:hover {
     font-size: clamp(1.80rem, 4.55vh, 3.10rem);
   }
 }
-
 
 @media (max-width: 520px) {
   body.landing-page .landing-overlay {
