@@ -765,3 +765,71 @@ body.landing-page .enter-link:hover {
       15%;
   }
 }
+/* =========================================================
+   MINOR FIX — STAINED GLASS PANEL ALIGNMENT
+   ========================================================= */
+
+/*
+   Stop the top panel extending down over the side panels.
+   Keep a tiny horizontal bleed so it still sits behind
+   the stone edge cleanly.
+*/
+
+body.landing-page .landing-glass--top {
+  width: 102%;
+  height: 100%;
+  margin-left: -1%;
+  margin-top: 0;
+  align-self: stretch;
+}
+
+
+/*
+   Remove the old sideways offsets.
+   Both columns now occupy exactly the same amount of space.
+*/
+
+body.landing-page .landing-side-stack--left,
+body.landing-page .landing-side-stack--right {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+
+/*
+   Each side image is clipped INSIDE its own box.
+
+   The slight zoom makes the motifs larger and intentionally
+   crops some of the original three-square panel rather than
+   squeezing the whole image into the space.
+*/
+
+body.landing-page .landing-side-piece {
+  overflow: hidden;
+}
+
+body.landing-page .landing-side-piece img {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+
+  object-fit: cover;
+  object-position: center center;
+
+  transform: scale(1.14) !important;
+  transform-origin: center center;
+}
+
+
+/*
+   Mirror the right-hand glass.
+
+   This makes the left and right sides visually symmetrical,
+   rather than showing more of one edge of the original photo.
+*/
+
+body.landing-page
+.landing-side-stack--right
+.landing-side-piece img {
+  transform: scaleX(-1) scale(1.14) !important;
+}
