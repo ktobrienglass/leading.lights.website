@@ -833,3 +833,43 @@ body.landing-page
 .landing-side-piece img {
   transform: scaleX(-1) scale(1.14) !important;
 }
+/* =========================================================
+   SIDE GLASS — CLEAN FIT
+   ========================================================= */
+
+/* No overlap between the two stacked images */
+body.landing-page .landing-side-piece + .landing-side-piece {
+  margin-top: 0 !important;
+}
+
+/* Keep both side columns perfectly even */
+body.landing-page .landing-side-stack--left,
+body.landing-page .landing-side-stack--right {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/*
+   Remove the previous 1.14 zoom.
+   Let each three-square image fill its own section naturally.
+*/
+body.landing-page .landing-side-piece img {
+  display: block;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  margin: 0 !important;
+
+  object-fit: cover;
+  object-position: center center;
+
+  transform: none !important;
+}
+
+/* Keep the right and left panels using exactly the same crop */
+body.landing-page
+.landing-side-stack--right
+.landing-side-piece img {
+  transform: none !important;
+}
