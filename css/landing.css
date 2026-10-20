@@ -1,110 +1,222 @@
 @import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
 
 /* =========================================================
-   LANDING PAGE OVERRIDES
-   FIRST FIX:
-   - one shell only
-   - shell fills the whole screen
-   - no duplicated background
-   - no black side borders
+   LEADING LIGHTS — LANDING PAGE
+
+   IMPORTANT:
+   The architectural image is portrait.
+
+   The correct full-width approach is:
+   - width = entire browser
+   - preserve the image's natural proportions
+   - allow the page to become taller
+   - allow normal vertical scrolling
+
+   This keeps every overlay aligned with the actual window.
    ========================================================= */
-
-body.landing-page {
-  --font-medieval: 'UnifrakturCook', 'IM Fell English SC', Georgia, serif;
-  position: relative;
-  width: 100vw;
-  height: 100svh;
-  min-height: 100svh;
-  margin: 0;
-  overflow: hidden;
-  background: #050505;
-}
-
-body.landing-page main {
-  width: 100vw;
-  height: 100svh;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
 
 
 /* =========================================================
-   SINGLE FULL-SCREEN SHELL
+   PAGE
    ========================================================= */
+
+body.landing-page {
+  --font-medieval:
+    'UnifrakturCook',
+    'IM Fell English SC',
+    Georgia,
+    serif;
+
+  margin: 0;
+
+  width: 100%;
+
+  min-height: 100%;
+
+  overflow-x: hidden;
+
+  overflow-y: auto;
+
+  background: #050505;
+}
+
+
+/*
+  IMPORTANT:
+  Remove the duplicate background versions created previously.
+*/
+
+body.landing-page::before,
+body.landing-page::after {
+  content: none !important;
+
+  display: none !important;
+}
+
+
+body.landing-page main {
+  display: block;
+
+  width: 100%;
+
+  min-height: 100%;
+
+  margin: 0;
+
+  padding: 0;
+
+  overflow: visible;
+}
+
+
+
+/* =========================================================
+   ONE SINGLE FULL-WIDTH GOTHIC IMAGE
+   ========================================================= */
+
+/*
+  The shell image is 1055 × 1491.
+
+  The stage fills the entire browser WIDTH.
+
+  Its height is calculated from the real image ratio.
+
+  Because the original image is portrait, this makes the page
+  taller than the browser on desktop — that is intentional.
+
+  The visitor can scroll normally.
+*/
 
 body.landing-page .gothic-stage {
   position: relative;
+
+  left: auto;
+
   width: 100vw;
-  height: 100svh;
+
+  height:
+    calc(
+      100vw * 1491 / 1055
+    );
+
+  max-width: none;
+
+  min-height: 0;
+
   margin: 0;
+
   padding: 0;
+
   overflow: hidden;
 
-  /* THIS is now the only background shell */
-  background-image: url('../assets/images/landing/landing-shell-final.png');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  background: #050505;
+
+  transform: none;
 }
 
-/* subtle darkening so text reads a bit better */
-body.landing-page .gothic-stage::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.04);
-  pointer-events: none;
-  z-index: 1;
-}
 
 
 /* =========================================================
    FRONT STONE FRAME
-   Same shell image, but with transparent centre.
-   This sits above the stained glass/content.
    ========================================================= */
+
+/*
+  This is landing-shell-frame.png.
+
+  It is the SAME architecture as the approved shell,
+  except the central window opening is transparent.
+
+  It sits ABOVE the stained glass.
+
+  Therefore the stained glass disappears naturally
+  underneath the stone border.
+*/
 
 body.landing-page .gothic-shell-image {
   position: absolute;
+
   inset: 0;
+
   z-index: 5;
+
   display: block;
+
   width: 100%;
+
   height: 100%;
+
   max-width: none;
-  object-fit: cover;
-  object-position: center center;
+
+  margin: 0;
+
+  padding: 0;
+
+  aspect-ratio: auto;
+
+  object-fit: fill;
+
+  object-position: center;
+
   pointer-events: none;
+
   user-select: none;
 }
 
 
+
 /* =========================================================
-   WINDOW CONTENT AREA
+   WINDOW OPENING
    ========================================================= */
+
+/*
+  These percentages are relative to THE SAME image.
+
+  Because the whole stage now preserves the image's real
+  proportions, these positions stay attached to the window.
+*/
 
 body.landing-page .window-overlay {
   position: absolute;
+
   z-index: 2;
 
-  /* aligned to the opening in the shell */
   left: 20.8%;
+
   right: 20.8%;
+
   top: 14.3%;
+
   bottom: 17.1%;
 
-  color: var(--text-main);
+  color:
+    var(--text-main);
 }
+
+
+
+/* =========================================================
+   INTERNAL WINDOW GRID
+   ========================================================= */
 
 body.landing-page .landing-overlay {
   display: grid;
-  grid-template-columns: 19% 62% 19%;
-  grid-template-rows: 24% 76%;
+
+  grid-template-columns:
+    19%
+    62%
+    19%;
+
+  grid-template-rows:
+    24%
+    76%;
+
   gap: 0;
+
   padding: 0;
+
   overflow: visible;
 }
+
 
 
 /* =========================================================
@@ -113,148 +225,295 @@ body.landing-page .landing-overlay {
 
 body.landing-page .landing-glass {
   position: relative;
+
   overflow: hidden;
-  background: #020303;
+
+  background:
+    #020303;
 }
 
+
 body.landing-page .landing-glass--top {
-  grid-column: 1 / -1;
+  grid-column:
+    1 / -1;
+
   grid-row: 1;
 
+
+  /*
+    Slight oversize lets the glass continue underneath
+    the physical stone border.
+  */
+
   width: 110%;
+
   height: 110%;
+
   margin-left: -5%;
+
   margin-top: -5%;
+
   align-self: end;
 
   clip-path: none;
 }
 
+
 body.landing-page .landing-glass--top img {
   display: block;
+
   width: 100%;
+
   height: 100%;
+
   max-width: none;
+
   object-fit: cover;
-  object-position: center 42%;
+
+  object-position:
+    center 42%;
 }
 
 
+
 /* =========================================================
-   SIDE STAINED GLASS
+   LEFT + RIGHT STAINED GLASS
    ========================================================= */
 
 body.landing-page .landing-side-stack {
   grid-row: 2;
+
   display: grid;
-  grid-template-rows: 1fr 1fr;
+
+  grid-template-rows:
+    1fr
+    1fr;
+
   min-width: 0;
+
   min-height: 0;
+
   overflow: hidden;
-  background: #020303;
+
+  background:
+    #020303;
 }
+
 
 body.landing-page .landing-side-stack--left {
   grid-column: 1;
+
   margin-left: -6%;
 }
 
+
 body.landing-page .landing-side-stack--right {
   grid-column: 3;
+
   margin-right: -6%;
 }
 
+
 body.landing-page .landing-side-piece {
   position: relative;
+
   min-width: 0;
+
   min-height: 0;
+
   overflow: hidden;
-  background: #020303;
+
+  background:
+    #020303;
 }
+
 
 body.landing-page .landing-side-piece + .landing-side-piece {
   margin-top: -2px;
 }
 
+
 body.landing-page .landing-side-piece img {
   display: block;
+
   width: 106%;
+
   height: 106%;
+
   max-width: none;
+
   margin: -3%;
+
   object-fit: cover;
+
   object-position: center;
 }
 
 
+
 /* =========================================================
-   CENTRAL PANEL
+   CENTRAL BLACK INFORMATION PANEL
    ========================================================= */
 
 body.landing-page .landing-panel {
   grid-column: 2;
+
   grid-row: 2;
 
   position: relative;
+
   min-width: 0;
+
   min-height: 0;
+
   overflow: hidden;
 
+
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
   justify-content: center;
 
-  padding: clamp(.30rem, .78vh, .70rem) clamp(.40rem, 1vh, .82rem);
+
+  padding:
+
+    clamp(
+      .30rem,
+      .78vh,
+      .70rem
+    )
+
+    clamp(
+      .40rem,
+      1vh,
+      .82rem
+    );
+
 
   text-align: center;
 
+
   background:
+
     radial-gradient(
       ellipse at 50% 10%,
       rgba(77, 58, 27, .10),
       transparent 38%
     ),
-    rgba(2, 3, 3, .988);
 
-  border-left: 1px solid rgba(63, 48, 24, .34);
-  border-right: 1px solid rgba(63, 48, 24, .34);
+    rgba(
+      2,
+      3,
+      3,
+      .988
+    );
+
+
+  border-left:
+    1px solid
+    rgba(63, 48, 24, .34);
+
+
+  border-right:
+    1px solid
+    rgba(63, 48, 24, .34);
+
 
   box-shadow:
-    inset 8px 0 18px rgba(0, 0, 0, .38),
-    inset -8px 0 18px rgba(0, 0, 0, .38);
+
+    inset
+    8px
+    0
+    18px
+    rgba(0, 0, 0, .38),
+
+    inset
+    -8px
+    0
+    18px
+    rgba(0, 0, 0, .38);
 }
 
 
+
 /* =========================================================
-   TITLE / BRAND
+   BRAND
    ========================================================= */
 
 body.landing-page .landing-brand {
   width: 100%;
-  flex: 0 0 auto;
+
+  flex:
+    0 0 auto;
 }
+
 
 body.landing-page .landing-panel .brand-title {
   margin: 0;
-  font-family: var(--font-medieval);
-  font-size: clamp(1.75rem, 4vh, 3.35rem);
+
+  font-family:
+    var(--font-medieval);
+
+  font-size:
+
+    clamp(
+      1.75rem,
+      4vh,
+      3.35rem
+    );
+
   font-weight: 700;
-  letter-spacing: .01em;
-  line-height: .84;
-  color: #f0d397;
+
+  letter-spacing:
+    .01em;
+
+  line-height:
+    .84;
+
+  color:
+    #f0d397;
+
   text-shadow:
-    0 2px 0 #2d1c08,
-    0 0 12px rgba(216, 169, 85, .10);
+
+    0 2px 0
+    #2d1c08,
+
+    0 0 12px
+    rgba(
+      216,
+      169,
+      85,
+      .10
+    );
 }
 
+
 body.landing-page .brand-subtitle {
-  margin: .16rem 0 0;
-  font-family: var(--font-display);
-  color: #e9cf96;
-  font-size: clamp(.70rem, 1.5vh, 1.18rem);
+  margin:
+    .16rem
+    0
+    0;
+
+  font-family:
+    var(--font-display);
+
+  color:
+    #e9cf96;
+
+  font-size:
+
+    clamp(
+      .70rem,
+      1.5vh,
+      1.18rem
+    );
+
   line-height: 1;
 }
+
 
 
 /* =========================================================
@@ -263,24 +522,61 @@ body.landing-page .brand-subtitle {
 
 body.landing-page .gold-rule {
   width: 72%;
+
   height: 1px;
-  margin: clamp(.14rem, .40vh, .34rem) auto;
+
+  margin:
+
+    clamp(
+      .14rem,
+      .40vh,
+      .34rem
+    )
+
+    auto;
+
   background:
+
     linear-gradient(
+
       90deg,
+
       transparent,
-      rgba(212, 173, 95, .95),
+
+      rgba(
+        212,
+        173,
+        95,
+        .95
+      ),
+
       transparent
+
     );
 }
 
+
 body.landing-page .landing-section-rule {
-  margin-top: clamp(.20rem, .50vh, .42rem);
+  margin-top:
+
+    clamp(
+      .20rem,
+      .50vh,
+      .42rem
+    );
 }
 
+
 body.landing-page .landing-enter-rule {
-  margin-top: clamp(.16rem, .40vh, .34rem);
+  margin-top:
+
+    clamp(
+      .16rem,
+      .40vh,
+      .34rem
+    );
 }
+
 
 
 /* =========================================================
@@ -288,30 +584,84 @@ body.landing-page .landing-enter-rule {
    ========================================================= */
 
 body.landing-page .service-line {
-  margin: .04rem 0 clamp(.14rem, .40vh, .32rem);
-  font-size: clamp(.67rem, 1.40vh, 1rem);
-  line-height: 1.08;
-  color: #f0e7d7;
+  margin:
+
+    .04rem
+    0
+
+    clamp(
+      .14rem,
+      .40vh,
+      .32rem
+    );
+
+  font-size:
+
+    clamp(
+      .67rem,
+      1.40vh,
+      1rem
+    );
+
+  line-height:
+    1.08;
+
+  color:
+    #f0e7d7;
 }
+
 
 body.landing-page .contact-compact {
   display: grid;
+
   justify-items: center;
-  gap: clamp(.03rem, .10vh, .08rem);
-  margin-top: clamp(.06rem, .18vh, .15rem);
-  font-size: clamp(.58rem, 1.12vh, .82rem);
-  line-height: 1.08;
-  color: #eee4d4;
+
+  gap:
+
+    clamp(
+      .03rem,
+      .10vh,
+      .08rem
+    );
+
+  margin-top:
+
+    clamp(
+      .06rem,
+      .18vh,
+      .15rem
+    );
+
+  font-size:
+
+    clamp(
+      .58rem,
+      1.12vh,
+      .82rem
+    );
+
+  line-height:
+    1.08;
+
+  color:
+    #eee4d4;
 }
+
 
 body.landing-page .contact-compact a {
-  text-decoration: none;
-  color: inherit;
+  text-decoration:
+    none;
+
+  color:
+    inherit;
 }
 
+
 body.landing-page .contact-compact a:hover {
-  color: #f3d99c;
+  color:
+    #f3d99c;
 }
+
 
 
 /* =========================================================
@@ -320,28 +670,80 @@ body.landing-page .contact-compact a:hover {
 
 body.landing-page .landing-business-copy {
   width: 100%;
-  flex: 0 0 auto;
+
+  flex:
+    0 0 auto;
 }
+
 
 body.landing-page .landing-business-title {
   max-width: 98%;
-  margin: 0 auto clamp(.14rem, .32vh, .27rem);
-  font-family: var(--font-body);
-  font-size: clamp(.68rem, 1.28vh, .94rem);
+
+  margin:
+
+    0
+    auto
+
+    clamp(
+      .14rem,
+      .32vh,
+      .27rem
+    );
+
+  font-family:
+    var(--font-body);
+
+  font-size:
+
+    clamp(
+      .68rem,
+      1.28vh,
+      .94rem
+    );
+
   font-weight: 500;
-  line-height: 1.04;
-  color: #f0e8db;
+
+  line-height:
+    1.04;
+
+  color:
+    #f0e8db;
 }
+
 
 body.landing-page .landing-copy {
   width: 100%;
-  margin: clamp(.10rem, .23vh, .20rem) auto;
-  font-family: var(--font-body);
-  font-size: clamp(.54rem, 1.02vh, .74rem);
+
+  margin:
+
+    clamp(
+      .10rem,
+      .23vh,
+      .20rem
+    )
+
+    auto;
+
+  font-family:
+    var(--font-body);
+
+  font-size:
+
+    clamp(
+      .54rem,
+      1.02vh,
+      .74rem
+    );
+
   font-weight: 400;
-  line-height: 1.11;
-  color: #ddd4c5;
+
+  line-height:
+    1.11;
+
+  color:
+    #ddd4c5;
 }
+
 
 
 /* =========================================================
@@ -349,133 +751,213 @@ body.landing-page .landing-copy {
    ========================================================= */
 
 body.landing-page .enter-link {
-  display: inline-block;
-  flex: 0 0 auto;
-  margin-top: clamp(.04rem, .12vh, .10rem);
-  padding: .02em .16em .04em;
+  display:
+    inline-block;
 
-  font-family: var(--font-medieval);
-  font-size: clamp(1.95rem, 5vh, 4.15rem);
+  flex:
+    0 0 auto;
+
+  margin-top:
+
+    clamp(
+      .04rem,
+      .12vh,
+      .10rem
+    );
+
+  padding:
+    .02em
+    .16em
+    .04em;
+
+
+  font-family:
+    var(--font-medieval);
+
+
+  font-size:
+
+    clamp(
+      1.95rem,
+      5vh,
+      4.15rem
+    );
+
+
   font-weight: 700;
-  line-height: .82;
 
-  text-decoration: none;
-  color: #d11f27;
+  line-height:
+    .82;
+
+
+  text-decoration:
+    none;
+
+
+  color:
+    #d11f27;
+
 
   text-shadow:
-    0 2px 0 #43070b,
-    0 0 12px rgba(189, 25, 34, .28);
+
+    0 2px 0
+    #43070b,
+
+    0 0 12px
+    rgba(
+      189,
+      25,
+      34,
+      .28
+    );
+
 
   transition:
-    transform 160ms ease,
-    color 160ms ease,
-    text-shadow 160ms ease;
+
+    transform
+    160ms
+    ease,
+
+    color
+    160ms
+    ease,
+
+    text-shadow
+    160ms
+    ease;
 }
+
 
 body.landing-page .enter-link:hover {
-  color: #ed343b;
-  transform: translateY(-1px);
+  color:
+    #ed343b;
+
+  transform:
+    translateY(-1px);
+
   text-shadow:
-    0 2px 0 #43070b,
-    0 0 18px rgba(189, 25, 34, .42);
+
+    0 2px 0
+    #43070b,
+
+    0 0 18px
+    rgba(
+      189,
+      25,
+      34,
+      .42
+    );
 }
 
-
-/* =========================================================
-   SHORTER SCREENS
-   ========================================================= */
-
-@media (max-height: 720px) and (min-width: 721px) {
-  body.landing-page .landing-panel {
-    padding-top: .18rem;
-    padding-bottom: .18rem;
-  }
-
-  body.landing-page .landing-panel .brand-title {
-    font-size: 1.75rem;
-  }
-
-  body.landing-page .brand-subtitle {
-    font-size: .70rem;
-  }
-
-  body.landing-page .service-line {
-    font-size: .66rem;
-  }
-
-  body.landing-page .contact-compact {
-    font-size: .56rem;
-  }
-
-  body.landing-page .landing-business-title {
-    font-size: .66rem;
-  }
-
-  body.landing-page .landing-copy {
-    font-size: .52rem;
-    line-height: 1.06;
-    margin-block: .07rem;
-  }
-
-  body.landing-page .enter-link {
-    font-size: 1.95rem;
-  }
-
-  body.landing-page .gold-rule {
-    margin-block: .10rem;
-  }
-}
 
 
 /* =========================================================
    MOBILE
    ========================================================= */
 
-@media (max-width: 720px) {
-  body.landing-page .window-overlay {
-    left: 20.8%;
-    right: 20.8%;
-    top: 14.3%;
-    bottom: 17.1%;
-  }
+@media
+(max-width: 720px) {
 
   body.landing-page .landing-overlay {
-    grid-template-columns: 17% 66% 17%;
-    grid-template-rows: 24% 76%;
+    grid-template-columns:
+
+      17%
+      66%
+      17%;
   }
+
 
   body.landing-page .landing-panel .brand-title {
-    font-size: clamp(1.60rem, 4vh, 2.55rem);
+    font-size:
+
+      clamp(
+        1.60rem,
+        4vh,
+        2.55rem
+      );
   }
+
 
   body.landing-page .brand-subtitle {
-    font-size: clamp(.66rem, 1.42vh, .96rem);
+    font-size:
+
+      clamp(
+        .66rem,
+        1.42vh,
+        .96rem
+      );
   }
+
 
   body.landing-page .service-line {
-    font-size: clamp(.62rem, 1.24vh, .84rem);
+    font-size:
+
+      clamp(
+        .62rem,
+        1.24vh,
+        .84rem
+      );
   }
+
 
   body.landing-page .contact-compact {
-    font-size: clamp(.54rem, 1.04vh, .72rem);
+    font-size:
+
+      clamp(
+        .54rem,
+        1.04vh,
+        .72rem
+      );
   }
+
 
   body.landing-page .landing-business-title {
-    font-size: clamp(.64rem, 1.15vh, .79rem);
+    font-size:
+
+      clamp(
+        .64rem,
+        1.15vh,
+        .79rem
+      );
   }
+
 
   body.landing-page .landing-copy {
-    font-size: clamp(.51rem, .92vh, .67rem);
-    line-height: 1.08;
+    font-size:
+
+      clamp(
+        .51rem,
+        .92vh,
+        .67rem
+      );
+
+    line-height:
+      1.08;
   }
+
 
   body.landing-page .enter-link {
-    font-size: clamp(1.80rem, 4.55vh, 3.10rem);
+    font-size:
+
+      clamp(
+        1.80rem,
+        4.55vh,
+        3.10rem
+      );
   }
+
 }
 
-@media (max-width: 520px) {
+
+@media
+(max-width: 520px) {
+
   body.landing-page .landing-overlay {
-    grid-template-columns: 15% 70% 15%;
+    grid-template-columns:
+
+      15%
+      70%
+      15%;
   }
+
 }
