@@ -467,6 +467,7 @@ body.landing-page .landing-brand > .gold-rule {
 
 /* =========================================================
    SERVICE HEADING
+   Moved upward slightly — nothing else changed
    ========================================================= */
 
 body.landing-page .service-line {
@@ -476,6 +477,8 @@ body.landing-page .service-line {
   width: 100%;
 
   margin: 0;
+
+  transform: translateY(-0.45rem);
 
   font-family:
     var(--font-elegant) !important;
@@ -524,6 +527,7 @@ body.landing-page .service-line::after {
 
 /* =========================================================
    CONTACT DETAILS
+   Moved upward by the same amount
    ========================================================= */
 
 body.landing-page .contact-compact {
@@ -539,6 +543,8 @@ body.landing-page .contact-compact {
   width: 100%;
 
   margin: 0;
+
+  transform: translateY(-0.45rem);
 
   font-family:
     var(--font-elegant) !important;
@@ -651,9 +657,14 @@ body.landing-page .landing-enter-rule::after {
 }
 
 
+
+/* Lower divider moves with the service/contact section */
+
 body.landing-page .landing-section-rule {
   grid-column: 1;
   grid-row: 6;
+
+  transform: translateY(-0.45rem);
 }
 
 
