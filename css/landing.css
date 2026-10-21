@@ -277,25 +277,6 @@ body.landing-page .landing-side-piece img {
 
 /* =========================================================
    CENTRAL BLACK PANEL
-
-   1  Leading Lights
-   2  of London Ltd
-
-   3  SPACE
-
-   4  Service heading
-   5  Contact details
-
-   6  SPACE + divider
-
-   7  Main business copy
-
-   8  SPACE + divider
-
-   9  ENTER
-
-   Rows 3, 6 and 8 all use 1fr, so the available vertical
-   space is shared evenly between the four main sections.
    ========================================================= */
 
 body.landing-page .landing-panel {
@@ -332,10 +313,6 @@ body.landing-page .landing-panel {
   align-items: center;
   justify-items: center;
 
-  /*
-     More room between content and the top/bottom frame.
-     This is deliberately larger than before.
-  */
   padding:
     7%
     4%
@@ -429,7 +406,7 @@ body.landing-page .brand-subtitle {
   width: 88%;
 
   margin:
-    .20rem
+    .42rem
     auto
     0;
 
@@ -674,10 +651,6 @@ body.landing-page .landing-enter-rule::after {
 }
 
 
-
-/* First divider sits centrally in the gap
-   between contact information and main copy */
-
 body.landing-page .landing-section-rule {
   grid-column: 1;
   grid-row: 6;
@@ -687,9 +660,6 @@ body.landing-page .landing-section-rule {
 
 /* =========================================================
    MAIN BUSINESS COPY
-
-   Slightly smaller than the previous version so the panel
-   has room for deliberate vertical breathing space.
    ========================================================= */
 
 body.landing-page .landing-business-copy {
@@ -777,8 +747,6 @@ body.landing-page .landing-copy {
 
 /* =========================================================
    DIVIDER ABOVE ENTER
-
-   This sits centrally inside the third equal spacing area.
    ========================================================= */
 
 body.landing-page .landing-enter-rule {
