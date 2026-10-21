@@ -666,6 +666,7 @@ body.landing-page .landing-section-rule {
 
 /* =========================================================
    MAIN BUSINESS COPY
+   Slightly larger + moved upward only
    ========================================================= */
 
 body.landing-page .landing-business-copy {
@@ -689,6 +690,8 @@ body.landing-page .landing-business-copy {
   margin: 0 auto;
 
   padding: 0;
+
+  transform: translateY(-0.8rem);
 }
 
 
@@ -707,9 +710,9 @@ body.landing-page .landing-business-title {
 
   font-size:
     clamp(
-      .76rem,
-      .88vw,
-      .96rem
+      .80rem,
+      .92vw,
+      1rem
     );
 
   font-weight: 500;
@@ -735,9 +738,9 @@ body.landing-page .landing-copy {
 
   font-size:
     clamp(
-      .48rem,
-      .57vw,
-      .61rem
+      .50rem,
+      .60vw,
+      .64rem
     );
 
   font-weight: 400;
@@ -903,6 +906,8 @@ body.landing-page .enter-link:hover {
     max-width: 98%;
 
     gap: .22rem;
+
+    transform: none;
   }
 
 
