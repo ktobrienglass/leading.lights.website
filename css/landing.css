@@ -3,6 +3,7 @@
 
 /* =========================================================
    LEADING LIGHTS — LANDING PAGE
+   CLEAN CONSOLIDATED VERSION
    Shell size: 1448 × 1086
    ========================================================= */
 
@@ -29,7 +30,6 @@ body.landing-page {
   min-height: 100%;
 
   overflow-x: hidden !important;
-
   overflow-y: auto !important;
 
   background: #050505;
@@ -39,7 +39,6 @@ body.landing-page {
 body.landing-page::before,
 body.landing-page::after {
   content: none !important;
-
   display: none !important;
 }
 
@@ -70,7 +69,6 @@ body.landing-page .gothic-stage {
   position: relative;
 
   left: 0 !important;
-
   right: auto !important;
 
   width: 100vw !important;
@@ -109,7 +107,6 @@ body.landing-page .gothic-shell-image {
   display: block !important;
 
   width: 100% !important;
-
   height: 100% !important;
 
   max-width: none !important;
@@ -121,7 +118,6 @@ body.landing-page .gothic-shell-image {
   aspect-ratio: 1448 / 1086;
 
   object-fit: fill;
-
   object-position: center;
 
   pointer-events: none;
@@ -141,11 +137,9 @@ body.landing-page .window-overlay {
   z-index: 2;
 
   left: 34.323% !important;
-
   right: 35.428% !important;
 
   top: 15.562% !important;
-
   bottom: 17.495% !important;
 
   color: var(--text-main);
@@ -306,11 +300,14 @@ body.landing-page .landing-side-piece img {
 /* =========================================================
    CENTRAL BLACK PANEL
 
-   1 = branding + service/contact
-   2 = divider
-   3 = central business copy
-   4 = divider
+   1 = title/service/contact
+   2 = first gold divider
+   3 = main business copy
+   4 = second gold divider
    5 = ENTER
+
+   The middle business copy sits centrally in the available
+   space between the upper information and ENTER.
    ========================================================= */
 
 body.landing-page .landing-panel {
@@ -503,7 +500,7 @@ body.landing-page .landing-brand > .gold-rule {
 /* =========================================================
    SERVICE HEADING
 
-   This block now begins a little lower below the title.
+   This sits slightly lower beneath the main title.
    ========================================================= */
 
 body.landing-page .service-line {
@@ -533,7 +530,9 @@ body.landing-page .service-line {
 
 
 
-/* Gold ornament below service heading */
+/* =========================================================
+   SMALL GOLD ORNAMENT
+   ========================================================= */
 
 body.landing-page .service-line::after {
   content: '—  ⚜  —';
@@ -685,11 +684,10 @@ body.landing-page .landing-enter-rule::after {
 
 
 /* =========================================================
-   DIVIDER BETWEEN CONTACT BLOCK AND MAIN WRITING
+   GAP BELOW CONTACT BLOCK
 
-   Slightly MORE space below than above.
-   This makes the contact block feel a little closer
-   to the title than to the writing underneath.
+   The contact section is slightly closer to the title
+   than it is to the large business copy below.
    ========================================================= */
 
 body.landing-page .landing-section-rule {
@@ -703,6 +701,8 @@ body.landing-page .landing-section-rule {
 
 /* =========================================================
    MAIN BUSINESS COPY
+
+   Larger and centred in the flexible middle space.
    ========================================================= */
 
 body.landing-page .landing-business-copy {
@@ -736,7 +736,9 @@ body.landing-page .landing-business-copy {
 
 
 
-/* Main business heading */
+/* =========================================================
+   MAIN BUSINESS HEADING
+   ========================================================= */
 
 body.landing-page .landing-business-title {
   width: 100%;
@@ -764,7 +766,9 @@ body.landing-page .landing-business-title {
 
 
 
-/* Main paragraphs */
+/* =========================================================
+   MAIN PARAGRAPHS
+   ========================================================= */
 
 body.landing-page .landing-copy {
   width: 100%;
@@ -870,135 +874,10 @@ body.landing-page .enter-link:hover {
 
 
 /* =========================================================
-   SHORTER DESKTOP WINDOWS
-   ========================================================= */
-
-@media
-(max-height: 850px) and (min-width: 721px) {
-
-  body.landing-page .landing-panel {
-    padding:
-      3.6%
-      5%
-      3.4%;
-  }
-
-
-  body.landing-page .landing-panel .brand-title {
-    font-size:
-      clamp(
-        1.75rem,
-        2.35vw,
-        2.55rem
-      );
-  }
-
-
-  body.landing-page .brand-subtitle {
-    margin:
-      .15rem
-      auto
-      .18rem;
-  }
-
-
-  body.landing-page .service-line {
-    margin:
-      .60rem
-      0
-      .20rem;
-
-    font-size:
-      clamp(
-        .72rem,
-        .88vw,
-        .92rem
-      );
-  }
-
-
-  body.landing-page .service-line::after {
-    margin:
-      .23rem
-      auto
-      .14rem;
-  }
-
-
-  body.landing-page .contact-compact {
-    font-size:
-      clamp(
-        .54rem,
-        .64vw,
-        .68rem
-      );
-  }
-
-
-  body.landing-page .landing-section-rule {
-    margin:
-      .48rem
-      auto
-      .72rem;
-  }
-
-
-  body.landing-page .landing-business-copy {
-    max-width: 92%;
-
-    gap: .34rem;
-  }
-
-
-  body.landing-page .landing-business-title {
-    font-size:
-      clamp(
-        .78rem,
-        .90vw,
-        .96rem
-      );
-  }
-
-
-  body.landing-page .landing-copy {
-    font-size:
-      clamp(
-        .51rem,
-        .61vw,
-        .65rem
-      );
-
-    line-height: 1.14;
-  }
-
-
-  body.landing-page .landing-enter-rule {
-    margin:
-      .32rem
-      auto
-      .36rem;
-  }
-
-
-  body.landing-page .enter-link {
-    font-size:
-      clamp(
-        1.9rem,
-        2.45vw,
-        2.55rem
-      );
-  }
-
-}
-
-
-
-/* =========================================================
    MOBILE
    ========================================================= */
 
-@media
-(max-width: 720px) {
+@media (max-width: 720px) {
 
   body.landing-page .landing-overlay {
     grid-template-columns:
@@ -1100,9 +979,7 @@ body.landing-page .enter-link:hover {
 }
 
 
-
-@media
-(max-width: 520px) {
+@media (max-width: 520px) {
 
   body.landing-page .landing-overlay {
     grid-template-columns:
