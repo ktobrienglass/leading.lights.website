@@ -3,7 +3,6 @@
 
 /* =========================================================
    LEADING LIGHTS — LANDING PAGE
-   CLEAN CONSOLIDATED VERSION
    Shell size: 1448 × 1086
    ========================================================= */
 
@@ -307,14 +306,11 @@ body.landing-page .landing-side-piece img {
 /* =========================================================
    CENTRAL BLACK PANEL
 
-   Five rows:
-   1. Branding / service / contact
-   2. Gold divider
-   3. Main business copy
-   4. Gold divider
-   5. ENTER
-
-   The middle copy occupies the flexible centre zone.
+   1 = branding + service/contact
+   2 = divider
+   3 = central business copy
+   4 = divider
+   5 = ENTER
    ========================================================= */
 
 body.landing-page .landing-panel {
@@ -507,12 +503,12 @@ body.landing-page .landing-brand > .gold-rule {
 /* =========================================================
    SERVICE HEADING
 
-   Deliberately moved slightly lower beneath the title.
+   This block now begins a little lower below the title.
    ========================================================= */
 
 body.landing-page .service-line {
   margin:
-    .62rem
+    .78rem
     0
     .28rem;
 
@@ -537,7 +533,7 @@ body.landing-page .service-line {
 
 
 
-/* Small ornamental line */
+/* Gold ornament below service heading */
 
 body.landing-page .service-line::after {
   content: '—  ⚜  —';
@@ -626,7 +622,7 @@ body.landing-page .contact-compact a:hover {
 
 
 /* =========================================================
-   ORNAMENTAL GOLD DIVIDERS
+   GOLD DIVIDERS
    ========================================================= */
 
 body.landing-page .landing-section-rule,
@@ -688,21 +684,25 @@ body.landing-page .landing-enter-rule::after {
 
 
 
-/* Divider between top information and central copy */
+/* =========================================================
+   DIVIDER BETWEEN CONTACT BLOCK AND MAIN WRITING
+
+   Slightly MORE space below than above.
+   This makes the contact block feel a little closer
+   to the title than to the writing underneath.
+   ========================================================= */
 
 body.landing-page .landing-section-rule {
   margin:
-    .56rem
+    .62rem
     auto
-    .46rem;
+    .92rem;
 }
 
 
 
 /* =========================================================
    MAIN BUSINESS COPY
-
-   Larger than before and centred in available middle space.
    ========================================================= */
 
 body.landing-page .landing-business-copy {
@@ -794,8 +794,6 @@ body.landing-page .landing-copy {
 
 /* =========================================================
    DIVIDER ABOVE ENTER
-
-   Similar breathing room beneath the central copy.
    ========================================================= */
 
 body.landing-page .landing-enter-rule {
@@ -906,7 +904,7 @@ body.landing-page .enter-link:hover {
 
   body.landing-page .service-line {
     margin:
-      .42rem
+      .60rem
       0
       .20rem;
 
@@ -939,9 +937,9 @@ body.landing-page .enter-link:hover {
 
   body.landing-page .landing-section-rule {
     margin:
-      .38rem
+      .48rem
       auto
-      .32rem;
+      .72rem;
   }
 
 
@@ -1039,7 +1037,7 @@ body.landing-page .enter-link:hover {
 
 
   body.landing-page .service-line {
-    margin-top: .40rem;
+    margin-top: .50rem;
 
     font-size:
       clamp(
@@ -1057,6 +1055,14 @@ body.landing-page .enter-link:hover {
         1.7vw,
         .66rem
       );
+  }
+
+
+  body.landing-page .landing-section-rule {
+    margin:
+      .38rem
+      auto
+      .58rem;
   }
 
 
