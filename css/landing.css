@@ -3,7 +3,6 @@
 
 /* =========================================================
    LEADING LIGHTS — LANDING PAGE
-   CLEAN CONSOLIDATED VERSION
    Shell size: 1448 × 1086
    ========================================================= */
 
@@ -30,6 +29,7 @@ body.landing-page {
   min-height: 100%;
 
   overflow-x: hidden !important;
+
   overflow-y: auto !important;
 
   background: #050505;
@@ -39,6 +39,7 @@ body.landing-page {
 body.landing-page::before,
 body.landing-page::after {
   content: none !important;
+
   display: none !important;
 }
 
@@ -69,11 +70,11 @@ body.landing-page .gothic-stage {
   position: relative;
 
   left: 0 !important;
+
   right: auto !important;
 
   width: 100vw !important;
 
-  /* 1086 / 1448 = 0.75 */
   height: 75vw !important;
 
   max-width: none !important;
@@ -107,6 +108,7 @@ body.landing-page .gothic-shell-image {
   display: block !important;
 
   width: 100% !important;
+
   height: 100% !important;
 
   max-width: none !important;
@@ -118,6 +120,7 @@ body.landing-page .gothic-shell-image {
   aspect-ratio: 1448 / 1086;
 
   object-fit: fill;
+
   object-position: center;
 
   pointer-events: none;
@@ -137,9 +140,11 @@ body.landing-page .window-overlay {
   z-index: 2;
 
   left: 34.323% !important;
+
   right: 35.428% !important;
 
   top: 15.562% !important;
+
   bottom: 17.495% !important;
 
   color: var(--text-main);
@@ -215,8 +220,7 @@ body.landing-page .landing-glass--top img {
 
   object-fit: cover;
 
-  object-position:
-    center 42%;
+  object-position: center 42%;
 
   transform: none !important;
 }
@@ -289,8 +293,7 @@ body.landing-page .landing-side-piece img {
 
   object-fit: cover;
 
-  object-position:
-    center center;
+  object-position: center center;
 
   transform: none !important;
 }
@@ -299,15 +302,6 @@ body.landing-page .landing-side-piece img {
 
 /* =========================================================
    CENTRAL BLACK PANEL
-
-   1 = title/service/contact
-   2 = first gold divider
-   3 = main business copy
-   4 = second gold divider
-   5 = ENTER
-
-   The middle business copy sits centrally in the available
-   space between the upper information and ENTER.
    ========================================================= */
 
 body.landing-page .landing-panel {
@@ -499,8 +493,6 @@ body.landing-page .landing-brand > .gold-rule {
 
 /* =========================================================
    SERVICE HEADING
-
-   This sits slightly lower beneath the main title.
    ========================================================= */
 
 body.landing-page .service-line {
@@ -685,9 +677,6 @@ body.landing-page .landing-enter-rule::after {
 
 /* =========================================================
    GAP BELOW CONTACT BLOCK
-
-   The contact section is slightly closer to the title
-   than it is to the large business copy below.
    ========================================================= */
 
 body.landing-page .landing-section-rule {
@@ -701,8 +690,6 @@ body.landing-page .landing-section-rule {
 
 /* =========================================================
    MAIN BUSINESS COPY
-
-   Larger and centred in the flexible middle space.
    ========================================================= */
 
 body.landing-page .landing-business-copy {
