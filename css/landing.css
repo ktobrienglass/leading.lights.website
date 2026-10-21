@@ -277,9 +277,18 @@ body.landing-page .landing-side-piece img {
 /* =========================================================
    CENTRAL BLACK PANEL
 
-   ONLY SPACING CHANGE:
-   the gap after "OF LONDON LTD" is now 0.5fr rather than 1fr
-   so it visually matches the email-to-gold-line distance.
+   ROW 1  = Leading Lights
+   ROW 2  = of London Ltd
+   ROW 3  = flexible space
+
+   ROW 4  = service
+   ROW 5  = contact details
+   ROW 6  = flexible equal space + divider
+
+   ROW 7  = business writing
+   ROW 8  = flexible equal space + divider
+
+   ROW 9  = ENTER
    ========================================================= */
 
 body.landing-page .landing-panel {
@@ -346,6 +355,10 @@ body.landing-page .landing-panel {
 
 /* =========================================================
    FLATTEN HEADER INTO PANEL GRID
+
+   This lets us separate:
+   heading → info → writing → ENTER
+   without changing the HTML.
    ========================================================= */
 
 body.landing-page .landing-brand {
@@ -654,6 +667,9 @@ body.landing-page .landing-enter-rule::after {
 }
 
 
+
+/* divider occupies the middle of the equal info → writing space */
+
 body.landing-page .landing-section-rule {
   grid-column: 1;
   grid-row: 6;
@@ -750,6 +766,8 @@ body.landing-page .landing-copy {
 
 /* =========================================================
    DIVIDER ABOVE ENTER
+
+   This occupies the third equal flexible space.
    ========================================================= */
 
 body.landing-page .landing-enter-rule {
