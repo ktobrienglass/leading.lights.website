@@ -467,7 +467,6 @@ body.landing-page .landing-brand > .gold-rule {
 
 /* =========================================================
    SERVICE HEADING
-   MOVED HIGHER — ONLY CHANGE
    ========================================================= */
 
 body.landing-page .service-line {
@@ -478,7 +477,7 @@ body.landing-page .service-line {
 
   margin: 0;
 
-  transform: translateY(-2.45rem);
+  transform: translateY(-1.65rem);
 
   font-family:
     var(--font-elegant) !important;
@@ -527,7 +526,6 @@ body.landing-page .service-line::after {
 
 /* =========================================================
    CONTACT DETAILS
-   MOVED HIGHER BY SAME AMOUNT
    ========================================================= */
 
 body.landing-page .contact-compact {
@@ -544,7 +542,7 @@ body.landing-page .contact-compact {
 
   margin: 0;
 
-  transform: translateY(-2.45rem);
+  transform: translateY(-1.65rem);
 
   font-family:
     var(--font-elegant) !important;
@@ -661,7 +659,7 @@ body.landing-page .landing-section-rule {
   grid-column: 1;
   grid-row: 6;
 
-  transform: translateY(-2.45rem);
+  transform: translateY(-1.65rem);
 }
 
 
