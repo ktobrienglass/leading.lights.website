@@ -46,6 +46,7 @@ body.landing-page main {
   width: 100%;
   height: auto !important;
   min-height: 0;
+
   margin: 0;
   padding: 0;
 
@@ -66,7 +67,6 @@ body.landing-page .gothic-stage {
 
   width: 100vw !important;
 
-  /* 1086 / 1448 = 0.75 */
   height: 75vw !important;
 
   max-width: none !important;
@@ -74,6 +74,7 @@ body.landing-page .gothic-stage {
 
   margin: 0 !important;
   padding: 0;
+
   overflow: hidden;
 
   background: #050505;
@@ -276,19 +277,6 @@ body.landing-page .landing-side-piece img {
 
 /* =========================================================
    CENTRAL BLACK PANEL
-
-   ROW 1  = Leading Lights
-   ROW 2  = of London Ltd
-   ROW 3  = flexible space
-
-   ROW 4  = service
-   ROW 5  = contact details
-   ROW 6  = flexible equal space + divider
-
-   ROW 7  = business writing
-   ROW 8  = flexible equal space + divider
-
-   ROW 9  = ENTER
    ========================================================= */
 
 body.landing-page .landing-panel {
@@ -314,21 +302,21 @@ body.landing-page .landing-panel {
   grid-template-rows:
     auto
     auto
-    minmax(.45rem, .5fr)
+    minmax(.85rem, 1fr)
     auto
     auto
-    minmax(.45rem, 1fr)
+    minmax(.85rem, 1fr)
     auto
-    minmax(.45rem, 1fr)
+    minmax(.85rem, 1fr)
     auto;
 
   align-items: center;
   justify-items: center;
 
   padding:
-    3.8%
+    7%
     4%
-    3.8%;
+    7%;
 
   text-align: center;
 
@@ -354,11 +342,7 @@ body.landing-page .landing-panel {
 
 
 /* =========================================================
-   FLATTEN HEADER INTO PANEL GRID
-
-   This lets us separate:
-   heading → info → writing → ENTER
-   without changing the HTML.
+   ALLOW HEADER CONTENT TO JOIN MAIN GRID
    ========================================================= */
 
 body.landing-page .landing-brand {
@@ -422,7 +406,7 @@ body.landing-page .brand-subtitle {
   width: 88%;
 
   margin:
-    .22rem
+    .42rem
     auto
     0;
 
@@ -482,7 +466,8 @@ body.landing-page .landing-brand > .gold-rule {
 
 
 /* =========================================================
-   SERVICE / INFORMATION BLOCK
+   SERVICE HEADING
+   MOVED HIGHER — ONLY CHANGE
    ========================================================= */
 
 body.landing-page .service-line {
@@ -493,19 +478,21 @@ body.landing-page .service-line {
 
   margin: 0;
 
+  transform: translateY(-0.9rem);
+
   font-family:
     var(--font-elegant) !important;
 
   font-size:
     clamp(
-      .80rem,
-      1.02vw,
-      1.08rem
+      .76rem,
+      .94vw,
+      1rem
     );
 
   font-weight: 500;
 
-  line-height: 1.12;
+  line-height: 1.14;
 
   letter-spacing: .01em;
 
@@ -519,9 +506,9 @@ body.landing-page .service-line::after {
   display: block;
 
   margin:
-    .28rem
+    .30rem
     auto
-    .18rem;
+    .24rem;
 
   color: #dcb45b;
 
@@ -529,7 +516,7 @@ body.landing-page .service-line::after {
     Georgia,
     serif;
 
-  font-size: .68rem;
+  font-size: .66rem;
 
   line-height: 1;
 
@@ -540,6 +527,7 @@ body.landing-page .service-line::after {
 
 /* =========================================================
    CONTACT DETAILS
+   MOVED HIGHER BY SAME AMOUNT
    ========================================================= */
 
 body.landing-page .contact-compact {
@@ -550,20 +538,22 @@ body.landing-page .contact-compact {
 
   justify-items: center;
 
-  gap: .12rem;
+  gap: .10rem;
 
   width: 100%;
 
   margin: 0;
+
+  transform: translateY(-0.9rem);
 
   font-family:
     var(--font-elegant) !important;
 
   font-size:
     clamp(
-      .60rem,
-      .74vw,
-      .78rem
+      .54rem,
+      .65vw,
+      .70rem
     );
 
   line-height: 1.12;
@@ -667,12 +657,11 @@ body.landing-page .landing-enter-rule::after {
 }
 
 
-
-/* divider occupies the middle of the equal info → writing space */
-
 body.landing-page .landing-section-rule {
   grid-column: 1;
   grid-row: 6;
+
+  transform: translateY(-0.9rem);
 }
 
 
@@ -685,8 +674,8 @@ body.landing-page .landing-business-copy {
   grid-column: 1;
   grid-row: 7;
 
-  width: 96%;
-  max-width: 96%;
+  width: 97%;
+  max-width: 97%;
 
   min-width: 0;
 
@@ -697,7 +686,7 @@ body.landing-page .landing-business-copy {
   align-items: center;
   justify-content: center;
 
-  gap: .38rem;
+  gap: .34rem;
 
   margin: 0 auto;
 
@@ -707,7 +696,7 @@ body.landing-page .landing-business-copy {
 
 
 /* =========================================================
-   BUSINESS HEADING
+   MAIN BUSINESS HEADING
    ========================================================= */
 
 body.landing-page .landing-business-title {
@@ -720,9 +709,9 @@ body.landing-page .landing-business-title {
 
   font-size:
     clamp(
-      .96rem,
-      1.14vw,
-      1.20rem
+      .76rem,
+      .88vw,
+      .96rem
     );
 
   font-weight: 500;
@@ -735,7 +724,7 @@ body.landing-page .landing-business-title {
 
 
 /* =========================================================
-   BUSINESS PARAGRAPHS
+   MAIN BUSINESS PARAGRAPHS
    ========================================================= */
 
 body.landing-page .landing-copy {
@@ -748,16 +737,16 @@ body.landing-page .landing-copy {
 
   font-size:
     clamp(
-      .62rem,
-      .76vw,
-      .80rem
+      .48rem,
+      .57vw,
+      .61rem
     );
 
   font-weight: 400;
 
-  line-height: 1.18;
+  line-height: 1.14;
 
-  letter-spacing: .003em;
+  letter-spacing: .002em;
 
   color: #e9e1d4;
 }
@@ -766,8 +755,6 @@ body.landing-page .landing-copy {
 
 /* =========================================================
    DIVIDER ABOVE ENTER
-
-   This occupies the third equal flexible space.
    ========================================================= */
 
 body.landing-page .landing-enter-rule {
@@ -841,7 +828,7 @@ body.landing-page .enter-link:hover {
 
 
 /* =========================================================
-   MOBILE / NARROW SCREENS
+   MOBILE
    ========================================================= */
 
 @media (max-width: 720px) {
@@ -855,19 +842,30 @@ body.landing-page .enter-link:hover {
 
 
   body.landing-page .landing-panel {
+    grid-template-rows:
+      auto
+      auto
+      minmax(.30rem, 1fr)
+      auto
+      auto
+      minmax(.30rem, 1fr)
+      auto
+      minmax(.30rem, 1fr)
+      auto;
+
     padding:
-      3.4%
+      5%
       3.5%
-      3.4%;
+      5%;
   }
 
 
   body.landing-page .landing-panel .brand-title {
     font-size:
       clamp(
-        1.45rem,
-        5.2vw,
-        2.2rem
+        1.35rem,
+        5vw,
+        2.1rem
       );
   }
 
@@ -875,9 +873,9 @@ body.landing-page .enter-link:hover {
   body.landing-page .brand-subtitle {
     font-size:
       clamp(
-        .56rem,
-        2vw,
-        .74rem
+        .50rem,
+        1.9vw,
+        .70rem
       );
   }
 
@@ -885,9 +883,9 @@ body.landing-page .enter-link:hover {
   body.landing-page .service-line {
     font-size:
       clamp(
-        .66rem,
-        2.2vw,
-        .86rem
+        .60rem,
+        2vw,
+        .80rem
       );
   }
 
@@ -895,27 +893,27 @@ body.landing-page .enter-link:hover {
   body.landing-page .contact-compact {
     font-size:
       clamp(
-        .50rem,
-        1.7vw,
-        .66rem
+        .46rem,
+        1.55vw,
+        .60rem
       );
   }
 
 
   body.landing-page .landing-business-copy {
-    width: 97%;
-    max-width: 97%;
+    width: 98%;
+    max-width: 98%;
 
-    gap: .32rem;
+    gap: .22rem;
   }
 
 
   body.landing-page .landing-business-title {
     font-size:
       clamp(
-        .72rem,
-        2.3vw,
-        .88rem
+        .64rem,
+        2vw,
+        .78rem
       );
   }
 
@@ -923,21 +921,21 @@ body.landing-page .enter-link:hover {
   body.landing-page .landing-copy {
     font-size:
       clamp(
-        .50rem,
-        1.7vw,
-        .62rem
+        .42rem,
+        1.45vw,
+        .55rem
       );
 
-    line-height: 1.12;
+    line-height: 1.10;
   }
 
 
   body.landing-page .enter-link {
     font-size:
       clamp(
-        1.8rem,
-        6.5vw,
-        2.6rem
+        1.65rem,
+        6vw,
+        2.4rem
       );
   }
 
