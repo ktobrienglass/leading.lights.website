@@ -41,21 +41,14 @@
   >
 
 
-  <!-- =====================================================
-       HOMEPAGE SHELL ALIGNMENT
-
-       The homepage shell now uses the SAME:
-
-       - image
-       - full browser width
-       - 1448 × 1086 proportions
-       - 75vw height
-       - image sizing
-
-       as the landing page.
-       ===================================================== -->
-
   <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+
+
+    /* =====================================================
+       HOMEPAGE SHELL ALIGNMENT
+       ===================================================== */
 
     body.home-page .gothic-stage {
       position: relative;
@@ -124,10 +117,33 @@
 
 
 
-    /* Existing homepage content remains behind the shell */
+    /* =====================================================
+       EXISTING HOMEPAGE CONTENT
+       ===================================================== */
 
     body.home-page .window-overlay {
       z-index: 2;
+    }
+
+
+
+    /* =====================================================
+       HOMEPAGE TITLE FONT
+
+       Match landing-page "Leading Lights" font.
+       No sizes, spacing or positioning changed.
+       ===================================================== */
+
+    body.home-page .brand-mini,
+    body.home-page .brand-title,
+    body.home-page .section-heading,
+    body.home-page .footer-brand {
+      font-family:
+        'Pirata One',
+        Georgia,
+        serif !important;
+
+      font-weight: 400;
     }
 
   </style>
