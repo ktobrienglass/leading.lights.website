@@ -1,1099 +1,797 @@
-<!doctype html>
-<html lang="en-GB">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | Leading Lights of London Ltd</title>
 
-  <meta charset="utf-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1"
-  >
-
-  <title>
-    Home | Leading Lights of London Ltd
-  </title>
-
-  <meta
-    name="description"
-    content="Stained glass design, restoration and repair by Leading Lights of London Ltd."
-  >
-
-  <meta
-    property="og:title"
-    content="Home | Leading Lights of London Ltd"
-  >
-
-  <meta
-    property="og:description"
-    content="Stained glass design, restoration and repair by Leading Lights of London Ltd."
-  >
-
-  <meta
-    property="og:type"
-    content="website"
-  >
-
-
-  <link
-    rel="stylesheet"
-    href="css/styles.css"
-  >
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-
-    @import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
-
-
-    /* =====================================================
-       HOMEPAGE SHELL ALIGNMENT
-       ===================================================== */
-
-    body.home-page .gothic-stage {
-      position: relative;
-
-      left: 0 !important;
-      right: auto !important;
-
-      width: 100vw !important;
-      height: 75vw !important;
-
-      max-width: none !important;
-      min-height: 0;
-
-      margin-left:
-        calc(50% - 50vw) !important;
-
-      margin-right:
-        calc(50% - 50vw) !important;
-
-      margin-top: 0 !important;
-      margin-bottom: 0 !important;
-
-      padding: 0;
-
-      overflow: hidden;
-
-      background: #050505;
-
-      transform: none !important;
+    :root {
+      --bg: #020304;
+      --panel: #060809;
+      --panel-soft: rgba(8, 11, 12, 0.94);
+      --gold: #d8b35a;
+      --gold-soft: #e4cc8e;
+      --text: #f1ede2;
+      --muted: #d9d0bc;
+      --line: rgba(216, 179, 90, 0.45);
+      --lead: #1f2729;
+      --lead-2: #2c3437;
+      --tile-bg: #101617;
+      --shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      --page-width: 1200px;
     }
 
+    * {
+      box-sizing: border-box;
+    }
 
+    html {
+      scroll-behavior: smooth;
+    }
 
-    /* =====================================================
-       SAME WIDE SHELL AS LANDING PAGE
-       ===================================================== */
-
-    body.home-page .gothic-shell-image {
-      position: absolute;
-
-      inset: 0;
-
-      z-index: 10;
-
-      display: block !important;
-
-      width: 100% !important;
-      height: 100% !important;
-
-      max-width: none !important;
-
+    body {
       margin: 0;
-      padding: 0;
-
-      aspect-ratio:
-        1448 / 1086;
-
-      object-fit: fill;
-
-      object-position: center;
-
-      pointer-events: none;
-
-      user-select: none;
+      background: #000;
+      color: var(--text);
+      font-family: "Cormorant Garamond", serif;
+      overflow-x: hidden;
     }
 
-
-    body.home-page .window-overlay {
-      z-index: 2;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-
-
-    /* =====================================================
-       HOMEPAGE TITLE FONT
-       ===================================================== */
-
-    body.home-page .brand-mini,
-    body.home-page .section-heading,
-    body.home-page .footer-brand {
-      font-family:
-        'Pirata One',
-        Georgia,
-        serif !important;
-
-      font-weight: 400;
+    img {
+      max-width: 100%;
+      display: block;
     }
 
+    .page-wrap {
+      background: #000;
+    }
 
+    /* =========================
+       TOP HEADER
+    ========================== */
 
-    /* =====================================================
-       HOMEPAGE BRAND BLOCK
-
-       ONLY NEW CHANGE:
-       move complete title/service/contact group
-       slightly upward.
-       ===================================================== */
-
-    body.home-page .home-brand {
+    .site-header {
+      background: #040607;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
       position: relative;
-
-      transform:
-        translateY(-0.65rem);
+      z-index: 20;
     }
 
-
-
-    /* =====================================================
-       CURVED WINDOW TITLE
-
-       Original title/subtitle remain in the normal
-       layout invisibly so the spacing underneath
-       remains unchanged.
-       ===================================================== */
-
-    body.home-page .home-brand > .brand-title,
-    body.home-page .home-brand > .brand-subtitle {
-      visibility: hidden;
+    .site-header-inner {
+      width: min(var(--page-width), calc(100% - 48px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 18px 0 14px;
     }
 
+    .site-brand {
+      font-family: "UnifrakturCook", serif;
+      color: var(--gold-soft);
+      font-size: 1.12rem;
+      letter-spacing: 0.02em;
+      line-height: 1;
+      white-space: nowrap;
+    }
 
-    body.home-page .arched-home-title {
-      position: absolute;
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
 
-      top: -.35rem;
-      left: 50%;
+    .main-nav a {
+      color: #f3ecdd;
+      font-size: 1rem;
+      line-height: 1;
+      padding-bottom: 6px;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
 
+    .main-nav a:hover,
+    .main-nav a.active {
+      color: var(--gold-soft);
+      border-color: var(--gold);
+    }
+
+    .gallery-top-nav {
+      width: min(var(--page-width), calc(100% - 48px));
+      margin: 0 auto;
+      background: rgba(7, 10, 11, 0.92);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+      padding: 14px 22px;
+      position: relative;
+      z-index: 19;
+    }
+
+    .gallery-top-nav a {
+      color: #f0eadb;
+      font-size: 0.95rem;
+      line-height: 1.1;
+      white-space: nowrap;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .gallery-top-nav a:hover,
+    .gallery-top-nav a.active {
+      color: var(--gold-soft);
+      border-color: rgba(216, 179, 90, 0.8);
+    }
+
+    /* =========================
+       HERO / MASTER WINDOW
+    ========================== */
+
+    .hero-shell {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      position: relative;
+      background: #000;
+      overflow: hidden;
+    }
+
+    .shell-stage {
+      position: relative;
       width: 100%;
+      max-width: 1536px;
+      margin: 0 auto;
+      line-height: 0;
+    }
 
-      height:
-        clamp(
-          3.2rem,
-          6vw,
-          5rem
-        );
+    .shell-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
-      transform:
-        translateX(-50%);
+    .window-overlay {
+      position: absolute;
+      top: 14.8%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: clamp(360px, 34vw, 520px);
+      height: 73%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: center;
+      padding: 0 12px 0;
+      line-height: 1.2;
+    }
 
+    .window-title-wrap {
+      width: 100%;
+      margin-top: 12px;
+    }
+
+    .arched-title {
+      width: 100%;
+      height: auto;
       overflow: visible;
-
-      pointer-events: none;
-
-      z-index: 2;
+      display: block;
     }
 
-
-    body.home-page .arched-home-title text {
-      font-family:
-        'Pirata One',
-        Georgia,
-        serif;
-
-      font-weight: 400;
-
-      fill: #efd393;
-
-      text-shadow:
-        0 2px 0 #2d1c08;
+    .arched-title text {
+      font-family: "UnifrakturCook", serif;
+      fill: var(--gold-soft);
+      font-size: 48px;
+      letter-spacing: 0.01em;
     }
 
-
-    body.home-page .arched-home-title .arched-main {
-      font-size: 54px;
+    .window-subtitle {
+      margin-top: -6px;
+      font-family: "UnifrakturCook", serif;
+      color: var(--gold-soft);
+      font-size: 0.92rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      line-height: 1;
     }
 
-
-    body.home-page .arched-home-title .arched-sub {
-      font-size: 22px;
-
-      fill: #e9cf96;
-
-      letter-spacing: 1px;
+    .window-service-line {
+      margin-top: 12px;
+      font-size: 1.08rem;
+      line-height: 1.25;
+      color: #f4efe3;
     }
 
+    .window-contact-row,
+    .window-address-row {
+      color: #f4efe3;
+      font-size: 0.88rem;
+      line-height: 1.35;
+      margin: 0;
+    }
 
+    .window-contact-row {
+      margin-top: 14px;
+    }
 
-    /* =====================================================
-       REMOVE LEFT / RIGHT GUTTERS FROM LOWER HOMEPAGE
-       ===================================================== */
+    .window-address-row {
+      margin-top: 4px;
+    }
 
-    body.home-page .content-band {
-      box-shadow:
-        0 0 0 100vmax #0d1011;
+    /* =========================
+       TILE LAYOUT
+    ========================== */
 
-      clip-path:
-        inset(
-          0
-          -100vmax
+    .tiles-zone {
+      width: 100%;
+      max-width: 500px;
+      margin-top: 16px;
+      flex: 1 1 auto;
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-rows: repeat(2, 1fr);
+      gap: 12px;
+      padding: 0 6px 8px;
+      align-content: end;
+      min-height: 390px;
+    }
+
+    .gallery-tile {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 180px;
+      background:
+        linear-gradient(rgba(15, 19, 20, 0.92), rgba(12, 16, 17, 0.95)),
+        repeating-linear-gradient(
+          45deg,
+          rgba(216,179,90,0.03) 0,
+          rgba(216,179,90,0.03) 1px,
+          transparent 1px,
+          transparent 18px
+        ),
+        repeating-linear-gradient(
+          -45deg,
+          rgba(216,179,90,0.03) 0,
+          rgba(216,179,90,0.03) 1px,
+          transparent 1px,
+          transparent 18px
         );
-    }
-
-
-    body.home-page .site-footer {
+      border: 1px solid #1d2528;
       box-shadow:
-        0 0 0 100vmax #090b0c;
-
-      clip-path:
-        inset(
-          0
-          -100vmax
-        );
+        inset 0 0 0 1px rgba(55, 70, 74, 0.55),
+        0 0 0 1px rgba(0,0,0,0.3);
+      overflow: hidden;
     }
 
+    .tile-image-placeholder {
+      flex: 1 1 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px 12px;
+      color: rgba(222, 208, 176, 0.55);
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .tile-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 34px;
+      padding: 7px 10px 8px;
+      background: rgba(5, 7, 8, 0.96);
+      border-top: 1px solid #1b2325;
+      color: #f3ecdc;
+      font-size: 0.92rem;
+      line-height: 1;
+    }
+
+    .tile-arrow {
+      color: var(--gold);
+      font-size: 0.95rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .diamond-tile {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 142px;
+      height: 142px;
+      transform: translate(-50%, -50%) rotate(45deg);
+      z-index: 5;
+      background:
+        linear-gradient(rgba(15, 19, 20, 0.98), rgba(12, 16, 17, 0.98)),
+        repeating-linear-gradient(
+          45deg,
+          rgba(216,179,90,0.03) 0,
+          rgba(216,179,90,0.03) 1px,
+          transparent 1px,
+          transparent 18px
+        ),
+        repeating-linear-gradient(
+          -45deg,
+          rgba(216,179,90,0.03) 0,
+          rgba(216,179,90,0.03) 1px,
+          transparent 1px,
+          transparent 18px
+        );
+      border: 1px solid #1d2528;
+      box-shadow:
+        inset 0 0 0 1px rgba(55, 70, 74, 0.55),
+        0 0 0 1px rgba(0,0,0,0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .diamond-tile-inner {
+      transform: rotate(-45deg);
+      width: 86%;
+      text-align: center;
+      color: rgba(222, 208, 176, 0.88);
+    }
+
+    .diamond-title {
+      display: block;
+      font-size: 1rem;
+      line-height: 1.1;
+      color: #f4edde;
+      margin-bottom: 8px;
+    }
+
+    .diamond-copy {
+      display: block;
+      font-size: 0.78rem;
+      line-height: 1.15;
+      color: rgba(222, 208, 176, 0.55);
+    }
+
+    .tile-front-doors { grid-column: 1; grid-row: 1; }
+    .tile-ecclesiastic { grid-column: 2; grid-row: 1; }
+    .tile-mansion { grid-column: 3; grid-row: 1; }
+    .tile-bespoke { grid-column: 1; grid-row: 2; }
+    .tile-architectural { grid-column: 2; grid-row: 2; }
+    .tile-misc { grid-column: 3; grid-row: 2; }
+
+    /* =========================
+       INTRO SECTION
+    ========================== */
+
+    .lower-content {
+      background: #000;
+      padding: 0 0 36px;
+    }
+
+    .intro-block {
+      width: min(var(--page-width), calc(100% - 48px));
+      margin: 0 auto;
+      background: #05080a;
+      padding: 58px 70px 64px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .section-title {
+      margin: 0 0 22px;
+      font-family: "UnifrakturCook", serif;
+      color: var(--gold-soft);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1;
+      letter-spacing: 0.01em;
+    }
+
+    .intro-copy {
+      max-width: 920px;
+      font-size: 1.1rem;
+      line-height: 1.45;
+      color: #ece3d0;
+      margin: 0 0 28px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      color: var(--gold-soft);
+      padding: 14px 18px;
+      font-size: 1rem;
+      line-height: 1;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .cta-button:hover {
+      background: rgba(216, 179, 90, 0.08);
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    .site-footer {
+      width: min(var(--page-width), calc(100% - 48px));
+      margin: 0 auto;
+      background: #05080a;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 34px 52px 26px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 0.8fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .footer-brand {
+      font-family: "UnifrakturCook", serif;
+      color: var(--gold-soft);
+      font-size: 1.1rem;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .footer-copy,
+    .footer-col,
+    .footer-links a {
+      font-size: 0.95rem;
+      line-height: 1.45;
+      color: #ece3d0;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-soft);
+    }
+
+    .copyright {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.92rem;
+      color: #e6dcc8;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 1200px) {
+      .window-overlay {
+        width: clamp(340px, 40vw, 500px);
+      }
+
+      .arched-title text {
+        font-size: 44px;
+      }
+
+      .tiles-zone {
+        min-height: 370px;
+      }
+
+      .gallery-tile {
+        min-height: 168px;
+      }
+
+      .diamond-tile {
+        width: 132px;
+        height: 132px;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .site-header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .main-nav {
+        gap: 18px;
+      }
+
+      .window-overlay {
+        width: clamp(320px, 48vw, 470px);
+        top: 15.2%;
+        height: 72%;
+      }
+
+      .arched-title text {
+        font-size: 40px;
+      }
+
+      .window-service-line {
+        font-size: 1rem;
+      }
+
+      .window-contact-row,
+      .window-address-row {
+        font-size: 0.8rem;
+      }
+
+      .tiles-zone {
+        min-height: 340px;
+        gap: 10px;
+      }
+
+      .gallery-tile {
+        min-height: 155px;
+      }
+
+      .diamond-tile {
+        width: 118px;
+        height: 118px;
+      }
+
+      .intro-block {
+        padding: 44px 34px 48px;
+      }
+
+      .site-footer {
+        padding: 30px 30px 22px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .site-header-inner,
+      .gallery-top-nav,
+      .intro-block,
+      .site-footer {
+        width: calc(100% - 28px);
+      }
+
+      .gallery-top-nav {
+        gap: 12px 18px;
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .window-overlay {
+        width: min(86vw, 440px);
+        top: 15%;
+        height: 73%;
+        padding: 0 8px;
+      }
+
+      .arched-title text {
+        font-size: 36px;
+      }
+
+      .window-subtitle {
+        font-size: 0.82rem;
+      }
+
+      .window-service-line {
+        font-size: 0.96rem;
+      }
+
+      .window-contact-row,
+      .window-address-row {
+        font-size: 0.74rem;
+      }
+
+      .tiles-zone {
+        min-height: 300px;
+        gap: 8px;
+        padding-left: 2px;
+        padding-right: 2px;
+      }
+
+      .gallery-tile {
+        min-height: 135px;
+      }
+
+      .tile-image-placeholder {
+        font-size: 0.72rem;
+        padding: 10px 8px;
+      }
+
+      .tile-label {
+        font-size: 0.78rem;
+        padding: 6px 7px 7px;
+      }
+
+      .diamond-tile {
+        width: 96px;
+        height: 96px;
+      }
+
+      .diamond-title {
+        font-size: 0.84rem;
+      }
+
+      .diamond-copy {
+        font-size: 0.62rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
-
 </head>
-
-
-
-<body class="home-page">
-
-
-  <a
-    class="skip-link"
-    href="#main-content"
-  >
-    Skip to content
-  </a>
-
-
-
-  <!-- =====================================================
-       SITE HEADER
-       ===================================================== -->
-
-  <header class="site-header">
-
-
-    <nav
-      class="primary-nav"
-      aria-label="Primary navigation"
-    >
-
-
-      <a
-        class="brand-mini"
-        href="home.html"
-      >
-        Leading Lights of London Ltd
-      </a>
-
-
-      <button
-        class="nav-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="primary-links"
-      >
-        Menu
-      </button>
-
-
-      <ul
-        class="primary-links"
-        id="primary-links"
-      >
-
-
-        <li>
-
-          <a
-            href="home.html"
-            aria-current="page"
-          >
-            Home
-          </a>
-
-        </li>
-
-
-        <li>
-
-          <a href="about.html">
-            About
-          </a>
-
-        </li>
-
-
-        <li>
-
-          <a href="contact.html">
-            Contact
-          </a>
-
-        </li>
-
-
-      </ul>
-
-
-    </nav>
-
-
-
-    <nav
-      class="gallery-nav"
-      aria-label="Gallery categories"
-    >
-
-
-      <ul class="gallery-links">
-
-
-        <li>
-          <a href="gallery/front-doors.html">
-            Front Doors
-          </a>
-        </li>
-
-
-        <li>
-          <a href="gallery/ecclesiastic.html">
-            Ecclesiastic
-          </a>
-        </li>
-
-
-        <li>
-          <a href="gallery/mansion-houses.html">
-            Mansion Houses
-          </a>
-        </li>
-
-
-        <li>
-          <a href="gallery/bespoke-designs.html">
-            Bespoke Designs
-          </a>
-        </li>
-
-
-        <li>
-          <a href="gallery/architectural.html">
-            Architectural
-          </a>
-        </li>
-
-
-        <li>
-          <a href="gallery/miscellaneous.html">
-            Miscellaneous
-          </a>
-        </li>
-
-
-      </ul>
-
-
-    </nav>
-
-
-  </header>
-
-
-
-  <!-- =====================================================
-       MAIN CONTENT
-       ===================================================== -->
-
-  <main id="main-content">
-
-
-    <!-- ===================================================
-         GOTHIC HOMEPAGE WINDOW
-         =================================================== -->
-
-    <section
-      class="gothic-stage"
-      aria-label="Leading Lights of London homepage window"
-    >
-
-
-      <img
-        class="gothic-shell-image"
-        src="assets/images/landing/landing-shell-frame-wide-clean-v2.png"
-        alt="Weathered Gothic stone window frame"
-        width="1448"
-        height="1086"
-      >
-
-
-
-      <div class="window-overlay home-overlay">
-
-
-
-        <!-- =================================================
-             HOMEPAGE BRAND
-             ================================================= -->
-
-        <header class="home-brand">
-
-
-          <svg
-            class="arched-home-title"
-            viewBox="0 0 600 120"
-            role="img"
-            aria-label="Leading Lights of London Ltd"
-            preserveAspectRatio="xMidYMid meet"
+<body>
+  <div class="page-wrap">
+
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-brand" href="home.html">Leading Lights of London Ltd</a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="home.html" class="active">Home</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+
+      <nav class="gallery-top-nav" aria-label="Gallery navigation">
+        <a href="gallery/front-doors.html">Front Doors</a>
+        <a href="gallery/ecclesiastic.html">Ecclesiastic</a>
+        <a href="gallery/mansion-houses.html">Mansion Houses</a>
+        <a href="gallery/palaces.html">Palaces</a>
+        <a href="gallery/bespoke-designs.html">Bespoke Designs</a>
+        <a href="gallery/architectural.html">Architectural</a>
+        <a href="gallery/miscellaneous.html">Miscellaneous</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-shell">
+        <div class="shell-stage">
+          <img
+            class="shell-image"
+            src="landing-shell-frame-wide-clean-v2.png"
+            alt="Weathered Gothic stone window frame"
           >
 
-            <defs>
+          <div class="window-overlay">
+            <div class="window-title-wrap">
+              <svg class="arched-title" viewBox="0 0 520 120" aria-hidden="true">
+                <defs>
+                  <path id="titleArcHome" d="M 88 88 Q 260 18 432 88"></path>
+                </defs>
+                <text text-anchor="middle">
+                  <textPath href="#titleArcHome" startOffset="50%">Leading Lights</textPath>
+                </text>
+              </svg>
 
-              <path
-                id="leading-lights-title-arc"
-                d="M 75 74 Q 300 12 525 74"
-              ></path>
+              <div class="window-subtitle">of London Ltd</div>
 
-              <path
-                id="leading-lights-subtitle-arc"
-                d="M 180 102 Q 300 77 420 102"
-              ></path>
+              <div class="window-service-line">Stained Glass Design&nbsp;&nbsp;|&nbsp;&nbsp;Restoration &amp; Repair</div>
 
-            </defs>
+              <p class="window-contact-row">☎ 020 7737 4567 &nbsp;&nbsp;▣ 07803 935003 &nbsp;&nbsp;✉ jonny@leadinglighter.co.uk</p>
+              <p class="window-address-row">⌖ Clockwork Studios, 38A Southwell Road, London SE5 9PG</p>
+            </div>
 
+            <div class="tiles-zone">
+              <a class="gallery-tile tile-front-doors" href="gallery/front-doors.html">
+                <div class="tile-image-placeholder">[ FRONT DOORS IMAGE ]</div>
+                <div class="tile-label">
+                  <span>Front Doors</span>
+                  <span class="tile-arrow">›</span>
+                </div>
+              </a>
 
-            <text
-              class="arched-main"
-              text-anchor="middle"
-            >
+              <a class="gallery-tile tile-ecclesiastic" href="gallery/ecclesiastic.html">
+                <div class="tile-image-placeholder">[ ECCLESIASTIC IMAGE ]</div>
+                <div class="tile-label">
+                  <span>Ecclesiastic</span>
+                  <span class="tile-arrow">›</span>
+                </div>
+              </a>
 
-              <textPath
-                href="#leading-lights-title-arc"
-                startOffset="50%"
-              >
-                Leading Lights
-              </textPath>
+              <a class="gallery-tile tile-mansion" href="gallery/mansion-houses.html">
+                <div class="tile-image-placeholder">[ MANSION HOUSES IMAGE ]</div>
+                <div class="tile-label">
+                  <span>Mansion Houses</span>
+                  <span class="tile-arrow">›</span>
+                </div>
+              </a>
 
-            </text>
+              <a class="gallery-tile tile-bespoke" href="gallery/bespoke-designs.html">
+                <div class="tile-image-placeholder">[ BESPOKE DESIGNS IMAGE ]</div>
+                <div class="tile-label">
+                  <span>Bespoke Designs</span>
+                  <span class="tile-arrow">›</span>
+                </div>
+              </a>
 
+              <a class="gallery-tile tile-architectural" href="gallery/architectural.html">
+                <div class="tile-image-placeholder">[ ARCHITECTURAL IMAGE ]</div>
+                <div class="tile-label">
+                  <span>Architectural</span>
+                  <span class="tile-arrow">›</span>
+                </div>
+              </a>
 
-            <text
-              class="arched-sub"
-              text-anchor="middle"
-            >
+              <a class="gallery-tile tile-misc" href="gallery/miscellaneous.html">
+                <div class="tile-image-placeholder">[ MISCELLANEOUS IMAGE ]</div>
+                <div class="tile-label">
+                  <span>Miscellaneous</span>
+                  <span class="tile-arrow">›</span>
+                </div>
+              </a>
 
-              <textPath
-                href="#leading-lights-subtitle-arc"
-                startOffset="50%"
-              >
-                OF LONDON LTD
-              </textPath>
+              <a class="diamond-tile" href="gallery/palaces.html" aria-label="Palaces">
+                <div class="diamond-tile-inner">
+                  <span class="diamond-title">Palaces</span>
+                  <span class="diamond-copy">[ PALACES IMAGE ]</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            </text>
+      <section class="lower-content">
+        <div class="intro-block">
+          <h2 class="section-title">Stained glass &amp; leaded lights in London</h2>
 
-          </svg>
-
-
-
-          <h1 class="brand-title">
-            Leading Lights
-          </h1>
-
-
-          <p class="brand-subtitle">
-            of London Ltd
+          <p class="intro-copy">
+            [ Homepage business introduction to be added. This area is ready for the final approved copy without changing the Gothic shell above. ]
           </p>
 
+          <a class="cta-button" href="contact.html">Email Jonny / Make an enquiry</a>
+        </div>
 
+        <footer class="site-footer">
+          <div class="footer-grid">
+            <div>
+              <div class="footer-brand">Leading Lights<br>of London Ltd</div>
+              <div class="footer-copy">Stained Glass Design | Restoration &amp; Repair</div>
+            </div>
 
-          <p class="home-services">
-            Stained Glass Design
-            &nbsp;|&nbsp;
-            Restoration &amp; Repair
-          </p>
+            <div class="footer-col">
+              020 7737 4567<br>
+              07803 935003<br>
+              jonny@leadinglighter.co.uk
+            </div>
 
-
-
-          <div class="home-contact-grid">
-
-
-            <a href="tel:+442077374567">
-              ☎ 020 7737 4567
-            </a>
-
-
-            <a href="tel:+447803935003">
-              ▣ 07803 935003
-            </a>
-
-
-            <a href="mailto:jonny@leadinglighter.co.uk">
-              ✉ jonny@leadinglighter.co.uk
-            </a>
-
-
-            <span class="address">
-              ⌖ Clockwork Studios,
-              38A Southwell Road,
+            <div class="footer-col">
+              Clockwork Studios, 38A Southwell Road,<br>
               London SE5 9PG
-            </span>
+            </div>
 
-
+            <div class="footer-links">
+              <a href="index.html">Front Page</a>
+              <a href="home.html">Home</a>
+              <a href="#">[ Instagram link ]</a>
+            </div>
           </div>
 
-
-        </header>
-
-
-
-        <!-- =================================================
-             SIX HOMEPAGE GALLERY PANES
-             ================================================= -->
-
-        <div
-          class="home-gallery-grid"
-          aria-label="Gallery categories"
-        >
-
-
-
-          <a
-            class="gallery-pane"
-            href="gallery/front-doors.html"
-          >
-
-            <span class="image-placeholder">
-              [ FRONT DOORS IMAGE ]
-            </span>
-
-            <span class="gallery-pane-label">
-
-              <span>
-                Front Doors
-              </span>
-
-              <span aria-hidden="true">
-                ›
-              </span>
-
-            </span>
-
-          </a>
-
-
-
-          <a
-            class="gallery-pane"
-            href="gallery/ecclesiastic.html"
-          >
-
-            <span class="image-placeholder">
-              [ ECCLESIASTIC IMAGE ]
-            </span>
-
-            <span class="gallery-pane-label">
-
-              <span>
-                Ecclesiastic
-              </span>
-
-              <span aria-hidden="true">
-                ›
-              </span>
-
-            </span>
-
-          </a>
-
-
-
-          <a
-            class="gallery-pane"
-            href="gallery/mansion-houses.html"
-          >
-
-            <span class="image-placeholder">
-              [ MANSION HOUSES IMAGE ]
-            </span>
-
-            <span class="gallery-pane-label">
-
-              <span>
-                Mansion Houses
-              </span>
-
-              <span aria-hidden="true">
-                ›
-              </span>
-
-            </span>
-
-          </a>
-
-
-
-          <a
-            class="gallery-pane"
-            href="gallery/bespoke-designs.html"
-          >
-
-            <span class="image-placeholder">
-              [ BESPOKE DESIGNS IMAGE ]
-            </span>
-
-            <span class="gallery-pane-label">
-
-              <span>
-                Bespoke Designs
-              </span>
-
-              <span aria-hidden="true">
-                ›
-              </span>
-
-            </span>
-
-          </a>
-
-
-
-          <a
-            class="gallery-pane"
-            href="gallery/architectural.html"
-          >
-
-            <span class="image-placeholder">
-              [ ARCHITECTURAL IMAGE ]
-            </span>
-
-            <span class="gallery-pane-label">
-
-              <span>
-                Architectural
-              </span>
-
-              <span aria-hidden="true">
-                ›
-              </span>
-
-            </span>
-
-          </a>
-
-
-
-          <a
-            class="gallery-pane"
-            href="gallery/miscellaneous.html"
-          >
-
-            <span class="image-placeholder">
-              [ MISCELLANEOUS IMAGE ]
-            </span>
-
-            <span class="gallery-pane-label">
-
-              <span>
-                Miscellaneous
-              </span>
-
-              <span aria-hidden="true">
-                ›
-              </span>
-
-            </span>
-
-          </a>
-
-
-        </div>
-
-
-      </div>
-
-
-    </section>
-
-
-
-    <!-- ===================================================
-         MOBILE GALLERY
-         =================================================== -->
-
-    <section
-      class="content-band mobile-home-gallery"
-      aria-labelledby="mobile-gallery-heading"
-    >
-
-
-      <h2
-        class="section-heading"
-        id="mobile-gallery-heading"
-      >
-        Gallery
-      </h2>
-
-
-
-      <div class="gallery-page-grid">
-
-
-
-        <a
-          class="gallery-pane"
-          href="gallery/front-doors.html"
-        >
-
-          <span
-            class="image-placeholder"
-            style="aspect-ratio: 4 / 3;"
-          >
-            [ FRONT DOORS IMAGE ]
-          </span>
-
-          <span class="gallery-pane-label">
-
-            <span>
-              Front Doors
-            </span>
-
-            <span aria-hidden="true">
-              ›
-            </span>
-
-          </span>
-
-        </a>
-
-
-
-        <a
-          class="gallery-pane"
-          href="gallery/ecclesiastic.html"
-        >
-
-          <span
-            class="image-placeholder"
-            style="aspect-ratio: 4 / 3;"
-          >
-            [ ECCLESIASTIC IMAGE ]
-          </span>
-
-          <span class="gallery-pane-label">
-
-            <span>
-              Ecclesiastic
-            </span>
-
-            <span aria-hidden="true">
-              ›
-            </span>
-
-          </span>
-
-        </a>
-
-
-
-        <a
-          class="gallery-pane"
-          href="gallery/mansion-houses.html"
-        >
-
-          <span
-            class="image-placeholder"
-            style="aspect-ratio: 4 / 3;"
-          >
-            [ MANSION HOUSES IMAGE ]
-          </span>
-
-          <span class="gallery-pane-label">
-
-            <span>
-              Mansion Houses
-            </span>
-
-            <span aria-hidden="true">
-              ›
-            </span>
-
-          </span>
-
-        </a>
-
-
-
-        <a
-          class="gallery-pane"
-          href="gallery/bespoke-designs.html"
-        >
-
-          <span
-            class="image-placeholder"
-            style="aspect-ratio: 4 / 3;"
-          >
-            [ BESPOKE DESIGNS IMAGE ]
-          </span>
-
-          <span class="gallery-pane-label">
-
-            <span>
-              Bespoke Designs
-            </span>
-
-            <span aria-hidden="true">
-              ›
-            </span>
-
-          </span>
-
-        </a>
-
-
-
-        <a
-          class="gallery-pane"
-          href="gallery/architectural.html"
-        >
-
-          <span
-            class="image-placeholder"
-            style="aspect-ratio: 4 / 3;"
-          >
-            [ ARCHITECTURAL IMAGE ]
-          </span>
-
-          <span class="gallery-pane-label">
-
-            <span>
-              Architectural
-            </span>
-
-            <span aria-hidden="true">
-              ›
-            </span>
-
-          </span>
-
-        </a>
-
-
-
-        <a
-          class="gallery-pane"
-          href="gallery/miscellaneous.html"
-        >
-
-          <span
-            class="image-placeholder"
-            style="aspect-ratio: 4 / 3;"
-          >
-            [ MISCELLANEOUS IMAGE ]
-          </span>
-
-          <span class="gallery-pane-label">
-
-            <span>
-              Miscellaneous
-            </span>
-
-            <span aria-hidden="true">
-              ›
-            </span>
-
-          </span>
-
-        </a>
-
-
-      </div>
-
-
-    </section>
-
-
-
-    <!-- ===================================================
-         HOMEPAGE INTRODUCTION
-         =================================================== -->
-
-    <section
-      class="content-band"
-      aria-labelledby="home-intro-heading"
-    >
-
-
-      <h2
-        class="section-heading"
-        id="home-intro-heading"
-      >
-        Stained glass &amp; leaded lights in London
-      </h2>
-
-
-      <p class="section-lede">
-        [ Homepage business introduction to be added.
-        This area is ready for the final approved copy
-        without changing the Gothic shell above. ]
-      </p>
-
-
-      <div class="cta-row">
-
-
-        <a
-          class="button"
-          href="contact.html"
-        >
-          Email Jonny / Make an enquiry
-        </a>
-
-
-      </div>
-
-
-    </section>
-
-
-  </main>
-
-
-
-  <!-- =====================================================
-       FOOTER
-       ===================================================== -->
-
-  <footer class="site-footer">
-
-
-    <div class="footer-grid">
-
-
-
-      <div>
-
-
-        <div class="footer-brand">
-          Leading Lights<br>
-          of London Ltd
-        </div>
-
-
-        <p>
-          Stained Glass Design |
-          Restoration &amp; Repair
-        </p>
-
-
-      </div>
-
-
-
-      <div>
-
-
-        <ul>
-
-
-          <li>
-            <a href="tel:+442077374567">
-              020 7737 4567
-            </a>
-          </li>
-
-
-          <li>
-            <a href="tel:+447803935003">
-              07803 935003
-            </a>
-          </li>
-
-
-          <li>
-            <a href="mailto:jonny@leadinglighter.co.uk">
-              jonny@leadinglighter.co.uk
-            </a>
-          </li>
-
-
-        </ul>
-
-
-      </div>
-
-
-
-      <div>
-
-
-        <p>
-          Clockwork Studios,
-          38A Southwell Road,
-          London SE5 9PG
-        </p>
-
-
-      </div>
-
-
-
-      <div>
-
-
-        <ul>
-
-
-          <li>
-            <a href="index.html">
-              Front Page
-            </a>
-          </li>
-
-
-          <li>
-            <a href="home.html">
-              Home
-            </a>
-          </li>
-
-
-          <li>
-            <a href="#">
-              [ Instagram link ]
-            </a>
-          </li>
-
-
-        </ul>
-
-
-      </div>
-
-
-    </div>
-
-
-
-    <div class="footer-bottom">
-      © Leading Lights of London Ltd 2026
-    </div>
-
-
-  </footer>
-
-
-
-  <script
-    src="js/main.js"
-    defer
-  ></script>
-
-
+          <div class="copyright">© Leading Lights of London Ltd 2026</div>
+        </footer>
+      </section>
+    </main>
+
+  </div>
 </body>
-
 </html>
