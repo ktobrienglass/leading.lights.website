@@ -2,6 +2,7 @@
 <html lang="en-GB">
 
 <head>
+
   <meta charset="utf-8">
 
   <meta
@@ -33,6 +34,7 @@
     content="website"
   >
 
+
   <link
     rel="stylesheet"
     href="css/styles.css"
@@ -40,28 +42,32 @@
 
 
   <!-- =====================================================
-       HOMEPAGE SHELL ONLY
+       HOMEPAGE SHELL ALIGNMENT
+
+       The homepage shell now uses the SAME:
+
+       - image
+       - full browser width
+       - 1448 × 1086 proportions
+       - 75vw height
+       - image sizing
+
+       as the landing page.
        ===================================================== -->
 
   <style>
 
-    /*
-      FULL-WIDTH HOMEPAGE STAGE
-
-      Only change from the previous version:
-      the Gothic image now extends to both edges
-      of the browser instead of stopping at the
-      old page-width container.
-    */
-
     body.home-page .gothic-stage {
       position: relative;
 
-      width: 100vw !important;
-      max-width: none !important;
+      left: 0 !important;
+      right: auto !important;
 
-      aspect-ratio:
-        1122 / 1402;
+      width: 100vw !important;
+      height: 75vw !important;
+
+      max-width: none !important;
+      min-height: 0;
 
       margin-left:
         calc(50% - 50vw) !important;
@@ -69,20 +75,23 @@
       margin-right:
         calc(50% - 50vw) !important;
 
-      margin-top: 0;
-      margin-bottom: 0;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+
+      padding: 0;
 
       overflow: hidden;
 
-      background:
-        var(--window-dark);
+      background: #050505;
+
+      transform: none !important;
     }
 
 
-    /*
-      SAME APPROVED LANDING-PAGE SHELL.
-      No change to its crop or proportions.
-    */
+
+    /* =====================================================
+       EXACT SAME WIDE SHELL AS LANDING PAGE
+       ===================================================== */
 
     body.home-page .gothic-shell-image {
       position: absolute;
@@ -91,17 +100,22 @@
 
       z-index: 10;
 
-      display: block;
+      display: block !important;
 
-      width: 100%;
-      height: 100%;
+      width: 100% !important;
+      height: 100% !important;
 
-      max-width: none;
+      max-width: none !important;
 
-      object-fit: cover;
+      margin: 0;
+      padding: 0;
 
-      object-position:
-        center center;
+      aspect-ratio:
+        1448 / 1086;
+
+      object-fit: fill;
+
+      object-position: center;
 
       pointer-events: none;
 
@@ -109,10 +123,8 @@
     }
 
 
-    /*
-      Existing homepage content remains behind
-      the transparent stone shell.
-    */
+
+    /* Existing homepage content remains behind the shell */
 
     body.home-page .window-overlay {
       z-index: 2;
@@ -123,7 +135,9 @@
 </head>
 
 
+
 <body class="home-page">
+
 
   <a
     class="skip-link"
@@ -133,16 +147,19 @@
   </a>
 
 
+
   <!-- =====================================================
        SITE HEADER
        ===================================================== -->
 
   <header class="site-header">
 
+
     <nav
       class="primary-nav"
       aria-label="Primary navigation"
     >
+
 
       <a
         class="brand-mini"
@@ -167,36 +184,51 @@
         id="primary-links"
       >
 
+
         <li>
+
           <a
             href="home.html"
             aria-current="page"
           >
             Home
           </a>
+
         </li>
 
+
         <li>
+
           <a href="restoration.html">
             Restoration
           </a>
+
         </li>
 
+
         <li>
+
           <a href="about.html">
             About
           </a>
+
         </li>
 
+
         <li>
+
           <a href="contact.html">
             Contact
           </a>
+
         </li>
+
 
       </ul>
 
+
     </nav>
+
 
 
     <nav
@@ -204,49 +236,72 @@
       aria-label="Gallery categories"
     >
 
+
       <ul class="gallery-links">
 
+
         <li>
+
           <a href="gallery/front-doors.html">
             Front Doors
           </a>
+
         </li>
 
+
         <li>
+
           <a href="gallery/ecclesiastic.html">
             Ecclesiastic
           </a>
+
         </li>
 
+
         <li>
+
           <a href="gallery/mansion-houses.html">
             Mansion Houses
           </a>
+
         </li>
 
+
         <li>
+
           <a href="gallery/bespoke-designs.html">
             Bespoke Designs
           </a>
+
         </li>
 
+
         <li>
+
           <a href="gallery/architectural.html">
             Architectural
           </a>
+
         </li>
 
+
         <li>
+
           <a href="gallery/miscellaneous.html">
             Miscellaneous
           </a>
+
         </li>
+
 
       </ul>
 
+
     </nav>
 
+
   </header>
+
 
 
   <!-- =====================================================
@@ -266,7 +321,9 @@
     >
 
 
-      <!-- APPROVED LANDING-PAGE STONE SHELL -->
+      <!-- =================================================
+           APPROVED WIDE GOTHIC SHELL
+           ================================================= -->
 
       <img
         class="gothic-shell-image"
@@ -277,9 +334,13 @@
       >
 
 
-      <!-- EXISTING HOMEPAGE CONTENT -->
+
+      <!-- =================================================
+           EXISTING HOMEPAGE CONTENT
+           ================================================= -->
 
       <div class="window-overlay home-overlay">
+
 
 
         <!-- =================================================
@@ -288,13 +349,16 @@
 
         <header class="home-brand">
 
+
           <h1 class="brand-title">
             Leading Lights
           </h1>
 
+
           <p class="brand-subtitle">
             of London Ltd
           </p>
+
 
           <p class="home-services">
             Stained Glass Design
@@ -303,19 +367,24 @@
           </p>
 
 
+
           <div class="home-contact-grid">
+
 
             <a href="tel:+442077374567">
               ☎ 020 7737 4567
             </a>
 
+
             <a href="tel:+447803935003">
               ▣ 07803 935003
             </a>
 
+
             <a href="mailto:jonny@leadinglighter.co.uk">
               ✉ jonny@leadinglighter.co.uk
             </a>
+
 
             <span class="address">
               ⌖ Clockwork Studios,
@@ -323,7 +392,9 @@
               London SE5 9PG
             </span>
 
+
           </div>
+
 
         </header>
 
@@ -339,21 +410,33 @@
         >
 
 
+
           <a
             class="gallery-pane"
             href="gallery/front-doors.html"
           >
 
+
             <span class="image-placeholder">
               [ FRONT DOORS IMAGE ]
             </span>
 
+
             <span class="gallery-pane-label">
-              <span>Front Doors</span>
-              <span aria-hidden="true">›</span>
+
+              <span>
+                Front Doors
+              </span>
+
+              <span aria-hidden="true">
+                ›
+              </span>
+
             </span>
 
+
           </a>
+
 
 
           <a
@@ -361,16 +444,27 @@
             href="gallery/ecclesiastic.html"
           >
 
+
             <span class="image-placeholder">
               [ ECCLESIASTIC IMAGE ]
             </span>
 
+
             <span class="gallery-pane-label">
-              <span>Ecclesiastic</span>
-              <span aria-hidden="true">›</span>
+
+              <span>
+                Ecclesiastic
+              </span>
+
+              <span aria-hidden="true">
+                ›
+              </span>
+
             </span>
 
+
           </a>
+
 
 
           <a
@@ -378,16 +472,27 @@
             href="gallery/mansion-houses.html"
           >
 
+
             <span class="image-placeholder">
               [ MANSION HOUSES IMAGE ]
             </span>
 
+
             <span class="gallery-pane-label">
-              <span>Mansion Houses</span>
-              <span aria-hidden="true">›</span>
+
+              <span>
+                Mansion Houses
+              </span>
+
+              <span aria-hidden="true">
+                ›
+              </span>
+
             </span>
 
+
           </a>
+
 
 
           <a
@@ -395,16 +500,27 @@
             href="gallery/bespoke-designs.html"
           >
 
+
             <span class="image-placeholder">
               [ BESPOKE DESIGNS IMAGE ]
             </span>
 
+
             <span class="gallery-pane-label">
-              <span>Bespoke Designs</span>
-              <span aria-hidden="true">›</span>
+
+              <span>
+                Bespoke Designs
+              </span>
+
+              <span aria-hidden="true">
+                ›
+              </span>
+
             </span>
 
+
           </a>
+
 
 
           <a
@@ -412,16 +528,27 @@
             href="gallery/architectural.html"
           >
 
+
             <span class="image-placeholder">
               [ ARCHITECTURAL IMAGE ]
             </span>
 
+
             <span class="gallery-pane-label">
-              <span>Architectural</span>
-              <span aria-hidden="true">›</span>
+
+              <span>
+                Architectural
+              </span>
+
+              <span aria-hidden="true">
+                ›
+              </span>
+
             </span>
 
+
           </a>
+
 
 
           <a
@@ -429,20 +556,33 @@
             href="gallery/miscellaneous.html"
           >
 
+
             <span class="image-placeholder">
               [ MISCELLANEOUS IMAGE ]
             </span>
 
+
             <span class="gallery-pane-label">
-              <span>Miscellaneous</span>
-              <span aria-hidden="true">›</span>
+
+              <span>
+                Miscellaneous
+              </span>
+
+              <span aria-hidden="true">
+                ›
+              </span>
+
             </span>
+
 
           </a>
 
+
         </div>
 
+
       </div>
+
 
     </section>
 
@@ -457,6 +597,7 @@
       aria-labelledby="mobile-gallery-heading"
     >
 
+
       <h2
         class="section-heading"
         id="mobile-gallery-heading"
@@ -465,13 +606,16 @@
       </h2>
 
 
+
       <div class="gallery-page-grid">
+
 
 
         <a
           class="gallery-pane"
           href="gallery/front-doors.html"
         >
+
 
           <span
             class="image-placeholder"
@@ -480,18 +624,29 @@
             [ FRONT DOORS IMAGE ]
           </span>
 
+
           <span class="gallery-pane-label">
-            <span>Front Doors</span>
-            <span aria-hidden="true">›</span>
+
+            <span>
+              Front Doors
+            </span>
+
+            <span aria-hidden="true">
+              ›
+            </span>
+
           </span>
 
+
         </a>
+
 
 
         <a
           class="gallery-pane"
           href="gallery/ecclesiastic.html"
         >
+
 
           <span
             class="image-placeholder"
@@ -500,18 +655,29 @@
             [ ECCLESIASTIC IMAGE ]
           </span>
 
+
           <span class="gallery-pane-label">
-            <span>Ecclesiastic</span>
-            <span aria-hidden="true">›</span>
+
+            <span>
+              Ecclesiastic
+            </span>
+
+            <span aria-hidden="true">
+              ›
+            </span>
+
           </span>
 
+
         </a>
+
 
 
         <a
           class="gallery-pane"
           href="gallery/mansion-houses.html"
         >
+
 
           <span
             class="image-placeholder"
@@ -520,18 +686,29 @@
             [ MANSION HOUSES IMAGE ]
           </span>
 
+
           <span class="gallery-pane-label">
-            <span>Mansion Houses</span>
-            <span aria-hidden="true">›</span>
+
+            <span>
+              Mansion Houses
+            </span>
+
+            <span aria-hidden="true">
+              ›
+            </span>
+
           </span>
 
+
         </a>
+
 
 
         <a
           class="gallery-pane"
           href="gallery/bespoke-designs.html"
         >
+
 
           <span
             class="image-placeholder"
@@ -540,18 +717,29 @@
             [ BESPOKE DESIGNS IMAGE ]
           </span>
 
+
           <span class="gallery-pane-label">
-            <span>Bespoke Designs</span>
-            <span aria-hidden="true">›</span>
+
+            <span>
+              Bespoke Designs
+            </span>
+
+            <span aria-hidden="true">
+              ›
+            </span>
+
           </span>
 
+
         </a>
+
 
 
         <a
           class="gallery-pane"
           href="gallery/architectural.html"
         >
+
 
           <span
             class="image-placeholder"
@@ -560,18 +748,29 @@
             [ ARCHITECTURAL IMAGE ]
           </span>
 
+
           <span class="gallery-pane-label">
-            <span>Architectural</span>
-            <span aria-hidden="true">›</span>
+
+            <span>
+              Architectural
+            </span>
+
+            <span aria-hidden="true">
+              ›
+            </span>
+
           </span>
 
+
         </a>
+
 
 
         <a
           class="gallery-pane"
           href="gallery/miscellaneous.html"
         >
+
 
           <span
             class="image-placeholder"
@@ -580,14 +779,25 @@
             [ MISCELLANEOUS IMAGE ]
           </span>
 
+
           <span class="gallery-pane-label">
-            <span>Miscellaneous</span>
-            <span aria-hidden="true">›</span>
+
+            <span>
+              Miscellaneous
+            </span>
+
+            <span aria-hidden="true">
+              ›
+            </span>
+
           </span>
+
 
         </a>
 
+
       </div>
+
 
     </section>
 
@@ -602,6 +812,7 @@
       aria-labelledby="home-intro-heading"
     >
 
+
       <h2
         class="section-heading"
         id="home-intro-heading"
@@ -609,13 +820,16 @@
         Stained glass &amp; leaded lights in London
       </h2>
 
+
       <p class="section-lede">
         [ Homepage business introduction to be added.
         This area is ready for the final approved copy
         without changing the Gothic shell above. ]
       </p>
 
+
       <div class="cta-row">
+
 
         <a
           class="button"
@@ -624,9 +838,12 @@
           Email Jonny / Make an enquiry
         </a>
 
+
       </div>
 
+
     </section>
+
 
   </main>
 
@@ -638,52 +855,72 @@
 
   <footer class="site-footer">
 
+
     <div class="footer-grid">
 
 
+
       <div>
+
 
         <div class="footer-brand">
           Leading Lights<br>
           of London Ltd
         </div>
 
+
         <p>
           Stained Glass Design |
           Restoration &amp; Repair
         </p>
 
+
       </div>
 
 
+
       <div>
+
 
         <ul>
 
+
           <li>
+
             <a href="tel:+442077374567">
               020 7737 4567
             </a>
+
           </li>
 
+
           <li>
+
             <a href="tel:+447803935003">
               07803 935003
             </a>
+
           </li>
 
+
           <li>
+
             <a href="mailto:jonny@leadinglighter.co.uk">
               jonny@leadinglighter.co.uk
             </a>
+
           </li>
 
+
         </ul>
+
 
       </div>
 
 
+
       <div>
+
 
         <p>
           Clockwork Studios,
@@ -691,49 +928,68 @@
           London SE5 9PG
         </p>
 
+
       </div>
+
 
 
       <div>
 
+
         <ul>
 
+
           <li>
+
             <a href="index.html">
               Front Page
             </a>
+
           </li>
 
+
           <li>
+
             <a href="home.html">
               Home
             </a>
+
           </li>
 
+
           <li>
+
             <a href="#">
               [ Instagram link ]
             </a>
+
           </li>
+
 
         </ul>
 
+
       </div>
 
+
     </div>
+
 
 
     <div class="footer-bottom">
       © Leading Lights of London Ltd 2026
     </div>
 
+
   </footer>
+
 
 
   <script
     src="js/main.js"
     defer
   ></script>
+
 
 </body>
 
