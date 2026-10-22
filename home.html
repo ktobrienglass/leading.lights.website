@@ -81,9 +81,8 @@
     }
 
 
-
     /* =====================================================
-       EXACT SAME WIDE SHELL AS LANDING PAGE
+       SAME WIDE SHELL AS LANDING PAGE
        ===================================================== */
 
     body.home-page .gothic-shell-image {
@@ -116,11 +115,6 @@
     }
 
 
-
-    /* =====================================================
-       EXISTING HOMEPAGE CONTENT
-       ===================================================== */
-
     body.home-page .window-overlay {
       z-index: 2;
     }
@@ -129,13 +123,9 @@
 
     /* =====================================================
        HOMEPAGE TITLE FONT
-
-       Match landing-page "Leading Lights" font.
-       No sizes, spacing or positioning changed.
        ===================================================== */
 
     body.home-page .brand-mini,
-    body.home-page .brand-title,
     body.home-page .section-heading,
     body.home-page .footer-brand {
       font-family:
@@ -144,6 +134,114 @@
         serif !important;
 
       font-weight: 400;
+    }
+
+
+
+    /* =====================================================
+       CURVED WINDOW TITLE
+
+       The original title and subtitle remain in the layout
+       invisibly so nothing below them moves.
+
+       The SVG title is laid over the same space.
+       ===================================================== */
+
+    body.home-page .home-brand {
+      position: relative;
+    }
+
+
+    body.home-page .home-brand > .brand-title,
+    body.home-page .home-brand > .brand-subtitle {
+      visibility: hidden;
+    }
+
+
+    body.home-page .arched-home-title {
+      position: absolute;
+
+      top: -.35rem;
+      left: 50%;
+
+      width: 100%;
+
+      height:
+        clamp(
+          3.2rem,
+          6vw,
+          5rem
+        );
+
+      transform:
+        translateX(-50%);
+
+      overflow: visible;
+
+      pointer-events: none;
+
+      z-index: 2;
+    }
+
+
+    body.home-page .arched-home-title text {
+      font-family:
+        'Pirata One',
+        Georgia,
+        serif;
+
+      font-weight: 400;
+
+      fill: #efd393;
+
+      text-shadow:
+        0 2px 0 #2d1c08;
+    }
+
+
+    body.home-page .arched-home-title .arched-main {
+      font-size: 54px;
+    }
+
+
+    body.home-page .arched-home-title .arched-sub {
+      font-size: 22px;
+
+      fill: #e9cf96;
+
+      letter-spacing: 1px;
+    }
+
+
+
+    /* =====================================================
+       REMOVE LEFT / RIGHT GUTTERS FROM LOWER HOMEPAGE
+
+       The sections KEEP their existing width and padding.
+       Only their backgrounds extend to browser edges.
+       ===================================================== */
+
+    body.home-page .content-band {
+      box-shadow:
+        0 0 0 100vmax #0d1011;
+
+      clip-path:
+        inset(
+          0
+          -100vmax
+        );
+    }
+
+
+    body.home-page .site-footer {
+      box-shadow:
+        0 0 0 100vmax #090b0c;
+
+      clip-path:
+        inset(
+          0
+          -100vmax
+        );
     }
 
   </style>
@@ -208,15 +306,6 @@
             aria-current="page"
           >
             Home
-          </a>
-
-        </li>
-
-
-        <li>
-
-          <a href="restoration.html">
-            Restoration
           </a>
 
         </li>
@@ -337,10 +426,6 @@
     >
 
 
-      <!-- =================================================
-           APPROVED WIDE GOTHIC SHELL
-           ================================================= -->
-
       <img
         class="gothic-shell-image"
         src="assets/images/landing/landing-shell-frame-wide-clean-v2.png"
@@ -350,10 +435,6 @@
       >
 
 
-
-      <!-- =================================================
-           EXISTING HOMEPAGE CONTENT
-           ================================================= -->
 
       <div class="window-overlay home-overlay">
 
@@ -366,6 +447,73 @@
         <header class="home-brand">
 
 
+          <!--
+            Curved visible title.
+            It is absolutely positioned over the original
+            title area so content below stays in place.
+          -->
+
+          <svg
+            class="arched-home-title"
+            viewBox="0 0 600 120"
+            role="img"
+            aria-label="Leading Lights of London Ltd"
+            preserveAspectRatio="xMidYMid meet"
+          >
+
+            <defs>
+
+              <path
+                id="leading-lights-title-arc"
+                d="M 75 74 Q 300 12 525 74"
+              ></path>
+
+              <path
+                id="leading-lights-subtitle-arc"
+                d="M 180 102 Q 300 77 420 102"
+              ></path>
+
+            </defs>
+
+
+            <text
+              class="arched-main"
+              text-anchor="middle"
+            >
+
+              <textPath
+                href="#leading-lights-title-arc"
+                startOffset="50%"
+              >
+                Leading Lights
+              </textPath>
+
+            </text>
+
+
+            <text
+              class="arched-sub"
+              text-anchor="middle"
+            >
+
+              <textPath
+                href="#leading-lights-subtitle-arc"
+                startOffset="50%"
+              >
+                OF LONDON LTD
+              </textPath>
+
+            </text>
+
+          </svg>
+
+
+
+          <!--
+            These remain in the normal document flow so
+            all existing spacing below stays unchanged.
+          -->
+
           <h1 class="brand-title">
             Leading Lights
           </h1>
@@ -374,6 +522,7 @@
           <p class="brand-subtitle">
             of London Ltd
           </p>
+
 
 
           <p class="home-services">
