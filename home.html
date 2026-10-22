@@ -81,6 +81,7 @@
     }
 
 
+
     /* =====================================================
        SAME WIDE SHELL AS LANDING PAGE
        ===================================================== */
@@ -139,18 +140,29 @@
 
 
     /* =====================================================
-       CURVED WINDOW TITLE
+       HOMEPAGE BRAND BLOCK
 
-       The original title and subtitle remain in the layout
-       invisibly so nothing below them moves.
-
-       The SVG title is laid over the same space.
+       ONLY NEW CHANGE:
+       move complete title/service/contact group
+       slightly upward.
        ===================================================== */
 
     body.home-page .home-brand {
       position: relative;
+
+      transform:
+        translateY(-0.65rem);
     }
 
+
+
+    /* =====================================================
+       CURVED WINDOW TITLE
+
+       Original title/subtitle remain in the normal
+       layout invisibly so the spacing underneath
+       remains unchanged.
+       ===================================================== */
 
     body.home-page .home-brand > .brand-title,
     body.home-page .home-brand > .brand-subtitle {
@@ -216,9 +228,6 @@
 
     /* =====================================================
        REMOVE LEFT / RIGHT GUTTERS FROM LOWER HOMEPAGE
-
-       The sections KEEP their existing width and padding.
-       Only their backgrounds extend to browser edges.
        ===================================================== */
 
     body.home-page .content-band {
@@ -346,56 +355,44 @@
 
 
         <li>
-
           <a href="gallery/front-doors.html">
             Front Doors
           </a>
-
         </li>
 
 
         <li>
-
           <a href="gallery/ecclesiastic.html">
             Ecclesiastic
           </a>
-
         </li>
 
 
         <li>
-
           <a href="gallery/mansion-houses.html">
             Mansion Houses
           </a>
-
         </li>
 
 
         <li>
-
           <a href="gallery/bespoke-designs.html">
             Bespoke Designs
           </a>
-
         </li>
 
 
         <li>
-
           <a href="gallery/architectural.html">
             Architectural
           </a>
-
         </li>
 
 
         <li>
-
           <a href="gallery/miscellaneous.html">
             Miscellaneous
           </a>
-
         </li>
 
 
@@ -446,12 +443,6 @@
 
         <header class="home-brand">
 
-
-          <!--
-            Curved visible title.
-            It is absolutely positioned over the original
-            title area so content below stays in place.
-          -->
 
           <svg
             class="arched-home-title"
@@ -508,11 +499,6 @@
           </svg>
 
 
-
-          <!--
-            These remain in the normal document flow so
-            all existing spacing below stays unchanged.
-          -->
 
           <h1 class="brand-title">
             Leading Lights
@@ -581,11 +567,9 @@
             href="gallery/front-doors.html"
           >
 
-
             <span class="image-placeholder">
               [ FRONT DOORS IMAGE ]
             </span>
-
 
             <span class="gallery-pane-label">
 
@@ -599,7 +583,6 @@
 
             </span>
 
-
           </a>
 
 
@@ -609,11 +592,9 @@
             href="gallery/ecclesiastic.html"
           >
 
-
             <span class="image-placeholder">
               [ ECCLESIASTIC IMAGE ]
             </span>
-
 
             <span class="gallery-pane-label">
 
@@ -627,7 +608,6 @@
 
             </span>
 
-
           </a>
 
 
@@ -637,11 +617,9 @@
             href="gallery/mansion-houses.html"
           >
 
-
             <span class="image-placeholder">
               [ MANSION HOUSES IMAGE ]
             </span>
-
 
             <span class="gallery-pane-label">
 
@@ -655,7 +633,6 @@
 
             </span>
 
-
           </a>
 
 
@@ -665,11 +642,9 @@
             href="gallery/bespoke-designs.html"
           >
 
-
             <span class="image-placeholder">
               [ BESPOKE DESIGNS IMAGE ]
             </span>
-
 
             <span class="gallery-pane-label">
 
@@ -683,7 +658,6 @@
 
             </span>
 
-
           </a>
 
 
@@ -693,11 +667,9 @@
             href="gallery/architectural.html"
           >
 
-
             <span class="image-placeholder">
               [ ARCHITECTURAL IMAGE ]
             </span>
-
 
             <span class="gallery-pane-label">
 
@@ -711,7 +683,6 @@
 
             </span>
 
-
           </a>
 
 
@@ -721,11 +692,9 @@
             href="gallery/miscellaneous.html"
           >
 
-
             <span class="image-placeholder">
               [ MISCELLANEOUS IMAGE ]
             </span>
-
 
             <span class="gallery-pane-label">
 
@@ -738,7 +707,6 @@
               </span>
 
             </span>
-
 
           </a>
 
@@ -781,14 +749,12 @@
           href="gallery/front-doors.html"
         >
 
-
           <span
             class="image-placeholder"
             style="aspect-ratio: 4 / 3;"
           >
             [ FRONT DOORS IMAGE ]
           </span>
-
 
           <span class="gallery-pane-label">
 
@@ -802,7 +768,6 @@
 
           </span>
 
-
         </a>
 
 
@@ -812,14 +777,12 @@
           href="gallery/ecclesiastic.html"
         >
 
-
           <span
             class="image-placeholder"
             style="aspect-ratio: 4 / 3;"
           >
             [ ECCLESIASTIC IMAGE ]
           </span>
-
 
           <span class="gallery-pane-label">
 
@@ -833,7 +796,6 @@
 
           </span>
 
-
         </a>
 
 
@@ -843,14 +805,12 @@
           href="gallery/mansion-houses.html"
         >
 
-
           <span
             class="image-placeholder"
             style="aspect-ratio: 4 / 3;"
           >
             [ MANSION HOUSES IMAGE ]
           </span>
-
 
           <span class="gallery-pane-label">
 
@@ -864,7 +824,6 @@
 
           </span>
 
-
         </a>
 
 
@@ -874,14 +833,12 @@
           href="gallery/bespoke-designs.html"
         >
 
-
           <span
             class="image-placeholder"
             style="aspect-ratio: 4 / 3;"
           >
             [ BESPOKE DESIGNS IMAGE ]
           </span>
-
 
           <span class="gallery-pane-label">
 
@@ -895,7 +852,6 @@
 
           </span>
 
-
         </a>
 
 
@@ -905,14 +861,12 @@
           href="gallery/architectural.html"
         >
 
-
           <span
             class="image-placeholder"
             style="aspect-ratio: 4 / 3;"
           >
             [ ARCHITECTURAL IMAGE ]
           </span>
-
 
           <span class="gallery-pane-label">
 
@@ -926,7 +880,6 @@
 
           </span>
 
-
         </a>
 
 
@@ -936,14 +889,12 @@
           href="gallery/miscellaneous.html"
         >
 
-
           <span
             class="image-placeholder"
             style="aspect-ratio: 4 / 3;"
           >
             [ MISCELLANEOUS IMAGE ]
           </span>
-
 
           <span class="gallery-pane-label">
 
@@ -956,7 +907,6 @@
             </span>
 
           </span>
-
 
         </a>
 
@@ -1051,29 +1001,23 @@
 
 
           <li>
-
             <a href="tel:+442077374567">
               020 7737 4567
             </a>
-
           </li>
 
 
           <li>
-
             <a href="tel:+447803935003">
               07803 935003
             </a>
-
           </li>
 
 
           <li>
-
             <a href="mailto:jonny@leadinglighter.co.uk">
               jonny@leadinglighter.co.uk
             </a>
-
           </li>
 
 
@@ -1105,29 +1049,23 @@
 
 
           <li>
-
             <a href="index.html">
               Front Page
             </a>
-
           </li>
 
 
           <li>
-
             <a href="home.html">
               Home
             </a>
-
           </li>
 
 
           <li>
-
             <a href="#">
               [ Instagram link ]
             </a>
-
           </li>
 
 
