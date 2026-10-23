@@ -35,7 +35,6 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
 
-
     /* =====================================================
        HOMEPAGE SHELL ALIGNMENT
        ===================================================== */
@@ -57,7 +56,6 @@
       background: #050505;
       transform: none !important;
     }
-
 
     /* =====================================================
        SAME WIDE SHELL AS LANDING PAGE
@@ -84,7 +82,6 @@
       z-index: 2;
     }
 
-
     /* =====================================================
        HOMEPAGE TITLE FONT
        ===================================================== */
@@ -96,7 +93,6 @@
       font-weight: 400;
     }
 
-
     /* =====================================================
        HOMEPAGE BRAND BLOCK
        ===================================================== */
@@ -105,7 +101,6 @@
       position: relative;
       transform: translateY(-0.65rem);
     }
-
 
     /* =====================================================
        CURVED WINDOW TITLE
@@ -145,7 +140,6 @@
       letter-spacing: 1px;
     }
 
-
     /* =====================================================
        SEVEN-PANE HOMEPAGE GALLERY
        ===================================================== */
@@ -156,32 +150,15 @@
       width: 78%;
       min-height: 0;
       align-self: center;
-
       display: grid;
-
-      grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
-      grid-template-rows:
-        repeat(2, minmax(0, 1fr));
-
-      column-gap:
-        clamp(10px, .9vw, 14px);
-
-      row-gap:
-        clamp(40px, 3.2vw, 54px);
-
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      column-gap: clamp(10px, .9vw, 14px);
+      row-gap: clamp(40px, 3.2vw, 54px);
       margin-top: 1.9%;
       margin-bottom: 1.5%;
-
       overflow: visible;
-
-      /*
-        ONLY CHANGE:
-        shift the whole composition left slightly
-        and make it fractionally smaller.
-      */
-      transform: translateX(-2%) scale(0.93);
+      transform: translateX(-1.25%) scale(0.92);
       transform-origin: center center;
     }
 
@@ -189,8 +166,8 @@
       min-width: 0;
       min-height: 0;
       height: 100%;
+      position: relative;
     }
-
 
     /* =====================================================
        REAL HOMEPAGE TILE PHOTOS
@@ -208,6 +185,27 @@
       overflow: hidden;
     }
 
+    /* =====================================================
+       TILE LABEL SIZE - SLIGHTLY BIGGER
+       ===================================================== */
+
+    body.home-page .gallery-pane-label {
+      font-size: clamp(.94rem, 1.02vw, 1.06rem);
+      line-height: 1.15;
+      z-index: 4;
+    }
+
+    /* =====================================================
+       ECCLESIASTIC LABEL AT TOP ONLY
+       ===================================================== */
+
+    body.home-page .gallery-pane.label-top .gallery-pane-label {
+      top: 0;
+      bottom: auto;
+      border-top: none;
+      border-bottom: 1px solid rgba(212, 173, 95, 0.18);
+      z-index: 5;
+    }
 
     /* =====================================================
        PALACES DIAMOND
@@ -218,24 +216,14 @@
       left: 50%;
       top: 50%;
       z-index: 8;
-
       width: 21.5%;
       aspect-ratio: 1 / 1;
-
       display: flex;
       align-items: center;
       justify-content: center;
-
-      transform:
-        translate(-50%, -50%)
-        rotate(45deg);
-
+      transform: translate(-50%, -50%) rotate(45deg);
       overflow: hidden;
-
-      border:
-        3px solid
-        #171919;
-
+      border: 3px solid #171919;
       background:
         linear-gradient(
           45deg,
@@ -250,27 +238,12 @@
           transparent 51%
         ),
         #121616;
-
-      background-size:
-        28px
-        28px;
-
+      background-size: 28px 28px;
       box-shadow:
-        inset
-        0
-        0
-        0
-        1px
-        rgba(220,183,102,.22),
-
-        0
-        5px
-        15px
-        rgba(0,0,0,.46);
-
+        inset 0 0 0 1px rgba(220,183,102,.22),
+        0 5px 15px rgba(0,0,0,.46);
       color: #f0e7d6;
       text-decoration: none;
-
       transition:
         filter 170ms ease,
         box-shadow 170ms ease;
@@ -279,19 +252,9 @@
     body.home-page .palaces-diamond:hover,
     body.home-page .palaces-diamond:focus-visible {
       filter: brightness(1.08);
-
       box-shadow:
-        inset
-        0
-        0
-        0
-        1px
-        rgba(231,195,116,.36),
-
-        0
-        8px
-        18px
-        rgba(0,0,0,.5);
+        inset 0 0 0 1px rgba(231,195,116,.36),
+        0 8px 18px rgba(0,0,0,.5);
     }
 
     body.home-page .palaces-diamond-inner {
@@ -307,7 +270,7 @@
 
     body.home-page .palaces-placeholder {
       color: rgba(237,229,211,.58);
-      font-size: clamp(.40rem, .60vw, .58rem);
+      font-size: clamp(.48rem, .70vw, .66rem);
       line-height: 1.1;
       letter-spacing: .05em;
       text-transform: uppercase;
@@ -315,16 +278,15 @@
 
     body.home-page .palaces-label {
       color: #f1eadc;
-      font-size: clamp(.56rem, .82vw, .78rem);
+      font-size: clamp(.68rem, .98vw, .92rem);
       line-height: 1;
     }
 
     body.home-page .palaces-arrow {
       color: var(--accent-gold);
-      font-size: .72rem;
+      font-size: .82rem;
       line-height: 1;
     }
-
 
     /* =====================================================
        LOWER HOMEPAGE BACKGROUNDS
@@ -332,35 +294,21 @@
 
     body.home-page .content-band {
       box-shadow:
-        0
-        0
-        0
-        100vmax
-        #0d1011;
-
-      clip-path:
-        inset(0 -100vmax);
+        0 0 0 100vmax #0d1011;
+      clip-path: inset(0 -100vmax);
     }
 
     body.home-page .site-footer {
       box-shadow:
-        0
-        0
-        0
-        100vmax
-        #090b0c;
-
-      clip-path:
-        inset(0 -100vmax);
+        0 0 0 100vmax #090b0c;
+      clip-path: inset(0 -100vmax);
     }
-
 
     /* =====================================================
        MOBILE
        ===================================================== */
 
     @media (max-width: 900px) {
-
       body.home-page .palaces-diamond {
         display: none;
       }
@@ -369,12 +317,14 @@
         transform: none;
       }
 
+      body.home-page .gallery-pane.label-top .gallery-pane-label {
+        top: auto;
+        bottom: 0;
+        border-bottom: none;
+      }
     }
-
   </style>
-
 </head>
-
 
 <body class="home-page">
 
@@ -384,7 +334,6 @@
   >
     Skip to content
   </a>
-
 
   <header class="site-header">
 
@@ -400,7 +349,6 @@
         Leading Lights of London Ltd
       </a>
 
-
       <button
         class="nav-toggle"
         type="button"
@@ -410,12 +358,10 @@
         Menu
       </button>
 
-
       <ul
         class="primary-links"
         id="primary-links"
       >
-
         <li>
           <a
             href="home.html"
@@ -436,19 +382,14 @@
             Contact
           </a>
         </li>
-
       </ul>
-
     </nav>
-
 
     <nav
       class="gallery-nav"
       aria-label="Gallery categories"
     >
-
       <ul class="gallery-links">
-
         <li>
           <a href="gallery/front-doors.html">
             Front Doors
@@ -490,13 +431,9 @@
             Miscellaneous
           </a>
         </li>
-
       </ul>
-
     </nav>
-
   </header>
-
 
   <main id="main-content">
 
@@ -513,7 +450,6 @@
         height="1086"
       >
 
-
       <div class="window-overlay home-overlay">
 
         <header class="home-brand">
@@ -525,9 +461,7 @@
             aria-label="Leading Lights of London Ltd"
             preserveAspectRatio="xMidYMid meet"
           >
-
             <defs>
-
               <path
                 id="leading-lights-title-arc"
                 d="M 75 74 Q 300 12 525 74"
@@ -537,51 +471,40 @@
                 id="leading-lights-subtitle-arc"
                 d="M 180 102 Q 300 77 420 102"
               ></path>
-
             </defs>
-
 
             <text
               class="arched-main"
               text-anchor="middle"
             >
-
               <textPath
                 href="#leading-lights-title-arc"
                 startOffset="50%"
               >
                 Leading Lights
               </textPath>
-
             </text>
-
 
             <text
               class="arched-sub"
               text-anchor="middle"
             >
-
               <textPath
                 href="#leading-lights-subtitle-arc"
                 startOffset="50%"
               >
                 OF LONDON LTD
               </textPath>
-
             </text>
-
           </svg>
-
 
           <h1 class="brand-title">
             Leading Lights
           </h1>
 
-
           <p class="brand-subtitle">
             of London Ltd
           </p>
-
 
           <p class="home-services">
             Stained Glass Design
@@ -589,9 +512,7 @@
             Restoration &amp; Repair
           </p>
 
-
           <div class="home-contact-grid">
-
             <a href="tel:+442077374567">
               ☎ 020 7737 4567
             </a>
@@ -609,11 +530,8 @@
               38A Southwell Road,
               London SE5 9PG
             </span>
-
           </div>
-
         </header>
-
 
         <div
           class="home-gallery-grid"
@@ -624,7 +542,6 @@
             class="gallery-pane"
             href="gallery/front-doors.html"
           >
-
             <img
               class="tile-photo"
               src="assets/images/home/front-doors.jpg"
@@ -635,15 +552,12 @@
               <span>Front Doors</span>
               <span aria-hidden="true">›</span>
             </span>
-
           </a>
 
-
           <a
-            class="gallery-pane"
+            class="gallery-pane label-top"
             href="gallery/ecclesiastic.html"
           >
-
             <img
               class="tile-photo"
               src="assets/images/home/ecclesiastic.jpg"
@@ -654,15 +568,12 @@
               <span>Ecclesiastic</span>
               <span aria-hidden="true">›</span>
             </span>
-
           </a>
-
 
           <a
             class="gallery-pane"
             href="gallery/mansion-houses.html"
           >
-
             <img
               class="tile-photo"
               src="assets/images/home/mansion-houses.jpg"
@@ -673,15 +584,12 @@
               <span>Mansion Houses</span>
               <span aria-hidden="true">›</span>
             </span>
-
           </a>
-
 
           <a
             class="gallery-pane"
             href="gallery/bespoke-designs.html"
           >
-
             <img
               class="tile-photo"
               src="assets/images/home/bespoke-designs.jpg"
@@ -692,15 +600,12 @@
               <span>Bespoke Designs</span>
               <span aria-hidden="true">›</span>
             </span>
-
           </a>
-
 
           <a
             class="gallery-pane"
             href="gallery/architectural.html"
           >
-
             <img
               class="tile-photo"
               src="assets/images/home/architectural.jpg"
@@ -711,15 +616,12 @@
               <span>Architectural</span>
               <span aria-hidden="true">›</span>
             </span>
-
           </a>
-
 
           <a
             class="gallery-pane"
             href="gallery/miscellaneous.html"
           >
-
             <img
               class="tile-photo"
               src="assets/images/home/miscellaneous.jpg"
@@ -730,18 +632,14 @@
               <span>Miscellaneous</span>
               <span aria-hidden="true">›</span>
             </span>
-
           </a>
-
 
           <a
             class="palaces-diamond"
             href="gallery/palaces.html"
             aria-label="Palaces gallery"
           >
-
             <span class="palaces-diamond-inner">
-
               <span class="palaces-placeholder">
                 [ PALACES IMAGE ]
               </span>
@@ -756,17 +654,13 @@
               >
                 ›
               </span>
-
             </span>
-
           </a>
 
         </div>
 
       </div>
-
     </section>
-
 
     <section
       class="content-band mobile-home-gallery"
@@ -780,14 +674,12 @@
         Gallery
       </h2>
 
-
       <div class="gallery-page-grid">
 
         <a
           class="gallery-pane"
           href="gallery/front-doors.html"
         >
-
           <img
             class="tile-photo"
             src="assets/images/home/front-doors.jpg"
@@ -799,15 +691,12 @@
             <span>Front Doors</span>
             <span aria-hidden="true">›</span>
           </span>
-
         </a>
-
 
         <a
           class="gallery-pane"
           href="gallery/ecclesiastic.html"
         >
-
           <img
             class="tile-photo"
             src="assets/images/home/ecclesiastic.jpg"
@@ -819,15 +708,12 @@
             <span>Ecclesiastic</span>
             <span aria-hidden="true">›</span>
           </span>
-
         </a>
-
 
         <a
           class="gallery-pane"
           href="gallery/mansion-houses.html"
         >
-
           <img
             class="tile-photo"
             src="assets/images/home/mansion-houses.jpg"
@@ -839,15 +725,12 @@
             <span>Mansion Houses</span>
             <span aria-hidden="true">›</span>
           </span>
-
         </a>
-
 
         <a
           class="gallery-pane"
           href="gallery/palaces.html"
         >
-
           <span
             class="image-placeholder"
             style="aspect-ratio: 4 / 3;"
@@ -859,15 +742,12 @@
             <span>Palaces</span>
             <span aria-hidden="true">›</span>
           </span>
-
         </a>
-
 
         <a
           class="gallery-pane"
           href="gallery/bespoke-designs.html"
         >
-
           <img
             class="tile-photo"
             src="assets/images/home/bespoke-designs.jpg"
@@ -879,15 +759,12 @@
             <span>Bespoke Designs</span>
             <span aria-hidden="true">›</span>
           </span>
-
         </a>
-
 
         <a
           class="gallery-pane"
           href="gallery/architectural.html"
         >
-
           <img
             class="tile-photo"
             src="assets/images/home/architectural.jpg"
@@ -899,15 +776,12 @@
             <span>Architectural</span>
             <span aria-hidden="true">›</span>
           </span>
-
         </a>
-
 
         <a
           class="gallery-pane"
           href="gallery/miscellaneous.html"
         >
-
           <img
             class="tile-photo"
             src="assets/images/home/miscellaneous.jpg"
@@ -919,19 +793,15 @@
             <span>Miscellaneous</span>
             <span aria-hidden="true">›</span>
           </span>
-
         </a>
 
       </div>
-
     </section>
-
 
     <section
       class="content-band"
       aria-labelledby="home-intro-heading"
     >
-
       <h2
         class="section-heading"
         id="home-intro-heading"
@@ -953,18 +823,13 @@
           Email Jonny / Make an enquiry
         </a>
       </div>
-
     </section>
 
   </main>
 
-
   <footer class="site-footer">
-
     <div class="footer-grid">
-
       <div>
-
         <div class="footer-brand">
           Leading Lights<br>
           of London Ltd
@@ -974,14 +839,10 @@
           Stained Glass Design |
           Restoration &amp; Repair
         </p>
-
       </div>
 
-
       <div>
-
         <ul>
-
           <li>
             <a href="tel:+442077374567">
               020 7737 4567
@@ -999,27 +860,19 @@
               jonny@leadinglighter.co.uk
             </a>
           </li>
-
         </ul>
-
       </div>
 
-
       <div>
-
         <p>
           Clockwork Studios,
           38A Southwell Road,
           London SE5 9PG
         </p>
-
       </div>
 
-
       <div>
-
         <ul>
-
           <li>
             <a href="index.html">
               Front Page
@@ -1037,20 +890,14 @@
               [ Instagram link ]
             </a>
           </li>
-
         </ul>
-
       </div>
-
     </div>
-
 
     <div class="footer-bottom">
       © Leading Lights of London Ltd 2026
     </div>
-
   </footer>
-
 
   <script
     src="js/main.js"
@@ -1058,5 +905,4 @@
   ></script>
 
 </body>
-
 </html>
