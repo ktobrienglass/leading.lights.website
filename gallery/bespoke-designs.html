@@ -1,111 +1,819 @@
-    <!doctype html>
-    <html lang="en-GB">
-    <head>
+<!doctype html>
+<html lang="en-GB">
+
+<head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Bespoke Designs | Leading Lights of London Ltd</title>
-  <meta name="description" content="Bespoke Designs stained glass gallery from Leading Lights of London Ltd.">
-  <meta property="og:title" content="Bespoke Designs | Leading Lights of London Ltd">
-  <meta property="og:description" content="Bespoke Designs stained glass gallery from Leading Lights of London Ltd.">
-  <meta property="og:type" content="website">
-  <!-- Add the final canonical URL here when the production domain is confirmed. -->
-  <!-- Add verified LocalBusiness structured data here only after all business details are confirmed. -->
-  <link rel="stylesheet" href="../css/styles.css">
+
+  <meta
+    name="description"
+    content="Bespoke and modern stained glass designs by Leading Lights of London Ltd."
+  >
+
+  <link
+    rel="stylesheet"
+    href="../css/styles.css"
+  >
+
+  <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Pirata+One&display=swap');
+
+
+    /* =====================================================
+       BESPOKE DESIGNS PAGE
+       ===================================================== */
+
+    body.bespoke-designs-page {
+      margin: 0;
+      min-height: 100vh;
+
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          #171515 0,
+          #0c0e0f 34%,
+          #050607 72%
+        );
+
+      color: #f1eadc;
+    }
+
+
+    /* =====================================================
+       NAVIGATION
+       ===================================================== */
+
+    body.bespoke-designs-page .brand-mini {
+      font-family:
+        'Pirata One',
+        Georgia,
+        serif !important;
+
+      font-size:
+        clamp(1.1rem, 2vw, 1.4rem);
+
+      color: #efd393;
+    }
+
+
+    /* =====================================================
+       PAGE TITLE
+       ===================================================== */
+
+    .bespoke-designs-hero {
+      width:
+        min(
+          92%,
+          1380px
+        );
+
+      margin: 0 auto;
+
+      padding:
+        clamp(4rem, 7vw, 6rem)
+        1rem
+        clamp(2.4rem, 5vw, 4rem);
+
+      text-align: center;
+    }
+
+
+    .bespoke-designs-title {
+      margin: 0;
+
+      font-family:
+        'Pirata One',
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(
+          2.8rem,
+          5vw,
+          5rem
+        );
+
+      font-weight: 400;
+
+      line-height: .95;
+
+      color: #d11f27;
+
+      text-shadow:
+        0 3px 0 #43070b,
+        0 0 16px rgba(189,25,34,.32);
+    }
+
+
+    /* =====================================================
+       GOLD DIVIDER
+       ===================================================== */
+
+    .bespoke-designs-rule {
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: .8rem;
+
+      width:
+        min(
+          360px,
+          70%
+        );
+
+      margin:
+        1.5rem
+        auto
+        0;
+
+      color: #d4ad5f;
+    }
+
+
+    .bespoke-designs-rule::before,
+    .bespoke-designs-rule::after {
+      content: '';
+
+      display: block;
+
+      flex: 1;
+
+      height: 1px;
+
+      background:
+        linear-gradient(
+          to right,
+          transparent,
+          rgba(212,173,95,.75)
+        );
+    }
+
+
+    .bespoke-designs-rule::after {
+      background:
+        linear-gradient(
+          to left,
+          transparent,
+          rgba(212,173,95,.75)
+        );
+    }
+
+
+    .bespoke-designs-rule span {
+      font-size: .75rem;
+    }
+
+
+    /* =====================================================
+       INTRODUCTION
+       ===================================================== */
+
+    .bespoke-designs-intro {
+      width:
+        min(
+          88%,
+          980px
+        );
+
+      margin:
+        clamp(2rem, 4vw, 3rem)
+        auto
+        0;
+
+      font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif;
+
+      color: #ddd3c2;
+
+      text-align: center;
+    }
+
+
+    .bespoke-designs-intro p {
+      margin: 0 auto;
+
+      font-size:
+        clamp(
+          1.05rem,
+          1.45vw,
+          1.3rem
+        );
+
+      line-height: 1.55;
+    }
+
+
+    /* =====================================================
+       GALLERY
+       ===================================================== */
+
+    .bespoke-designs-gallery {
+      width:
+        min(
+          92%,
+          1380px
+        );
+
+      margin: 0 auto;
+
+      padding:
+        0
+        0
+        clamp(4rem, 8vw, 7rem);
+    }
+
+
+    .bespoke-designs-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          4,
+          minmax(0, 1fr)
+        );
+
+      gap:
+        clamp(
+          1rem,
+          2vw,
+          1.8rem
+        );
+    }
+
+
+    /* =====================================================
+       TEMPORARY IMAGE PLACEHOLDERS
+       ===================================================== */
+
+    .gallery-placeholder {
+      position: relative;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      width: 100%;
+
+      height:
+        clamp(
+          250px,
+          25vw,
+          360px
+        );
+
+      overflow: hidden;
+
+      border:
+        1px solid
+        rgba(212,173,95,.28);
+
+      border-radius: 2px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255,255,255,.015),
+          rgba(212,173,95,.025)
+        ),
+        #050606;
+
+      box-shadow:
+        0 12px 28px rgba(0,0,0,.32),
+        inset 0 0 0 1px rgba(255,255,255,.025);
+
+      color:
+        rgba(221,211,194,.42);
+
+      font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(
+          .9rem,
+          1.2vw,
+          1.05rem
+        );
+
+      letter-spacing:
+        .04em;
+
+      text-align: center;
+    }
+
+
+    .gallery-placeholder::before {
+      content: '';
+
+      position: absolute;
+
+      inset: 12px;
+
+      border:
+        1px solid
+        rgba(212,173,95,.08);
+
+      pointer-events: none;
+    }
+
+
+    /* =====================================================
+       ENQUIRY
+       ===================================================== */
+
+    .bespoke-designs-enquiry {
+      display: flex;
+
+      justify-content: center;
+
+      padding:
+        0
+        1rem
+        clamp(3rem, 6vw, 5rem);
+    }
+
+
+    .bespoke-designs-enquiry .button {
+      margin: 0;
+    }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    body.bespoke-designs-page .site-footer {
+      background: #080a0b;
+    }
+
+
+    body.bespoke-designs-page .site-footer .footer-grid {
+      display: grid;
+
+      grid-template-columns:
+        minmax(280px, 1.25fr)
+        minmax(170px, .8fr)
+        minmax(220px, 1fr)
+        minmax(120px, .55fr);
+
+      gap:
+        clamp(
+          2rem,
+          5vw,
+          5rem
+        );
+
+      align-items: center;
+    }
+
+
+    .footer-studio-link {
+      display: block;
+
+      width: 100%;
+
+      max-width: 330px;
+
+      text-decoration: none;
+    }
+
+
+    .footer-studio-image {
+      display: block;
+
+      width: 100%;
+
+      height: auto;
+    }
+
+
+    /* =====================================================
+       RESPONSIVE
+       ===================================================== */
+
+    @media (max-width: 1050px) {
+
+      .bespoke-designs-grid {
+        grid-template-columns:
+          repeat(
+            3,
+            minmax(0, 1fr)
+          );
+      }
+
+    }
+
+
+    @media (max-width: 760px) {
+
+      .bespoke-designs-grid {
+        grid-template-columns:
+          repeat(
+            2,
+            minmax(0, 1fr)
+          );
+      }
+
+
+      .gallery-placeholder {
+        height:
+          clamp(
+            230px,
+            52vw,
+            340px
+          );
+      }
+
+
+      body.bespoke-designs-page .site-footer .footer-grid {
+        grid-template-columns: 1fr;
+
+        gap: 1.8rem;
+      }
+
+    }
+
+
+    @media (max-width: 480px) {
+
+      .bespoke-designs-grid {
+        grid-template-columns: 1fr;
+      }
+
+
+      .gallery-placeholder {
+        height:
+          min(
+            115vw,
+            440px
+          );
+      }
+
+
+      .bespoke-designs-hero {
+        padding-top: 2.5rem;
+      }
+
+    }
+
+  </style>
+
 </head>
-    <body>
-      <a class="skip-link" href="#main-content">Skip to content</a>
-      <header class="site-header">
-  <nav class="primary-nav" aria-label="Primary navigation">
-    <a class="brand-mini" href="../home.html">Leading Lights of London Ltd</a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-links">Menu</button>
-    <ul class="primary-links" id="primary-links">
-      <li><a href="../home.html">Home</a></li> <li><a href="../restoration.html">Restoration</a></li> <li><a href="../about.html">About</a></li> <li><a href="../contact.html">Contact</a></li>
-    </ul>
-  </nav>
-  <nav class="gallery-nav" aria-label="Gallery categories">
-    <ul class="gallery-links"><li><a href="front-doors.html">Front Doors</a></li> <li><a href="ecclesiastic.html">Ecclesiastic</a></li> <li><a href="mansion-houses.html">Mansion Houses</a></li> <li><a href="bespoke-designs.html" aria-current="page">Bespoke Designs</a></li> <li><a href="architectural.html">Architectural</a></li> <li><a href="miscellaneous.html">Miscellaneous</a></li></ul>
-  </nav>
-</header>
-      <main id="main-content">
-            <section class="gothic-stage" aria-label="Bespoke Designs gallery Gothic window">
-      <img class="gothic-shell-image" src="../assets/images/site/master-gothic-shell.png" alt="Dark Gothic stone window surround used as the site architectural frame" width="1122" height="1402">
-      <div class="window-overlay page-overlay">
-        <div class="page-window-card">
-          <h1>Bespoke Designs</h1>
-          <p>[ Optional bespoke designs gallery introduction to be added. ]</p>
-        </div>
+
+
+<body class="bespoke-designs-page">
+
+
+  <a
+    class="skip-link"
+    href="#main-content"
+  >
+    Skip to content
+  </a>
+
+
+  <header class="site-header">
+
+
+    <nav
+      class="primary-nav"
+      aria-label="Primary navigation"
+    >
+
+      <a
+        class="brand-mini"
+        href="../home.html"
+      >
+        Leading Lights of London Ltd
+      </a>
+
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-links"
+      >
+        Menu
+      </button>
+
+
+      <ul
+        class="primary-links"
+        id="primary-links"
+      >
+
+        <li>
+          <a href="../home.html">
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a href="../about.html">
+            About
+          </a>
+        </li>
+
+        <li>
+          <a href="../contact.html">
+            Contact
+          </a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+
+    <nav
+      class="gallery-nav"
+      aria-label="Gallery categories"
+    >
+
+      <ul class="gallery-links">
+
+        <li>
+          <a href="front-doors.html">
+            Front Doors
+          </a>
+        </li>
+
+        <li>
+          <a href="ecclesiastic.html">
+            Ecclesiastic
+          </a>
+        </li>
+
+        <li>
+          <a href="mansion-houses.html">
+            Mansion Houses
+          </a>
+        </li>
+
+        <li>
+          <a href="palaces.html">
+            Palaces
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="bespoke-designs.html"
+            aria-current="page"
+          >
+            Bespoke Designs
+          </a>
+        </li>
+
+        <li>
+          <a href="architectural.html">
+            Architectural
+          </a>
+        </li>
+
+        <li>
+          <a href="miscellaneous.html">
+            Miscellaneous
+          </a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+
+  </header>
+
+
+  <main id="main-content">
+
+
+    <section class="bespoke-designs-hero">
+
+
+      <h1 class="bespoke-designs-title">
+        Bespoke Designs
+      </h1>
+
+
+      <div
+        class="bespoke-designs-rule"
+        aria-hidden="true"
+      >
+        <span>✦</span>
       </div>
-    </section>
-    <section class="content-band" aria-labelledby="gallery-heading">
-      <h2 class="section-heading" id="gallery-heading">Bespoke Designs</h2>
-      <p class="section-lede">[ Gallery introduction to be added. ]</p>
-      <div class="gallery-page-grid"><figure class="gallery-item">
-  <div class="image-placeholder">[ IMAGE 01 ]</div>
-  <figcaption>[ Optional caption ]</figcaption>
-</figure><figure class="gallery-item">
-  <div class="image-placeholder">[ IMAGE 02 ]</div>
-  <figcaption>[ Optional caption ]</figcaption>
-</figure><figure class="gallery-item">
-  <div class="image-placeholder">[ IMAGE 03 ]</div>
-  <figcaption>[ Optional caption ]</figcaption>
-</figure><figure class="gallery-item">
-  <div class="image-placeholder">[ IMAGE 04 ]</div>
-  <figcaption>[ Optional caption ]</figcaption>
-</figure><figure class="gallery-item">
-  <div class="image-placeholder">[ IMAGE 05 ]</div>
-  <figcaption>[ Optional caption ]</figcaption>
-</figure><figure class="gallery-item">
-  <div class="image-placeholder">[ IMAGE 06 ]</div>
-  <figcaption>[ Optional caption ]</figcaption>
-</figure><figure class="gallery-item">
-  <div class="image-placeholder">[ IMAGE 07 ]</div>
-  <figcaption>[ Optional caption ]</figcaption>
-</figure><figure class="gallery-item">
-  <div class="image-placeholder">[ IMAGE 08 ]</div>
-  <figcaption>[ Optional caption ]</figcaption>
-</figure><figure class="gallery-item">
-  <div class="image-placeholder">[ IMAGE 09 ]</div>
-  <figcaption>[ Optional caption ]</figcaption>
-</figure><figure class="gallery-item">
-  <div class="image-placeholder">[ IMAGE 10 ]</div>
-  <figcaption>[ Optional caption ]</figcaption>
-</figure><figure class="gallery-item">
-  <div class="image-placeholder">[ IMAGE 11 ]</div>
-  <figcaption>[ Optional caption ]</figcaption>
-</figure><figure class="gallery-item">
-  <div class="image-placeholder">[ IMAGE 12 ]</div>
-  <figcaption>[ Optional caption ]</figcaption>
-</figure></div>
-      <div class="cta-row"><a class="button" href="../contact.html">Enquire about a project</a></div>
+
+
+      <div class="bespoke-designs-intro">
+
+        <p>
+          We are frequently asked to make unique and individual stained glass designs, often with a stained glass modernist theme. Here are a few examples of modern stained glass work we have undertaken.
+        </p>
+
+      </div>
+
+
     </section>
 
-      </main>
-      <footer class="site-footer">
-  <div class="footer-grid">
-    <div>
-      <div class="footer-brand">Leading Lights<br>of London Ltd</div>
-      <p>Stained Glass Design | Restoration &amp; Repair</p>
+
+    <section
+      class="bespoke-designs-gallery"
+      aria-label="Bespoke stained glass gallery"
+    >
+
+      <div class="bespoke-designs-grid">
+
+
+        <div class="gallery-placeholder">
+          Bespoke Designs image
+        </div>
+
+        <div class="gallery-placeholder">
+          Bespoke Designs image
+        </div>
+
+        <div class="gallery-placeholder">
+          Bespoke Designs image
+        </div>
+
+        <div class="gallery-placeholder">
+          Bespoke Designs image
+        </div>
+
+
+        <div class="gallery-placeholder">
+          Bespoke Designs image
+        </div>
+
+        <div class="gallery-placeholder">
+          Bespoke Designs image
+        </div>
+
+        <div class="gallery-placeholder">
+          Bespoke Designs image
+        </div>
+
+        <div class="gallery-placeholder">
+          Bespoke Designs image
+        </div>
+
+
+        <div class="gallery-placeholder">
+          Bespoke Designs image
+        </div>
+
+        <div class="gallery-placeholder">
+          Bespoke Designs image
+        </div>
+
+        <div class="gallery-placeholder">
+          Bespoke Designs image
+        </div>
+
+        <div class="gallery-placeholder">
+          Bespoke Designs image
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+    <div class="bespoke-designs-enquiry">
+
+      <a
+        class="button"
+        href="../contact.html"
+      >
+        Email / Make an enquiry
+      </a>
+
     </div>
-    <div>
-      <ul>
-        <li><a href="tel:+442077374567">020 7737 4567</a></li>
-        <li><a href="tel:+447803935003">07803 935003</a></li>
-        <li><a href="mailto:jonny@leadinglighter.co.uk">jonny@leadinglighter.co.uk</a></li>
-      </ul>
+
+
+  </main>
+
+
+  <footer class="site-footer">
+
+
+    <div class="footer-grid">
+
+
+      <div>
+
+        <a
+          class="footer-studio-link"
+          href="https://clockworkstudios.co.uk/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit the Clockwork Studios website"
+        >
+
+          <img
+            class="footer-studio-image"
+            src="../assets/images/home/clockwork-studios-architectural-blueprint.png"
+            alt="Clockwork Studios architectural drawing and logo"
+          >
+
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <ul>
+
+          <li>
+            <a href="tel:+442077374567">
+              020 7737 4567
+            </a>
+          </li>
+
+          <li>
+            <a href="tel:+447803935003">
+              07803 935003
+            </a>
+          </li>
+
+          <li>
+            <a href="mailto:jonny@leadinglighter.co.uk">
+              jonny@leadinglighter.co.uk
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div>
+
+        <p>
+          Clockwork Studios,<br>
+          38A Southwell Road,<br>
+          London SE5 9PG
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <ul>
+
+          <li>
+            <a href="../index.html">
+              Front Page
+            </a>
+          </li>
+
+          <li>
+            <a href="../home.html">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              [ Instagram link ]
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
     </div>
-    <div>
-      <p>Clockwork Studios, 38A Southwell Road, London SE5 9PG</p>
+
+
+    <div class="footer-bottom">
+      © Leading Lights of London Ltd 2026
     </div>
-    <div>
-      <ul>
-        <li><a href="../index.html">Front Page</a></li>
-        <li><a href="../home.html">Home</a></li>
-        <li><a href="#">[ Instagram link ]</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">© Leading Lights of London Ltd 2026</div>
-</footer>
-      <script src="../js/main.js" defer></script>
-    </body>
-    </html>
+
+
+  </footer>
+
+
+  <script
+    src="../js/main.js"
+    defer
+  ></script>
+
+
+</body>
+
+</html>
