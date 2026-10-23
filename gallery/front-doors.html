@@ -73,12 +73,7 @@
        ===================================================== */
 
     .front-doors-hero {
-      width:
-        min(
-          92%,
-          1380px
-        );
-
+      width: min(92%, 1380px);
       margin: 0 auto;
 
       padding:
@@ -99,14 +94,9 @@
         serif;
 
       font-size:
-        clamp(
-          2.6rem,
-          5vw,
-          5rem
-        );
+        clamp(2.6rem, 5vw, 5rem);
 
       font-weight: 400;
-
       line-height: .92;
 
       color: #efd393;
@@ -119,11 +109,8 @@
 
     .front-doors-brand span {
       display: block;
-
       margin-top: .22em;
-
       font-size: .48em;
-
       letter-spacing: .035em;
     }
 
@@ -140,14 +127,9 @@
         serif;
 
       font-size:
-        clamp(
-          2.4rem,
-          4.7vw,
-          4.4rem
-        );
+        clamp(2.4rem, 4.7vw, 4.4rem);
 
       font-weight: 400;
-
       line-height: .95;
 
       color: #d11f27;
@@ -160,17 +142,12 @@
 
     .front-doors-rule {
       display: flex;
-
       align-items: center;
       justify-content: center;
 
       gap: .8rem;
 
-      width:
-        min(
-          360px,
-          70%
-        );
+      width: min(360px, 70%);
 
       margin:
         1.6rem
@@ -186,7 +163,6 @@
       content: '';
 
       display: block;
-
       flex: 1;
 
       height: 1px;
@@ -216,16 +192,50 @@
 
 
     /* =====================================================
+       FRONT DOORS INTRODUCTION
+       ===================================================== */
+
+    .front-doors-intro {
+      width: min(88%, 980px);
+
+      margin:
+        clamp(2rem, 4vw, 3rem)
+        auto
+        0;
+
+      font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif;
+
+      color: #ddd3c2;
+
+      text-align: center;
+    }
+
+
+    .front-doors-intro p {
+      margin: 0 auto;
+
+      font-size:
+        clamp(1.05rem, 1.45vw, 1.3rem);
+
+      line-height: 1.55;
+    }
+
+
+    .front-doors-intro p + p {
+      margin-top:
+        clamp(1.3rem, 2.5vw, 2rem);
+    }
+
+
+    /* =====================================================
        GALLERY
        ===================================================== */
 
     .front-doors-gallery {
-      width:
-        min(
-          92%,
-          1380px
-        );
-
+      width: min(92%, 1380px);
       margin: 0 auto;
 
       padding:
@@ -239,17 +249,10 @@
       display: grid;
 
       grid-template-columns:
-        repeat(
-          4,
-          minmax(0, 1fr)
-        );
+        repeat(4, minmax(0, 1fr));
 
       gap:
-        clamp(
-          1rem,
-          2vw,
-          1.8rem
-        );
+        clamp(1rem, 2vw, 1.8rem);
     }
 
 
@@ -259,11 +262,7 @@
       width: 100%;
 
       height:
-        clamp(
-          250px,
-          25vw,
-          360px
-        );
+        clamp(250px, 25vw, 360px);
 
       margin: 0;
       padding: 0;
@@ -293,8 +292,7 @@
 
     .gallery-card:hover,
     .gallery-card:focus-visible {
-      transform:
-        translateY(-4px);
+      transform: translateY(-4px);
 
       border-color:
         rgba(231,195,116,.68);
@@ -310,8 +308,7 @@
         2px solid
         #f0cf86;
 
-      outline-offset:
-        4px;
+      outline-offset: 4px;
     }
 
 
@@ -333,11 +330,8 @@
 
 
     .gallery-card:hover img {
-      transform:
-        scale(1.018);
-
-      filter:
-        brightness(1.04);
+      transform: scale(1.018);
+      filter: brightness(1.04);
     }
 
 
@@ -347,7 +341,6 @@
 
     .front-doors-enquiry {
       display: flex;
-
       justify-content: center;
 
       padding:
@@ -381,11 +374,7 @@
         minmax(120px, .55fr);
 
       gap:
-        clamp(
-          2rem,
-          5vw,
-          5rem
-        );
+        clamp(2rem, 5vw, 5rem);
 
       align-items: center;
     }
@@ -393,18 +382,14 @@
 
     .footer-studio-link {
       display: block;
-
       width: 100%;
-
       max-width: 330px;
-
       text-decoration: none;
     }
 
 
     .footer-studio-image {
       display: block;
-
       width: 100%;
       height: auto;
     }
@@ -421,7 +406,6 @@
 
     .gallery-lightbox {
       position: fixed;
-
       inset: 0;
 
       z-index: 9999;
@@ -458,11 +442,7 @@
       height: 100vh;
 
       padding:
-        clamp(
-          3.5rem,
-          7vw,
-          5rem
-        )
+        clamp(3.5rem, 7vw, 5rem)
         0;
 
       overflow: hidden;
@@ -473,10 +453,7 @@
       display: block;
 
       max-width:
-        min(
-          92vw,
-          1250px
-        );
+        min(92vw, 1250px);
 
       max-height:
         calc(100vh - 8rem);
@@ -495,20 +472,12 @@
       position: absolute;
 
       top:
-        clamp(
-          1rem,
-          2vw,
-          1.6rem
-        );
+        clamp(1rem, 2vw, 1.6rem);
 
       right:
-        clamp(
-          1rem,
-          2vw,
-          1.6rem
-        );
+        clamp(1rem, 2vw, 1.6rem);
 
-      z-index: 3;
+      z-index: 50;
 
       width: 48px;
       height: 48px;
@@ -527,7 +496,7 @@
       border-radius: 50%;
 
       background:
-        rgba(8,9,9,.76);
+        rgba(8,9,9,.88);
 
       color: #f2e9d9;
 
@@ -536,17 +505,18 @@
         sans-serif;
 
       font-size: 1.55rem;
-
       line-height: 1;
 
       cursor: pointer;
+
+      pointer-events: auto;
     }
 
 
     .lightbox-nav {
       position: relative;
 
-      z-index: 3;
+      z-index: 2;
 
       display: flex;
 
@@ -569,11 +539,7 @@
         serif;
 
       font-size:
-        clamp(
-          2.7rem,
-          6vw,
-          5.5rem
-        );
+        clamp(2.7rem, 6vw, 5.5rem);
 
       cursor: pointer;
 
@@ -592,14 +558,12 @@
 
 
     .lightbox-prev:hover {
-      transform:
-        translateX(-3px);
+      transform: translateX(-3px);
     }
 
 
     .lightbox-next:hover {
-      transform:
-        translateX(3px);
+      transform: translateX(3px);
     }
 
 
@@ -607,12 +571,9 @@
       position: absolute;
 
       left: 50%;
+
       bottom:
-        clamp(
-          1.2rem,
-          2vw,
-          1.8rem
-        );
+        clamp(1.2rem, 2vw, 1.8rem);
 
       transform:
         translateX(-50%);
@@ -628,14 +589,11 @@
       background:
         rgba(6,7,7,.72);
 
-      color:
-        #d5c9b5;
+      color: #d5c9b5;
 
-      font-size:
-        .9rem;
+      font-size: .9rem;
 
-      letter-spacing:
-        .08em;
+      letter-spacing: .08em;
     }
 
 
@@ -647,10 +605,7 @@
 
       .front-doors-grid {
         grid-template-columns:
-          repeat(
-            3,
-            minmax(0, 1fr)
-          );
+          repeat(3, minmax(0, 1fr));
       }
 
     }
@@ -660,20 +615,13 @@
 
       .front-doors-grid {
         grid-template-columns:
-          repeat(
-            2,
-            minmax(0, 1fr)
-          );
+          repeat(2, minmax(0, 1fr));
       }
 
 
       .gallery-card {
         height:
-          clamp(
-            230px,
-            52vw,
-            340px
-          );
+          clamp(230px, 52vw, 340px);
       }
 
 
@@ -693,9 +641,7 @@
 
 
       body.front-doors-page .site-footer .footer-grid {
-        grid-template-columns:
-          1fr;
-
+        grid-template-columns: 1fr;
         gap: 1.8rem;
       }
 
@@ -711,10 +657,7 @@
 
       .gallery-card {
         height:
-          min(
-            115vw,
-            440px
-          );
+          min(115vw, 440px);
       }
 
 
@@ -763,10 +706,6 @@
     Skip to content
   </a>
 
-
-  <!-- =====================================================
-       NAVIGATION
-       ===================================================== -->
 
   <header class="site-header">
 
@@ -885,10 +824,6 @@
   <main id="main-content">
 
 
-    <!-- ===================================================
-         TITLE
-         =================================================== -->
-
     <section class="front-doors-hero">
 
 
@@ -916,255 +851,15 @@
       </h2>
 
 
-    </section>
+      <div class="front-doors-intro">
 
+        <p>
+          Stained glass front door restoration is the most popular customer enquiry. Stained glass door panels will enhance the entrance to your home. We can restore your existing stained glass front door or, if your home no longer has the original stained glass, we can replicate neighbouring original stained glass designs.
+        </p>
 
-    <!-- ===================================================
-         GALLERY
-         =================================================== -->
-
-    <section
-      class="front-doors-gallery"
-      aria-label="Front door stained glass gallery"
-    >
-
-
-      <div class="front-doors-grid">
-
-
-        <button
-          class="gallery-card"
-          type="button"
-          data-index="0"
-          aria-label="Open front door image 1"
-        >
-          <img
-            src="../assets/images/front-doors/1_full.jpg"
-            alt="Front door stained glass project 1"
-          >
-        </button>
-
-
-        <button
-          class="gallery-card"
-          type="button"
-          data-index="1"
-          aria-label="Open front door image 2"
-        >
-          <img
-            src="../assets/images/front-doors/2_full.jpg"
-            alt="Front door stained glass project 2"
-          >
-        </button>
-
-
-        <button
-          class="gallery-card"
-          type="button"
-          data-index="2"
-          aria-label="Open front door image 3"
-        >
-          <img
-            src="../assets/images/front-doors/3_full.jpg"
-            alt="Front door stained glass project 3"
-          >
-        </button>
-
-
-        <button
-          class="gallery-card"
-          type="button"
-          data-index="3"
-          aria-label="Open front door image 4"
-        >
-          <img
-            src="../assets/images/front-doors/4_full.jpg"
-            alt="Front door stained glass project 4"
-          >
-        </button>
-
-
-        <button
-          class="gallery-card"
-          type="button"
-          data-index="4"
-          aria-label="Open front door image 5"
-        >
-          <img
-            src="../assets/images/front-doors/5_full.jpg"
-            alt="Front door stained glass project 5"
-          >
-        </button>
-
-
-        <button
-          class="gallery-card"
-          type="button"
-          data-index="5"
-          aria-label="Open front door image 6"
-        >
-          <img
-            src="../assets/images/front-doors/6.jpg"
-            alt="Front door stained glass project 6"
-          >
-        </button>
-
-
-        <button
-          class="gallery-card"
-          type="button"
-          data-index="6"
-          aria-label="Open front door image 7"
-        >
-          <img
-            src="../assets/images/front-doors/7(1).jpg"
-            alt="Front door stained glass project 7"
-          >
-        </button>
-
-
-        <button
-          class="gallery-card"
-          type="button"
-          data-index="7"
-          aria-label="Open front door image 8"
-        >
-          <img
-            src="../assets/images/front-doors/8.jpg"
-            alt="Front door stained glass project 8"
-          >
-        </button>
-
-
-        <button
-          class="gallery-card"
-          type="button"
-          data-index="8"
-          aria-label="Open front door image 9"
-        >
-          <img
-            src="../assets/images/front-doors/9(1).jpg"
-            alt="Front door stained glass project 9"
-          >
-        </button>
-
-
-        <button
-          class="gallery-card"
-          type="button"
-          data-index="9"
-          aria-label="Open front door image 10"
-        >
-          <img
-            src="../assets/images/front-doors/10.jpg"
-            alt="Front door stained glass project 10"
-          >
-        </button>
-
-
-        <button
-          class="gallery-card"
-          type="button"
-          data-index="10"
-          aria-label="Open front door image 11"
-        >
-          <img
-            src="../assets/images/front-doors/11(1).jpg"
-            alt="Front door stained glass project 11"
-          >
-        </button>
-
-
-        <button
-          class="gallery-card"
-          type="button"
-          data-index="11"
-          aria-label="Open front door image 12"
-        >
-          <img
-            src="../assets/images/front-doors/12.jpg"
-            alt="Front door stained glass project 12"
-          >
-        </button>
-
-
-        <button
-          class="gallery-card"
-          type="button"
-          data-index="12"
-          aria-label="Open front door image 13"
-        >
-          <img
-            src="../assets/images/front-doors/13.jpg"
-            alt="Front door stained glass project 13"
-          >
-        </button>
-
-
-        <button
-          class="gallery-card"
-          type="button"
-          data-index="13"
-          aria-label="Open front door image 14"
-        >
-          <img
-            src="../assets/images/front-doors/14.jpg"
-            alt="Front door stained glass project 14"
-          >
-        </button>
-
-
-        <button
-          class="gallery-card"
-          type="button"
-          data-index="14"
-          aria-label="Open front door image 15"
-        >
-          <img
-            src="../assets/images/front-doors/15.jpg"
-            alt="Front door stained glass project 15"
-          >
-        </button>
-
-
-        <button
-          class="gallery-card"
-          type="button"
-          data-index="15"
-          aria-label="Open front door image 16"
-        >
-          <img
-            src="../assets/images/front-doors/16.jpg"
-            alt="Front door stained glass project 16"
-          >
-        </button>
-
-
-        <button
-          class="gallery-card"
-          type="button"
-          data-index="16"
-          aria-label="Open front door image 17"
-        >
-          <img
-            src="../assets/images/front-doors/17.jpg"
-            alt="Front door stained glass project 17"
-          >
-        </button>
-
-
-        <button
-          class="gallery-card"
-          type="button"
-          data-index="17"
-          aria-label="Open front door image 18"
-        >
-          <img
-            src="../assets/images/front-doors/18.jpg"
-            alt="Front door stained glass project 18"
-          >
-        </button>
-
+        <p>
+          For stained glass restoration, the process would be to take the stained glass out of the door, measure the rebate, board up, take back to the studio, take a rubbing, un-lead, re-lead, replace broken panes, rebuild, cement, polish, place new ties and new steel saddle bars, refit and replace with new window beads or putty.
+        </p>
 
       </div>
 
@@ -1172,9 +867,91 @@
     </section>
 
 
-    <!-- ===================================================
-         CONTACT
-         =================================================== -->
+    <section
+      class="front-doors-gallery"
+      aria-label="Front door stained glass gallery"
+    >
+
+      <div class="front-doors-grid">
+
+
+        <button class="gallery-card" type="button" data-index="0" aria-label="Open front door image 1">
+          <img src="../assets/images/front-doors/1_full.jpg" alt="Front door stained glass project 1">
+        </button>
+
+        <button class="gallery-card" type="button" data-index="1" aria-label="Open front door image 2">
+          <img src="../assets/images/front-doors/2_full.jpg" alt="Front door stained glass project 2">
+        </button>
+
+        <button class="gallery-card" type="button" data-index="2" aria-label="Open front door image 3">
+          <img src="../assets/images/front-doors/3_full.jpg" alt="Front door stained glass project 3">
+        </button>
+
+        <button class="gallery-card" type="button" data-index="3" aria-label="Open front door image 4">
+          <img src="../assets/images/front-doors/4_full.jpg" alt="Front door stained glass project 4">
+        </button>
+
+        <button class="gallery-card" type="button" data-index="4" aria-label="Open front door image 5">
+          <img src="../assets/images/front-doors/5_full.jpg" alt="Front door stained glass project 5">
+        </button>
+
+        <button class="gallery-card" type="button" data-index="5" aria-label="Open front door image 6">
+          <img src="../assets/images/front-doors/6.jpg" alt="Front door stained glass project 6">
+        </button>
+
+        <button class="gallery-card" type="button" data-index="6" aria-label="Open front door image 7">
+          <img src="../assets/images/front-doors/7.jpg" alt="Front door stained glass project 7">
+        </button>
+
+        <button class="gallery-card" type="button" data-index="7" aria-label="Open front door image 8">
+          <img src="../assets/images/front-doors/8.jpg" alt="Front door stained glass project 8">
+        </button>
+
+        <button class="gallery-card" type="button" data-index="8" aria-label="Open front door image 9">
+          <img src="../assets/images/front-doors/9.jpg" alt="Front door stained glass project 9">
+        </button>
+
+        <button class="gallery-card" type="button" data-index="9" aria-label="Open front door image 10">
+          <img src="../assets/images/front-doors/10.jpg" alt="Front door stained glass project 10">
+        </button>
+
+        <button class="gallery-card" type="button" data-index="10" aria-label="Open front door image 11">
+          <img src="../assets/images/front-doors/11.jpg" alt="Front door stained glass project 11">
+        </button>
+
+        <button class="gallery-card" type="button" data-index="11" aria-label="Open front door image 12">
+          <img src="../assets/images/front-doors/12.jpg" alt="Front door stained glass project 12">
+        </button>
+
+        <button class="gallery-card" type="button" data-index="12" aria-label="Open front door image 13">
+          <img src="../assets/images/front-doors/13.jpg" alt="Front door stained glass project 13">
+        </button>
+
+        <button class="gallery-card" type="button" data-index="13" aria-label="Open front door image 14">
+          <img src="../assets/images/front-doors/14.jpg" alt="Front door stained glass project 14">
+        </button>
+
+        <button class="gallery-card" type="button" data-index="14" aria-label="Open front door image 15">
+          <img src="../assets/images/front-doors/15.jpg" alt="Front door stained glass project 15">
+        </button>
+
+        <button class="gallery-card" type="button" data-index="15" aria-label="Open front door image 16">
+          <img src="../assets/images/front-doors/16.jpg" alt="Front door stained glass project 16">
+        </button>
+
+        <button class="gallery-card" type="button" data-index="16" aria-label="Open front door image 17">
+          <img src="../assets/images/front-doors/17.jpg" alt="Front door stained glass project 17">
+        </button>
+
+        <button class="gallery-card" type="button" data-index="17" aria-label="Open front door image 18">
+          <img src="../assets/images/front-doors/18.jpg" alt="Front door stained glass project 18">
+        </button>
+
+
+      </div>
+
+    </section>
+
 
     <div class="front-doors-enquiry">
 
@@ -1191,15 +968,9 @@
   </main>
 
 
-  <!-- =====================================================
-       FOOTER
-       ===================================================== -->
-
   <footer class="site-footer">
 
-
     <div class="footer-grid">
-
 
       <div>
 
@@ -1286,7 +1057,6 @@
 
       </div>
 
-
     </div>
 
 
@@ -1294,13 +1064,8 @@
       © Leading Lights of London Ltd 2026
     </div>
 
-
   </footer>
 
-
-  <!-- =====================================================
-       LIGHTBOX
-       ===================================================== -->
 
   <div
     class="gallery-lightbox"
@@ -1310,7 +1075,6 @@
     aria-label="Front doors image viewer"
     hidden
   >
-
 
     <button
       class="lightbox-close"
@@ -1344,7 +1108,6 @@
         alt=""
       >
 
-
       <div
         class="lightbox-counter"
         id="lightbox-counter"
@@ -1363,7 +1126,6 @@
     >
       ›
     </button>
-
 
   </div>
 
@@ -1384,39 +1146,25 @@
         );
 
       const lightbox =
-        document.getElementById(
-          'gallery-lightbox'
-        );
+        document.getElementById('gallery-lightbox');
 
       const lightboxImage =
-        document.getElementById(
-          'lightbox-image'
-        );
+        document.getElementById('lightbox-image');
 
       const counter =
-        document.getElementById(
-          'lightbox-counter'
-        );
+        document.getElementById('lightbox-counter');
 
       const closeButton =
-        document.getElementById(
-          'lightbox-close'
-        );
+        document.getElementById('lightbox-close');
 
       const previousButton =
-        document.getElementById(
-          'lightbox-prev'
-        );
+        document.getElementById('lightbox-prev');
 
       const nextButton =
-        document.getElementById(
-          'lightbox-next'
-        );
+        document.getElementById('lightbox-next');
 
       const stage =
-        document.getElementById(
-          'lightbox-stage'
-        );
+        document.getElementById('lightbox-stage');
 
 
       const images =
@@ -1434,7 +1182,6 @@
 
 
       let currentIndex = 0;
-
       let touchStartX = 0;
 
 
@@ -1496,8 +1243,6 @@
           'lightbox-open'
         );
 
-        cards[currentIndex].focus();
-
       }
 
 
@@ -1508,6 +1253,19 @@
             'click',
             () => openLightbox(index)
           );
+
+        }
+      );
+
+
+      closeButton.addEventListener(
+        'click',
+        event => {
+
+          event.preventDefault();
+          event.stopPropagation();
+
+          closeLightbox();
 
         }
       );
@@ -1526,12 +1284,6 @@
         () => showImage(
           currentIndex + 1
         )
-      );
-
-
-      closeButton.addEventListener(
-        'click',
-        closeLightbox
       );
 
 
@@ -1591,8 +1343,7 @@
         event => {
 
           touchStartX =
-            event.changedTouches[0]
-              .screenX;
+            event.changedTouches[0].screenX;
 
         },
         {
@@ -1606,8 +1357,7 @@
         event => {
 
           const touchEndX =
-            event.changedTouches[0]
-              .screenX;
+            event.changedTouches[0].screenX;
 
           const difference =
             touchEndX -
