@@ -186,7 +186,7 @@
     }
 
     /* =====================================================
-       TILE LABEL SIZE - SLIGHTLY BIGGER
+       TILE LABEL SIZE
        ===================================================== */
 
     body.home-page .gallery-pane-label {
@@ -196,15 +196,12 @@
     }
 
     /* =====================================================
-       ECCLESIASTIC LABEL AT TOP ONLY
+       ECCLESIASTIC TOP LABEL ONLY
        ===================================================== */
 
     body.home-page .gallery-pane.label-top .gallery-pane-label {
-      top: 0;
-      bottom: auto;
       border-top: none;
       border-bottom: 1px solid rgba(212, 173, 95, 0.18);
-      z-index: 5;
     }
 
     /* =====================================================
@@ -224,6 +221,7 @@
       transform: translate(-50%, -50%) rotate(45deg);
       overflow: hidden;
       border: 3px solid #171919;
+
       background:
         linear-gradient(
           45deg,
@@ -238,12 +236,16 @@
           transparent 51%
         ),
         #121616;
+
       background-size: 28px 28px;
+
       box-shadow:
         inset 0 0 0 1px rgba(220,183,102,.22),
         0 5px 15px rgba(0,0,0,.46);
+
       color: #f0e7d6;
       text-decoration: none;
+
       transition:
         filter 170ms ease,
         box-shadow 170ms ease;
@@ -252,6 +254,7 @@
     body.home-page .palaces-diamond:hover,
     body.home-page .palaces-diamond:focus-visible {
       filter: brightness(1.08);
+
       box-shadow:
         inset 0 0 0 1px rgba(231,195,116,.36),
         0 8px 18px rgba(0,0,0,.5);
@@ -293,14 +296,12 @@
        ===================================================== */
 
     body.home-page .content-band {
-      box-shadow:
-        0 0 0 100vmax #0d1011;
+      box-shadow: 0 0 0 100vmax #0d1011;
       clip-path: inset(0 -100vmax);
     }
 
     body.home-page .site-footer {
-      box-shadow:
-        0 0 0 100vmax #090b0c;
+      box-shadow: 0 0 0 100vmax #090b0c;
       clip-path: inset(0 -100vmax);
     }
 
@@ -329,12 +330,6 @@
         transform: none;
       }
 
-      body.home-page .gallery-pane.label-top .gallery-pane-label {
-        top: auto;
-        bottom: 0;
-        border-bottom: none;
-      }
-
     }
 
   </style>
@@ -343,10 +338,7 @@
 
 <body class="home-page">
 
-  <a
-    class="skip-link"
-    href="#main-content"
-  >
+  <a class="skip-link" href="#main-content">
     Skip to content
   </a>
 
@@ -503,28 +495,24 @@
               class="arched-main"
               text-anchor="middle"
             >
-
               <textPath
                 href="#leading-lights-title-arc"
                 startOffset="50%"
               >
                 Leading Lights
               </textPath>
-
             </text>
 
             <text
               class="arched-sub"
               text-anchor="middle"
             >
-
               <textPath
                 href="#leading-lights-subtitle-arc"
                 startOffset="50%"
               >
                 OF LONDON LTD
               </textPath>
-
             </text>
 
           </svg>
@@ -572,6 +560,8 @@
           aria-label="Gallery categories"
         >
 
+          <!-- FRONT DOORS -->
+
           <a
             class="gallery-pane"
             href="gallery/front-doors.html"
@@ -590,10 +580,17 @@
 
           </a>
 
+          <!-- ECCLESIASTIC - LABEL PHYSICALLY FIRST -->
+
           <a
             class="gallery-pane label-top"
             href="gallery/ecclesiastic.html"
           >
+
+            <span class="gallery-pane-label">
+              <span>Ecclesiastic</span>
+              <span aria-hidden="true">›</span>
+            </span>
 
             <img
               class="tile-photo"
@@ -601,12 +598,9 @@
               alt="Ecclesiastic stained glass detail"
             >
 
-            <span class="gallery-pane-label">
-              <span>Ecclesiastic</span>
-              <span aria-hidden="true">›</span>
-            </span>
-
           </a>
+
+          <!-- MANSION HOUSES -->
 
           <a
             class="gallery-pane"
@@ -626,6 +620,8 @@
 
           </a>
 
+          <!-- BESPOKE DESIGNS -->
+
           <a
             class="gallery-pane"
             href="gallery/bespoke-designs.html"
@@ -643,6 +639,8 @@
             </span>
 
           </a>
+
+          <!-- ARCHITECTURAL -->
 
           <a
             class="gallery-pane"
@@ -662,6 +660,8 @@
 
           </a>
 
+          <!-- MISCELLANEOUS -->
+
           <a
             class="gallery-pane"
             href="gallery/miscellaneous.html"
@@ -679,6 +679,8 @@
             </span>
 
           </a>
+
+          <!-- PALACES -->
 
           <a
             class="palaces-diamond"
@@ -714,6 +716,7 @@
     </section>
 
     <section class="content-band">
+
       <div class="cta-row">
 
         <a
@@ -724,6 +727,7 @@
         </a>
 
       </div>
+
     </section>
 
   </main>
@@ -733,11 +737,13 @@
     <div class="footer-grid">
 
       <div>
+
         <img
           class="footer-studio-image"
           src="assets/images/home/clockwork-studios-architectural-blueprint.png"
           alt="Clockwork Studios architectural drawing"
         >
+
       </div>
 
       <div>
@@ -816,5 +822,4 @@
   ></script>
 
 </body>
-
 </html>
