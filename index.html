@@ -1,117 +1,605 @@
 <!doctype html>
 <html lang="en-GB">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Leading Lights of London Ltd | Stained Glass Design, Restoration & Repair</title>
+<head>
+
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+
+  <title>
+    Leading Lights of London Ltd | Stained Glass Design, Restoration & Repair
+  </title>
+
 
   <meta
     name="description"
     content="Leading Lights of London Ltd — stained glass design, restoration and repair in London."
   >
 
+
   <meta
     property="og:title"
     content="Leading Lights of London Ltd | Stained Glass Design, Restoration & Repair"
   >
+
 
   <meta
     property="og:description"
     content="Leading Lights of London Ltd — stained glass design, restoration and repair in London."
   >
 
-  <meta property="og:type" content="website">
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
 
   <!-- Add the final canonical URL here when the production domain is confirmed. -->
   <!-- Add verified LocalBusiness structured data here only after all business details are confirmed. -->
 
+
   <!-- Shared website styles -->
-  <link rel="stylesheet" href="css/styles.css?v=7">
+
+  <link
+    rel="stylesheet"
+    href="css/styles.css?v=7"
+  >
+
 
   <!-- Landing-page-specific styles -->
-  <link rel="stylesheet" href="css/landing.css?v=23">
+
+  <link
+    rel="stylesheet"
+    href="css/landing.css?v=23"
+  >
+
+
+  <!-- =====================================================
+       CLICK-TO-ENLARGE BUSINESS COPY
+       ===================================================== -->
+
+  <style>
+
+
+    /* Existing text block remains visually unchanged
+       until the visitor hovers over it. */
+
+    .landing-business-copy--interactive {
+
+      position: relative;
+
+      cursor: pointer;
+
+    }
+
+
+    /* Invisible border positioned outside the existing
+       content so it does NOT change your current spacing. */
+
+    .landing-business-copy--interactive::after {
+
+      content: '';
+
+      position: absolute;
+
+      inset: -10px;
+
+      border:
+        1px solid
+        transparent;
+
+      border-radius: 2px;
+
+      pointer-events: none;
+
+      transition:
+        border-color 180ms ease,
+        box-shadow 180ms ease,
+        background-color 180ms ease;
+
+    }
+
+
+    .landing-business-copy--interactive:hover::after,
+    .landing-business-copy--interactive:focus-visible::after {
+
+      border-color:
+        rgba(220, 181, 95, .72);
+
+      box-shadow:
+        0 0 15px rgba(212, 173, 95, .10),
+        inset 0 0 16px rgba(212, 173, 95, .025);
+
+      background-color:
+        rgba(212, 173, 95, .012);
+
+    }
+
+
+    .landing-business-copy--interactive:focus-visible {
+
+      outline: none;
+
+    }
+
+
+    /* =====================================================
+       LARGE READING OVERLAY
+       ===================================================== */
+
+    .landing-copy-lightbox[hidden] {
+
+      display: none !important;
+
+    }
+
+
+    .landing-copy-lightbox {
+
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 99999;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding:
+        clamp(1.5rem, 5vw, 4rem);
+
+      background:
+        rgba(0, 0, 0, .94);
+
+      backdrop-filter:
+        blur(6px);
+
+      -webkit-backdrop-filter:
+        blur(6px);
+
+    }
+
+
+    .landing-copy-lightbox-panel {
+
+      position: relative;
+
+      width:
+        min(
+          90vw,
+          920px
+        );
+
+      max-height:
+        85vh;
+
+      overflow-y: auto;
+
+      padding:
+        clamp(2.3rem, 5vw, 4.3rem)
+        clamp(1.8rem, 5vw, 4.5rem);
+
+      border:
+        1px solid
+        rgba(212, 173, 95, .46);
+
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          #181515 0,
+          #0c0d0e 48%,
+          #070808 100%
+        );
+
+      box-shadow:
+        0 24px 80px rgba(0, 0, 0, .82),
+        inset 0 0 0 1px rgba(255,255,255,.025);
+
+      text-align: center;
+
+    }
+
+
+    .landing-copy-lightbox-title {
+
+      width:
+        min(
+          100%,
+          760px
+        );
+
+      margin:
+        0
+        auto
+        1.7rem;
+
+      font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(
+          1.75rem,
+          3vw,
+          2.6rem
+        );
+
+      font-weight: 600;
+
+      line-height: 1.15;
+
+      color: #f2eadc;
+
+    }
+
+
+    .landing-copy-lightbox-rule {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: .8rem;
+
+      width:
+        min(
+          320px,
+          60%
+        );
+
+      margin:
+        0
+        auto
+        2rem;
+
+      color: #d4ad5f;
+
+    }
+
+
+    .landing-copy-lightbox-rule::before,
+    .landing-copy-lightbox-rule::after {
+
+      content: '';
+
+      flex: 1;
+
+      height: 1px;
+
+      background:
+        linear-gradient(
+          to right,
+          transparent,
+          rgba(212, 173, 95, .75)
+        );
+
+    }
+
+
+    .landing-copy-lightbox-rule::after {
+
+      background:
+        linear-gradient(
+          to left,
+          transparent,
+          rgba(212, 173, 95, .75)
+        );
+
+    }
+
+
+    .landing-copy-lightbox-rule span {
+
+      font-size: .7rem;
+
+    }
+
+
+    .landing-copy-lightbox-text {
+
+      width:
+        min(
+          100%,
+          760px
+        );
+
+      margin: 0 auto;
+
+      font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif;
+
+      color: #e5dccd;
+
+      font-size:
+        clamp(
+          1.2rem,
+          1.8vw,
+          1.48rem
+        );
+
+      line-height: 1.6;
+
+    }
+
+
+    .landing-copy-lightbox-text p {
+
+      margin:
+        0
+        0
+        1.45rem;
+
+    }
+
+
+    .landing-copy-lightbox-text p:last-child {
+
+      margin-bottom: 0;
+
+    }
+
+
+    .landing-copy-lightbox-close {
+
+      position: absolute;
+
+      top: 1rem;
+
+      right: 1rem;
+
+      z-index: 5;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      width: 46px;
+
+      height: 46px;
+
+      padding: 0;
+
+      border:
+        1px solid
+        rgba(212, 173, 95, .48);
+
+      border-radius: 50%;
+
+      background:
+        rgba(5, 6, 6, .82);
+
+      color: #f1eadc;
+
+      font-family:
+        Arial,
+        sans-serif;
+
+      font-size: 1.5rem;
+
+      line-height: 1;
+
+      cursor: pointer;
+
+      transition:
+        border-color 160ms ease,
+        color 160ms ease,
+        background-color 160ms ease;
+
+    }
+
+
+    .landing-copy-lightbox-close:hover,
+    .landing-copy-lightbox-close:focus-visible {
+
+      border-color: #d4ad5f;
+
+      color: #efd393;
+
+      background:
+        rgba(18, 15, 12, .96);
+
+    }
+
+
+    body.landing-copy-open {
+
+      overflow: hidden;
+
+    }
+
+
+    /* =====================================================
+       MOBILE
+       ===================================================== */
+
+    @media (max-width: 600px) {
+
+      .landing-business-copy--interactive::after {
+
+        inset: -6px;
+
+      }
+
+
+      .landing-copy-lightbox {
+
+        padding: 1rem;
+
+      }
+
+
+      .landing-copy-lightbox-panel {
+
+        width: 100%;
+
+        max-height: 90vh;
+
+        padding:
+          3.8rem
+          1.35rem
+          2rem;
+
+      }
+
+
+      .landing-copy-lightbox-title {
+
+        font-size:
+          clamp(
+            1.55rem,
+            7vw,
+            2rem
+          );
+
+      }
+
+
+      .landing-copy-lightbox-text {
+
+        font-size: 1.12rem;
+
+        line-height: 1.55;
+
+      }
+
+    }
+
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .landing-business-copy--interactive::after,
+      .landing-copy-lightbox-close {
+
+        transition: none;
+
+      }
+
+    }
+
+
+  </style>
+
 </head>
+
+
 
 <body class="landing-page">
 
-  <a class="skip-link" href="#main-content">
+
+  <a
+    class="skip-link"
+    href="#main-content"
+  >
     Skip to content
   </a>
 
+
+
   <main id="main-content">
+
 
     <section
       class="gothic-stage"
       aria-label="Leading Lights of London entrance"
     >
 
+
       <!--
         FRONT STONE FRAME
-
-        This is the same approved stone shell as before,
-        but with the black centre made transparent.
-
-        It sits ABOVE the stained glass so the glass appears
-        physically behind the Gothic stonework.
       -->
+
       <img
-      class="gothic-shell-image"
-  src="assets/images/landing/landing-shell-frame-wide-clean-v2.png"
-  alt="Weathered Gothic stone window frame"
-  width="1448"
-  height="1086"
+        class="gothic-shell-image"
+        src="assets/images/landing/landing-shell-frame-wide-clean-v2.png"
+        alt="Weathered Gothic stone window frame"
+        width="1448"
+        height="1086"
       >
+
 
 
       <!--
         EVERYTHING BELOW THIS POINT SITS BEHIND THE STONE FRAME
       -->
+
       <div class="window-overlay landing-overlay">
 
 
+
         <!-- TOP STAINED GLASS -->
+
         <div
           class="landing-glass landing-glass--top"
           aria-hidden="true"
         >
+
           <img
-  src="assets/images/landing/landing-top-panel-v2.png"
-  alt=""
+            src="assets/images/landing/landing-top-panel-v2.png"
+            alt=""
           >
+
         </div>
 
 
+
         <!-- LEFT STAINED-GLASS COLUMN -->
+
         <div
           class="landing-side-stack landing-side-stack--left"
           aria-hidden="true"
         >
 
-          <div class="landing-side-piece">
-            <img
-              src="assets/images/landing/landing-side-panel.png"
-              alt=""
-            >
-          </div>
 
           <div class="landing-side-piece">
+
             <img
               src="assets/images/landing/landing-side-panel.png"
               alt=""
             >
+
           </div>
+
+
+          <div class="landing-side-piece">
+
+            <img
+              src="assets/images/landing/landing-side-panel.png"
+              alt=""
+            >
+
+          </div>
+
 
         </div>
 
 
+
         <!-- CENTRAL INFORMATION PANEL -->
+
         <section
           class="landing-panel"
           aria-labelledby="landing-title"
         >
 
+
           <header class="landing-brand">
+
 
             <h1
               class="brand-title"
@@ -120,14 +608,17 @@
               Leading Lights
             </h1>
 
+
             <p class="brand-subtitle">
               of London Ltd
             </p>
+
 
             <div
               class="gold-rule"
               aria-hidden="true"
             ></div>
+
 
 
             <p class="service-line">
@@ -136,26 +627,48 @@
             </p>
 
 
+
             <div class="contact-compact">
 
+
               <a href="tel:+442077374567">
-                <span aria-hidden="true">☎</span>
+
+                <span aria-hidden="true">
+                  ☎
+                </span>
+
                 020 7737 4567
+
               </a>
+
 
               <a href="tel:+447803935003">
-                <span aria-hidden="true">▣</span>
+
+                <span aria-hidden="true">
+                  ▣
+                </span>
+
                 07803 935003
+
               </a>
 
+
               <a href="mailto:jonny@leadinglighter.co.uk">
-                <span aria-hidden="true">✉</span>
+
+                <span aria-hidden="true">
+                  ✉
+                </span>
+
                 jonny@leadinglighter.co.uk
+
               </a>
+
 
             </div>
 
+
           </header>
+
 
 
           <div
@@ -164,29 +677,56 @@
           ></div>
 
 
-          <!-- BUSINESS COPY -->
-          <div class="landing-business-copy">
+
+          <!-- =================================================
+               BUSINESS COPY
+               Now clickable without changing its normal layout.
+               ================================================= -->
+
+          <div
+            class="landing-business-copy landing-business-copy--interactive"
+            id="landing-business-copy"
+            role="button"
+            tabindex="0"
+            aria-haspopup="dialog"
+            aria-controls="landing-copy-lightbox"
+            aria-label="Open larger version of the business information"
+          >
+
 
             <h2 class="landing-business-title">
+
               Leaded Light and Stained Glass Design, Restoration and Repair in London
+
             </h2>
 
 
+
             <p class="landing-copy">
+
               Leading lights of London Ltd is a Stained Glass and Leaded Light company, based in Camberwell, South London and Camden, North London. The company specialises in Stained Glass Restoration, Stained Glass Repairs, Stained Glass Reproductions and new Stained Glass Designs. A range of forms and styles can be produced.
+
             </p>
 
 
+
             <p class="landing-copy">
+
               From beautiful Victorian Stained Glass front doors, feature Leaded Light Windows for pubs and restaurants, an infinite variety of Ecclesiastic Stained Glass, as well as bespoke designs, minor repairs, work for managed properties and quotes for insurance claims.
+
             </p>
+
 
 
             <p class="landing-copy">
+
               Free consultations within 5 miles of SE5 and NW1. In most cases, all we require is for you to email a photo of the damaged stained glass.
+
             </p>
+
 
           </div>
+
 
 
           <div
@@ -195,7 +735,9 @@
           ></div>
 
 
+
           <!-- ENTER -->
+
           <a
             class="enter-link"
             href="home.html"
@@ -204,42 +746,284 @@
             ENTER
           </a>
 
+
         </section>
 
 
+
         <!-- RIGHT STAINED-GLASS COLUMN -->
+
         <div
           class="landing-side-stack landing-side-stack--right"
           aria-hidden="true"
         >
 
-          <div class="landing-side-piece">
-            <img
-              src="assets/images/landing/landing-side-panel.png"
-              alt=""
-            >
-          </div>
 
           <div class="landing-side-piece">
+
             <img
               src="assets/images/landing/landing-side-panel.png"
               alt=""
             >
+
           </div>
+
+
+          <div class="landing-side-piece">
+
+            <img
+              src="assets/images/landing/landing-side-panel.png"
+              alt=""
+            >
+
+          </div>
+
 
         </div>
 
+
       </div>
+
 
     </section>
 
+
   </main>
 
+
+
+  <!-- =====================================================
+       ENLARGED BUSINESS TEXT
+       ===================================================== -->
+
+  <div
+    class="landing-copy-lightbox"
+    id="landing-copy-lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="landing-copy-lightbox-title"
+    hidden
+  >
+
+
+    <div class="landing-copy-lightbox-panel">
+
+
+      <button
+        class="landing-copy-lightbox-close"
+        id="landing-copy-lightbox-close"
+        type="button"
+        aria-label="Close enlarged business information"
+      >
+        ×
+      </button>
+
+
+
+      <h2
+        class="landing-copy-lightbox-title"
+        id="landing-copy-lightbox-title"
+      >
+
+        Leaded Light and Stained Glass Design,<br>
+        Restoration and Repair in London
+
+      </h2>
+
+
+
+      <div
+        class="landing-copy-lightbox-rule"
+        aria-hidden="true"
+      >
+        <span>✦</span>
+      </div>
+
+
+
+      <div class="landing-copy-lightbox-text">
+
+
+        <p>
+
+          Leading lights of London Ltd is a Stained Glass and Leaded Light company, based in Camberwell, South London and Camden, North London. The company specialises in Stained Glass Restoration, Stained Glass Repairs, Stained Glass Reproductions and new Stained Glass Designs. A range of forms and styles can be produced.
+
+        </p>
+
+
+        <p>
+
+          From beautiful Victorian Stained Glass front doors, feature Leaded Light Windows for pubs and restaurants, an infinite variety of Ecclesiastic Stained Glass, as well as bespoke designs, minor repairs, work for managed properties and quotes for insurance claims.
+
+        </p>
+
+
+        <p>
+
+          Free consultations within 5 miles of SE5 and NW1. In most cases, all we require is for you to email a photo of the damaged stained glass.
+
+        </p>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+
+  <!-- EXISTING MAIN SCRIPT -->
 
   <script
     src="js/main.js"
     defer
   ></script>
 
+
+
+  <!-- =====================================================
+       ENLARGED TEXT SCRIPT
+       ===================================================== -->
+
+  <script>
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      () => {
+
+
+        const copyBlock =
+          document.getElementById(
+            'landing-business-copy'
+          );
+
+
+        const lightbox =
+          document.getElementById(
+            'landing-copy-lightbox'
+          );
+
+
+        const closeButton =
+          document.getElementById(
+            'landing-copy-lightbox-close'
+          );
+
+
+
+        function openCopyLightbox() {
+
+          lightbox.hidden = false;
+
+          document.body.classList.add(
+            'landing-copy-open'
+          );
+
+          closeButton.focus();
+
+        }
+
+
+
+        function closeCopyLightbox() {
+
+          lightbox.hidden = true;
+
+          document.body.classList.remove(
+            'landing-copy-open'
+          );
+
+          copyBlock.focus();
+
+        }
+
+
+
+        copyBlock.addEventListener(
+          'click',
+          openCopyLightbox
+        );
+
+
+
+        copyBlock.addEventListener(
+          'keydown',
+          event => {
+
+            if (
+              event.key === 'Enter' ||
+              event.key === ' '
+            ) {
+
+              event.preventDefault();
+
+              openCopyLightbox();
+
+            }
+
+          }
+        );
+
+
+
+        closeButton.addEventListener(
+          'click',
+          event => {
+
+            event.preventDefault();
+
+            event.stopPropagation();
+
+            closeCopyLightbox();
+
+          }
+        );
+
+
+
+        lightbox.addEventListener(
+          'click',
+          event => {
+
+            if (
+              event.target === lightbox
+            ) {
+
+              closeCopyLightbox();
+
+            }
+
+          }
+        );
+
+
+
+        document.addEventListener(
+          'keydown',
+          event => {
+
+            if (
+              event.key === 'Escape' &&
+              !lightbox.hidden
+            ) {
+
+              closeCopyLightbox();
+
+            }
+
+          }
+        );
+
+
+      }
+    );
+
+  </script>
+
+
 </body>
+
 </html>
