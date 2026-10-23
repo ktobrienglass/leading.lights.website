@@ -1,97 +1,734 @@
-    <!doctype html>
-    <html lang="en-GB">
-    <head>
+<!doctype html>
+<html lang="en-GB">
+
+<head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact | Leading Lights of London Ltd</title>
-  <meta name="description" content="Contact Leading Lights of London Ltd for stained glass design, restoration and repair enquiries.">
-  <meta property="og:title" content="Contact | Leading Lights of London Ltd">
-  <meta property="og:description" content="Contact Leading Lights of London Ltd for stained glass design, restoration and repair enquiries.">
-  <meta property="og:type" content="website">
-  <!-- Add the final canonical URL here when the production domain is confirmed. -->
-  <!-- Add verified LocalBusiness structured data here only after all business details are confirmed. -->
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-    <body>
-      <a class="skip-link" href="#main-content">Skip to content</a>
-      <header class="site-header">
-  <nav class="primary-nav" aria-label="Primary navigation">
-    <a class="brand-mini" href="home.html">Leading Lights of London Ltd</a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-links">Menu</button>
-    <ul class="primary-links" id="primary-links">
-      <li><a href="home.html">Home</a></li> <li><a href="restoration.html">Restoration</a></li> <li><a href="about.html">About</a></li> <li><a href="contact.html" aria-current="page">Contact</a></li>
-    </ul>
-  </nav>
-  <nav class="gallery-nav" aria-label="Gallery categories">
-    <ul class="gallery-links"><li><a href="gallery/front-doors.html">Front Doors</a></li> <li><a href="gallery/ecclesiastic.html">Ecclesiastic</a></li> <li><a href="gallery/mansion-houses.html">Mansion Houses</a></li> <li><a href="gallery/bespoke-designs.html">Bespoke Designs</a></li> <li><a href="gallery/architectural.html">Architectural</a></li> <li><a href="gallery/miscellaneous.html">Miscellaneous</a></li></ul>
-  </nav>
-</header>
-      <main id="main-content">
-        <section class="gothic-stage" aria-label="Contact page Gothic window">
-  <img class="gothic-shell-image" src="assets/images/site/master-gothic-shell.png" alt="Dark Gothic stone window surround used as the site architectural frame" width="1122" height="1402">
-  <div class="window-overlay page-overlay">
-    <div class="page-window-card">
-      <h1>Contact</h1>
-      <p>Stained glass design, restoration and repair enquiries.</p>
-    </div>
-  </div>
-</section>
-<section class="content-band">
-  <div class="contact-grid">
-    <div>
-      <h2 class="section-heading">Get in touch</h2>
-      <p class="section-lede">[ Add final enquiry guidance / appointment information here. ]</p>
-      <ul class="contact-list">
-        <li>Telephone: <a href="tel:+442077374567">020 7737 4567</a></li>
-        <li>Mobile: <a href="tel:+447803935003">07803 935003</a></li>
-        <li>Email: <a href="mailto:jonny@leadinglighter.co.uk">jonny@leadinglighter.co.uk</a></li>
-        <li>Studio: Clockwork Studios, 38A Southwell Road, London SE5 9PG</li>
-        <li>[ Opening / appointment information to be confirmed ]</li>
-      </ul>
-    </div>
-    <div>
-      <h2 class="section-heading">Enquiry form</h2>
-      <!-- This form is intentionally not connected to a backend. Replace with a Formspree (or equivalent) action when ready. -->
-      <form class="contact-form" action="#" method="post">
-        <div class="form-row"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name"></div>
-        <div class="form-row"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email"></div>
-        <div class="form-row"><label for="telephone">Telephone</label><input id="telephone" name="telephone" type="tel" autocomplete="tel"></div>
-        <div class="form-row"><label for="type">Type of enquiry</label><select id="type" name="type"><option>Stained glass design</option><option>Restoration / repair</option><option>Gallery / existing work</option><option>Other</option></select></div>
-        <div class="form-row"><label for="message">Message</label><textarea id="message" name="message"></textarea></div>
-        <button class="button button-disabled" type="button" aria-disabled="true">Submit (setup required)</button>
-        <p class="form-note" id="form-note">The form is visually ready but deliberately disabled until a static form service is connected.</p>
-      </form>
-    </div>
-  </div>
-</section>
 
-      </main>
-      <footer class="site-footer">
-  <div class="footer-grid">
-    <div>
-      <div class="footer-brand">Leading Lights<br>of London Ltd</div>
-      <p>Stained Glass Design | Restoration &amp; Repair</p>
-    </div>
-    <div>
-      <ul>
-        <li><a href="tel:+442077374567">020 7737 4567</a></li>
-        <li><a href="tel:+447803935003">07803 935003</a></li>
-        <li><a href="mailto:jonny@leadinglighter.co.uk">jonny@leadinglighter.co.uk</a></li>
+  <title>Contact | Leading Lights of London Ltd</title>
+
+  <meta
+    name="description"
+    content="Contact Leading Lights of London Ltd for stained glass design, restoration and repair in London."
+  >
+
+  <link
+    rel="stylesheet"
+    href="css/styles.css"
+  >
+
+  <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Pirata+One&display=swap');
+
+
+    /* =====================================================
+       CONTACT PAGE
+       ===================================================== */
+
+    body.contact-page {
+      margin: 0;
+      min-height: 100vh;
+
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          #171515 0,
+          #0c0e0f 34%,
+          #050607 72%
+        );
+
+      color: #f1eadc;
+    }
+
+
+    /* =====================================================
+       NAVIGATION
+       ===================================================== */
+
+    body.contact-page .brand-mini {
+      font-family:
+        'Pirata One',
+        Georgia,
+        serif !important;
+
+      font-size:
+        clamp(1.1rem, 2vw, 1.4rem);
+
+      color: #efd393;
+    }
+
+
+    /* =====================================================
+       MAIN CONTACT AREA
+       ===================================================== */
+
+    .contact-main {
+      width:
+        min(
+          92%,
+          1050px
+        );
+
+      margin: 0 auto;
+
+      padding:
+        clamp(4rem, 8vw, 7rem)
+        1rem
+        clamp(5rem, 10vw, 8rem);
+
+      text-align: center;
+    }
+
+
+    .contact-title {
+      margin: 0;
+
+      font-family:
+        'Pirata One',
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(
+          2.8rem,
+          5vw,
+          5rem
+        );
+
+      font-weight: 400;
+
+      line-height: .95;
+
+      color: #d11f27;
+
+      text-shadow:
+        0 3px 0 #43070b,
+        0 0 16px rgba(189,25,34,.32);
+    }
+
+
+    /* =====================================================
+       GOLD DIVIDER
+       ===================================================== */
+
+    .contact-rule {
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: .8rem;
+
+      width:
+        min(
+          360px,
+          70%
+        );
+
+      margin:
+        1.5rem
+        auto
+        0;
+
+      color: #d4ad5f;
+    }
+
+
+    .contact-rule::before,
+    .contact-rule::after {
+      content: '';
+
+      display: block;
+
+      flex: 1;
+
+      height: 1px;
+
+      background:
+        linear-gradient(
+          to right,
+          transparent,
+          rgba(212,173,95,.75)
+        );
+    }
+
+
+    .contact-rule::after {
+      background:
+        linear-gradient(
+          to left,
+          transparent,
+          rgba(212,173,95,.75)
+        );
+    }
+
+
+    .contact-rule span {
+      font-size: .75rem;
+    }
+
+
+    /* =====================================================
+       INTRO TEXT
+       ===================================================== */
+
+    .contact-intro {
+      width:
+        min(
+          90%,
+          760px
+        );
+
+      margin:
+        clamp(2rem, 4vw, 3rem)
+        auto
+        0;
+
+      font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(
+          1.1rem,
+          1.5vw,
+          1.3rem
+        );
+
+      line-height: 1.6;
+
+      color: #ddd3c2;
+    }
+
+
+    /* =====================================================
+       CONTACT DETAILS
+       ===================================================== */
+
+    .contact-details {
+      width:
+        min(
+          92%,
+          700px
+        );
+
+      margin:
+        clamp(2.5rem, 5vw, 4rem)
+        auto
+        0;
+
+      padding:
+        clamp(2rem, 4vw, 3rem);
+
+      border:
+        1px solid
+        rgba(212,173,95,.24);
+
+      background:
+        rgba(6,7,7,.55);
+
+      box-shadow:
+        0 16px 38px rgba(0,0,0,.3),
+        inset 0 0 0 1px rgba(255,255,255,.02);
+    }
+
+
+    .contact-details h2 {
+      margin:
+        0
+        0
+        1.6rem;
+
+      font-family:
+        'Pirata One',
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(
+          1.8rem,
+          3vw,
+          2.5rem
+        );
+
+      font-weight: 400;
+
+      color: #efd393;
+    }
+
+
+    .contact-list {
+      list-style: none;
+
+      margin: 0;
+      padding: 0;
+
+      font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(
+          1.1rem,
+          1.55vw,
+          1.35rem
+        );
+
+      line-height: 1.7;
+    }
+
+
+    .contact-list li + li {
+      margin-top: .8rem;
+    }
+
+
+    .contact-list a {
+      color: #f1eadc;
+
+      text-decoration: none;
+
+      border-bottom:
+        1px solid
+        rgba(212,173,95,.28);
+
+      transition:
+        color 160ms ease,
+        border-color 160ms ease;
+    }
+
+
+    .contact-list a:hover,
+    .contact-list a:focus-visible {
+      color: #efd393;
+
+      border-color:
+        rgba(212,173,95,.75);
+    }
+
+
+    .contact-address {
+      margin:
+        2rem
+        0
+        0;
+
+      font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(
+          1.05rem,
+          1.45vw,
+          1.25rem
+        );
+
+      line-height: 1.6;
+
+      color: #d8cebd;
+    }
+
+
+    .contact-email-button {
+      display: inline-block;
+
+      margin-top:
+        clamp(2rem, 4vw, 3rem);
+    }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    body.contact-page .site-footer {
+      background: #080a0b;
+    }
+
+
+    body.contact-page .site-footer .footer-grid {
+      display: grid;
+
+      grid-template-columns:
+        minmax(170px,.8fr)
+        minmax(235px,1fr)
+        minmax(120px,.56fr);
+
+      column-gap:
+        clamp(
+          50px,
+          6vw,
+          90px
+        );
+
+      align-items: center;
+    }
+
+
+    body.contact-page .site-footer .footer-grid ul {
+      margin: 0;
+      padding: 0;
+    }
+
+
+    body.contact-page .site-footer .footer-grid li {
+      margin:
+        0
+        0
+        .48rem
+        0;
+    }
+
+
+    body.contact-page .site-footer .footer-grid li:last-child {
+      margin-bottom: 0;
+    }
+
+
+    body.contact-page .site-footer .footer-grid p {
+      margin: 0;
+      line-height: 1.55;
+    }
+
+
+    /* =====================================================
+       RESPONSIVE
+       ===================================================== */
+
+    @media (max-width: 760px) {
+
+      body.contact-page .site-footer .footer-grid {
+        grid-template-columns: 1fr;
+        row-gap: 1.8rem;
+      }
+
+
+      .contact-main {
+        padding-top: 3rem;
+      }
+
+
+      .contact-details {
+        padding:
+          1.8rem
+          1.25rem;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body class="contact-page">
+
+
+  <a
+    class="skip-link"
+    href="#main-content"
+  >
+    Skip to content
+  </a>
+
+
+  <!-- =====================================================
+       HEADER
+       ===================================================== -->
+
+  <header class="site-header">
+
+
+    <nav
+      class="primary-nav"
+      aria-label="Primary navigation"
+    >
+
+      <a
+        class="brand-mini"
+        href="home.html"
+      >
+        Leading Lights of London Ltd
+      </a>
+
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-links"
+      >
+        Menu
+      </button>
+
+
+      <ul
+        class="primary-links"
+        id="primary-links"
+      >
+
+        <li>
+          <a href="home.html">
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a href="about.html">
+            About
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="contact.html"
+            aria-current="page"
+          >
+            Contact
+          </a>
+        </li>
+
       </ul>
-    </div>
-    <div>
-      <p>Clockwork Studios, 38A Southwell Road, London SE5 9PG</p>
-    </div>
-    <div>
-      <ul>
-        <li><a href="index.html">Front Page</a></li>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="#">[ Instagram link ]</a></li>
+
+    </nav>
+
+
+    <nav
+      class="gallery-nav"
+      aria-label="Gallery categories"
+    >
+
+      <ul class="gallery-links">
+
+        <li>
+          <a href="gallery/front-doors.html">
+            Front Doors
+          </a>
+        </li>
+
+        <li>
+          <a href="gallery/ecclesiastic.html">
+            Ecclesiastic
+          </a>
+        </li>
+
+        <li>
+          <a href="gallery/mansion-houses.html">
+            Mansion Houses
+          </a>
+        </li>
+
+        <li>
+          <a href="gallery/palaces.html">
+            Palaces
+          </a>
+        </li>
+
+        <li>
+          <a href="gallery/bespoke-designs.html">
+            Bespoke Designs
+          </a>
+        </li>
+
+        <li>
+          <a href="gallery/architectural.html">
+            Architectural
+          </a>
+        </li>
+
+        <li>
+          <a href="gallery/miscellaneous.html">
+            Miscellaneous
+          </a>
+        </li>
+
       </ul>
+
+    </nav>
+
+
+  </header>
+
+
+  <!-- =====================================================
+       MAIN
+       ===================================================== -->
+
+  <main
+    class="contact-main"
+    id="main-content"
+  >
+
+
+    <h1 class="contact-title">
+      Contact
+    </h1>
+
+
+    <div
+      class="contact-rule"
+      aria-hidden="true"
+    >
+      <span>✦</span>
     </div>
-  </div>
-  <div class="footer-bottom">© Leading Lights of London Ltd 2026</div>
-</footer>
-      <script src="js/main.js" defer></script>
-    </body>
-    </html>
+
+
+    <p class="contact-intro">
+      For stained glass design, restoration or repair enquiries, please get in touch by phone or email.
+    </p>
+
+
+    <section
+      class="contact-details"
+      aria-label="Contact details"
+    >
+
+
+      <h2>
+        Leading Lights of London Ltd
+      </h2>
+
+
+      <ul class="contact-list">
+
+        <li>
+          <a href="tel:+442077374567">
+            020 7737 4567
+          </a>
+        </li>
+
+        <li>
+          <a href="tel:+447803935003">
+            07803 935003
+          </a>
+        </li>
+
+        <li>
+          <a href="mailto:jonny@leadinglighter.co.uk">
+            jonny@leadinglighter.co.uk
+          </a>
+        </li>
+
+      </ul>
+
+
+      <p class="contact-address">
+        Clockwork Studios<br>
+        38A Southwell Road<br>
+        London SE5 9PG
+      </p>
+
+
+      <a
+        class="button contact-email-button"
+        href="mailto:jonny@leadinglighter.co.uk"
+      >
+        Email / Make an enquiry
+      </a>
+
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
+  <footer class="site-footer">
+
+
+    <div class="footer-grid">
+
+
+      <div>
+
+        <ul>
+
+          <li>
+            <a href="tel:+442077374567">
+              020 7737 4567
+            </a>
+          </li>
+
+          <li>
+            <a href="tel:+447803935003">
+              07803 935003
+            </a>
+          </li>
+
+          <li>
+            <a href="mailto:jonny@leadinglighter.co.uk">
+              jonny@leadinglighter.co.uk
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div>
+
+        <p>
+          Clockwork Studios, 38A Southwell Road,<br>
+          London SE5 9PG
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <ul>
+
+          <li>
+            <a href="index.html">
+              Front Page
+            </a>
+          </li>
+
+          <li>
+            <a href="home.html">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              [ Instagram link ]
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+      © Leading Lights of London Ltd 2026
+    </div>
+
+
+  </footer>
+
+
+  <script
+    src="js/main.js"
+    defer
+  ></script>
+
+
+</body>
+
+</html>
