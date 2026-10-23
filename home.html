@@ -176,7 +176,13 @@
 
       overflow: visible;
 
-      transform: scale(0.95);
+      /*
+        ONLY CHANGE:
+        keep the entire composition locked together,
+        make it a tiny bit smaller and nudge it slightly
+        left so the right-hand gap matches the left.
+      */
+      transform: translateX(-0.4%) scale(0.94);
       transform-origin: center center;
     }
 
@@ -193,28 +199,19 @@
 
     body.home-page .tile-photo {
       display: block;
-
-      flex:
-        1
-        1
-        auto;
-
+      flex: 1 1 auto;
       width: 100%;
       height: 100%;
-
       min-width: 0;
       min-height: 0;
-
       object-fit: cover;
       object-position: center;
-
       overflow: hidden;
     }
 
 
     /* =====================================================
        PALACES DIAMOND
-       Leave as placeholder for now
        ===================================================== */
 
     body.home-page .palaces-diamond {
@@ -273,7 +270,6 @@
         rgba(0,0,0,.46);
 
       color: #f0e7d6;
-
       text-decoration: none;
 
       transition:
@@ -310,40 +306,28 @@
 
       gap: .22rem;
 
-      transform:
-        rotate(-45deg);
+      transform: rotate(-45deg);
 
       text-align: center;
     }
 
     body.home-page .palaces-placeholder {
-      color:
-        rgba(237,229,211,.58);
-
-      font-size:
-        clamp(.40rem, .60vw, .58rem);
-
+      color: rgba(237,229,211,.58);
+      font-size: clamp(.40rem, .60vw, .58rem);
       line-height: 1.1;
-
       letter-spacing: .05em;
-
       text-transform: uppercase;
     }
 
     body.home-page .palaces-label {
       color: #f1eadc;
-
-      font-size:
-        clamp(.56rem, .82vw, .78rem);
-
+      font-size: clamp(.56rem, .82vw, .78rem);
       line-height: 1;
     }
 
     body.home-page .palaces-arrow {
       color: var(--accent-gold);
-
       font-size: .72rem;
-
       line-height: 1;
     }
 
@@ -408,10 +392,6 @@
     Skip to content
   </a>
 
-
-  <!-- =====================================================
-       SITE HEADER
-       ===================================================== -->
 
   <header class="site-header">
 
@@ -543,10 +523,6 @@
   </header>
 
 
-  <!-- =====================================================
-       MAIN CONTENT
-       ===================================================== -->
-
   <main id="main-content">
 
 
@@ -567,10 +543,6 @@
 
       <div class="window-overlay home-overlay">
 
-
-        <!-- =================================================
-             HOMEPAGE BRAND
-             ================================================= -->
 
         <header class="home-brand">
 
@@ -680,17 +652,11 @@
         </header>
 
 
-        <!-- =================================================
-             SEVEN HOMEPAGE GALLERY PANES
-             ================================================= -->
-
         <div
           class="home-gallery-grid"
           aria-label="Gallery categories"
         >
 
-
-          <!-- FRONT DOORS -->
 
           <a
             class="gallery-pane"
@@ -704,21 +670,12 @@
             >
 
             <span class="gallery-pane-label">
-
-              <span>
-                Front Doors
-              </span>
-
-              <span aria-hidden="true">
-                ›
-              </span>
-
+              <span>Front Doors</span>
+              <span aria-hidden="true">›</span>
             </span>
 
           </a>
 
-
-          <!-- ECCLESIASTIC -->
 
           <a
             class="gallery-pane"
@@ -732,21 +689,12 @@
             >
 
             <span class="gallery-pane-label">
-
-              <span>
-                Ecclesiastic
-              </span>
-
-              <span aria-hidden="true">
-                ›
-              </span>
-
+              <span>Ecclesiastic</span>
+              <span aria-hidden="true">›</span>
             </span>
 
           </a>
 
-
-          <!-- MANSION HOUSES -->
 
           <a
             class="gallery-pane"
@@ -760,21 +708,12 @@
             >
 
             <span class="gallery-pane-label">
-
-              <span>
-                Mansion Houses
-              </span>
-
-              <span aria-hidden="true">
-                ›
-              </span>
-
+              <span>Mansion Houses</span>
+              <span aria-hidden="true">›</span>
             </span>
 
           </a>
 
-
-          <!-- BESPOKE DESIGNS -->
 
           <a
             class="gallery-pane"
@@ -788,21 +727,12 @@
             >
 
             <span class="gallery-pane-label">
-
-              <span>
-                Bespoke Designs
-              </span>
-
-              <span aria-hidden="true">
-                ›
-              </span>
-
+              <span>Bespoke Designs</span>
+              <span aria-hidden="true">›</span>
             </span>
 
           </a>
 
-
-          <!-- ARCHITECTURAL -->
 
           <a
             class="gallery-pane"
@@ -816,21 +746,12 @@
             >
 
             <span class="gallery-pane-label">
-
-              <span>
-                Architectural
-              </span>
-
-              <span aria-hidden="true">
-                ›
-              </span>
-
+              <span>Architectural</span>
+              <span aria-hidden="true">›</span>
             </span>
 
           </a>
 
-
-          <!-- MISCELLANEOUS -->
 
           <a
             class="gallery-pane"
@@ -844,24 +765,12 @@
             >
 
             <span class="gallery-pane-label">
-
-              <span>
-                Miscellaneous
-              </span>
-
-              <span aria-hidden="true">
-                ›
-              </span>
-
+              <span>Miscellaneous</span>
+              <span aria-hidden="true">›</span>
             </span>
 
           </a>
 
-
-          <!-- =================================================
-               PALACES
-               Leave as placeholder
-               ================================================= -->
 
           <a
             class="palaces-diamond"
@@ -903,10 +812,6 @@
 
     </section>
 
-
-    <!-- ===================================================
-         MOBILE GALLERY
-         =================================================== -->
 
     <section
       class="content-band mobile-home-gallery"
@@ -984,8 +889,6 @@
 
         </a>
 
-
-        <!-- PALACES stays as placeholder -->
 
         <a
           class="gallery-pane"
@@ -1073,10 +976,6 @@
     </section>
 
 
-    <!-- ===================================================
-         HOMEPAGE INTRODUCTION
-         =================================================== -->
-
     <section
       class="content-band"
       aria-labelledby="home-intro-heading"
@@ -1115,10 +1014,6 @@
 
   </main>
 
-
-  <!-- =====================================================
-       FOOTER
-       ===================================================== -->
 
   <footer class="site-footer">
 
