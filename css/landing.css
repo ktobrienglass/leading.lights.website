@@ -960,3 +960,18 @@ body.landing-page .enter-link:hover {
   }
 
 }
+/* =========================================================
+   LEAD LINE BETWEEN TOP GLASS AND SIDE PANELS
+   ========================================================= */
+
+.landing-glass--top::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 7px;
+  background: #050505;
+  z-index: 5;
+  pointer-events: none;
+}
