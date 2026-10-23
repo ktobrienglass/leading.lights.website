@@ -3,382 +3,167 @@
 
 <head>
   <meta charset="utf-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1"
-  >
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Front Doors | Leading Lights of London Ltd</title>
-
-  <meta
-    name="description"
-    content="Front door stained glass by Leading Lights of London Ltd."
-  >
-
-  <link
-    rel="stylesheet"
-    href="../css/styles.css"
-  >
+  <meta name="description" content="Front door stained glass by Leading Lights of London Ltd.">
+  <link rel="stylesheet" href="../css/styles.css">
 
   <style>
-
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Pirata+One&display=swap');
-
-
-    /* =====================================================
-       FRONT DOORS PAGE
-       ===================================================== */
 
     body.front-doors-page {
       margin: 0;
       min-height: 100vh;
-
-      background:
-        radial-gradient(
-          circle at 50% 0%,
-          #171515 0,
-          #0c0e0f 34%,
-          #050607 72%
-        );
-
+      background: radial-gradient(circle at 50% 0%, #171515 0, #0c0e0f 34%, #050607 72%);
       color: #f1eadc;
     }
-
 
     body.front-doors-page.lightbox-open {
       overflow: hidden;
     }
 
-
-    /* =====================================================
-       NAVIGATION
-       ===================================================== */
-
     body.front-doors-page .brand-mini {
-      font-family:
-        'Pirata One',
-        Georgia,
-        serif !important;
-
-      font-size:
-        clamp(1.1rem, 2vw, 1.4rem);
-
+      font-family: 'Pirata One', Georgia, serif !important;
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
       color: #efd393;
     }
-
-
-    /* =====================================================
-       PAGE TITLE
-       ===================================================== */
 
     .front-doors-hero {
       width: min(92%, 1380px);
       margin: 0 auto;
-
-      padding:
-        clamp(3rem, 7vw, 6rem)
-        1rem
-        clamp(2.4rem, 5vw, 4rem);
-
+      padding: clamp(4rem, 7vw, 6rem) 1rem clamp(2.4rem, 5vw, 4rem);
       text-align: center;
     }
 
-
-    .front-doors-brand {
-      margin: 0;
-
-      font-family:
-        'Pirata One',
-        Georgia,
-        serif;
-
-      font-size:
-        clamp(2.6rem, 5vw, 5rem);
-
-      font-weight: 400;
-      line-height: .92;
-
-      color: #efd393;
-
-      text-shadow:
-        0 3px 0 #39230c,
-        0 0 18px rgba(212,173,95,.12);
-    }
-
-
-    .front-doors-brand span {
-      display: block;
-      margin-top: .22em;
-      font-size: .48em;
-      letter-spacing: .035em;
-    }
-
-
     .front-doors-title {
-      margin:
-        clamp(1.1rem, 2.5vw, 1.8rem)
-        0
-        0;
-
-      font-family:
-        'Pirata One',
-        Georgia,
-        serif;
-
-      font-size:
-        clamp(2.4rem, 4.7vw, 4.4rem);
-
+      margin: 0;
+      font-family: 'Pirata One', Georgia, serif;
+      font-size: clamp(2.8rem, 5vw, 5rem);
       font-weight: 400;
       line-height: .95;
-
       color: #d11f27;
-
-      text-shadow:
-        0 3px 0 #43070b,
-        0 0 16px rgba(189,25,34,.32);
+      text-shadow: 0 3px 0 #43070b, 0 0 16px rgba(189, 25, 34, .32);
     }
-
 
     .front-doors-rule {
       display: flex;
       align-items: center;
       justify-content: center;
-
       gap: .8rem;
-
       width: min(360px, 70%);
-
-      margin:
-        1.6rem
-        auto
-        0;
-
+      margin: 1.5rem auto 0;
       color: #d4ad5f;
     }
-
 
     .front-doors-rule::before,
     .front-doors-rule::after {
       content: '';
-
       display: block;
       flex: 1;
-
       height: 1px;
-
-      background:
-        linear-gradient(
-          to right,
-          transparent,
-          rgba(212,173,95,.75)
-        );
+      background: linear-gradient(to right, transparent, rgba(212, 173, 95, .75));
     }
-
 
     .front-doors-rule::after {
-      background:
-        linear-gradient(
-          to left,
-          transparent,
-          rgba(212,173,95,.75)
-        );
+      background: linear-gradient(to left, transparent, rgba(212, 173, 95, .75));
     }
-
 
     .front-doors-rule span {
       font-size: .75rem;
     }
 
-
-    /* =====================================================
-       FRONT DOORS INTRODUCTION
-       ===================================================== */
-
     .front-doors-intro {
       width: min(88%, 980px);
-
-      margin:
-        clamp(2rem, 4vw, 3rem)
-        auto
-        0;
-
-      font-family:
-        'Cormorant Garamond',
-        Georgia,
-        serif;
-
+      margin: clamp(2rem, 4vw, 3rem) auto 0;
+      font-family: 'Cormorant Garamond', Georgia, serif;
       color: #ddd3c2;
-
       text-align: center;
     }
 
-
     .front-doors-intro p {
       margin: 0 auto;
-
-      font-size:
-        clamp(1.05rem, 1.45vw, 1.3rem);
-
+      font-size: clamp(1.05rem, 1.45vw, 1.3rem);
       line-height: 1.55;
     }
 
-
     .front-doors-intro p + p {
-      margin-top:
-        clamp(1.3rem, 2.5vw, 2rem);
+      margin-top: clamp(1.3rem, 2.5vw, 2rem);
     }
-
-
-    /* =====================================================
-       GALLERY
-       ===================================================== */
 
     .front-doors-gallery {
       width: min(92%, 1380px);
       margin: 0 auto;
-
-      padding:
-        0
-        0
-        clamp(4rem, 8vw, 7rem);
+      padding: 0 0 clamp(4rem, 8vw, 7rem);
     }
-
 
     .front-doors-grid {
       display: grid;
-
-      grid-template-columns:
-        repeat(4, minmax(0, 1fr));
-
-      gap:
-        clamp(1rem, 2vw, 1.8rem);
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: clamp(1rem, 2vw, 1.8rem);
     }
-
 
     .gallery-card {
       position: relative;
-
       width: 100%;
-
-      height:
-        clamp(250px, 25vw, 360px);
-
+      height: clamp(250px, 25vw, 360px);
       margin: 0;
       padding: 0;
-
       overflow: hidden;
-
-      border:
-        1px solid
-        rgba(212,173,95,.28);
-
+      border: 1px solid rgba(212, 173, 95, .28);
       border-radius: 2px;
-
       background: #050606;
-
-      box-shadow:
-        0 12px 28px rgba(0,0,0,.32),
-        inset 0 0 0 1px rgba(255,255,255,.025);
-
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .32), inset 0 0 0 1px rgba(255, 255, 255, .025);
       cursor: pointer;
-
-      transition:
-        transform 180ms ease,
-        border-color 180ms ease,
-        box-shadow 180ms ease;
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
     }
-
 
     .gallery-card:hover,
     .gallery-card:focus-visible {
       transform: translateY(-4px);
-
-      border-color:
-        rgba(231,195,116,.68);
-
-      box-shadow:
-        0 17px 34px rgba(0,0,0,.46),
-        inset 0 0 0 1px rgba(231,195,116,.14);
+      border-color: rgba(231, 195, 116, .68);
+      box-shadow: 0 17px 34px rgba(0, 0, 0, .46), inset 0 0 0 1px rgba(231, 195, 116, .14);
     }
 
-
     .gallery-card:focus-visible {
-      outline:
-        2px solid
-        #f0cf86;
-
+      outline: 2px solid #f0cf86;
       outline-offset: 4px;
     }
 
-
     .gallery-card img {
       display: block;
-
       width: 100%;
       height: 100%;
-
       object-fit: contain;
       object-position: center;
-
       background: #050606;
-
-      transition:
-        transform 220ms ease,
-        filter 220ms ease;
+      transition: transform 220ms ease, filter 220ms ease;
     }
-
 
     .gallery-card:hover img {
       transform: scale(1.018);
       filter: brightness(1.04);
     }
 
-
-    /* =====================================================
-       ENQUIRY
-       ===================================================== */
-
     .front-doors-enquiry {
       display: flex;
       justify-content: center;
-
-      padding:
-        0
-        1rem
-        clamp(3rem, 6vw, 5rem);
+      padding: 0 1rem clamp(3rem, 6vw, 5rem);
     }
-
 
     .front-doors-enquiry .button {
       margin: 0;
     }
 
-
-    /* =====================================================
-       FOOTER
-       ===================================================== */
-
     body.front-doors-page .site-footer {
       background: #080a0b;
     }
 
-
     body.front-doors-page .site-footer .footer-grid {
       display: grid;
-
-      grid-template-columns:
-        minmax(280px, 1.25fr)
-        minmax(170px, .8fr)
-        minmax(220px, 1fr)
-        minmax(120px, .55fr);
-
-      gap:
-        clamp(2rem, 5vw, 5rem);
-
+      grid-template-columns: minmax(280px, 1.25fr) minmax(170px, .8fr) minmax(220px, 1fr) minmax(120px, .55fr);
+      gap: clamp(2rem, 5vw, 5rem);
       align-items: center;
     }
-
 
     .footer-studio-link {
       display: block;
@@ -387,472 +172,222 @@
       text-decoration: none;
     }
 
-
     .footer-studio-image {
       display: block;
       width: 100%;
       height: auto;
     }
 
-
-    /* =====================================================
-       LIGHTBOX
-       ===================================================== */
-
     .gallery-lightbox[hidden] {
       display: none !important;
     }
 
-
     .gallery-lightbox {
       position: fixed;
       inset: 0;
-
       z-index: 9999;
-
       display: grid;
-
-      grid-template-columns:
-        minmax(56px, 8vw)
-        minmax(0, 1fr)
-        minmax(56px, 8vw);
-
+      grid-template-columns: minmax(56px, 8vw) minmax(0, 1fr) minmax(56px, 8vw);
       align-items: center;
-
-      background:
-        rgba(0,0,0,.94);
-
-      backdrop-filter:
-        blur(5px);
-
-      -webkit-backdrop-filter:
-        blur(5px);
+      background: rgba(0, 0, 0, .94);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
     }
-
 
     .lightbox-stage {
       position: relative;
-
       display: flex;
-
       align-items: center;
       justify-content: center;
-
       width: 100%;
       height: 100vh;
-
-      padding:
-        clamp(3.5rem, 7vw, 5rem)
-        0;
-
+      padding: clamp(3.5rem, 7vw, 5rem) 0;
       overflow: hidden;
     }
 
-
     .lightbox-image {
       display: block;
-
-      max-width:
-        min(92vw, 1250px);
-
-      max-height:
-        calc(100vh - 8rem);
-
+      max-width: min(92vw, 1250px);
+      max-height: calc(100vh - 8rem);
       width: auto;
       height: auto;
-
       object-fit: contain;
-
-      box-shadow:
-        0 18px 70px rgba(0,0,0,.72);
+      box-shadow: 0 18px 70px rgba(0, 0, 0, .72);
     }
-
 
     .lightbox-close {
       position: absolute;
-
-      top:
-        clamp(1rem, 2vw, 1.6rem);
-
-      right:
-        clamp(1rem, 2vw, 1.6rem);
-
+      top: clamp(1rem, 2vw, 1.6rem);
+      right: clamp(1rem, 2vw, 1.6rem);
       z-index: 50;
-
       width: 48px;
       height: 48px;
-
       display: flex;
-
       align-items: center;
       justify-content: center;
-
       padding: 0;
-
-      border:
-        1px solid
-        rgba(239,211,147,.35);
-
+      border: 1px solid rgba(239, 211, 147, .35);
       border-radius: 50%;
-
-      background:
-        rgba(8,9,9,.88);
-
+      background: rgba(8, 9, 9, .88);
       color: #f2e9d9;
-
-      font-family:
-        Arial,
-        sans-serif;
-
+      font-family: Arial, sans-serif;
       font-size: 1.55rem;
       line-height: 1;
-
       cursor: pointer;
-
       pointer-events: auto;
     }
 
-
     .lightbox-nav {
       position: relative;
-
       z-index: 2;
-
       display: flex;
-
       align-items: center;
       justify-content: center;
-
       width: 100%;
       height: 100%;
-
       padding: 0;
-
       border: 0;
-
       background: transparent;
-
       color: #efd393;
-
-      font-family:
-        Georgia,
-        serif;
-
-      font-size:
-        clamp(2.7rem, 6vw, 5.5rem);
-
+      font-family: Georgia, serif;
+      font-size: clamp(2.7rem, 6vw, 5.5rem);
       cursor: pointer;
-
       opacity: .78;
-
-      transition:
-        opacity 160ms ease,
-        transform 160ms ease;
+      transition: opacity 160ms ease, transform 160ms ease;
     }
-
 
     .lightbox-nav:hover,
     .lightbox-nav:focus-visible {
       opacity: 1;
     }
 
-
     .lightbox-prev:hover {
       transform: translateX(-3px);
     }
-
 
     .lightbox-next:hover {
       transform: translateX(3px);
     }
 
-
     .lightbox-counter {
       position: absolute;
-
       left: 50%;
-
-      bottom:
-        clamp(1.2rem, 2vw, 1.8rem);
-
-      transform:
-        translateX(-50%);
-
-      padding:
-        .32rem
-        .72rem;
-
-      border:
-        1px solid
-        rgba(212,173,95,.24);
-
-      background:
-        rgba(6,7,7,.72);
-
+      bottom: clamp(1.2rem, 2vw, 1.8rem);
+      transform: translateX(-50%);
+      padding: .32rem .72rem;
+      border: 1px solid rgba(212, 173, 95, .24);
+      background: rgba(6, 7, 7, .72);
       color: #d5c9b5;
-
       font-size: .9rem;
-
       letter-spacing: .08em;
     }
 
-
-    /* =====================================================
-       RESPONSIVE
-       ===================================================== */
-
     @media (max-width: 1050px) {
-
       .front-doors-grid {
-        grid-template-columns:
-          repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
-
     }
 
-
     @media (max-width: 760px) {
-
       .front-doors-grid {
-        grid-template-columns:
-          repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
-
 
       .gallery-card {
-        height:
-          clamp(230px, 52vw, 340px);
+        height: clamp(230px, 52vw, 340px);
       }
-
 
       .gallery-lightbox {
-        grid-template-columns:
-          50px
-          minmax(0,1fr)
-          50px;
+        grid-template-columns: 50px minmax(0, 1fr) 50px;
       }
-
 
       .lightbox-stage {
-        padding:
-          4rem
-          .5rem;
+        padding: 4rem .5rem;
       }
-
 
       body.front-doors-page .site-footer .footer-grid {
         grid-template-columns: 1fr;
         gap: 1.8rem;
       }
-
     }
 
-
     @media (max-width: 480px) {
-
       .front-doors-grid {
         grid-template-columns: 1fr;
       }
 
-
       .gallery-card {
-        height:
-          min(115vw, 440px);
+        height: min(115vw, 440px);
       }
-
 
       .front-doors-hero {
         padding-top: 2.5rem;
       }
 
-
       .gallery-lightbox {
-        grid-template-columns:
-          42px
-          minmax(0,1fr)
-          42px;
+        grid-template-columns: 42px minmax(0, 1fr) 42px;
       }
-
 
       .lightbox-nav {
         font-size: 2.7rem;
       }
-
     }
 
-
     @media (prefers-reduced-motion: reduce) {
-
       .gallery-card,
       .gallery-card img,
       .lightbox-nav {
         transition: none;
       }
-
     }
-
   </style>
-
 </head>
-
 
 <body class="front-doors-page">
 
-
-  <a
-    class="skip-link"
-    href="#main-content"
-  >
-    Skip to content
-  </a>
-
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <header class="site-header">
 
+    <nav class="primary-nav" aria-label="Primary navigation">
+      <a class="brand-mini" href="../home.html">Leading Lights of London Ltd</a>
 
-    <nav
-      class="primary-nav"
-      aria-label="Primary navigation"
-    >
-
-      <a
-        class="brand-mini"
-        href="../home.html"
-      >
-        Leading Lights of London Ltd
-      </a>
-
-
-      <button
-        class="nav-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="primary-links"
-      >
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-links">
         Menu
       </button>
 
-
-      <ul
-        class="primary-links"
-        id="primary-links"
-      >
-
-        <li>
-          <a href="../home.html">
-            Home
-          </a>
-        </li>
-
-        <li>
-          <a href="../about.html">
-            About
-          </a>
-        </li>
-
-        <li>
-          <a href="../contact.html">
-            Contact
-          </a>
-        </li>
-
+      <ul class="primary-links" id="primary-links">
+        <li><a href="../home.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
       </ul>
-
     </nav>
 
-
-    <nav
-      class="gallery-nav"
-      aria-label="Gallery categories"
-    >
-
+    <nav class="gallery-nav" aria-label="Gallery categories">
       <ul class="gallery-links">
-
-        <li>
-          <a
-            href="front-doors.html"
-            aria-current="page"
-          >
-            Front Doors
-          </a>
-        </li>
-
-        <li>
-          <a href="ecclesiastic.html">
-            Ecclesiastic
-          </a>
-        </li>
-
-        <li>
-          <a href="mansion-houses.html">
-            Mansion Houses
-          </a>
-        </li>
-
-        <li>
-          <a href="palaces.html">
-            Palaces
-          </a>
-        </li>
-
-        <li>
-          <a href="bespoke-designs.html">
-            Bespoke Designs
-          </a>
-        </li>
-
-        <li>
-          <a href="architectural.html">
-            Architectural
-          </a>
-        </li>
-
-        <li>
-          <a href="miscellaneous.html">
-            Miscellaneous
-          </a>
-        </li>
-
+        <li><a href="front-doors.html" aria-current="page">Front Doors</a></li>
+        <li><a href="ecclesiastic.html">Ecclesiastic</a></li>
+        <li><a href="mansion-houses.html">Mansion Houses</a></li>
+        <li><a href="palaces.html">Palaces</a></li>
+        <li><a href="bespoke-designs.html">Bespoke Designs</a></li>
+        <li><a href="architectural.html">Architectural</a></li>
+        <li><a href="miscellaneous.html">Miscellaneous</a></li>
       </ul>
-
     </nav>
-
 
   </header>
 
-
   <main id="main-content">
-
 
     <section class="front-doors-hero">
 
+      <h2 class="front-doors-title">Front Doors</h2>
 
-      <h1 class="front-doors-brand">
-
-        Leading Lights
-
-        <span>
-          of London Ltd
-        </span>
-
-      </h1>
-
-
-      <div
-        class="front-doors-rule"
-        aria-hidden="true"
-      >
+      <div class="front-doors-rule" aria-hidden="true">
         <span>✦</span>
       </div>
 
-
-      <h2 class="front-doors-title">
-        Front Doors
-      </h2>
-
-
       <div class="front-doors-intro">
-
         <p>
           Stained glass front door restoration is the most popular customer enquiry. Stained glass door panels will enhance the entrance to your home. We can restore your existing stained glass front door or, if your home no longer has the original stained glass, we can replicate neighbouring original stained glass designs.
         </p>
@@ -860,20 +395,12 @@
         <p>
           For stained glass restoration, the process would be to take the stained glass out of the door, measure the rebate, board up, take back to the studio, take a rubbing, un-lead, re-lead, replace broken panes, rebuild, cement, polish, place new ties and new steel saddle bars, refit and replace with new window beads or putty.
         </p>
-
       </div>
-
 
     </section>
 
-
-    <section
-      class="front-doors-gallery"
-      aria-label="Front door stained glass gallery"
-    >
-
+    <section class="front-doors-gallery" aria-label="Front door stained glass gallery">
       <div class="front-doors-grid">
-
 
         <button class="gallery-card" type="button" data-index="0" aria-label="Open front door image 1">
           <img src="../assets/images/front-doors/1_full.jpg" alt="Front door stained glass project 1">
@@ -947,33 +474,19 @@
           <img src="../assets/images/front-doors/18.jpg" alt="Front door stained glass project 18">
         </button>
 
-
       </div>
-
     </section>
 
-
     <div class="front-doors-enquiry">
-
-      <a
-        class="button"
-        href="../contact.html"
-      >
-        Email / Make an enquiry
-      </a>
-
+      <a class="button" href="../contact.html">Email / Make an enquiry</a>
     </div>
-
 
   </main>
 
-
   <footer class="site-footer">
-
     <div class="footer-grid">
 
       <div>
-
         <a
           class="footer-studio-link"
           href="https://clockworkstudios.co.uk/"
@@ -981,91 +494,44 @@
           rel="noopener noreferrer"
           aria-label="Visit the Clockwork Studios website"
         >
-
           <img
             class="footer-studio-image"
             src="../assets/images/home/clockwork-studios-architectural-blueprint.png"
             alt="Clockwork Studios architectural drawing and logo"
           >
-
         </a>
-
       </div>
 
-
       <div>
-
         <ul>
-
-          <li>
-            <a href="tel:+442077374567">
-              020 7737 4567
-            </a>
-          </li>
-
-          <li>
-            <a href="tel:+447803935003">
-              07803 935003
-            </a>
-          </li>
-
-          <li>
-            <a href="mailto:jonny@leadinglighter.co.uk">
-              jonny@leadinglighter.co.uk
-            </a>
-          </li>
-
+          <li><a href="tel:+442077374567">020 7737 4567</a></li>
+          <li><a href="tel:+447803935003">07803 935003</a></li>
+          <li><a href="mailto:jonny@leadinglighter.co.uk">jonny@leadinglighter.co.uk</a></li>
         </ul>
-
       </div>
 
-
       <div>
-
         <p>
           Clockwork Studios,<br>
           38A Southwell Road,<br>
           London SE5 9PG
         </p>
-
       </div>
 
-
       <div>
-
         <ul>
-
-          <li>
-            <a href="../index.html">
-              Front Page
-            </a>
-          </li>
-
-          <li>
-            <a href="../home.html">
-              Home
-            </a>
-          </li>
-
-          <li>
-            <a href="#">
-              [ Instagram link ]
-            </a>
-          </li>
-
+          <li><a href="../index.html">Front Page</a></li>
+          <li><a href="../home.html">Home</a></li>
+          <li><a href="#">[ Instagram link ]</a></li>
         </ul>
-
       </div>
 
     </div>
-
 
     <div class="footer-bottom">
       © Leading Lights of London Ltd 2026
     </div>
-
   </footer>
-
 
   <div
     class="gallery-lightbox"
@@ -1085,7 +551,6 @@
       ×
     </button>
 
-
     <button
       class="lightbox-nav lightbox-prev"
       id="lightbox-prev"
@@ -1095,28 +560,10 @@
       ‹
     </button>
 
-
-    <div
-      class="lightbox-stage"
-      id="lightbox-stage"
-    >
-
-      <img
-        class="lightbox-image"
-        id="lightbox-image"
-        src=""
-        alt=""
-      >
-
-      <div
-        class="lightbox-counter"
-        id="lightbox-counter"
-      >
-        1 / 18
-      </div>
-
+    <div class="lightbox-stage" id="lightbox-stage">
+      <img class="lightbox-image" id="lightbox-image" src="" alt="">
+      <div class="lightbox-counter" id="lightbox-counter">1 / 18</div>
     </div>
-
 
     <button
       class="lightbox-nav lightbox-next"
@@ -1129,277 +576,102 @@
 
   </div>
 
-
-  <script
-    src="../js/main.js"
-    defer
-  ></script>
-
+  <script src="../js/main.js" defer></script>
 
   <script>
-
     document.addEventListener('DOMContentLoaded', () => {
+      const cards = Array.from(document.querySelectorAll('.gallery-card'));
+      const lightbox = document.getElementById('gallery-lightbox');
+      const lightboxImage = document.getElementById('lightbox-image');
+      const counter = document.getElementById('lightbox-counter');
+      const closeButton = document.getElementById('lightbox-close');
+      const previousButton = document.getElementById('lightbox-prev');
+      const nextButton = document.getElementById('lightbox-next');
+      const stage = document.getElementById('lightbox-stage');
 
-      const cards =
-        Array.from(
-          document.querySelectorAll('.gallery-card')
-        );
-
-      const lightbox =
-        document.getElementById('gallery-lightbox');
-
-      const lightboxImage =
-        document.getElementById('lightbox-image');
-
-      const counter =
-        document.getElementById('lightbox-counter');
-
-      const closeButton =
-        document.getElementById('lightbox-close');
-
-      const previousButton =
-        document.getElementById('lightbox-prev');
-
-      const nextButton =
-        document.getElementById('lightbox-next');
-
-      const stage =
-        document.getElementById('lightbox-stage');
-
-
-      const images =
-        cards.map(card => {
-
-          const image =
-            card.querySelector('img');
-
-          return {
-            src: image.src,
-            alt: image.alt
-          };
-
-        });
-
+      const images = cards.map(card => {
+        const image = card.querySelector('img');
+        return {
+          src: image.src,
+          alt: image.alt
+        };
+      });
 
       let currentIndex = 0;
       let touchStartX = 0;
 
-
       function showImage(index) {
-
         if (index < 0) {
-          currentIndex =
-            images.length - 1;
-        }
-
-        else if (
-          index >= images.length
-        ) {
+          currentIndex = images.length - 1;
+        } else if (index >= images.length) {
           currentIndex = 0;
-        }
-
-        else {
+        } else {
           currentIndex = index;
         }
 
-
-        const current =
-          images[currentIndex];
-
-
-        lightboxImage.src =
-          current.src;
-
-        lightboxImage.alt =
-          current.alt;
-
-
-        counter.textContent =
-          `${currentIndex + 1} / ${images.length}`;
-
+        const current = images[currentIndex];
+        lightboxImage.src = current.src;
+        lightboxImage.alt = current.alt;
+        counter.textContent = `${currentIndex + 1} / ${images.length}`;
       }
-
 
       function openLightbox(index) {
-
         showImage(index);
-
         lightbox.hidden = false;
-
-        document.body.classList.add(
-          'lightbox-open'
-        );
-
+        document.body.classList.add('lightbox-open');
         closeButton.focus();
-
       }
-
 
       function closeLightbox() {
-
         lightbox.hidden = true;
-
-        document.body.classList.remove(
-          'lightbox-open'
-        );
-
+        document.body.classList.remove('lightbox-open');
       }
 
+      cards.forEach((card, index) => {
+        card.addEventListener('click', () => openLightbox(index));
+      });
 
-      cards.forEach(
-        (card, index) => {
+      closeButton.addEventListener('click', event => {
+        event.preventDefault();
+        event.stopPropagation();
+        closeLightbox();
+      });
 
-          card.addEventListener(
-            'click',
-            () => openLightbox(index)
-          );
+      previousButton.addEventListener('click', () => showImage(currentIndex - 1));
+      nextButton.addEventListener('click', () => showImage(currentIndex + 1));
 
-        }
-      );
-
-
-      closeButton.addEventListener(
-        'click',
-        event => {
-
-          event.preventDefault();
-          event.stopPropagation();
-
+      lightbox.addEventListener('click', event => {
+        if (event.target === lightbox) {
           closeLightbox();
-
         }
-      );
+      });
 
+      document.addEventListener('keydown', event => {
+        if (lightbox.hidden) return;
 
-      previousButton.addEventListener(
-        'click',
-        () => showImage(
-          currentIndex - 1
-        )
-      );
+        if (event.key === 'Escape') closeLightbox();
+        if (event.key === 'ArrowLeft') showImage(currentIndex - 1);
+        if (event.key === 'ArrowRight') showImage(currentIndex + 1);
+      });
 
+      stage.addEventListener('touchstart', event => {
+        touchStartX = event.changedTouches[0].screenX;
+      }, { passive: true });
 
-      nextButton.addEventListener(
-        'click',
-        () => showImage(
-          currentIndex + 1
-        )
-      );
+      stage.addEventListener('touchend', event => {
+        const touchEndX = event.changedTouches[0].screenX;
+        const difference = touchEndX - touchStartX;
 
+        if (Math.abs(difference) < 45) return;
 
-      lightbox.addEventListener(
-        'click',
-        event => {
-
-          if (
-            event.target === lightbox
-          ) {
-            closeLightbox();
-          }
-
+        if (difference < 0) {
+          showImage(currentIndex + 1);
+        } else {
+          showImage(currentIndex - 1);
         }
-      );
-
-
-      document.addEventListener(
-        'keydown',
-        event => {
-
-          if (lightbox.hidden) {
-            return;
-          }
-
-
-          if (
-            event.key === 'Escape'
-          ) {
-            closeLightbox();
-          }
-
-
-          if (
-            event.key === 'ArrowLeft'
-          ) {
-            showImage(
-              currentIndex - 1
-            );
-          }
-
-
-          if (
-            event.key === 'ArrowRight'
-          ) {
-            showImage(
-              currentIndex + 1
-            );
-          }
-
-        }
-      );
-
-
-      stage.addEventListener(
-        'touchstart',
-        event => {
-
-          touchStartX =
-            event.changedTouches[0].screenX;
-
-        },
-        {
-          passive: true
-        }
-      );
-
-
-      stage.addEventListener(
-        'touchend',
-        event => {
-
-          const touchEndX =
-            event.changedTouches[0].screenX;
-
-          const difference =
-            touchEndX -
-            touchStartX;
-
-
-          if (
-            Math.abs(difference) < 45
-          ) {
-            return;
-          }
-
-
-          if (
-            difference < 0
-          ) {
-
-            showImage(
-              currentIndex + 1
-            );
-
-          }
-
-          else {
-
-            showImage(
-              currentIndex - 1
-            );
-
-          }
-
-        },
-        {
-          passive: true
-        }
-      );
-
+      }, { passive: true });
     });
-
   </script>
 
-
 </body>
-
 </html>
