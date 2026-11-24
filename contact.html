@@ -134,9 +134,36 @@
       font-size: .75rem;
     }
 
-    /* NEW CONTACT PHOTOGRAPH */
+    /* INTRODUCTORY TEXT ABOVE PHOTOGRAPH */
+
+    .contact-intro {
+      width: min(90%, 950px);
+
+      margin:
+        clamp(2rem, 4vw, 3rem)
+        auto
+        0;
+
+      font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(1.1rem, 1.5vw, 1.3rem);
+
+      line-height: 1.6;
+
+      color: #ddd3c2;
+
+      text-align: center;
+    }
+
+    /* CONTACT PHOTOGRAPH */
 
     .contact-photo-wrapper {
+      box-sizing: border-box;
+
       display: flex;
 
       align-items: center;
@@ -145,7 +172,7 @@
       width: min(100%, 950px);
 
       margin:
-        clamp(2rem, 4vw, 3.5rem)
+        clamp(2rem, 4vw, 3rem)
         auto
         0;
 
@@ -177,43 +204,21 @@
       box-shadow: none !important;
     }
 
-    /* INTRODUCTORY TEXT */
+    /* CONTACT DETAILS */
+    /* SAME WIDTH AS PHOTOGRAPH */
 
-    .contact-intro {
-      width: min(90%, 760px);
+    .contact-details {
+      box-sizing: border-box;
+
+      width: min(100%, 950px);
 
       margin:
         clamp(2rem, 4vw, 3rem)
         auto
         0;
 
-      font-family:
-        'Cormorant Garamond',
-        Georgia,
-        serif;
-
-      font-size:
-        clamp(1.1rem, 1.5vw, 1.3rem);
-
-      line-height: 1.6;
-
-      color: #ddd3c2;
-    }
-
-    /* CONTACT DETAILS */
-
-    .contact-details {
-      width: min(92%, 700px);
-
-      margin:
-        clamp(2.5rem, 5vw, 4rem)
-        auto
-        0;
-
       padding:
         clamp(2rem, 4vw, 3rem);
-
-      box-sizing: border-box;
 
       border:
         1px solid
@@ -362,6 +367,11 @@
         padding-top: 3rem;
       }
 
+      .contact-intro {
+        width: 100%;
+        margin-top: 2rem;
+      }
+
       .contact-photo-wrapper {
         width: 100%;
         margin-top: 2rem;
@@ -373,6 +383,8 @@
       }
 
       .contact-details {
+        width: 100%;
+        margin-top: 2rem;
         padding: 1.8rem 1.25rem;
       }
 
@@ -507,25 +519,27 @@
       <span>✦</span>
     </div>
 
-    <!-- NEW CONTACT IMAGE -->
-
-    <div class="contact-photo-wrapper">
-
-      <img
-        class="contact-photo"
-        src="assets/images/contact.JPG"
-        alt="Leading Lights of London"
-        decoding="async"
-      >
-
-    </div>
-
     <!-- CONTACT INTRODUCTION -->
 
     <p class="contact-intro">
       For stained glass design, restoration or repair enquiries,
       please get in touch by phone or email.
     </p>
+
+    <!-- CONTACT IMAGE -->
+
+    <div class="contact-photo-wrapper">
+
+      <img
+        class="contact-photo"
+        src="assets/images/contact.JPG"
+        alt="Stained glass craftsman working in the Leading Lights of London studio"
+        decoding="async"
+      >
+
+    </div>
+
+    <!-- CONTACT INFORMATION -->
 
     <section
       class="contact-details"
