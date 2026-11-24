@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en-GB">
 
@@ -7,495 +8,456 @@
 
   <title>Miscellaneous | Leading Lights of London Ltd</title>
 
-  <meta
-    name="description"
-    content="Miscellaneous stained glass projects, craftspeople and collaborations from Leading Lights of London Ltd."
-  >
+  <meta name="description" content="Miscellaneous stained glass projects, craftspeople and collaborations from Leading Lights of London Ltd.">
 
-  <link
-    rel="stylesheet"
-    href="../css/styles.css"
-  >
+  <link rel="stylesheet" href="../css/styles.css">
 
   <style>
-
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Pirata+One&display=swap');
-
-
-    /* =====================================================
-       MISCELLANEOUS PAGE
-       ===================================================== */
 
     body.miscellaneous-page {
       margin: 0;
       min-height: 100vh;
-
-      background:
-        radial-gradient(
-          circle at 50% 0%,
-          #171515 0,
-          #0c0e0f 34%,
-          #050607 72%
-        );
-
+      background: radial-gradient(
+        circle at 50% 0%,
+        #171515 0,
+        #0c0e0f 34%,
+        #050607 72%
+      );
       color: #f1eadc;
     }
 
-
-    /* =====================================================
-       NAVIGATION
-       ===================================================== */
+    body.miscellaneous-page.lightbox-open {
+      overflow: hidden;
+    }
 
     body.miscellaneous-page .brand-mini {
-      font-family:
-        'Pirata One',
-        Georgia,
-        serif !important;
-
-      font-size:
-        clamp(1.1rem, 2vw, 1.4rem);
-
+      font-family: 'Pirata One', Georgia, serif !important;
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
       color: #efd393;
     }
 
-
-    /* =====================================================
-       PAGE TITLE
-       ===================================================== */
+    /* PAGE TITLE */
 
     .miscellaneous-hero {
-      width:
-        min(
-          92%,
-          1380px
-        );
-
+      box-sizing: border-box;
+      width: min(92%, 1380px);
       margin: 0 auto;
-
-      padding:
-        clamp(4rem, 7vw, 6rem)
-        1rem
+      padding: clamp(4rem, 7vw, 6rem) 1rem
         clamp(2.4rem, 5vw, 4rem);
-
       text-align: center;
     }
 
-
     .miscellaneous-title {
       margin: 0;
-
-      font-family:
-        'Pirata One',
-        Georgia,
-        serif;
-
-      font-size:
-        clamp(
-          2.8rem,
-          5vw,
-          5rem
-        );
-
+      font-family: 'Pirata One', Georgia, serif;
+      font-size: clamp(2.8rem, 5vw, 5rem);
       font-weight: 400;
-
       line-height: .95;
-
       color: #d11f27;
-
       text-shadow:
         0 3px 0 #43070b,
-        0 0 16px rgba(189,25,34,.32);
+        0 0 16px rgba(189, 25, 34, .32);
     }
 
-
-    /* =====================================================
-       GOLD DIVIDER
-       ===================================================== */
+    /* GOLD DIVIDER */
 
     .miscellaneous-rule {
       display: flex;
-
       align-items: center;
       justify-content: center;
-
       gap: .8rem;
-
-      width:
-        min(
-          360px,
-          70%
-        );
-
-      margin:
-        1.5rem
-        auto
-        0;
-
+      width: min(360px, 70%);
+      margin: 1.5rem auto 0;
       color: #d4ad5f;
     }
-
 
     .miscellaneous-rule::before,
     .miscellaneous-rule::after {
       content: '';
-
       display: block;
-
       flex: 1;
-
       height: 1px;
-
-      background:
-        linear-gradient(
-          to right,
-          transparent,
-          rgba(212,173,95,.75)
-        );
+      background: linear-gradient(
+        to right,
+        transparent,
+        rgba(212, 173, 95, .75)
+      );
     }
-
 
     .miscellaneous-rule::after {
-      background:
-        linear-gradient(
-          to left,
-          transparent,
-          rgba(212,173,95,.75)
-        );
+      background: linear-gradient(
+        to left,
+        transparent,
+        rgba(212, 173, 95, .75)
+      );
     }
-
 
     .miscellaneous-rule span {
       font-size: .75rem;
     }
 
-
-    /* =====================================================
-       INTRODUCTION
-       ===================================================== */
+    /* INTRODUCTORY TEXT */
 
     .miscellaneous-intro {
-      width:
-        min(
-          88%,
-          980px
-        );
-
-      margin:
-        clamp(2rem, 4vw, 3rem)
-        auto
-        0;
-
-      font-family:
-        'Cormorant Garamond',
-        Georgia,
-        serif;
-
+      width: min(88%, 980px);
+      margin: clamp(2rem, 4vw, 3rem) auto 0;
+      font-family: 'Cormorant Garamond', Georgia, serif;
       color: #ddd3c2;
-
       text-align: center;
     }
-
 
     .miscellaneous-intro p {
       margin: 0 auto;
-
-      font-size:
-        clamp(
-          1.05rem,
-          1.45vw,
-          1.3rem
-        );
-
+      font-size: clamp(1.05rem, 1.45vw, 1.3rem);
       line-height: 1.55;
     }
 
-
-    /* =====================================================
-       GALLERY
-       ===================================================== */
+    /* PHOTOGRAPH GALLERY */
 
     .miscellaneous-gallery {
-      width:
-        min(
-          92%,
-          1380px
-        );
-
+      width: min(92%, 1380px);
       margin: 0 auto;
-
-      padding:
-        0
-        0
-        clamp(4rem, 8vw, 7rem);
+      padding: 0 0 clamp(4rem, 8vw, 7rem);
     }
-
 
     .miscellaneous-grid {
       display: grid;
-
-      grid-template-columns:
-        repeat(
-          4,
-          minmax(0, 1fr)
-        );
-
-      gap:
-        clamp(
-          1rem,
-          2vw,
-          1.8rem
-        );
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      align-items: center;
+      gap: clamp(1.4rem, 3vw, 2.8rem);
     }
 
+    /* BORDERLESS PHOTOGRAPHS */
 
-    /* =====================================================
-       TEMPORARY IMAGE PLACEHOLDERS
-       ===================================================== */
-
-    .gallery-placeholder {
+    .miscellaneous-grid .gallery-card {
+      appearance: none;
+      -webkit-appearance: none;
       position: relative;
-
       display: flex;
-
       align-items: center;
       justify-content: center;
-
       width: 100%;
-
-      height:
-        clamp(
-          250px,
-          25vw,
-          360px
-        );
-
-      overflow: hidden;
-
-      border:
-        1px solid
-        rgba(212,173,95,.28);
-
-      border-radius: 2px;
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(255,255,255,.015),
-          rgba(212,173,95,.025)
-        ),
-        #050606;
-
-      box-shadow:
-        0 12px 28px rgba(0,0,0,.32),
-        inset 0 0 0 1px rgba(255,255,255,.025);
-
-      color:
-        rgba(221,211,194,.42);
-
-      font-family:
-        'Cormorant Garamond',
-        Georgia,
-        serif;
-
-      font-size:
-        clamp(
-          .9rem,
-          1.2vw,
-          1.05rem
-        );
-
-      letter-spacing:
-        .04em;
-
-      text-align: center;
+      height: auto;
+      min-width: 0;
+      margin: 0;
+      padding: 0;
+      overflow: visible;
+      border: none !important;
+      border-radius: 0;
+      background: transparent !important;
+      box-shadow: none !important;
+      cursor: zoom-in;
+      color: #ddd3c2;
     }
 
-
-    .gallery-placeholder::before {
-      content: '';
-
-      position: absolute;
-
-      inset: 12px;
-
-      border:
-        1px solid
-        rgba(212,173,95,.08);
-
-      pointer-events: none;
+    .miscellaneous-grid .gallery-card::before,
+    .miscellaneous-grid .gallery-card::after {
+      display: none;
+      content: none;
     }
 
+    .miscellaneous-grid .gallery-card img {
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 420px;
+      margin: 0 auto;
+      padding: 0;
+      object-fit: contain;
+      object-position: center;
+      border: none !important;
+      border-radius: 0;
+      background: transparent !important;
+      box-shadow: none !important;
+      transition: transform 220ms ease,
+        filter 220ms ease;
+    }
 
-    /* =====================================================
-       ENQUIRY
-       ===================================================== */
+    .miscellaneous-grid .gallery-card:hover {
+      transform: none;
+      border: none;
+      box-shadow: none;
+    }
+
+    .miscellaneous-grid .gallery-card:hover img {
+      transform: scale(1.025);
+      filter: brightness(1.06);
+    }
+
+    .miscellaneous-grid .gallery-card:focus-visible {
+      outline: 2px solid #f1eadc;
+      outline-offset: 6px;
+    }
+
+    /* ENQUIRY BUTTON */
 
     .miscellaneous-enquiry {
       display: flex;
-
       justify-content: center;
-
-      padding:
-        0
-        1rem
-        clamp(3rem, 6vw, 5rem);
+      padding: 0 1rem clamp(3rem, 6vw, 5rem);
     }
-
 
     .miscellaneous-enquiry .button {
       margin: 0;
     }
 
-
-    /* =====================================================
-       FOOTER
-       ===================================================== */
+    /* FOOTER */
 
     body.miscellaneous-page .site-footer {
       background: #080a0b;
     }
 
-
     body.miscellaneous-page .site-footer .footer-grid {
       display: grid;
-
       grid-template-columns:
         minmax(280px, 1.25fr)
         minmax(170px, .8fr)
         minmax(220px, 1fr)
         minmax(120px, .55fr);
-
-      gap:
-        clamp(
-          2rem,
-          5vw,
-          5rem
-        );
-
+      gap: clamp(2rem, 5vw, 5rem);
       align-items: center;
     }
 
-
     .footer-studio-link {
       display: block;
-
       width: 100%;
-
       max-width: 330px;
-
       text-decoration: none;
     }
 
-
     .footer-studio-image {
       display: block;
-
       width: 100%;
-
       height: auto;
     }
 
+    /* FULL-SCREEN IMAGE VIEWER */
 
-    /* =====================================================
-       RESPONSIVE
-       ===================================================== */
-
-    @media (max-width: 1050px) {
-
-      .miscellaneous-grid {
-        grid-template-columns:
-          repeat(
-            3,
-            minmax(0, 1fr)
-          );
-      }
-
+    .gallery-lightbox[hidden] {
+      display: none !important;
     }
 
+    .gallery-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: grid;
+      grid-template-columns:
+        minmax(56px, 8vw)
+        minmax(0, 1fr)
+        minmax(56px, 8vw);
+      align-items: center;
+      background: rgba(0, 0, 0, .97);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+    }
+
+    .lightbox-stage {
+      box-sizing: border-box;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-width: 0;
+      height: 100vh;
+      height: 100dvh;
+      padding: 4rem .5rem;
+      overflow: hidden;
+      touch-action: pan-y;
+    }
+
+    .lightbox-image {
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: calc(100vh - 8rem);
+      max-height: calc(100dvh - 8rem);
+      object-fit: contain;
+      border: none;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    /* CLOSE BUTTON */
+
+    .lightbox-close {
+      position: absolute;
+      top: clamp(1rem, 2vw, 1.6rem);
+      right: clamp(1rem, 2vw, 1.6rem);
+      z-index: 50;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      border: none;
+      border-radius: 50%;
+      background: rgba(8, 9, 9, .88);
+      color: #f2e9d9;
+      font-family: Arial, sans-serif;
+      font-size: 2rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .lightbox-close:hover {
+      background: #252525;
+    }
+
+    /* LEFT AND RIGHT ARROWS */
+
+    .lightbox-nav {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      border: none;
+      background: transparent;
+      color: #efd393;
+      font-family: Georgia, serif;
+      font-size: clamp(2.7rem, 6vw, 5.5rem);
+      cursor: pointer;
+      opacity: .8;
+      transition: opacity 160ms ease,
+        transform 160ms ease;
+    }
+
+    .lightbox-nav:hover,
+    .lightbox-nav:focus-visible {
+      opacity: 1;
+    }
+
+    .lightbox-prev:hover {
+      transform: translateX(-3px);
+    }
+
+    .lightbox-next:hover {
+      transform: translateX(3px);
+    }
+
+    .lightbox-nav:focus-visible,
+    .lightbox-close:focus-visible {
+      outline: 2px solid #f1eadc;
+      outline-offset: -4px;
+    }
+
+    /* IMAGE COUNTER */
+
+    .lightbox-counter {
+      position: absolute;
+      left: 50%;
+      bottom: 1.5rem;
+      transform: translateX(-50%);
+      padding: .32rem .72rem;
+      border: none;
+      background: transparent;
+      color: #d5c9b5;
+      font-size: .9rem;
+      letter-spacing: .08em;
+      white-space: nowrap;
+    }
+
+    /* TABLET */
+
+    @media (max-width: 1050px) {
+      .miscellaneous-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      body.miscellaneous-page .site-footer .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2rem;
+      }
+    }
+
+    /* MOBILE */
 
     @media (max-width: 760px) {
-
       .miscellaneous-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.5rem;
+      }
+
+      .miscellaneous-grid .gallery-card img {
+        max-height: 360px;
+      }
+
+      .gallery-lightbox {
         grid-template-columns:
-          repeat(
-            2,
-            minmax(0, 1fr)
-          );
+          40px minmax(0, 1fr) 40px;
       }
 
-
-      .gallery-placeholder {
-        height:
-          clamp(
-            230px,
-            52vw,
-            340px
-          );
+      .lightbox-stage {
+        padding: 4rem 0;
       }
-
 
       body.miscellaneous-page .site-footer .footer-grid {
         grid-template-columns: 1fr;
-
         gap: 1.8rem;
       }
-
     }
 
-
     @media (max-width: 480px) {
-
       .miscellaneous-grid {
         grid-template-columns: 1fr;
+        gap: 2rem;
       }
 
-
-      .gallery-placeholder {
-        height:
-          min(
-            115vw,
-            440px
-          );
+      .miscellaneous-grid .gallery-card img {
+        max-width: 100%;
+        max-height: 520px;
       }
-
 
       .miscellaneous-hero {
         padding-top: 2.5rem;
       }
 
+      .gallery-lightbox {
+        grid-template-columns:
+          34px minmax(0, 1fr) 34px;
+      }
+
+      .lightbox-nav {
+        font-size: 2.7rem;
+      }
     }
 
+    @media (prefers-reduced-motion: reduce) {
+      .gallery-card,
+      .gallery-card img,
+      .lightbox-nav {
+        transition: none;
+      }
+
+      .miscellaneous-grid .gallery-card:hover img {
+        transform: none;
+      }
+    }
   </style>
-
 </head>
-
 
 <body class="miscellaneous-page">
 
-
-  <a
-    class="skip-link"
-    href="#main-content"
-  >
+  <a class="skip-link" href="#main-content">
     Skip to content
   </a>
 
-
   <header class="site-header">
 
+    <nav class="primary-nav" aria-label="Primary navigation">
 
-    <nav
-      class="primary-nav"
-      aria-label="Primary navigation"
-    >
-
-      <a
-        class="brand-mini"
-        href="../home.html"
-      >
+      <a class="brand-mini" href="../home.html">
         Leading Lights of London Ltd
       </a>
-
 
       <button
         class="nav-toggle"
@@ -506,39 +468,15 @@
         Menu
       </button>
 
-
-      <ul
-        class="primary-links"
-        id="primary-links"
-      >
-
-        <li>
-          <a href="../home.html">
-            Home
-          </a>
-        </li>
-
-        <li>
-          <a href="../about.html">
-            About
-          </a>
-        </li>
-
-        <li>
-          <a href="../contact.html">
-            Contact
-          </a>
-        </li>
-
+      <ul class="primary-links" id="primary-links">
+        <li><a href="../home.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
       </ul>
 
     </nav>
 
-
-    <nav
-      class="gallery-nav"
-      aria-label="Gallery categories"
-    >
+    <nav class="gallery-nav" aria-label="Gallery categories">
 
       <ul class="gallery-links">
 
@@ -579,10 +517,7 @@
         </li>
 
         <li>
-          <a
-            href="miscellaneous.html"
-            aria-current="page"
-          >
+          <a href="miscellaneous.html" aria-current="page">
             Miscellaneous
           </a>
         </li>
@@ -591,40 +526,42 @@
 
     </nav>
 
-
   </header>
-
 
   <main id="main-content">
 
-
     <section class="miscellaneous-hero">
-
 
       <h1 class="miscellaneous-title">
         Miscellaneous
       </h1>
 
-
-      <div
-        class="miscellaneous-rule"
-        aria-hidden="true"
-      >
+      <div class="miscellaneous-rule" aria-hidden="true">
         <span>✦</span>
       </div>
-
 
       <div class="miscellaneous-intro">
 
         <p>
-          A curious category but we need to place another dimension on this craft, including people who work in it. We involve craftsmen and women we have worked with in the past and present, who Leading Lights of London Ltd would like to mention for sharing their special knowledge and experience. We placed the Rules restaurant project in this category as it has such a unique character and they serve some of the best cocktails in London. We also recognise the special contribution made by John Wilson to the design of our website.
+          A curious category but we need to place another
+          dimension on this craft, including people who
+          work in it. We involve craftsmen and women we
+          have worked with in the past and present, who
+          Leading Lights of London Ltd would like to
+          mention for sharing their special knowledge
+          and experience. We placed the Rules restaurant
+          project in this category as it has such a unique
+          character and they serve some of the best cocktails
+          in London. We also recognise the special
+          contribution made by John Wilson to the design
+          of our website.
         </p>
 
       </div>
 
-
     </section>
 
+    <!-- MISCELLANEOUS PHOTOGRAPHS -->
 
     <section
       class="miscellaneous-gallery"
@@ -633,83 +570,133 @@
 
       <div class="miscellaneous-grid">
 
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 1">
+          <img src="../assets/images/miscellaneous/1_full.jpg"
+            alt="Miscellaneous gallery photograph 1"
+            decoding="async">
+        </button>
 
-        <div class="gallery-placeholder">
-          Miscellaneous image
-        </div>
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 2">
+          <img src="../assets/images/miscellaneous/2_full.jpg"
+            alt="Miscellaneous gallery photograph 2"
+            decoding="async">
+        </button>
 
-        <div class="gallery-placeholder">
-          Miscellaneous image
-        </div>
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 3">
+          <img src="../assets/images/miscellaneous/3_full.jpg"
+            alt="Miscellaneous gallery photograph 3"
+            decoding="async">
+        </button>
 
-        <div class="gallery-placeholder">
-          Miscellaneous image
-        </div>
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 4">
+          <img src="../assets/images/miscellaneous/4_full.jpg"
+            alt="Miscellaneous gallery photograph 4"
+            decoding="async">
+        </button>
 
-        <div class="gallery-placeholder">
-          Miscellaneous image
-        </div>
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 5">
+          <img src="../assets/images/miscellaneous/5_full.jpg"
+            alt="Miscellaneous gallery photograph 5"
+            loading="lazy" decoding="async">
+        </button>
 
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 6">
+          <img src="../assets/images/miscellaneous/6_full.jpg"
+            alt="Miscellaneous gallery photograph 6"
+            loading="lazy" decoding="async">
+        </button>
 
-        <div class="gallery-placeholder">
-          Miscellaneous image
-        </div>
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 7">
+          <img src="../assets/images/miscellaneous/7_full.jpg"
+            alt="Miscellaneous gallery photograph 7"
+            loading="lazy" decoding="async">
+        </button>
 
-        <div class="gallery-placeholder">
-          Miscellaneous image
-        </div>
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 8">
+          <img src="../assets/images/miscellaneous/8_full.jpg"
+            alt="Miscellaneous gallery photograph 8"
+            loading="lazy" decoding="async">
+        </button>
 
-        <div class="gallery-placeholder">
-          Miscellaneous image
-        </div>
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 9">
+          <img src="../assets/images/miscellaneous/9_full.jpg"
+            alt="Miscellaneous gallery photograph 9"
+            loading="lazy" decoding="async">
+        </button>
 
-        <div class="gallery-placeholder">
-          Miscellaneous image
-        </div>
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 10">
+          <img src="../assets/images/miscellaneous/10_full.jpg"
+            alt="Miscellaneous gallery photograph 10"
+            loading="lazy" decoding="async">
+        </button>
 
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 11">
+          <img src="../assets/images/miscellaneous/11_full.jpg"
+            alt="Miscellaneous gallery photograph 11"
+            loading="lazy" decoding="async">
+        </button>
 
-        <div class="gallery-placeholder">
-          Miscellaneous image
-        </div>
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 12">
+          <img src="../assets/images/miscellaneous/12_full.jpg"
+            alt="Miscellaneous gallery photograph 12"
+            loading="lazy" decoding="async">
+        </button>
 
-        <div class="gallery-placeholder">
-          Miscellaneous image
-        </div>
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 13">
+          <img src="../assets/images/miscellaneous/13_full.jpg"
+            alt="Miscellaneous gallery photograph 13"
+            loading="lazy" decoding="async">
+        </button>
 
-        <div class="gallery-placeholder">
-          Miscellaneous image
-        </div>
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 14">
+          <img src="../assets/images/miscellaneous/14_full.jpg"
+            alt="Miscellaneous gallery photograph 14"
+            loading="lazy" decoding="async">
+        </button>
 
-        <div class="gallery-placeholder">
-          Miscellaneous image
-        </div>
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 15">
+          <img src="../assets/images/miscellaneous/15_full.jpg"
+            alt="Miscellaneous gallery photograph 15"
+            loading="lazy" decoding="async">
+        </button>
 
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 16">
+          <img src="../assets/images/miscellaneous/16_full.jpg"
+            alt="Miscellaneous gallery photograph 16"
+            loading="lazy" decoding="async">
+        </button>
+
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 17">
+          <img src="../assets/images/miscellaneous/17_full.jpg"
+            alt="Miscellaneous gallery photograph 17"
+            loading="lazy" decoding="async">
+        </button>
+
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 18">
+          <img src="../assets/images/miscellaneous/18_full.jpg"
+            alt="Miscellaneous gallery photograph 18"
+            loading="lazy" decoding="async">
+        </button>
 
       </div>
 
     </section>
 
-
     <div class="miscellaneous-enquiry">
 
-      <a
-        class="button"
-        href="../contact.html"
-      >
+      <a class="button" href="../contact.html">
         Email / Make an enquiry
       </a>
 
     </div>
 
-
   </main>
 
+  <!-- ORIGINAL FOOTER -->
 
   <footer class="site-footer">
 
-
     <div class="footer-grid">
-
 
       <div>
 
@@ -730,7 +717,6 @@
         </a>
 
       </div>
-
 
       <div>
 
@@ -758,7 +744,6 @@
 
       </div>
 
-
       <div>
 
         <p>
@@ -769,51 +754,367 @@
 
       </div>
 
-
       <div>
 
         <ul>
-
-          <li>
-            <a href="../index.html">
-              Front Page
-            </a>
-          </li>
-
-          <li>
-            <a href="../home.html">
-              Home
-            </a>
-          </li>
-
-          <li>
-            <a href="#">
-              [ Instagram link ]
-            </a>
-          </li>
-
+          <li><a href="../index.html">Front Page</a></li>
+          <li><a href="../home.html">Home</a></li>
+          <li><a href="#">[ Instagram link ]</a></li>
         </ul>
 
       </div>
 
-
     </div>
-
 
     <div class="footer-bottom">
       © Leading Lights of London Ltd 2026
     </div>
 
-
   </footer>
 
+  <!-- ENLARGED IMAGE VIEWER -->
 
-  <script
-    src="../js/main.js"
-    defer
-  ></script>
+  <div
+    class="gallery-lightbox"
+    id="gallery-lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Miscellaneous image viewer"
+    hidden
+  >
 
+    <button
+      class="lightbox-close"
+      id="lightbox-close"
+      type="button"
+      aria-label="Close image viewer"
+    >
+      ×
+    </button>
+
+    <button
+      class="lightbox-nav lightbox-prev"
+      id="lightbox-prev"
+      type="button"
+      aria-label="Previous photograph"
+    >
+      ‹
+    </button>
+
+    <div
+      class="lightbox-stage"
+      id="lightbox-stage"
+    >
+
+      <img
+        class="lightbox-image"
+        id="lightbox-image"
+        alt=""
+      >
+
+      <div
+        class="lightbox-counter"
+        id="lightbox-counter"
+        aria-live="polite"
+      >
+        1 / 18
+      </div>
+
+    </div>
+
+    <button
+      class="lightbox-nav lightbox-next"
+      id="lightbox-next"
+      type="button"
+      aria-label="Next photograph"
+    >
+      ›
+    </button>
+
+  </div>
+
+  <script src="../js/main.js" defer></script>
+
+  <script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+      const cards = Array.from(
+        document.querySelectorAll(
+          '.miscellaneous-grid .gallery-card'
+        )
+      );
+
+      const lightbox = document.getElementById(
+        'gallery-lightbox'
+      );
+
+      const lightboxImage = document.getElementById(
+        'lightbox-image'
+      );
+
+      const counter = document.getElementById(
+        'lightbox-counter'
+      );
+
+      const closeButton = document.getElementById(
+        'lightbox-close'
+      );
+
+      const previousButton = document.getElementById(
+        'lightbox-prev'
+      );
+
+      const nextButton = document.getElementById(
+        'lightbox-next'
+      );
+
+      const stage = document.getElementById(
+        'lightbox-stage'
+      );
+
+      const images = cards.map(card => {
+
+        const image = card.querySelector('img');
+
+        return {
+          src: image.src,
+          alt: image.alt
+        };
+
+      });
+
+      let currentIndex = 0;
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let previousFocus = null;
+
+      /* DISPLAY PHOTOGRAPH */
+
+      function showImage(index) {
+
+        if (images.length === 0) return;
+
+        currentIndex =
+          (index + images.length) % images.length;
+
+        const current = images[currentIndex];
+
+        lightboxImage.src = current.src;
+        lightboxImage.alt = current.alt;
+
+        counter.textContent =
+          `${currentIndex + 1} / ${images.length}`;
+
+        const nextIndex =
+          (currentIndex + 1) % images.length;
+
+        const previousIndex =
+          (currentIndex - 1 + images.length)
+          % images.length;
+
+        const nextImage = new Image();
+        nextImage.src = images[nextIndex].src;
+
+        const previousImage = new Image();
+        previousImage.src = images[previousIndex].src;
+
+      }
+
+      /* OPEN IMAGE VIEWER */
+
+      function openLightbox(index) {
+
+        previousFocus = document.activeElement;
+
+        showImage(index);
+
+        lightbox.hidden = false;
+
+        document.body.classList.add(
+          'lightbox-open'
+        );
+
+        closeButton.focus();
+
+      }
+
+      /* CLOSE IMAGE VIEWER */
+
+      function closeLightbox() {
+
+        lightbox.hidden = true;
+
+        document.body.classList.remove(
+          'lightbox-open'
+        );
+
+        if (previousFocus) {
+          previousFocus.focus();
+        }
+
+      }
+
+      /* CLICKABLE PHOTOGRAPHS */
+
+      cards.forEach((card, index) => {
+
+        card.addEventListener('click', () => {
+          openLightbox(index);
+        });
+
+      });
+
+      closeButton.addEventListener('click', event => {
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        closeLightbox();
+
+      });
+
+      /* LEFT AND RIGHT NAVIGATION */
+
+      previousButton.addEventListener('click', () => {
+
+        showImage(currentIndex - 1);
+
+      });
+
+      nextButton.addEventListener('click', () => {
+
+        showImage(currentIndex + 1);
+
+      });
+
+      lightbox.addEventListener('click', event => {
+
+        if (
+          event.target === lightbox ||
+          event.target === stage
+        ) {
+          closeLightbox();
+        }
+
+      });
+
+      /* KEYBOARD NAVIGATION */
+
+      document.addEventListener('keydown', event => {
+
+        if (lightbox.hidden) return;
+
+        if (event.key === 'Escape') {
+
+          event.preventDefault();
+          closeLightbox();
+
+        }
+
+        if (event.key === 'ArrowLeft') {
+
+          event.preventDefault();
+          showImage(currentIndex - 1);
+
+        }
+
+        if (event.key === 'ArrowRight') {
+
+          event.preventDefault();
+          showImage(currentIndex + 1);
+
+        }
+
+        if (event.key === 'Tab') {
+
+          const controls = [
+            closeButton,
+            previousButton,
+            nextButton
+          ];
+
+          const first = controls[0];
+          const last = controls[controls.length - 1];
+
+          if (
+            event.shiftKey &&
+            document.activeElement === first
+          ) {
+
+            event.preventDefault();
+            last.focus();
+
+          } else if (
+            !event.shiftKey &&
+            document.activeElement === last
+          ) {
+
+            event.preventDefault();
+            first.focus();
+
+          } else if (
+            !controls.includes(document.activeElement)
+          ) {
+
+            event.preventDefault();
+            first.focus();
+
+          }
+
+        }
+
+      });
+
+      /* MOBILE SWIPE NAVIGATION */
+
+      stage.addEventListener('touchstart', event => {
+
+        touchStartX =
+          event.changedTouches[0].screenX;
+
+        touchStartY =
+          event.changedTouches[0].screenY;
+
+      }, { passive: true });
+
+      stage.addEventListener('touchend', event => {
+
+        const touchEndX =
+          event.changedTouches[0].screenX;
+
+        const touchEndY =
+          event.changedTouches[0].screenY;
+
+        const differenceX =
+          touchEndX - touchStartX;
+
+        const differenceY =
+          touchEndY - touchStartY;
+
+        if (
+          Math.abs(differenceX) < 45 ||
+          Math.abs(differenceX) <
+          Math.abs(differenceY)
+        ) {
+          return;
+        }
+
+        if (differenceX < 0) {
+
+          showImage(currentIndex + 1);
+
+        } else {
+
+          showImage(currentIndex - 1);
+
+        }
+
+      }, { passive: true });
+
+    });
+
+  </script>
 
 </body>
-
 </html>
