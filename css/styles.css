@@ -1699,3 +1699,25 @@ body.home-page .brand-mini {
   font-weight: 400;
   color: #efd393;
 }
+/* =====================================================
+   135% ARCHITECTURAL ZOOM
+   HOMEPAGE AND LANDING PAGE ONLY
+   ===================================================== */
+
+@media (min-width: 901px) {
+
+  body.home-page main#main-content,
+  body.landing-page main#main-content {
+    display: flow-root;
+    overflow-x: clip !important;
+    overflow-y: visible !important;
+  }
+
+  body.home-page main#main-content > .gothic-stage,
+  body.landing-page main#main-content > .gothic-stage {
+    transform: scale(1.35) !important;
+    transform-origin: center top;
+    margin-bottom: 26.25vw !important;
+  }
+
+}
