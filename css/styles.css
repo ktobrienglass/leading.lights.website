@@ -1691,3 +1691,11 @@ body.landing-page .window-overlay {
 .primary-links > li:has(> a[href$="about.html"]) {
   display: none !important;
 }
+/* Match homepage header branding to gallery pages */
+
+body.home-page .brand-mini {
+  font-family: 'Pirata One', Georgia, serif !important;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-weight: 400;
+  color: #efd393;
+}
