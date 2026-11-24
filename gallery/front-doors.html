@@ -1,11 +1,15 @@
+
 <!doctype html>
 <html lang="en-GB">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Front Doors | Leading Lights of London Ltd</title>
+
   <meta name="description" content="Front door stained glass by Leading Lights of London Ltd.">
+
   <link rel="stylesheet" href="../css/styles.css">
 
   <style>
@@ -14,7 +18,12 @@
     body.front-doors-page {
       margin: 0;
       min-height: 100vh;
-      background: radial-gradient(circle at 50% 0%, #171515 0, #0c0e0f 34%, #050607 72%);
+      background: radial-gradient(
+        circle at 50% 0%,
+        #171515 0,
+        #0c0e0f 34%,
+        #050607 72%
+      );
       color: #f1eadc;
     }
 
@@ -28,10 +37,14 @@
       color: #efd393;
     }
 
+    /* PAGE TITLE */
+
     .front-doors-hero {
+      box-sizing: border-box;
       width: min(92%, 1380px);
       margin: 0 auto;
-      padding: clamp(4rem, 7vw, 6rem) 1rem clamp(2.4rem, 5vw, 4rem);
+      padding: clamp(4rem, 7vw, 6rem) 1rem
+        clamp(2.4rem, 5vw, 4rem);
       text-align: center;
     }
 
@@ -42,7 +55,9 @@
       font-weight: 400;
       line-height: .95;
       color: #d11f27;
-      text-shadow: 0 3px 0 #43070b, 0 0 16px rgba(189, 25, 34, .32);
+      text-shadow:
+        0 3px 0 #43070b,
+        0 0 16px rgba(189, 25, 34, .32);
     }
 
     .front-doors-rule {
@@ -61,16 +76,26 @@
       display: block;
       flex: 1;
       height: 1px;
-      background: linear-gradient(to right, transparent, rgba(212, 173, 95, .75));
+      background: linear-gradient(
+        to right,
+        transparent,
+        rgba(212, 173, 95, .75)
+      );
     }
 
     .front-doors-rule::after {
-      background: linear-gradient(to left, transparent, rgba(212, 173, 95, .75));
+      background: linear-gradient(
+        to left,
+        transparent,
+        rgba(212, 173, 95, .75)
+      );
     }
 
     .front-doors-rule span {
       font-size: .75rem;
     }
+
+    /* INTRODUCTORY TEXT */
 
     .front-doors-intro {
       width: min(88%, 980px);
@@ -90,6 +115,8 @@
       margin-top: clamp(1.3rem, 2.5vw, 2rem);
     }
 
+    /* PHOTOGRAPH GALLERY */
+
     .front-doors-gallery {
       width: min(92%, 1380px);
       margin: 0 auto;
@@ -99,50 +126,74 @@
     .front-doors-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: clamp(1rem, 2vw, 1.8rem);
+      align-items: center;
+      gap: clamp(1.4rem, 3vw, 2.8rem);
     }
 
-    .gallery-card {
+    /* NO GOLD BOXES OR BORDERS */
+
+    .front-doors-grid .gallery-card {
+      appearance: none;
+      -webkit-appearance: none;
       position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 100%;
-      height: clamp(250px, 25vw, 360px);
+      height: auto;
+      min-width: 0;
       margin: 0;
       padding: 0;
-      overflow: hidden;
-      border: 1px solid rgba(212, 173, 95, .28);
-      border-radius: 2px;
-      background: #050606;
-      box-shadow: 0 12px 28px rgba(0, 0, 0, .32), inset 0 0 0 1px rgba(255, 255, 255, .025);
-      cursor: pointer;
-      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+      overflow: visible;
+      border: none !important;
+      border-radius: 0;
+      background: transparent !important;
+      box-shadow: none !important;
+      cursor: zoom-in;
+      transition: transform 200ms ease;
     }
 
-    .gallery-card:hover,
-    .gallery-card:focus-visible {
-      transform: translateY(-4px);
-      border-color: rgba(231, 195, 116, .68);
-      box-shadow: 0 17px 34px rgba(0, 0, 0, .46), inset 0 0 0 1px rgba(231, 195, 116, .14);
+    .front-doors-grid .gallery-card::before,
+    .front-doors-grid .gallery-card::after {
+      display: none;
+      content: none;
     }
 
-    .gallery-card:focus-visible {
-      outline: 2px solid #f0cf86;
-      outline-offset: 4px;
-    }
-
-    .gallery-card img {
+    .front-doors-grid .gallery-card img {
       display: block;
-      width: 100%;
-      height: 100%;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 420px;
+      margin: 0 auto;
+      padding: 0;
       object-fit: contain;
       object-position: center;
-      background: #050606;
-      transition: transform 220ms ease, filter 220ms ease;
+      border: none !important;
+      border-radius: 0;
+      background: transparent !important;
+      box-shadow: none !important;
+      transition: transform 220ms ease,
+        filter 220ms ease;
     }
 
-    .gallery-card:hover img {
-      transform: scale(1.018);
-      filter: brightness(1.04);
+    .front-doors-grid .gallery-card:hover {
+      transform: none;
+      border: none;
+      box-shadow: none;
     }
+
+    .front-doors-grid .gallery-card:hover img {
+      transform: scale(1.025);
+      filter: brightness(1.06);
+    }
+
+    .front-doors-grid .gallery-card:focus-visible {
+      outline: 2px solid #f1eadc;
+      outline-offset: 6px;
+    }
+
+    /* ENQUIRY BUTTON */
 
     .front-doors-enquiry {
       display: flex;
@@ -154,13 +205,19 @@
       margin: 0;
     }
 
+    /* FOOTER */
+
     body.front-doors-page .site-footer {
       background: #080a0b;
     }
 
     body.front-doors-page .site-footer .footer-grid {
       display: grid;
-      grid-template-columns: minmax(280px, 1.25fr) minmax(170px, .8fr) minmax(220px, 1fr) minmax(120px, .55fr);
+      grid-template-columns:
+        minmax(280px, 1.25fr)
+        minmax(170px, .8fr)
+        minmax(220px, 1fr)
+        minmax(120px, .55fr);
       gap: clamp(2rem, 5vw, 5rem);
       align-items: center;
     }
@@ -178,6 +235,8 @@
       height: auto;
     }
 
+    /* FULL-SCREEN IMAGE VIEWER */
+
     .gallery-lightbox[hidden] {
       display: none !important;
     }
@@ -187,33 +246,45 @@
       inset: 0;
       z-index: 9999;
       display: grid;
-      grid-template-columns: minmax(56px, 8vw) minmax(0, 1fr) minmax(56px, 8vw);
+      grid-template-columns:
+        minmax(56px, 8vw)
+        minmax(0, 1fr)
+        minmax(56px, 8vw);
       align-items: center;
-      background: rgba(0, 0, 0, .94);
+      background: rgba(0, 0, 0, .97);
       backdrop-filter: blur(5px);
       -webkit-backdrop-filter: blur(5px);
     }
 
     .lightbox-stage {
+      box-sizing: border-box;
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
       width: 100%;
+      min-width: 0;
       height: 100vh;
-      padding: clamp(3.5rem, 7vw, 5rem) 0;
+      height: 100dvh;
+      padding: 4rem .5rem;
       overflow: hidden;
+      touch-action: pan-y;
     }
 
     .lightbox-image {
       display: block;
-      max-width: min(92vw, 1250px);
-      max-height: calc(100vh - 8rem);
       width: auto;
       height: auto;
+      max-width: 100%;
+      max-height: calc(100vh - 8rem);
+      max-height: calc(100dvh - 8rem);
       object-fit: contain;
-      box-shadow: 0 18px 70px rgba(0, 0, 0, .72);
+      border: none;
+      background: transparent;
+      box-shadow: none;
     }
+
+    /* CLOSE BUTTON */
 
     .lightbox-close {
       position: absolute;
@@ -226,16 +297,21 @@
       align-items: center;
       justify-content: center;
       padding: 0;
-      border: 1px solid rgba(239, 211, 147, .35);
+      border: none;
       border-radius: 50%;
       background: rgba(8, 9, 9, .88);
       color: #f2e9d9;
       font-family: Arial, sans-serif;
-      font-size: 1.55rem;
+      font-size: 2rem;
       line-height: 1;
       cursor: pointer;
-      pointer-events: auto;
     }
+
+    .lightbox-close:hover {
+      background: #252525;
+    }
+
+    /* PREVIOUS AND NEXT ARROWS */
 
     .lightbox-nav {
       position: relative;
@@ -246,14 +322,15 @@
       width: 100%;
       height: 100%;
       padding: 0;
-      border: 0;
+      border: none;
       background: transparent;
       color: #efd393;
       font-family: Georgia, serif;
       font-size: clamp(2.7rem, 6vw, 5.5rem);
       cursor: pointer;
-      opacity: .78;
-      transition: opacity 160ms ease, transform 160ms ease;
+      opacity: .8;
+      transition: opacity 160ms ease,
+        transform 160ms ease;
     }
 
     .lightbox-nav:hover,
@@ -269,40 +346,60 @@
       transform: translateX(3px);
     }
 
+    .lightbox-nav:focus-visible,
+    .lightbox-close:focus-visible {
+      outline: 2px solid #f1eadc;
+      outline-offset: -4px;
+    }
+
+    /* IMAGE NUMBER */
+
     .lightbox-counter {
       position: absolute;
       left: 50%;
-      bottom: clamp(1.2rem, 2vw, 1.8rem);
+      bottom: 1.5rem;
       transform: translateX(-50%);
       padding: .32rem .72rem;
-      border: 1px solid rgba(212, 173, 95, .24);
-      background: rgba(6, 7, 7, .72);
+      border: none;
+      background: transparent;
       color: #d5c9b5;
       font-size: .9rem;
       letter-spacing: .08em;
+      white-space: nowrap;
     }
+
+    /* TABLET */
 
     @media (max-width: 1050px) {
       .front-doors-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
+
+      body.front-doors-page .site-footer .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2rem;
+      }
     }
+
+    /* MOBILE */
 
     @media (max-width: 760px) {
       .front-doors-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.5rem;
       }
 
-      .gallery-card {
-        height: clamp(230px, 52vw, 340px);
+      .front-doors-grid .gallery-card img {
+        max-height: 360px;
       }
 
       .gallery-lightbox {
-        grid-template-columns: 50px minmax(0, 1fr) 50px;
+        grid-template-columns:
+          40px minmax(0, 1fr) 40px;
       }
 
       .lightbox-stage {
-        padding: 4rem .5rem;
+        padding: 4rem 0;
       }
 
       body.front-doors-page .site-footer .footer-grid {
@@ -314,10 +411,12 @@
     @media (max-width: 480px) {
       .front-doors-grid {
         grid-template-columns: 1fr;
+        gap: 2rem;
       }
 
-      .gallery-card {
-        height: min(115vw, 440px);
+      .front-doors-grid .gallery-card img {
+        max-width: 100%;
+        max-height: 520px;
       }
 
       .front-doors-hero {
@@ -325,7 +424,8 @@
       }
 
       .gallery-lightbox {
-        grid-template-columns: 42px minmax(0, 1fr) 42px;
+        grid-template-columns:
+          34px minmax(0, 1fr) 34px;
       }
 
       .lightbox-nav {
@@ -339,20 +439,34 @@
       .lightbox-nav {
         transition: none;
       }
+
+      .front-doors-grid .gallery-card:hover img {
+        transform: none;
+      }
     }
   </style>
 </head>
 
 <body class="front-doors-page">
 
-  <a class="skip-link" href="#main-content">Skip to content</a>
+  <a class="skip-link" href="#main-content">
+    Skip to content
+  </a>
 
   <header class="site-header">
 
     <nav class="primary-nav" aria-label="Primary navigation">
-      <a class="brand-mini" href="../home.html">Leading Lights of London Ltd</a>
 
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-links">
+      <a class="brand-mini" href="../home.html">
+        Leading Lights of London Ltd
+      </a>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-links"
+      >
         Menu
       </button>
 
@@ -361,18 +475,45 @@
         <li><a href="../about.html">About</a></li>
         <li><a href="../contact.html">Contact</a></li>
       </ul>
+
     </nav>
 
     <nav class="gallery-nav" aria-label="Gallery categories">
+
       <ul class="gallery-links">
-        <li><a href="front-doors.html" aria-current="page">Front Doors</a></li>
-        <li><a href="ecclesiastic.html">Ecclesiastic</a></li>
-        <li><a href="mansion-houses.html">Mansion Houses</a></li>
-        <li><a href="palaces.html">Palaces</a></li>
-        <li><a href="bespoke-designs.html">Bespoke Designs</a></li>
-        <li><a href="architectural.html">Architectural</a></li>
-        <li><a href="miscellaneous.html">Miscellaneous</a></li>
+
+        <li>
+          <a href="front-doors.html" aria-current="page">
+            Front Doors
+          </a>
+        </li>
+
+        <li>
+          <a href="ecclesiastic.html">Ecclesiastic</a>
+        </li>
+
+        <li>
+          <a href="mansion-houses.html">Mansion Houses</a>
+        </li>
+
+        <li>
+          <a href="palaces.html">Palaces</a>
+        </li>
+
+        <li>
+          <a href="bespoke-designs.html">Bespoke Designs</a>
+        </li>
+
+        <li>
+          <a href="architectural.html">Architectural</a>
+        </li>
+
+        <li>
+          <a href="miscellaneous.html">Miscellaneous</a>
+        </li>
+
       </ul>
+
     </nav>
 
   </header>
@@ -381,112 +522,236 @@
 
     <section class="front-doors-hero">
 
-      <h2 class="front-doors-title">Front Doors</h2>
+      <h1 class="front-doors-title">Front Doors</h1>
 
       <div class="front-doors-rule" aria-hidden="true">
         <span>✦</span>
       </div>
 
       <div class="front-doors-intro">
+
         <p>
-          Stained glass front door restoration is the most popular customer enquiry. Stained glass door panels will enhance the entrance to your home. We can restore your existing stained glass front door or, if your home no longer has the original stained glass, we can replicate neighbouring original stained glass designs.
+          Stained glass front door restoration is the most
+          popular customer enquiry. Stained glass door panels
+          will enhance the entrance to your home. We can
+          restore your existing stained glass front door or,
+          if your home no longer has the original stained
+          glass, we can replicate neighbouring original
+          stained glass designs.
         </p>
 
         <p>
-          For stained glass restoration, the process would be to take the stained glass out of the door, measure the rebate, board up, take back to the studio, take a rubbing, un-lead, re-lead, replace broken panes, rebuild, cement, polish, place new ties and new steel saddle bars, refit and replace with new window beads or putty.
+          For stained glass restoration, the process would
+          be to take the stained glass out of the door,
+          measure the rebate, board up, take back to the
+          studio, take a rubbing, un-lead, re-lead, replace
+          broken panes, rebuild, cement, polish, place new
+          ties and new steel saddle bars, refit and replace
+          with new window beads or putty.
         </p>
+
       </div>
 
     </section>
 
-    <section class="front-doors-gallery" aria-label="Front door stained glass gallery">
+    <!-- FRONT DOORS PHOTOGRAPHS -->
+
+    <section
+      class="front-doors-gallery"
+      aria-label="Front door stained glass gallery"
+    >
+
       <div class="front-doors-grid">
 
-        <button class="gallery-card" type="button" data-index="0" aria-label="Open front door image 1">
-          <img src="../assets/images/front-doors/1_full.jpg" alt="Front door stained glass project 1">
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 1">
+          <img
+            src="../assets/images/front-doors/1_full.jpg"
+            alt="Front door stained glass project 1"
+            decoding="async"
+          >
         </button>
 
-        <button class="gallery-card" type="button" data-index="1" aria-label="Open front door image 2">
-          <img src="../assets/images/front-doors/2_full.jpg" alt="Front door stained glass project 2">
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 2">
+          <img
+            src="../assets/images/front-doors/2_full.jpg"
+            alt="Front door stained glass project 2"
+            decoding="async"
+          >
         </button>
 
-        <button class="gallery-card" type="button" data-index="2" aria-label="Open front door image 3">
-          <img src="../assets/images/front-doors/3_full.jpg" alt="Front door stained glass project 3">
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 3">
+          <img
+            src="../assets/images/front-doors/3_full.jpg"
+            alt="Front door stained glass project 3"
+            decoding="async"
+          >
         </button>
 
-        <button class="gallery-card" type="button" data-index="3" aria-label="Open front door image 4">
-          <img src="../assets/images/front-doors/4_full.jpg" alt="Front door stained glass project 4">
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 4">
+          <img
+            src="../assets/images/front-doors/4_full.jpg"
+            alt="Front door stained glass project 4"
+            decoding="async"
+          >
         </button>
 
-        <button class="gallery-card" type="button" data-index="4" aria-label="Open front door image 5">
-          <img src="../assets/images/front-doors/5_full.jpg" alt="Front door stained glass project 5">
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 5">
+          <img
+            src="../assets/images/front-doors/5_full.jpg"
+            alt="Front door stained glass project 5"
+            loading="lazy"
+            decoding="async"
+          >
         </button>
 
-        <button class="gallery-card" type="button" data-index="5" aria-label="Open front door image 6">
-          <img src="../assets/images/front-doors/6.jpg" alt="Front door stained glass project 6">
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 6">
+          <img
+            src="../assets/images/front-doors/6_full.jpg"
+            alt="Front door stained glass project 6"
+            loading="lazy"
+            decoding="async"
+          >
         </button>
 
-        <button class="gallery-card" type="button" data-index="6" aria-label="Open front door image 7">
-          <img src="../assets/images/front-doors/7.jpg" alt="Front door stained glass project 7">
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 7">
+          <img
+            src="../assets/images/front-doors/7_full.jpg"
+            alt="Front door stained glass project 7"
+            loading="lazy"
+            decoding="async"
+          >
         </button>
 
-        <button class="gallery-card" type="button" data-index="7" aria-label="Open front door image 8">
-          <img src="../assets/images/front-doors/8.jpg" alt="Front door stained glass project 8">
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 8">
+          <img
+            src="../assets/images/front-doors/8_full.jpg"
+            alt="Front door stained glass project 8"
+            loading="lazy"
+            decoding="async"
+          >
         </button>
 
-        <button class="gallery-card" type="button" data-index="8" aria-label="Open front door image 9">
-          <img src="../assets/images/front-doors/9.jpg" alt="Front door stained glass project 9">
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 9">
+          <img
+            src="../assets/images/front-doors/9_full.jpg"
+            alt="Front door stained glass project 9"
+            loading="lazy"
+            decoding="async"
+          >
         </button>
 
-        <button class="gallery-card" type="button" data-index="9" aria-label="Open front door image 10">
-          <img src="../assets/images/front-doors/10.jpg" alt="Front door stained glass project 10">
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 10">
+          <img
+            src="../assets/images/front-doors/10_full.jpg"
+            alt="Front door stained glass project 10"
+            loading="lazy"
+            decoding="async"
+          >
         </button>
 
-        <button class="gallery-card" type="button" data-index="10" aria-label="Open front door image 11">
-          <img src="../assets/images/front-doors/11.jpg" alt="Front door stained glass project 11">
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 11">
+          <img
+            src="../assets/images/front-doors/11_full.jpg"
+            alt="Front door stained glass project 11"
+            loading="lazy"
+            decoding="async"
+          >
         </button>
 
-        <button class="gallery-card" type="button" data-index="11" aria-label="Open front door image 12">
-          <img src="../assets/images/front-doors/12.jpg" alt="Front door stained glass project 12">
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 12">
+          <img
+            src="../assets/images/front-doors/12_full.jpg"
+            alt="Front door stained glass project 12"
+            loading="lazy"
+            decoding="async"
+          >
         </button>
 
-        <button class="gallery-card" type="button" data-index="12" aria-label="Open front door image 13">
-          <img src="../assets/images/front-doors/13.jpg" alt="Front door stained glass project 13">
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 13">
+          <img
+            src="../assets/images/front-doors/13_full.jpg"
+            alt="Front door stained glass project 13"
+            loading="lazy"
+            decoding="async"
+          >
         </button>
 
-        <button class="gallery-card" type="button" data-index="13" aria-label="Open front door image 14">
-          <img src="../assets/images/front-doors/14.jpg" alt="Front door stained glass project 14">
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 14">
+          <img
+            src="../assets/images/front-doors/14_full.jpg"
+            alt="Front door stained glass project 14"
+            loading="lazy"
+            decoding="async"
+          >
         </button>
 
-        <button class="gallery-card" type="button" data-index="14" aria-label="Open front door image 15">
-          <img src="../assets/images/front-doors/15.jpg" alt="Front door stained glass project 15">
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 15">
+          <img
+            src="../assets/images/front-doors/15_full.jpg"
+            alt="Front door stained glass project 15"
+            loading="lazy"
+            decoding="async"
+          >
         </button>
 
-        <button class="gallery-card" type="button" data-index="15" aria-label="Open front door image 16">
-          <img src="../assets/images/front-doors/16.jpg" alt="Front door stained glass project 16">
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 16">
+          <img
+            src="../assets/images/front-doors/16_full.jpg"
+            alt="Front door stained glass project 16"
+            loading="lazy"
+            decoding="async"
+          >
         </button>
 
-        <button class="gallery-card" type="button" data-index="16" aria-label="Open front door image 17">
-          <img src="../assets/images/front-doors/17.jpg" alt="Front door stained glass project 17">
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 17">
+          <img
+            src="../assets/images/front-doors/17_full.jpg"
+            alt="Front door stained glass project 17"
+            loading="lazy"
+            decoding="async"
+          >
         </button>
 
-        <button class="gallery-card" type="button" data-index="17" aria-label="Open front door image 18">
-          <img src="../assets/images/front-doors/18.jpg" alt="Front door stained glass project 18">
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 18">
+          <img
+            src="../assets/images/front-doors/18_full.jpg"
+            alt="Front door stained glass project 18"
+            loading="lazy"
+            decoding="async"
+          >
+        </button>
+
+        <button class="gallery-card" type="button" aria-label="Enlarge photograph 19">
+          <img
+            src="../assets/images/front-doors/19_full.jpg"
+            alt="Front door stained glass project 19"
+            loading="lazy"
+            decoding="async"
+          >
         </button>
 
       </div>
+
     </section>
 
     <div class="front-doors-enquiry">
-      <a class="button" href="../contact.html">Email / Make an enquiry</a>
+
+      <a class="button" href="../contact.html">
+        Email / Make an enquiry
+      </a>
+
     </div>
 
   </main>
 
+  <!-- ORIGINAL FOOTER -->
+
   <footer class="site-footer">
+
     <div class="footer-grid">
 
       <div>
+
         <a
           class="footer-studio-link"
           href="https://clockworkstudios.co.uk/"
@@ -494,36 +759,61 @@
           rel="noopener noreferrer"
           aria-label="Visit the Clockwork Studios website"
         >
+
           <img
             class="footer-studio-image"
             src="../assets/images/home/clockwork-studios-architectural-blueprint.png"
             alt="Clockwork Studios architectural drawing and logo"
           >
+
         </a>
+
       </div>
 
       <div>
+
         <ul>
-          <li><a href="tel:+442077374567">020 7737 4567</a></li>
-          <li><a href="tel:+447803935003">07803 935003</a></li>
-          <li><a href="mailto:jonny@leadinglighter.co.uk">jonny@leadinglighter.co.uk</a></li>
+
+          <li>
+            <a href="tel:+442077374567">
+              020 7737 4567
+            </a>
+          </li>
+
+          <li>
+            <a href="tel:+447803935003">
+              07803 935003
+            </a>
+          </li>
+
+          <li>
+            <a href="mailto:jonny@leadinglighter.co.uk">
+              jonny@leadinglighter.co.uk
+            </a>
+          </li>
+
         </ul>
+
       </div>
 
       <div>
+
         <p>
           Clockwork Studios,<br>
           38A Southwell Road,<br>
           London SE5 9PG
         </p>
+
       </div>
 
       <div>
+
         <ul>
           <li><a href="../index.html">Front Page</a></li>
           <li><a href="../home.html">Home</a></li>
           <li><a href="#">[ Instagram link ]</a></li>
         </ul>
+
       </div>
 
     </div>
@@ -531,7 +821,10 @@
     <div class="footer-bottom">
       © Leading Lights of London Ltd 2026
     </div>
+
   </footer>
+
+  <!-- ENLARGED IMAGE VIEWER -->
 
   <div
     class="gallery-lightbox"
@@ -555,21 +848,37 @@
       class="lightbox-nav lightbox-prev"
       id="lightbox-prev"
       type="button"
-      aria-label="Previous image"
+      aria-label="Previous photograph"
     >
       ‹
     </button>
 
-    <div class="lightbox-stage" id="lightbox-stage">
-      <img class="lightbox-image" id="lightbox-image" src="" alt="">
-      <div class="lightbox-counter" id="lightbox-counter">1 / 18</div>
+    <div
+      class="lightbox-stage"
+      id="lightbox-stage"
+    >
+
+      <img
+        class="lightbox-image"
+        id="lightbox-image"
+        alt=""
+      >
+
+      <div
+        class="lightbox-counter"
+        id="lightbox-counter"
+        aria-live="polite"
+      >
+        1 / 19
+      </div>
+
     </div>
 
     <button
       class="lightbox-nav lightbox-next"
       id="lightbox-next"
       type="button"
-      aria-label="Next image"
+      aria-label="Next photograph"
     >
       ›
     </button>
@@ -579,98 +888,292 @@
   <script src="../js/main.js" defer></script>
 
   <script>
+
     document.addEventListener('DOMContentLoaded', () => {
-      const cards = Array.from(document.querySelectorAll('.gallery-card'));
-      const lightbox = document.getElementById('gallery-lightbox');
-      const lightboxImage = document.getElementById('lightbox-image');
-      const counter = document.getElementById('lightbox-counter');
-      const closeButton = document.getElementById('lightbox-close');
-      const previousButton = document.getElementById('lightbox-prev');
-      const nextButton = document.getElementById('lightbox-next');
-      const stage = document.getElementById('lightbox-stage');
+
+      const cards = Array.from(
+        document.querySelectorAll(
+          '.front-doors-grid .gallery-card'
+        )
+      );
+
+      const lightbox = document.getElementById(
+        'gallery-lightbox'
+      );
+
+      const lightboxImage = document.getElementById(
+        'lightbox-image'
+      );
+
+      const counter = document.getElementById(
+        'lightbox-counter'
+      );
+
+      const closeButton = document.getElementById(
+        'lightbox-close'
+      );
+
+      const previousButton = document.getElementById(
+        'lightbox-prev'
+      );
+
+      const nextButton = document.getElementById(
+        'lightbox-next'
+      );
+
+      const stage = document.getElementById(
+        'lightbox-stage'
+      );
 
       const images = cards.map(card => {
+
         const image = card.querySelector('img');
+
         return {
           src: image.src,
           alt: image.alt
         };
+
       });
 
       let currentIndex = 0;
       let touchStartX = 0;
+      let touchStartY = 0;
+      let previousFocus = null;
+
+      /* DISPLAY A PHOTOGRAPH */
 
       function showImage(index) {
-        if (index < 0) {
-          currentIndex = images.length - 1;
-        } else if (index >= images.length) {
-          currentIndex = 0;
-        } else {
-          currentIndex = index;
-        }
+
+        if (images.length === 0) return;
+
+        currentIndex =
+          (index + images.length) % images.length;
 
         const current = images[currentIndex];
+
         lightboxImage.src = current.src;
         lightboxImage.alt = current.alt;
-        counter.textContent = `${currentIndex + 1} / ${images.length}`;
+
+        counter.textContent =
+          `${currentIndex + 1} / ${images.length}`;
+
+        /* PRELOAD ADJACENT PHOTOGRAPHS */
+
+        const nextIndex =
+          (currentIndex + 1) % images.length;
+
+        const previousIndex =
+          (currentIndex - 1 + images.length)
+          % images.length;
+
+        const nextImage = new Image();
+        nextImage.src = images[nextIndex].src;
+
+        const previousImage = new Image();
+        previousImage.src = images[previousIndex].src;
+
       }
+
+      /* OPEN IMAGE VIEWER */
 
       function openLightbox(index) {
+
+        previousFocus = document.activeElement;
+
         showImage(index);
+
         lightbox.hidden = false;
-        document.body.classList.add('lightbox-open');
+
+        document.body.classList.add(
+          'lightbox-open'
+        );
+
         closeButton.focus();
+
       }
+
+      /* CLOSE IMAGE VIEWER */
 
       function closeLightbox() {
+
         lightbox.hidden = true;
-        document.body.classList.remove('lightbox-open');
+
+        document.body.classList.remove(
+          'lightbox-open'
+        );
+
+        if (previousFocus) {
+          previousFocus.focus();
+        }
+
       }
 
+      /* MAKE EVERY PHOTOGRAPH CLICKABLE */
+
       cards.forEach((card, index) => {
-        card.addEventListener('click', () => openLightbox(index));
+
+        card.addEventListener('click', () => {
+          openLightbox(index);
+        });
+
       });
+
+      /* CLOSE BUTTON */
 
       closeButton.addEventListener('click', event => {
+
         event.preventDefault();
         event.stopPropagation();
+
         closeLightbox();
+
       });
 
-      previousButton.addEventListener('click', () => showImage(currentIndex - 1));
-      nextButton.addEventListener('click', () => showImage(currentIndex + 1));
+      /* LEFT AND RIGHT ARROWS */
+
+      previousButton.addEventListener('click', () => {
+
+        showImage(currentIndex - 1);
+
+      });
+
+      nextButton.addEventListener('click', () => {
+
+        showImage(currentIndex + 1);
+
+      });
+
+      /* CLICK OUTSIDE THE PHOTOGRAPH TO CLOSE */
 
       lightbox.addEventListener('click', event => {
-        if (event.target === lightbox) {
+
+        if (
+          event.target === lightbox ||
+          event.target === stage
+        ) {
           closeLightbox();
         }
+
       });
+
+      /* KEYBOARD NAVIGATION */
 
       document.addEventListener('keydown', event => {
+
         if (lightbox.hidden) return;
 
-        if (event.key === 'Escape') closeLightbox();
-        if (event.key === 'ArrowLeft') showImage(currentIndex - 1);
-        if (event.key === 'ArrowRight') showImage(currentIndex + 1);
+        if (event.key === 'Escape') {
+
+          event.preventDefault();
+          closeLightbox();
+
+        }
+
+        if (event.key === 'ArrowLeft') {
+
+          event.preventDefault();
+          showImage(currentIndex - 1);
+
+        }
+
+        if (event.key === 'ArrowRight') {
+
+          event.preventDefault();
+          showImage(currentIndex + 1);
+
+        }
+
+        /* KEEP KEYBOARD FOCUS INSIDE THE VIEWER */
+
+        if (event.key === 'Tab') {
+
+          const controls = [
+            closeButton,
+            previousButton,
+            nextButton
+          ];
+
+          const first = controls[0];
+          const last = controls[controls.length - 1];
+
+          if (
+            event.shiftKey &&
+            document.activeElement === first
+          ) {
+
+            event.preventDefault();
+            last.focus();
+
+          } else if (
+            !event.shiftKey &&
+            document.activeElement === last
+          ) {
+
+            event.preventDefault();
+            first.focus();
+
+          } else if (
+            !controls.includes(document.activeElement)
+          ) {
+
+            event.preventDefault();
+            first.focus();
+
+          }
+
+        }
+
       });
 
+      /* MOBILE SWIPE NAVIGATION */
+
       stage.addEventListener('touchstart', event => {
-        touchStartX = event.changedTouches[0].screenX;
+
+        touchStartX =
+          event.changedTouches[0].screenX;
+
+        touchStartY =
+          event.changedTouches[0].screenY;
+
       }, { passive: true });
 
       stage.addEventListener('touchend', event => {
-        const touchEndX = event.changedTouches[0].screenX;
-        const difference = touchEndX - touchStartX;
 
-        if (Math.abs(difference) < 45) return;
+        const touchEndX =
+          event.changedTouches[0].screenX;
 
-        if (difference < 0) {
-          showImage(currentIndex + 1);
-        } else {
-          showImage(currentIndex - 1);
+        const touchEndY =
+          event.changedTouches[0].screenY;
+
+        const differenceX =
+          touchEndX - touchStartX;
+
+        const differenceY =
+          touchEndY - touchStartY;
+
+        if (
+          Math.abs(differenceX) < 45 ||
+          Math.abs(differenceX) <
+          Math.abs(differenceY)
+        ) {
+          return;
         }
+
+        if (differenceX < 0) {
+
+          showImage(currentIndex + 1);
+
+        } else {
+
+          showImage(currentIndex - 1);
+
+        }
+
       }, { passive: true });
+
     });
+
   </script>
 
 </body>
