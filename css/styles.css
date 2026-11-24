@@ -1681,3 +1681,8 @@ body.landing-page .window-overlay {
   }
 
 }
+/* Remove Palaces from all gallery navigation menus */
+
+.gallery-links > li:has(> a[href$="palaces.html"]) {
+  display: none !important;
+}
