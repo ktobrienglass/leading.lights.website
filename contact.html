@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en-GB">
 
@@ -12,19 +13,13 @@
     content="Contact Leading Lights of London Ltd for stained glass design, restoration and repair in London."
   >
 
-  <link
-    rel="stylesheet"
-    href="css/styles.css"
-  >
+  <link rel="stylesheet" href="css/styles.css">
 
   <style>
 
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Pirata+One&display=swap');
 
-
-    /* =====================================================
-       CONTACT PAGE
-       ===================================================== */
+    /* CONTACT PAGE */
 
     body.contact-page {
       margin: 0;
@@ -41,10 +36,7 @@
       color: #f1eadc;
     }
 
-
-    /* =====================================================
-       NAVIGATION
-       ===================================================== */
+    /* NAVIGATION */
 
     body.contact-page .brand-mini {
       font-family:
@@ -58,17 +50,12 @@
       color: #efd393;
     }
 
-
-    /* =====================================================
-       MAIN CONTACT AREA
-       ===================================================== */
+    /* MAIN CONTACT AREA */
 
     .contact-main {
-      width:
-        min(
-          92%,
-          1050px
-        );
+      box-sizing: border-box;
+
+      width: min(92%, 1050px);
 
       margin: 0 auto;
 
@@ -80,7 +67,6 @@
       text-align: center;
     }
 
-
     .contact-title {
       margin: 0;
 
@@ -90,16 +76,10 @@
         serif;
 
       font-size:
-        clamp(
-          2.8rem,
-          5vw,
-          5rem
-        );
+        clamp(2.8rem, 5vw, 5rem);
 
       font-weight: 400;
-
       line-height: .95;
-
       color: #d11f27;
 
       text-shadow:
@@ -107,10 +87,7 @@
         0 0 16px rgba(189,25,34,.32);
     }
 
-
-    /* =====================================================
-       GOLD DIVIDER
-       ===================================================== */
+    /* GOLD DIVIDER */
 
     .contact-rule {
       display: flex;
@@ -120,20 +97,12 @@
 
       gap: .8rem;
 
-      width:
-        min(
-          360px,
-          70%
-        );
+      width: min(360px, 70%);
 
-      margin:
-        1.5rem
-        auto
-        0;
+      margin: 1.5rem auto 0;
 
       color: #d4ad5f;
     }
-
 
     .contact-rule::before,
     .contact-rule::after {
@@ -142,7 +111,6 @@
       display: block;
 
       flex: 1;
-
       height: 1px;
 
       background:
@@ -153,7 +121,6 @@
         );
     }
 
-
     .contact-rule::after {
       background:
         linear-gradient(
@@ -163,22 +130,57 @@
         );
     }
 
-
     .contact-rule span {
       font-size: .75rem;
     }
 
+    /* NEW CONTACT PHOTOGRAPH */
 
-    /* =====================================================
-       INTRO TEXT
-       ===================================================== */
+    .contact-photo-wrapper {
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      width: min(100%, 950px);
+
+      margin:
+        clamp(2rem, 4vw, 3.5rem)
+        auto
+        0;
+
+      padding: 0;
+
+      background: transparent;
+      border: none;
+      box-shadow: none;
+    }
+
+    .contact-photo {
+      display: block;
+
+      width: 100%;
+      height: auto;
+
+      max-width: 950px;
+
+      margin: 0 auto;
+      padding: 0;
+
+      object-fit: contain;
+      object-position: center;
+
+      border: none !important;
+      border-radius: 0;
+
+      background: transparent;
+      box-shadow: none !important;
+    }
+
+    /* INTRODUCTORY TEXT */
 
     .contact-intro {
-      width:
-        min(
-          90%,
-          760px
-        );
+      width: min(90%, 760px);
 
       margin:
         clamp(2rem, 4vw, 3rem)
@@ -191,28 +193,17 @@
         serif;
 
       font-size:
-        clamp(
-          1.1rem,
-          1.5vw,
-          1.3rem
-        );
+        clamp(1.1rem, 1.5vw, 1.3rem);
 
       line-height: 1.6;
 
       color: #ddd3c2;
     }
 
-
-    /* =====================================================
-       CONTACT DETAILS
-       ===================================================== */
+    /* CONTACT DETAILS */
 
     .contact-details {
-      width:
-        min(
-          92%,
-          700px
-        );
+      width: min(92%, 700px);
 
       margin:
         clamp(2.5rem, 5vw, 4rem)
@@ -221,6 +212,8 @@
 
       padding:
         clamp(2rem, 4vw, 3rem);
+
+      box-sizing: border-box;
 
       border:
         1px solid
@@ -234,12 +227,8 @@
         inset 0 0 0 1px rgba(255,255,255,.02);
     }
 
-
     .contact-details h2 {
-      margin:
-        0
-        0
-        1.6rem;
+      margin: 0 0 1.6rem;
 
       font-family:
         'Pirata One',
@@ -247,17 +236,12 @@
         serif;
 
       font-size:
-        clamp(
-          1.8rem,
-          3vw,
-          2.5rem
-        );
+        clamp(1.8rem, 3vw, 2.5rem);
 
       font-weight: 400;
 
       color: #efd393;
     }
-
 
     .contact-list {
       list-style: none;
@@ -271,20 +255,16 @@
         serif;
 
       font-size:
-        clamp(
-          1.1rem,
-          1.55vw,
-          1.35rem
-        );
+        clamp(1.1rem, 1.55vw, 1.35rem);
 
       line-height: 1.7;
-    }
 
+      overflow-wrap: anywhere;
+    }
 
     .contact-list li + li {
       margin-top: .8rem;
     }
-
 
     .contact-list a {
       color: #f1eadc;
@@ -300,7 +280,6 @@
         border-color 160ms ease;
     }
 
-
     .contact-list a:hover,
     .contact-list a:focus-visible {
       color: #efd393;
@@ -309,12 +288,8 @@
         rgba(212,173,95,.75);
     }
 
-
     .contact-address {
-      margin:
-        2rem
-        0
-        0;
+      margin: 2rem 0 0;
 
       font-family:
         'Cormorant Garamond',
@@ -322,17 +297,12 @@
         serif;
 
       font-size:
-        clamp(
-          1.05rem,
-          1.45vw,
-          1.25rem
-        );
+        clamp(1.05rem, 1.45vw, 1.25rem);
 
       line-height: 1.6;
 
       color: #d8cebd;
     }
-
 
     .contact-email-button {
       display: inline-block;
@@ -341,15 +311,11 @@
         clamp(2rem, 4vw, 3rem);
     }
 
-
-    /* =====================================================
-       FOOTER
-       ===================================================== */
+    /* FOOTER */
 
     body.contact-page .site-footer {
       background: #080a0b;
     }
-
 
     body.contact-page .site-footer .footer-grid {
       display: grid;
@@ -360,45 +326,30 @@
         minmax(120px,.56fr);
 
       column-gap:
-        clamp(
-          50px,
-          6vw,
-          90px
-        );
+        clamp(50px, 6vw, 90px);
 
       align-items: center;
     }
-
 
     body.contact-page .site-footer .footer-grid ul {
       margin: 0;
       padding: 0;
     }
 
-
     body.contact-page .site-footer .footer-grid li {
-      margin:
-        0
-        0
-        .48rem
-        0;
+      margin: 0 0 .48rem 0;
     }
-
 
     body.contact-page .site-footer .footer-grid li:last-child {
       margin-bottom: 0;
     }
-
 
     body.contact-page .site-footer .footer-grid p {
       margin: 0;
       line-height: 1.55;
     }
 
-
-    /* =====================================================
-       RESPONSIVE
-       ===================================================== */
+    /* MOBILE RESPONSIVENESS */
 
     @media (max-width: 760px) {
 
@@ -407,16 +358,22 @@
         row-gap: 1.8rem;
       }
 
-
       .contact-main {
         padding-top: 3rem;
       }
 
+      .contact-photo-wrapper {
+        width: 100%;
+        margin-top: 2rem;
+      }
+
+      .contact-photo {
+        width: 100%;
+        height: auto;
+      }
 
       .contact-details {
-        padding:
-          1.8rem
-          1.25rem;
+        padding: 1.8rem 1.25rem;
       }
 
     }
@@ -425,9 +382,7 @@
 
 </head>
 
-
 <body class="contact-page">
-
 
   <a
     class="skip-link"
@@ -436,13 +391,9 @@
     Skip to content
   </a>
 
-
-  <!-- =====================================================
-       HEADER
-       ===================================================== -->
+  <!-- HEADER -->
 
   <header class="site-header">
-
 
     <nav
       class="primary-nav"
@@ -456,7 +407,6 @@
         Leading Lights of London Ltd
       </a>
 
-
       <button
         class="nav-toggle"
         type="button"
@@ -466,7 +416,6 @@
         Menu
       </button>
 
-
       <ul
         class="primary-links"
         id="primary-links"
@@ -475,12 +424,6 @@
         <li>
           <a href="home.html">
             Home
-          </a>
-        </li>
-
-        <li>
-          <a href="about.html">
-            About
           </a>
         </li>
 
@@ -496,7 +439,6 @@
       </ul>
 
     </nav>
-
 
     <nav
       class="gallery-nav"
@@ -524,12 +466,6 @@
         </li>
 
         <li>
-          <a href="gallery/palaces.html">
-            Palaces
-          </a>
-        </li>
-
-        <li>
           <a href="gallery/bespoke-designs.html">
             Bespoke Designs
           </a>
@@ -551,24 +487,18 @@
 
     </nav>
 
-
   </header>
 
-
-  <!-- =====================================================
-       MAIN
-       ===================================================== -->
+  <!-- MAIN CONTACT PAGE -->
 
   <main
     class="contact-main"
     id="main-content"
   >
 
-
     <h1 class="contact-title">
       Contact
     </h1>
-
 
     <div
       class="contact-rule"
@@ -577,22 +507,34 @@
       <span>✦</span>
     </div>
 
+    <!-- NEW CONTACT IMAGE -->
+
+    <div class="contact-photo-wrapper">
+
+      <img
+        class="contact-photo"
+        src="assets/images/contact.JPG"
+        alt="Leading Lights of London"
+        decoding="async"
+      >
+
+    </div>
+
+    <!-- CONTACT INTRODUCTION -->
 
     <p class="contact-intro">
-      For stained glass design, restoration or repair enquiries, please get in touch by phone or email.
+      For stained glass design, restoration or repair enquiries,
+      please get in touch by phone or email.
     </p>
-
 
     <section
       class="contact-details"
       aria-label="Contact details"
     >
 
-
       <h2>
         Leading Lights of London Ltd
       </h2>
-
 
       <ul class="contact-list">
 
@@ -616,13 +558,11 @@
 
       </ul>
 
-
       <p class="contact-address">
         Clockwork Studios<br>
         38A Southwell Road<br>
         London SE5 9PG
       </p>
-
 
       <a
         class="button contact-email-button"
@@ -631,22 +571,15 @@
         Email / Make an enquiry
       </a>
 
-
     </section>
-
 
   </main>
 
-
-  <!-- =====================================================
-       FOOTER
-       ===================================================== -->
+  <!-- FOOTER -->
 
   <footer class="site-footer">
 
-
     <div class="footer-grid">
-
 
       <div>
 
@@ -674,7 +607,6 @@
 
       </div>
 
-
       <div>
 
         <p>
@@ -683,7 +615,6 @@
         </p>
 
       </div>
-
 
       <div>
 
@@ -711,23 +642,15 @@
 
       </div>
 
-
     </div>
-
 
     <div class="footer-bottom">
       © Leading Lights of London Ltd 2026
     </div>
 
-
   </footer>
 
-
-  <script
-    src="js/main.js"
-    defer
-  ></script>
-
+  <script src="js/main.js" defer></script>
 
 </body>
 
