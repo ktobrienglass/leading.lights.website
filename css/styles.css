@@ -1686,3 +1686,8 @@ body.landing-page .window-overlay {
 .gallery-links > li:has(> a[href$="palaces.html"]) {
   display: none !important;
 }
+/* Remove About from all primary navigation menus */
+
+.primary-links > li:has(> a[href$="about.html"]) {
+  display: none !important;
+}
